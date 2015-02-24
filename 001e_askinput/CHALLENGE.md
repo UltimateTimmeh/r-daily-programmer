@@ -4,6 +4,7 @@
 **Number:** 1  
 **Difficulty:** Easy  
 **Name:** None  
+[Reddit post](http://www.reddit.com/r/dailyprogrammer/comments/pih8x/easy_challenge_1/)
 
 ## Description
 
