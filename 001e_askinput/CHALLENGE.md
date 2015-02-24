@@ -1,3 +1,12 @@
+## Information
+
+**Date:** 2012-02-10
+**Number:** 1
+**Difficulty:** Easy
+**Name:** None
+
+## Description
+
 Create a program that will ask the user's name, age, and reddit username.
 Have it tell them the information back, in the format:
 
