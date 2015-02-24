@@ -1,9 +1,9 @@
 ## Information
 
-**Date:** 2012-02-10
-**Number:** 1
-**Difficulty:** Easy
-**Name:** None
+**Date:** 2012-02-10  
+**Number:** 1  
+**Difficulty:** Easy  
+**Name:** None  
 
 ## Description
 
