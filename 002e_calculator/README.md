@@ -3,7 +3,7 @@
 **Date:** 2012-02-10  
 **Number:** 2  
 **Difficulty:** Easy  
-**Name:** None  
+**Name:** Calculator  
 [Reddit post](http://www.reddit.com/r/dailyprogrammer/comments/pjbj8/easy_challenge_2/)
 
 ## Description

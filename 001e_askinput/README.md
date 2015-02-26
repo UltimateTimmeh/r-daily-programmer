@@ -3,7 +3,7 @@
 **Date:** 2012-02-10  
 **Number:** 1  
 **Difficulty:** Easy  
-**Name:** None  
+**Name:** Askinput  
 [Reddit post](http://www.reddit.com/r/dailyprogrammer/comments/pih8x/easy_challenge_1/)
 
 ## Description
