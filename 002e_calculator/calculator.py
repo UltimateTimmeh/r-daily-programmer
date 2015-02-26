@@ -50,7 +50,6 @@ class TextMenu(object):
                 return -1
             else:
                 action()
-                input("PRESS ENTER TO CONTINUE")
 
 
 if __name__ == '__main__':
@@ -80,6 +79,7 @@ numbers you can see the result and the used formula. Have fun!"""
         result = 6*z**2
         print("The cube's surface area is: {0:.3f}".format(result))
         print("Formula: 6*z**2")
+        input("PRESS ENTER TO CONTINUE")
 
 
     def cube_volume():
@@ -88,6 +88,7 @@ numbers you can see the result and the used formula. Have fun!"""
         result = z**3
         print("The cube's volume is: {0:.3f}".format(result))
         print("Formula: z**3")
+        input("PRESS ENTER TO CONTINUE")
 
 
     def sphere_surface_area():
@@ -96,6 +97,7 @@ numbers you can see the result and the used formula. Have fun!"""
         result = 4*pi*r**2
         print("The sphere's surface area is: {0:.3f}".format(result))
         print("Formula: 4*pi*r**2")
+        input("PRESS ENTER TO CONTINUE")
 
 
     def sphere_volume():
@@ -104,6 +106,7 @@ numbers you can see the result and the used formula. Have fun!"""
         result = 4/3*pi*r**3
         print("The sphere's volume is: {0:.3f}".format(result))
         print("Formula: 4/3*pi*r**3")
+        input("PRESS ENTER TO CONTINUE")
 
 
     # Create the menus.

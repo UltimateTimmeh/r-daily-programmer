@@ -8,7 +8,8 @@ possible. If you have any comments or suggestions, feel free to send me a messag
 
 ## Challenges
 
-Following is a list of challenges and a short comment indicating the status of that challenge.
+Following is a list of performed challenges and their status.
 
-1. **001 Easy**: As done as it gets. Too simple to make anything more of it.
-1. **002 Easy**: There's a lot of room for expansion, but I'm not sure it's worth it.
+1. *Easy:* Complete
+1. *Easy:* Complete
+1. *Easy:* Complete
