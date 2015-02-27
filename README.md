@@ -11,5 +11,7 @@ possible. If you have any comments or suggestions, feel free to send me a messag
 Following is a list of performed challenges and their status.
 
 1. *Easy:* Complete
-1. *Easy:* Complete
-1. *Easy:* Complete
+2. *Easy:* Complete
+3. *Easy:* Complete
+4. *Easy:* Complete
+5. *Easy:* Complete
