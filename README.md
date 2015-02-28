@@ -15,3 +15,4 @@ Following is a list of performed challenges and their status.
 3. *Easy:* Complete
 4. *Easy:* Complete
 5. *Easy:* Complete
+6. *Easy:* Complete
