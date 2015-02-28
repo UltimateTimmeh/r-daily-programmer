@@ -15,7 +15,7 @@ Try not to cheat :-).
 
 ## Development notes
 
-*<2015-02-28, 19:14>*  
+*2015-02-28, 19:14*  
 I implemented three different formulas to calculate pi. The user can choose which formula, and the desired
 precision. The actual value of pi (up to 74 decimal numbers) is printed as well to check if the calculated
 number is correct. In my experience the first n-2 digits are accurate, but the final two digits (taking into

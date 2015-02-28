@@ -20,7 +20,7 @@ calculate `F = M * A`, but also `A = F/M`, and `M = F/A`!
 
 ## Development notes
 
-*<2015-02-26, 12:22>*
+*2015-02-26, 12:22*  
 There is a lot of room for expansion here. I could, for example, add all formulas for
 length, surface and volume of basic geometrical shapes. However, I don't think it's
 worth it. The TextMenu class could be useful in the future though. This challenge is
