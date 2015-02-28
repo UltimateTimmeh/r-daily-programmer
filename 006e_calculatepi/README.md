@@ -17,7 +17,7 @@ Try not to cheat :-).
 
 *<2015-02-28, 19:14>*  
 I implemented three different formulas to calculate pi. The user can choose which formula, and the desired
-precision. To actual value of pi (up to 74 decimal numbers) is printed as well to check if the calculated
+precision. The actual value of pi (up to 74 decimal numbers) is printed as well to check if the calculated
 number is correct. In my experience the first n-2 digits are accurate, but the final two digits (taking into
 account rounding) are not always correct. In other words, if you want to accurately calculate the first
 30 digits of pi, then you should request a calculation for the first 32 digits. This challenge is complete.
