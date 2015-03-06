@@ -21,7 +21,8 @@ Super-bonus if your program can flash or beep the Morse.
 
 ## Development notes
 
-### *2015-03-05, 16:40*  
+### *2015-03-05, 16:40*
+
 I have decided to make this a bit more expansive than required. The first important decision
 was to go the object-oriented route, with the definition of a MorseConvention object. With
 this object a Morse code convention can be loaded, and the convention can be used to encode
@@ -64,7 +65,8 @@ Which is apparently equal to (spoiler warning!):
 That looks like it could be correct. Up next is developing the beeping, after that it should
 be done.
 
-### *2015-03-06, 09:02*  
+### *2015-03-06, 09:02*
+
 I decided to use the `\a` character (system bell) to "print" the beep. The reason is because
 this should be OS independent. First, however, I had to find a way to activate the system bell
 in the terminal on Debian Jessie, since it was apparently off by default. This is what I had

@@ -17,6 +17,7 @@ For extra credit, have the program log this information in a file to be accessed
 
 ## Development notes
 
-*2015-02-26, 12:14*  
+### *2015-02-26, 12:14*
+
 This piece of code is so simple, it's not worth making anything more of it. I'll consider
 this completed.

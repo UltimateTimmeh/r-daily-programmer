@@ -17,6 +17,7 @@ For extra credit, add a "decrypt" function to your program!
 
 ## Development notes
 
-*2015-02-26, 12:16*  
+### *2015-02-26, 12:16*
+
 I did what needed to be done (encode), added the bonus (decode) and even added an extra of my
 own (brute-force decoding). I'm out of inspiration, so I will consider it complete.

@@ -14,5 +14,6 @@ to specify the length of the strings he wants to generate!
 
 ## Development notes
 
-*2015-02-26, 15:05*  
+### *2015-02-26, 15:05*
+
 All requirements of the challenge have been fulfilled, so I guess it's complete.

@@ -16,7 +16,8 @@ break into your own program :).
 
 ## Development notes
 
-*2015-02-27, 12:13*  
+### *2015-02-27, 12:13*
+
 In this challenge I will make use of the TextMenu class developed in 002e and the random password
 generator in 004e to make the program a bit more fun. Users will get a menu, where they can choose
 if they want to create a new user, or log in. When creating a new user, a username and password have
@@ -24,7 +25,8 @@ to be provided. If the provided password is left blank, then a random 8-characte
 generated for them. I will also apply encryption and salting to the password before storing it in
 a file, just for fun.
 
-*2015-02-27, 14:46*  
+### *2015-02-27, 14:46*
+
 So this is what I have. Upon executing the code the user is presented a menu:
 
 1. Log in: The user is asked for a username and a password. If the user does not exist, or the password is
