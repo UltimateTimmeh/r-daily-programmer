@@ -21,7 +21,7 @@ Super-bonus if your program can flash or beep the Morse.
 
 ## Development notes
 
-*2015-03-05, 16:40*  
+### *2015-03-05, 16:40*  
 I have decided to make this a bit more expansive than required. The first important decision
 was to go the object-oriented route, with the definition of a MorseConvention object. With
 this object a Morse code convention can be loaded, and the convention can be used to encode
@@ -61,4 +61,48 @@ Which is apparently equal to (spoiler warning!):
 
     HELLO DAILY PROGRAMMER GOOD LUCK ON THE CHALLENGES TODAY
 
-That appears to be correct. Up next is developing the beeping, after that it should be done.
+That looks like it could be correct. Up next is developing the beeping, after that it should
+be done.
+
+### *2015-03-06, 09:02*  
+I decided to use the `\a` character (system bell) to "print" the beep. The reason is because
+this should be OS independent. First, however, I had to find a way to activate the system bell
+in the terminal on Debian Jessie, since it was apparently off by default. This is what I had
+to do to set it to 'on' in the terminal, but 'off' system-wide by default:
+
+1. Apparently the bell setting in the xfce4 terminal is a "hidden setting". The only way to
+   change it is by editing the terminal's configuration file.
+2. Open (or create, if it does not exist) the file `/home/user/.config/xfce4/terminal/terminalrc`
+   in a text editor.
+2. Edit the file so it contains at least the following:
+
+        [Configuration]
+        MiscBell=TRUE
+
+   *Note: For me this messed up my terminal settings (background changed from white to black),
+   so I had to change the preferences back to what it was manually, but this did not affect
+   the setting of the bell.*
+
+3. If you log out and back in, the change should have taken effect. You can test by simply
+   pressing backspace in the terminal, or by launching python in the terminal and printing
+   the `\a` character.
+4. If it does not work, then perhaps the bell is deactivated system-wide by default. You
+   can check this with `xset q | grep bell` in the terminal. If "percent" is zero,
+   the bell is off. You can turn it on with `xset b on`. Then it should work.
+5. If the bell is activated system-wide by default, activating the bell in the terminal by
+   default as well will be very annoying. The terminal will constantly beep, and it will
+   drive you crazy. Because of this, the bell should automatically be switched off system-wide
+   when logging in. You can do this by adding the following lines to the `/home/user/.bashrc`
+   file:
+
+        # Turn off system bell by default
+        if [ -n "$DISPLAY" ]; then
+          xset b off
+        fi
+
+6. If you log in now, the bell should be deactivated system-wide, and allowed in the
+   terminal. You can always check the system bell settings with `xset q | grep bell`,
+   turn it on with `xset b on` and see if it now works in the terminal by printing the `\a`
+   character in python. To deactivate the bell, use `xset b off`.
+
+Now on to the actual implementation of the Morse code sequence beeping.
