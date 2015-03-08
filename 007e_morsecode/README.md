@@ -4,7 +4,7 @@
 **Challenge number:** 7  
 **Difficulty:** Easy  
 **Submission date:** 2012-02-15  
-**Status:** In progress
+**Status:** Complete
 
 ## Description
 
@@ -54,9 +54,7 @@ Since slashes are obviously not a valid Morse character, I will replace it with 
 space. This means the spacing between characters is one unit, and the spacing between
 words is three units. The sequence to decode becomes:
 
-    .... . .-.. .-.. ---   -.. .- .. .-.. -.--   .--. .-. --- --. .-. .- -- -- . .-.   
-    --. --- --- -..   .-.. ..- -.-. -.-   --- -.   - .... .   -.-. .... .- .-.. .-.. . 
-    -. --. . ...   - --- -.. .- -.--
+    .... . .-.. .-.. ---   -.. .- .. .-.. -.--   .--. .-. --- --. .-. .- -- -- . .-.   --. --- --- -..   .-.. ..- -.-. -.-   --- -.   - .... .   -.-. .... .- .-.. .-.. . -. --. . ...   - --- -.. .- -.--
 
 Which is apparently equal to (spoiler warning!):
 
@@ -108,3 +106,17 @@ to do to set it to 'on' in the terminal, but 'off' system-wide by default:
    character in python. To deactivate the bell, use `xset b off`.
 
 Now on to the actual implementation of the Morse code sequence beeping.
+
+### 2015-03-03, 15:04
+
+To make the beeping of the Morse code a bit easier I will work with only two characters,
+a 'space' and a 'dot'. Dashes are three subsequent dots. In the Morse sequence of a single
+character there is always a blank between dots and dashes. The character spacing is three
+blanks. The word spacing is seven blanks. This is pretty much the international standard.
+The Morse sequence of the challenge becomes:
+
+    . . . .   .   . ... . .   . ... . .   ... ... ...       ... . .   . ...   . .   . ... . .   ... . ... ...       . ... ... .   . ... .   ... ... ...   ... ... .   . ... .   . ...   ... ...   ... ...   .   . ... .       ... ... .   ... ... ...   ... ... ...   ... . .       . ... . .   . . ...   ... . ... .   ... . ...       ... ... ...   ... .       ...   . . . .   .       ... . ... .   . . . .   . ...   . ... . .   . ... . .   .   ... .   ... ... .   .   . . .       ...   ... ... ...   ... . .   . ...   ... . ... ...
+
+Beeping seems to work. The beep settings (pitch and duration for blanks and dots) can be
+changed, but it seems that the current default settings cause a clear beep sequence that
+is relatively easy to follow. Challenge complete!

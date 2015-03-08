@@ -4,8 +4,10 @@ the menu to select the desired function and enter the text to encode (and/or
 beep) or Morse to decode.
 """
 
-from menu import TextMenu
 import os
+import subprocess
+import time
+from menu import TextMenu
 
 # Standard Morse code conventions included in the morsecode package.
 convdir = os.path.split(__file__)[0]
@@ -19,24 +21,28 @@ conventions = {
 def valid_morse(morse):
     """Check if a string of Morse code is valid.
     
-    A Morse code string is valid if it only contains spaces or dots.
+    A Morse code string is valid if it only contains blanks and dots.
     """
-    return all([cc in [' ', '.', '-'] for cc in morse])
+    return all([cc in [' ', '.'] for cc in morse])
 
 
-def beep_morse(morse):
+def beep_morse(morse, bp=100, bt=200, dp=400, dt=200):
     """Beep the passed string of Morse code."""
     if not valid_morse(morse):
         print("Invalid Morse in Morse code string to beep.")
         return
     
+    cmd = 'xset b 100 {} {}'
     for cc in morse:
         if cc == ' ':
-            print("tak")
+            subprocess.call(cmd.format(bp,bt).split())
+            print('\a')
+            time.sleep(bt/1000.)
         elif cc == '.':
-            print("BEEP")
-        else:
-            print("BEEEEEEP")
+            subprocess.call(cmd.format(dp,dt).split())
+            print('.\a')
+            time.sleep(dt/1000.)
+    subprocess.call('xset b off'.split())
 
 
 # Morse code convention class.
