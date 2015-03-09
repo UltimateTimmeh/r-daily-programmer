@@ -17,3 +17,4 @@ Following is a list of performed challenges and their status.
 5. *Easy:* Complete
 6. *Easy:* Complete
 7. *Easy:* Complete
+8. *Easy:* Complete
