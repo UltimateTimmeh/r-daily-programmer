@@ -215,7 +215,6 @@ if __name__ == '__main__':
     # Create menus and launch main.
     convention_menuitems = [
         ['1', 'International', lambda: morseconvention.set('ITU')],
-        ['2', 'Reddit', lambda: morseconvention.set('REDDIT')],
         ['b', 'Back', 'back'],
         ['q', 'Quit', 'quit'],
         ]
