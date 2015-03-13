@@ -7,9 +7,15 @@ various list sizes to determine which ones are more efficient.
 import datetime
 import random
 
+###
+### SIMPLE SORTING ALGORITHMS
+###
+
 
 def sort_insertion(_list):
     """Implementation of insertion sort.
+
+    NOTE: This implementation sorts the input list in-place!
 
     Algorithm:
     1) Go over all items of the list, starting at the second item (the first
@@ -37,6 +43,8 @@ def sort_insertion(_list):
 def sort_selection(_list):
     """Implementation of selection sort.
 
+    NOTE: This implementation sorts the input list in-place!
+
     Algorithm:
     1) Go over all items of the list. The current item will be called the pivot.
     2) The pivot starts as being the 'smallest'.
@@ -56,6 +64,11 @@ def sort_selection(_list):
             _list[ip] = _list[smallest]
             _list[smallest] = pivot
     return _list
+
+
+###
+### EFFICIENT SORTING ALGORITHMS
+###
 
 
 def sort_merge(_list):
@@ -85,40 +98,78 @@ def sort_merge(_list):
     return merged + left[il:] + right[ir:]
 
 
+def sort_quick(_list,  lo=0,  hi=None):
+    """Implentation of quick sort.
+
+    NOTE: This implementation sorts the input list in-place!
+
+    Algorithm:
+    1) Determine a pivot element (choice is arbitrary, but different methods of
+       determining the pivot can have a difference in the average efficiency of the
+       algorithm).
+    2) Reorder the list so all items smaller than the pivot come before it, and all
+       items larger than the pivot come after it. Once this is done, the pivot is
+       automatically in the correct position.
+    3) Recursively apply this algorithm to the lower and higher partitions. The
+       base case of the recursion is a partition with one or no elements.
+    """
+    if hi is None:  ## Starting condition.
+        hi = len(_list) - 1
+    if lo >= hi:
+        return _list
+    pi = lo + int((hi-lo)/2)  ## This prevents overflow if lo + hi would be too large.
+    pivot = _list[pi]
+    _list[pi] = _list[hi]
+    _list[hi] = pivot
+    pi = lo
+    for li in range(lo,  hi):
+        if _list[li] < pivot:
+            backup = _list[pi]
+            _list[pi] = _list[li]
+            _list[li] = backup
+            pi += 1
+    _list[hi] = _list[pi]
+    _list[pi] = pivot
+    sort_quick(_list,  lo,  pi-1)
+    sort_quick(_list,  pi+1,  hi)
+    return _list
+
+
+###
+### MAIN BODY COMPAIRS ALGORITHMS
+###
+
 if __name__ == '__main__':
-    # Create a list containing a chosen amount of numbers, and randomize.
-    nelems = 10000
-    elems = list(range(nelems))
-    random.shuffle(elems)
+    # Create lists containing a chosen amount of numbers, and randomize.
+    nelems = [10,  50, 100, 500, 1000, 5000, 10000]
+    lists = [list(range(nn)) for nn in nelems]
+    for ll in lists:
+        random.shuffle(ll)
+
+    header = "Algorithm |" + " {:10d} elems |"*len(nelems)
+    header = header.format(*nelems)
+    print('\n'+"="*len(header))
+    print(header)
+    print("="*len(header),  end='')
 
     # The sorting algorithms to be considered.
-    sort_names = [
-        'Insertion sort',
-        'Selection sort',
-        'Merge sort',
-        ]
     sort_funcs = [
-        sort_insertion,
-        sort_selection,
-        sort_merge,
+        ('Insertion', sort_insertion),
+        ('Selection', sort_selection),
+        ('Merge    ', sort_merge),
+        ('Quick    ', sort_quick),
         ]
 
-    # Feed the list to the sorting algorithms, time the execution and print a report.
-    for sort_name,  sort_func in zip(sort_names, sort_funcs):
-        elems_copy = [e for e in elems]
-        ts = datetime.datetime.now()
-        elems_sorted = sort_func(elems_copy)
-        te = datetime.datetime.now()
-        td = te - ts
-        txt = [
-            '\n'.join(['='*len(sort_name),  sort_name,  '='*len(sort_name)]),
-            ## "Original: {0}",
-            ## "Sorted: {1}",
-            "Amount of elements: {2}",
-            "Elapsed time: {3}",
-            ]
-        txt = '\n'.join(txt)
-        print('\n'+txt.format(elems, elems_sorted, len(elems), td.total_seconds()))
-
+    # Feed the lists to the sorting algorithms, time the execution and print a report.
+    for sort_func in sort_funcs:
+        print("\n{} |".format(sort_func[0]),  end='')
+        for _list in lists:
+            _list_copy = [e for e in _list]
+            ts = datetime.datetime.now()
+            elems_sorted = sort_func[1](_list_copy)
+            te = datetime.datetime.now()
+            td = te - ts
+            print(" {:15f}s |".format(td.total_seconds()), end='')
+        print('\n'+'-'*len(header),  end='')
 
 # End
