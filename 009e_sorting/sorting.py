@@ -135,6 +135,59 @@ def sort_quick(_list,  lo=0,  hi=None):
     return _list
 
 
+def sift_down(_list, start, end):
+    """Restore list heap structure.
+
+    Sift down the node at index 'start' to the proper place such that all nodes
+    below the start index are in heap order.
+    """
+    root = start
+    while root*2+1 <= end:  ## While the root has at least one child.
+        child = root*2+1  ## Left child.
+        swap = root  ## Keeps track of child to swap with.
+        if _list[swap] < _list[child]:
+            swap = child
+        if child+1 <= end and _list[swap] < _list[child+1]:  ## If there is a right child, and it is larger than the current child to swap with.
+            swap = child+1
+        if swap == root:
+            return  ## The root holds the largest element. Since we assume the heaps rooted at the children are valid, this means we are done.
+        else:
+            backup = _list[swap]
+            _list[swap] = _list[root]
+            _list[root] = backup
+            root = swap  ## Repeat to continue sifting down the child with which was swapped.
+
+
+def sort_heap(_list):
+    """Implentation of heap sort.
+
+    NOTE: This implementation sorts the input list in-place!
+
+    Algorithm:
+    1) Restructure the list into a heap structure.
+    2) The first element (root) is now the largest, swap it with the last element.
+    3) Repeat, but shrink the list down one element from the back after every
+       iteration.
+    4) Once the heap has shrunk down to size one the list is sorted.
+    """
+    # Restructure the list into a heap.
+    ll = len(_list)
+    start = int((ll - 2) / 2)
+    while start >= 0:
+        sift_down(_list, start, ll-1)
+        start -= 1
+
+    # Swap and restore heap property of shrunk list. Repeat until done.
+    end = ll - 1
+    while end > 0:
+        largest = _list[0]
+        _list[0] = _list[end]
+        _list[end] = largest
+        end -= 1
+        sift_down(_list, 0, end)
+    return _list
+
+
 ###
 ### MAIN BODY COMPAIRS ALGORITHMS
 ###
@@ -158,6 +211,7 @@ if __name__ == '__main__':
         ('Selection', sort_selection),
         ('Merge    ', sort_merge),
         ('Quick    ', sort_quick),
+        ('Heap     ', sort_heap),
         ]
 
     # Feed the lists to the sorting algorithms, time the execution and print a report.
@@ -166,7 +220,7 @@ if __name__ == '__main__':
         for _list in lists:
             _list_copy = [e for e in _list]
             ts = datetime.datetime.now()
-            elems_sorted = sort_func[1](_list_copy)
+            _list_sorted = sort_func[1](_list_copy)
             te = datetime.datetime.now()
             td = te - ts
             print(" {:15f}s |".format(td.total_seconds()), end='')
