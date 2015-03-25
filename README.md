@@ -8,7 +8,13 @@ possible. If you have any comments or suggestions, feel free to send me a messag
 
 ## Challenges
 
-Following is a list of performed challenges and their status.
+**Info about challenge status**
+
+- *In progress*: Means I have started working on this challenge, but I'm not done yet.
+- *Done*: Means I have finished the main part of the challenge, but not the extra credit(s).
+- *Complete*: Means I have finished both the main part and the extra credit(s) of the challenge.
+
+**List of challenges and their status**
 
 1. *Easy:* Complete
 2. *Easy:* Complete
@@ -18,4 +24,4 @@ Following is a list of performed challenges and their status.
 6. *Easy:* Complete
 7. *Easy:* Complete
 8. *Easy:* Complete
-9. *Easy:* In progress
+9. *Easy:* Done

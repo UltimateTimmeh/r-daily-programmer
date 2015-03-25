@@ -242,7 +242,7 @@ def sort_quick(_list,  lo=0,  hi=None, layer=0, verbose=False):
     return _list
 
 
-def sort_heap(_list):
+def sort_heap(_list, verbose=False):
     """Implentation of heap sort.
 
     NOTE: This implementation sorts the input list in-place!
@@ -254,42 +254,87 @@ def sort_heap(_list):
        iteration.
     4) Once the heap has shrunk down to size one the list is sorted.
     """
+    # Verbosity texts.
+    txt_tab = "|   "
+    txt_startconstruct = "Start constructing heap from full list: {}"
+    txt_subconstruct = "Considering sublist from {} to {}: {}"
+    txt_endconstruct = "Heap constructed --> {}"
+    txt_swaproot = "{} <-- swap root with end sublist --> "
+    txt_startfix = "Start fixing heap for sublist from 0 to {}: {}"
+    txt_endfix = "Heap fixed for sublist --> {}"
+    txt_swapsift = "{} <-- swapping '{}' with '{}' --> "
+    txt_rootstart = "Starting with root '{}'"
+    txt_leftchild = "Left child '{}' is bigger than root"
+    txt_rightchild = "Right child '{}' is bigger than root and left child"
+    txt_rootbiggest = "Current root '{}' is bigger than child(ren), heap property is fulfilled"
+    txt_newroot = "New root is '{}'"
+    txt_nochildren = "This root has no children, heap property is fulfilled"
 
-
-    def sift_down(_list, starti, endi):
+    # Sort code.
+    def sift_down(_list, starti, endi, layer=0):
         """Restore list heap structure (in-place).
 
         Sift down the node at start index 'starti' to the proper place such that all nodes
         below the start index are in heap order.
         """
         rooti = starti
+        if verbose:
+            print(txt_tab*layer + txt_rootstart.format(_list[rooti]))
+        if verbose and rooti*2+1 > endi:
+            print(txt_tab*layer + txt_nochildren)
         while rooti*2+1 <= endi:  ## While the root has at least one child.
             childi = rooti*2+1  ## Left child.
             swapi = rooti  ## Keeps track of child to swap with.
             if _list[swapi] < _list[childi]:
+                if verbose:
+                    print(txt_tab*layer + txt_leftchild.format(_list[childi]))
                 swapi = childi
-            if childi+1 <= endi and _list[swapi] < _list[childi+1]:  ## If there is a right child, and it is larger than the current child to swap with.
+            if childi+1 <= endi and _list[swapi] < _list[childi+1]:  ## If there is a right child, and it is larger than the current item to swap with.
+                if verbose:
+                    print(txt_tab*layer + txt_rightchild.format(_list[childi+1]))
                 swapi = childi+1
             if swapi == rooti:
+                if verbose:
+                    print(txt_tab*layer + txt_rootbiggest.format(_list[rooti]))
                 return  ## The root holds the largest element. Since we assume the heaps rooted at the children are valid, this means we are done.
             else:
+                if verbose:
+                    print(txt_tab*layer + txt_swapsift.format(_list[starti:endi+1], _list[rooti], _list[swapi]), end='')
                 swap(_list, swapi, rooti)
                 rooti = swapi  ## Repeat to continue sifting down the child with which was swapped.
+                if verbose:
+                    print(_list[starti:endi+1])
+                    print(txt_tab*layer + txt_newroot.format(_list[rooti]))
+                if verbose and rooti*2+1 > endi:
+                    print(txt_tab*layer + txt_nochildren)
 
 
     # Restructure the list into a heap.
     ll = len(_list)
     starti = int((ll - 2) / 2)
+    if verbose:
+        print(txt_startconstruct.format(_list))
     while starti >= 0:
-        sift_down(_list, starti, ll-1)
+        if verbose:
+            print(txt_tab + txt_subconstruct.format(starti, ll, _list[starti:ll]))
+        sift_down(_list, starti, ll-1, layer=2)
         starti -= 1
+    if verbose:
+        print(txt_endconstruct.format(_list))
 
-    # Swap and restore heap property of shrunk list. Repeat until done.
+    # Shrink list. Swap and restore heap property of shrunk list. Repeat until done.
     endi = ll - 1
     while endi > 0:
+        if verbose:
+            print(txt_swaproot.format(_list), end='')
         swap(_list, 0, endi)
         endi -= 1
-        sift_down(_list, 0, endi)
+        if verbose:
+            print(_list)
+            print(txt_startfix.format(endi, _list[0:endi+1]))
+        sift_down(_list, 0, endi, layer = 1)
+        if verbose:
+            print(txt_endfix.format(_list[0:endi+1]))
     return _list
 
 
@@ -461,7 +506,7 @@ def sort_comb(_list,  shrink=1.3,  verbose=False):
 
 
 ###
-### MAIN BODY: TEST CORRECTNESS OF ALGORITHMS OR COMPAIR SPEED OF ALGORITHMS FOR VARIOUS LIST SIZES.
+### MAIN: TEST CORRECTNESS OF ALGORITHMS OR COMPAIR SPEED OF ALGORITHMS FOR VARIOUS LIST SIZES.
 ###
 
 sort_funcs_list = [
@@ -469,7 +514,7 @@ sort_funcs_list = [
         ('Selection', sort_selection),
         ('Merge', sort_merge),
         ('Quick', sort_quick),
-##        ('Heap', sort_heap),
+        ('Heap', sort_heap),
         ('Bubble', sort_bubble),
         ('Shell', sort_shell),
         ('Comb', sort_comb),
@@ -497,7 +542,7 @@ def test_algorithm(algorithm):
     print("Sorted list: {}".format(_list_sorted))
 
     # Compare benchmark with sorted.
-    if _list_sorted==_list_benchmark:
+    if _list_sorted == _list_benchmark:
         print("The algorithm seems to work properly!")
     else:
         print("That does not look right...")
@@ -547,7 +592,11 @@ if __name__ == '__main__':
             "When testing an algorithm, it is executed in verbose mode, printing a detail of",
             "all actions taken during the execution of the algorithm. This is for educational",
             "purposes, so someone who is trying to understand how the algorithm works can see",
-            "the steps performed in a real example."
+            "the steps performed in a real example.",
+            "",
+            "When comparing algorithms, a table is printed detailing the time it took each",
+            "algorithm to sort the noted list size. Each algorithm gets the same lists,",
+            "so the comparison is fair.",
             ]
         print('\n'.join(usage))
 
