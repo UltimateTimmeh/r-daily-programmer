@@ -4,7 +4,7 @@
 **Challenge number:** 9  
 **Difficulty:** Easy  
 **Submission date:** 2012-02-17  
-**Status:** In progress
+**Status:** Done
 
 ## Description
 
