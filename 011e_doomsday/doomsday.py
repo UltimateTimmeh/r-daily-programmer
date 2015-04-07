@@ -14,6 +14,10 @@ class Doomsday(object):
         'saturday',
         ]
 
+    # Amount of days in each month in a normal and leap year.
+    days_in_months_normal = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    days_in_months_leap = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+
     # Anchor days for 2000's, 2100's, 1800's and 1900's.
     anchordays = [2, 0, 5, 3]
 
@@ -28,6 +32,10 @@ class Doomsday(object):
         self.day = day
         self.month = month
         self.year = year
+
+        valid, error = self.is_valid()
+        if not valid:
+            raise ValueError(error)
 
 
     def __str__(self):
@@ -59,7 +67,7 @@ class Doomsday(object):
         else:
             maxday = 31
         day = random.randint(1,maxday)
-        return cls(day,month,year)
+        return cls(day, month, year)
 
 
     @staticmethod
@@ -73,6 +81,41 @@ class Doomsday(object):
             return True
         else:
             return False
+
+
+    def is_valid(self):
+        """Check if self is a valid date. If not, give reason why."""
+        # Checks independent of leap years.
+        if self.year < 1583:
+            error = "This class assumes the Gregorian calendar, which "
+            error += "was not introduced until 1583. Therefore, the "
+            error += "year must be at least 1583 (got {})."
+            error = error.format(self.year)
+            return False, error
+        if self.month < 1 or self.month > 12:
+            error = "Month must be between 1 and 12 (got {})."
+            error = error.format(self.month)
+            return False, error
+        if self.day < 1:
+            error = "Day must be at least 1 (got {})."
+            error = error.format(self.day)
+            return False, error
+
+        # Checks that depend on leap years.
+        if not Doomsday.is_leapyear(self.year):
+            days_in_months = Doomsday.days_in_months_normal
+        else:
+            days_in_months = Doomsday.days_in_months_leap
+        days_in_month = days_in_months[self.month-1]
+        if self.day > days_in_month:
+            error = "Month {} in year {} has at most {} days "
+            error += "(got {})."
+            error = error.format(self.month, self.year, days_in_month, self.day)
+            return False, error
+
+        # All checks passed.
+        return True, ''
+
 
 
     def century(self):
@@ -116,8 +159,20 @@ class Doomsday(object):
             doomsdate = Doomsday.doomsdates_normal[self.month-1]
         else:
             doomsdate = Doomsday.doomsdates_leap[self.month-1]
+
+        # Calculate the weekay of self.
         wi = (self.doomsday() + (self.day-doomsdate)) % 7
         return Doomsday.weekdays[wi]
+
+
+    def yearday(self):
+        """Calculate the day of the year of self."""
+        if not Doomsday.is_leapyear(self.year):
+            days_in_months = Doomsday.days_in_months_normal
+        else:
+            days_in_months = Doomsday.days_in_months_leap
+        yearday = sum(days_in_months[:self.month-1]) + self.day
+        return yearday
 
 
 if __name__ == '__main__':
