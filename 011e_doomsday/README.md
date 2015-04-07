@@ -41,7 +41,7 @@ following command:
 
     $ python3.4 doomsday.py
 
-The user is welcomed, and then continuouly asked to type the weekday for a given random date. The user's
+The user is welcomed and then continuouly asked to type the weekday for a given random date. The user's
 current streak and highscore is tracked. Stopping can be done by typing 'quit' instead of a weekday.
 
 **Output from test run**
