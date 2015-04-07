@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 Generate p random passwords with length l. Includes alphanumerical characters
 and some symbols.

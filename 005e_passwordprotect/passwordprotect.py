@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 Fun little program to practice user creation and login. Applies salting and
 hashing to make the user database as secure as possible.
@@ -44,13 +45,13 @@ def user_creation():
     while existing_user(username):
         print("That user already exists, please choose another name.")
         username = input("New user name: ")
-        
+
     # Ask new password, generate random if left blank.
     password = input("New password (leave blank for random): ")
     if password == '':
         password = pwgenerate.generate_passwords(1, 8)[0]
         print("Your randomly generated password is: {}".format(password))
-    
+
     # Add user to database.
     add_user(username, password)
     input("User successfully created! Press ENTER to continue.")
@@ -59,27 +60,27 @@ def user_creation():
 def user_identification():
     """Ask for username and password. Identify if they are correct."""
     global user
-    
+
     # Check if you are already logged in.
     if user is not None:
         print("You are already logged in as '{}'!".format(user))
         print("Logging in as another user will log out that session.")
-    
+
     # Ask for username and password.
     username = input("Username: ")
     password = input("Password: ")
-    
+
     # Make sure the user exists. If he does, get his data.
     if not existing_user(username):
         input("Incorrect username or password. Press ENTER to continue.")
         return
-    
+
     # Compare the provided password with the hash in the database.
     salt, hashed_password = get_user(username)
     if hashed_password != hl.sha256(salt.encode() + password.encode()).hexdigest():
         input("Incorrect username or password. Press ENTER to continue.")
         return
-    
+
     # Getting here means the login was successful. Set the user.
     user = username
     input("Login successful! Press ENTER to continue.")

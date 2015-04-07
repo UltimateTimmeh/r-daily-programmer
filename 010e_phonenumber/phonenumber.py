@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """Module containing a class for phone number objects.
 
 Can check if the phone number is valid in its country. Can

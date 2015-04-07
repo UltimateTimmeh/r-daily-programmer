@@ -1,3 +1,10 @@
+#!/usr/bin/python3
+"""
+Module containing the Doomsday class, a class for storing and handling
+date objects. Its main objective is to calculate the weekday for any
+given date using the Doomsday algorithm.
+"""
+
 import random
 
 

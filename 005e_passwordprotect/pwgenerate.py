@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 Function to generate random passwords of arbitrary length.
 """

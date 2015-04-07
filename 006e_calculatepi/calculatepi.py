@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 Accurately calculate pi to a certain precision using the desired formula.
 
@@ -63,15 +64,15 @@ def chudnovsky():
 
 
 if __name__ == '__main__':
-    
+
     # Make sure the usage is correct.
     if len(sys.argv) != 3:
         sys.exit("Argument error, use: python3.4 calculatepi.py <formula> <prec>")
-    
+
     # Extract sys.argv values.
     formula = sys.argv[1]
     precision = int(sys.argv[2])
-    
+
     # Check if requested formula exists.
     formulas = {
         'bbp': bbp,
@@ -82,12 +83,12 @@ if __name__ == '__main__':
         sys.exit("Formula error: formula '{}' does not exist.".format(formula))
     else:
         print("\nUsing formula '{}'...".format(formula))
-    
+
     # Calculate pi and print result.
     getcontext().prec = precision+1
     pi = formulas[formula]()
     print("...pi calculated to {} decimal points is:\n    {}".format(precision, pi))
-    
+
     # Compare with the first 74 digits of pi.
     with open('pi_74.txt', 'r') as pi_file:
         pi_string = pi_file.read()

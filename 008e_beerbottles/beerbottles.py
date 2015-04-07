@@ -1,4 +1,4 @@
-#!/usr/bin/env python3.4
+#!/usr/bin/python3
 """
 Class for printing the "99 bottles of beer" song's lyrics, with the ability
 to start at an arbitrary number. You can also choose how to join the song's
@@ -27,14 +27,14 @@ def plural(n):
 
 class BeerBottles(object):
     """Class for printing the '99 bottles of beer' song's lyrics."""
-    
-    
+
+
     def __init__(self, b, j='\n'):
         """Initialize the BeerBottles object."""
         self.bottles = b
         self.joinwith = j
-    
-    
+
+
     def __str__(self, wall=False):
         """Print the amount of bottles, possibly on a wall."""
         txt = "{} bottle{} of beer"
@@ -43,15 +43,15 @@ class BeerBottles(object):
         else:
             txt += "."
         return txt.format(self.bottles, plural(self.bottles))
-    
-    
+
+
     def take_and_pass(self):
         """Take a bottle and pass it around."""
         txt = "Take one down, pass it around."
         self.bottles -= 1
         return txt
-    
-    
+
+
     def lyrics(self, stopat=0):
         """Count down and generate the lyrics."""
         lyrics = []

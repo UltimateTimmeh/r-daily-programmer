@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 # Ask user for information.
 person = {}
 person['name'] = input("Name? > ")

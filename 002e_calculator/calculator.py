@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 Simple calculator, created per demand of the 2nd reddit.com/r/DailyProgrammer
 easy challenge. I have made this more complex than requested, but like this it
@@ -12,25 +13,25 @@ from math import pi
 # Define a class to handle menus.
 class TextMenu(object):
     """A text-based menu."""
-    
+
     def __init__(self, name, menuitems):
         """Initialize the menu."""
         self.name = name
         self.menuitems = menuitems
         self.keyactions = {}
-        
+
         for item in self.menuitems:
             self.keyactions[item[0]] = item[2]
-    
-    
+
+
     def __str__(self):
         """Print the menu items."""
         txt = "\n=== {} ===\n".format(self.name)
         txt += '\n'.join(["{}. {}".format(item[0], item[1]) for item in \
                           self.menuitems])
         return txt
-    
-    
+
+
     def ask_item(self):
         """Ask for an item from the menu."""
         while True:
@@ -61,8 +62,8 @@ SIMPLE CALCULATOR
 Welcome to this simple calculator. Use the menus to navigate to the caculation
 you wish to make, then provide the requested numbers. After providing the
 numbers you can see the result and the used formula. Have fun!"""
-    
-    
+
+
     # Define the calculation functions.
     def ask_float(txt):
         """Keep asking for a float until you get one."""

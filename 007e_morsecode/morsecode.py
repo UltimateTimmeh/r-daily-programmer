@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 Application with text-based menus to encode, beep and decode Morse code. Use
 the menu to select the desired function and enter the text to encode (and/or
@@ -20,7 +21,7 @@ conventions = {
 # Some global Morse code functions.
 def valid_morse(morse):
     """Check if a string of Morse code is valid.
-    
+
     A Morse code string is valid if it only contains blanks and dots.
     """
     return all([cc in [' ', '.'] for cc in morse])
@@ -31,7 +32,7 @@ def beep_morse(morse, bp=100, bt=200, dp=400, dt=200):
     if not valid_morse(morse):
         print("Invalid Morse in Morse code string to beep.")
         return
-    
+
     cmd = 'xset b 100 {} {}'
     for cc in morse:
         if cc == ' ':
@@ -48,8 +49,8 @@ def beep_morse(morse, bp=100, bt=200, dp=400, dt=200):
 # Morse code convention class.
 class MorseConvention(object):
     """A class containing a Morse encoding convention."""
-    
-    
+
+
     def __init__(self, convention='ITU'):
         """Initialize the Morse object."""
         if os.path.isfile(convention):
@@ -60,8 +61,8 @@ class MorseConvention(object):
             error = "'{}' is not a standard Morse code convention or a valid "
             error += "path to a custom Morse code convention file!"
             raise ValueError(error.format(convention))
-    
-    
+
+
     def __str__(self):
         """Format Morse object as a string."""
         title = "Morse code convention '{}':".format(self.codename)
@@ -74,8 +75,8 @@ class MorseConvention(object):
         txt.append(line)
         txt = '\n' + '\n'.join(txt)
         return txt
-    
-    
+
+
     def set(self, convention):
         """Set the chosen standard convention."""
         if convention in conventions:
@@ -83,14 +84,14 @@ class MorseConvention(object):
         else:
             error = "'{}' is not a standard Morse code convention!"
             raise ValueError(error.format(convention))
-    
-    
+
+
     def load(self, fn):
         """Load a Morse code convention from a file."""
         # Load Morse code convention file.
         with open(fn, 'r') as morse_file:
             code_lines = [line[:-1] for line in morse_file.readlines()]
-        
+
         # Process Morse code convention file lines..
         self.codename = None
         self.text2morse = {}
@@ -111,26 +112,26 @@ class MorseConvention(object):
                     error += "file '{}'."
                     raise ValueError(error.format(fn))
             else:
-                error = "Invalid line (#{}) in Morse code convention file '{}'" 
+                error = "Invalid line (#{}) in Morse code convention file '{}'"
                 raise ValueError(error.format(ll+1, fn))
             self.text2morse[key] = value
         self.morse2text = {value: key for key, value in self.text2morse.items()}
-        
+
         # Make sure the codename is specified.
         if self.codename is None:
             error = "No code name in Morse code convention file '{}'"
             raise ValueError(error.format(fn))
-        
+
         # Make sure there is a character spacing value.
         if '' not in self.text2morse:
             error = "No character spacing convention in "
             error += "Morse code convention file '{}'"
             raise ValueError(error.format(fn))
-    
-    
+
+
     def encode(self, text):
         """Encode a piece of text into morse."""
-        
+
         # Encode the passed string of text.
         text = text.upper()
         morse = []
@@ -148,15 +149,15 @@ class MorseConvention(object):
             morse.append(mw)
         morse = self.text2morse[' '].join(morse)
         return morse
-    
-    
+
+
     def decode(self, morse):
         """Decode a piece of Morse code to text."""
-        
+
         # Make sure the passed string is valid Morse code.
         if not valid_morse(morse):
             return "Invalid Morse character in Morse string to decode."
-        
+
         # Decode the string using the loaded Morse code convention.
         text = []
         for mw in morse.split(self.text2morse[' ']):
@@ -179,11 +180,11 @@ def encode_text(action='print'):
     if morseconvention is None:
         print("\nWARNING: No Morse code convention has been set!")
         return input("<Press ENTER to continue>")
-    
+
     # Ask for text and encode.
     text = input("Text to encode > ")
     morse = morseconvention.encode(text)
-    
+
     # Print or beep morse.
     if action == 'print':
         print("\n{}\n<{}>\n{}".format(text, morseconvention.codename, morse))
@@ -200,7 +201,7 @@ def decode_morse():
     if morseconvention is None:
         print("\nWARNING: No Morse code convention has been set!")
         return input("<Press ENTER to continue>")
-    
+
     # Ask for Morse, decode and print.
     morse = input("Morse to decode > ")
     text = morseconvention.decode(morse)
@@ -211,7 +212,7 @@ def decode_morse():
 if __name__ == '__main__':
     # Set default Morse code convention.
     morseconvention = MorseConvention()
-    
+
     # Create menus and launch main.
     convention_menuitems = [
         ['1', 'International', lambda: morseconvention.set('ITU')],
@@ -219,7 +220,7 @@ if __name__ == '__main__':
         ['q', 'Quit', 'quit'],
         ]
     convention_menu = TextMenu('MORSE CODE CONVENTION MENU', convention_menuitems)
-    
+
     main_menuitems = [
         ['1', 'Choose Morse code convention', convention_menu.ask_item],
         ['2', 'Encode and print', encode_text],

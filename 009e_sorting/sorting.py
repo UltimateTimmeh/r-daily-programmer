@@ -1,4 +1,4 @@
-#!/usr/bin/env python3.4
+#!/usr/bin/python3
 """
 Implementation of various sorting algorithms, and tests on
 various list sizes to determine which ones are more efficient.

@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 Functions to encode, decode and brute-force a ceasar cipher.
 """
@@ -9,20 +10,20 @@ def caesar_cipher(input, n, type='encode'):
     n = n % 26
     if type == 'decode':
         n = -n
-    
+
     abc = 'abcdefghijklmnopqrstuvwxyz'
     abc_shift = abc[n:] + abc[:n]
     cipher_map = {}
     for c,c_s in zip(abc, abc_shift):
         cipher_map[c] = c_s
-    
+
     output = ''
     for c in input:
         if c in abc:
             output += cipher_map[c]
         else:
             output += c
-    
+
     return output
 
 
@@ -37,7 +38,7 @@ if __name__ == '__main__':
     # Ask for input
     text = input("Text to encode > ")
     n = eval(input("Amount of right shift > "))
-    
+
     # Play with the input
     print("Original text: " + text)
     text_encoded = caesar_cipher(text, n)
