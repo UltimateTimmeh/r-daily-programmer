@@ -1,0 +1,8 @@
+Test method personalinfo.PersonalInfo.__init__ ... ok
+Test method personalinfo.PersonalInfo.__str__ ... ok
+Test method personalinfo.PersonalInfo.write ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+OK

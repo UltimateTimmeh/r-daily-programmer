@@ -28,22 +28,20 @@ this completed.
 
 Looks like I decided to make more of it after all. I basically threw out the old solution
 and created a class `PersonalInfo` that has `name`, `age` and `reddit_username` as attributes.
-The classmethod `PersonalInfo.ask()` can be used to initialize a `PersonalInfo` object by
-asking for the three attributes. The method `PersonalInfo.__str__()` nicely formats the
-object for printed output, and the `PersonalInfo.write()` method will write the formatted
-info to a text file. The main body of the text does just that.
+The method `PersonalInfo.__str__()` nicely formats the object for printed output, and the
+`PersonalInfo.write()` method will write the formatted info to a text file. The main body
+of the module asks for user input, prints the result and writes it to a file.
 
-**Output from test run**
+I also added some unit testing. Everything seems to work nice and proper. I think I am going
+to do this by default from now on, as a form of practice.
 
-This is the output from the test run that was performed to write the enclosed 'output.txt'
-file:
+**Example run**
 
-    $ python3
-    >>> from personalinfo import PersonalInfo
-    >>> pi = PersonalInfo.ask()
+This is the output from an example run that was performed to write the enclosed
+'example_output.txt' file:
+
+    $ python3 personalinfo.py 
     Name? > John Smith
     Age? > 50
     Reddit Username? > John_Smith
-    >>> print(pi)
     Your name is 'John Smith', you are 50 years old and your Reddit username is 'John_Smith'.
-    >>> pi.write('output.txt')
