@@ -4,7 +4,15 @@ Module containing TextTriangle class, a class capable of printing a text
 triangle with chosen character, base length, skip and alignment.
 """
 
+import os
+import sys
+
+# Import module from previous challenge.
+sys_path = list(sys.path)
+module_dir = os.path.abspath('../015e_justifytext')
+sys.path.insert(0, module_dir)
 from justifytext import justify_text
+sys.path[:] = sys_path
 
 
 class TextTriangle(object):

@@ -8,50 +8,7 @@ been.
 """
 
 from math import pi
-
-
-# Define a class to handle menus.
-class TextMenu(object):
-    """A text-based menu."""
-
-    def __init__(self, name, menuitems):
-        """Initialize the menu."""
-        self.name = name
-        self.menuitems = menuitems
-        self.keyactions = {}
-
-        for item in self.menuitems:
-            self.keyactions[item[0]] = item[2]
-
-
-    def __str__(self):
-        """Print the menu items."""
-        txt = "\n=== {} ===\n".format(self.name)
-        txt += '\n'.join(["{}. {}".format(item[0], item[1]) for item in \
-                          self.menuitems])
-        return txt
-
-
-    def ask_item(self):
-        """Ask for an item from the menu."""
-        while True:
-            print(self)
-            key = input("> ").lower()
-            if key not in self.keyactions:
-                print("'{}' is not a valid menu item! Try again.".format(key))
-                continue
-            action = self.keyactions[key]
-            if isinstance(action, TextMenu):
-                exitcode = action.ask_item()
-                if exitcode == -1:
-                    return -1
-            elif action == 'back':
-                return
-            elif action == 'quit':
-                return -1
-            else:
-                action()
-
+from textmenu import TextMenu
 
 if __name__ == '__main__':
     # The calculator's welcome text (also explains how it works).

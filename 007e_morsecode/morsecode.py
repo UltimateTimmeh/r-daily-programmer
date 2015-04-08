@@ -7,8 +7,15 @@ beep) or Morse to decode.
 
 import os
 import subprocess
+import sys
 import time
-from menu import TextMenu
+
+# Import module from previous challenge.
+sys_path = list(sys.path)
+module_dir = os.path.abspath('../002e_calculator')
+sys.path.insert(0, module_dir)
+from textmenu import TextMenu
+sys.path[:] = sys_path
 
 # Standard Morse code conventions included in the morsecode package.
 convdir = os.path.split(__file__)[0]

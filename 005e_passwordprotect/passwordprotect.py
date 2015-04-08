@@ -5,9 +5,23 @@ hashing to make the user database as secure as possible.
 """
 
 import hashlib as hl
-import menu
-import pwgenerate
+import os
+import sys
 import uuid
+
+# Import module from previous challenge.
+sys_path = list(sys.path)
+module_dir = os.path.abspath('../004e_randompassword')
+sys.path.insert(0, module_dir)
+from randompassword import generate_passwords
+sys.path[:] = sys_path
+
+# Import module from previous challenge.
+sys_path = list(sys.path)
+module_dir = os.path.abspath('../002e_calculator')
+sys.path.insert(0, module_dir)
+from textmenu import TextMenu
+sys.path[:] = sys_path
 
 
 def existing_user(username):
@@ -49,7 +63,7 @@ def user_creation():
     # Ask new password, generate random if left blank.
     password = input("New password (leave blank for random): ")
     if password == '':
-        password = pwgenerate.generate_passwords(1, 8)[0]
+        password = generate_passwords(1, 8)[0]
         print("Your randomly generated password is: {}".format(password))
 
     # Add user to database.
@@ -107,7 +121,7 @@ if __name__ == '__main__':
         ['3', 'Look at secret code', protected_code],
         ['q', 'Quit', 'quit'],
         ]
-    main_menu = menu.TextMenu('MAIN MENU', main_menuitems)
+    main_menu = TextMenu('MAIN MENU', main_menuitems)
     main_menu.ask_item()
 
 
