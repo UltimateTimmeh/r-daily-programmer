@@ -71,7 +71,7 @@ A class for creating and handling a text-based menu.
         >>> menu.map_id_to_action()
         {'q': 'quit', '1': 'Action 1'}
 
-- *method* **is\_valid\_item(**id**)**
+- *method* **is\_valid\_id(**id**)**
 
   Check if the passed menu item `id` is valid.
 
@@ -81,12 +81,11 @@ A class for creating and handling a text-based menu.
         >>> from textmenu import TextMenu
         >>> menuitems = [
         ...     ['1', 'Function 1', 'Action 1'],
-        ...     ['q', 'Quit', 'quit'],
         ...     ]
         >>> menu = TextMenu('Main Menu', menuitems)
-        >>> menu.is_valid_item('1')
+        >>> menu.is_valid_id('1')
         True
-        >>> menu.is_valid_item('foo')
+        >>> menu.is_valid_id('foo')
         False
 
 - *method* **get\_action(**id**)**
@@ -106,6 +105,8 @@ A class for creating and handling a text-based menu.
         >>> menu = TextMenu('Main Menu', menuitems)
         >>> menu.get_action('1')
         'Action 1'
+        >>> menu.get_action('q')
+        'quit'
 
 ### class textmenu.TextMenuEngine(object)
 

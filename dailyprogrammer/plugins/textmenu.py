@@ -29,14 +29,14 @@ class TextMenu(object):
         return _map
 
 
-    def is_valid_item(self, id):
+    def is_valid_id(self, id):
         """Check if the passed menu item `id` is valid."""
         return id in self.map_id_to_action()
 
 
     def get_action(self, id):
         """Return the action that is associated with the passed menu item `id`."""
-        if not self.is_valid_item(id):
+        if not self.is_valid_id(id):
             raise ValueError("Item '{}' is not in menu '{}'!".format(id, self.name))
         action = self.map_id_to_action()[id]
         return action
@@ -57,7 +57,7 @@ class TextMenuEngine(object):
         """Repeatedly ask for an item from `textmenu` until a valid ID is received."""
         while True:
             id = input('Choose menu item > ')
-            if textmenu.is_valid_item(id):
+            if textmenu.is_valid_id(id):
                 return id
             else:
                 print("That is not a valid menu item, please try again!")
