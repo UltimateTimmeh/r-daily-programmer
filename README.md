@@ -59,4 +59,5 @@ command:
 **List of plugins**
 
 - [config](doc/plugins/config.md)
+- [formula](doc/plugins/formula.md)
 - [personalinfo](doc/plugins/personalinfo.md)
