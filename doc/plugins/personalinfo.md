@@ -21,6 +21,7 @@ A class for storing and handling personal information.
 
   Example:
 
+        $ python3
         >>> from personalinfo import PersonalInfo
         >>> pi = PersonalInfo('John Smith', 50, reddit_username='John_Smith')
         >>> print(pi.name); print(pi.age); print(pi.reddit_username)
