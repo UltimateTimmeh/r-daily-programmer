@@ -38,6 +38,7 @@ the file `dailyprogrammer/output/001e_example_output.txt`)*
 **List of challenges**
 
 - *001e* - [Ask Input](doc/challenges/001e_askinput.md): Complete
+- *002e* - [Calculator](doc/challenges/002e_calculator.md): Complete
 
 ## Plugins
 
