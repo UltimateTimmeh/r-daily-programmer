@@ -3,8 +3,8 @@
 ## Introduction
 
 My repository for solutions to the challenges posted on [the /r/DailyProgrammer subreddit](http://www.reddit.com/r/DailyProgrammer).
-All programming is done using python 3.x, and I will attempt to always make all my code as pythonic as
-possible. If you have any comments or suggestions, feel free to send me a message!
+All programming is done using python 3.x, and I will attempt to always make all my code as pythonic
+as possible. If you have any comments or suggestions, feel free to send me a message!
 
 ## Challenges
 
@@ -12,7 +12,8 @@ possible. If you have any comments or suggestions, feel free to send me a messag
 
 To execute one of the challenge solutions you should launch the `dailyprogrammer.py` script in a
 shell with python 3, with as argument the id of the desired challenge. If the challenge is supposed
-to write output to a file, then this file will be located in the directory `dailyprogrammer/output/`.
+to write output to a file, then this file will be located in the directory
+`dailyprogrammer/output/`.
 
 *Example - Execute the solution for challenge '001e - Ask Input'*
 
@@ -24,7 +25,9 @@ to write output to a file, then this file will be located in the directory `dail
         reddit_username: John_Smith
         name: John Smith
         age: 50
-    (The output has been appended to the file 'dailyprogrammer/output/001e_example_output.txt')
+
+*(Note: The output that is printed at the end of this challenge should also have been appended to
+the file `dailyprogrammer/output/001e_example_output.txt`)*
 
 **Info about challenge status**
 
@@ -40,16 +43,16 @@ to write output to a file, then this file will be located in the directory `dail
 
 **Description**
 
-Many of the challenges have objectives in them that can be (partially) solved by making use of
-the solution of previous challenges. Because of this, it makes sense to create *plugins* that
-can be imported in the challenge execution scripts.
+Many of the challenges have objectives in them that can be (partially) solved by making use of the
+solution of previous challenges. Because of this, it makes sense to create *plugins* that can be
+imported in the challenge execution scripts.
 
 **Testing**
 
-Each plugin will be tested with Python's `unittest` package. Logs of the tests will be stored
-in the directory `dailyprogrammer/tests/logs/` and will be named using the date and time of
-test execution. All tests can be executed by using the 'discover' functionality of Python's
-unittest in the `dailyprogrammer` directory:
+Plugins will be tested with Python's `unittest` package. Unit tests for all plugins that have them
+can be executed by using the 'discover' functionality of Python's unittest in the `dailyprogrammer`
+directory. To store the output of the test run in a log file, for example, you should use the
+command:
 
     $ python3 -m unittest discover -v > path_to_log_file.log 2>&1
 

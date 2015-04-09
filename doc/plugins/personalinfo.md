@@ -2,10 +2,9 @@
 
 ## Description
 
-This module contains a class for storing and handling personal information.
-The PersonalInfo object is initialized with at least the subject's name
-and age, but any other imaginable personal data can be passed as a keyword
-argument and will then be available in the object as an attribute.
+This module contains a class for storing and handling personal information. The PersonalInfo object
+is initialized with at least the subject's name and age, but any other imaginable personal data can
+be passed as a keyword argument and will then be available in the object as an attribute.
 
 ## Classes
 
@@ -17,7 +16,7 @@ A class for storing and handling personal information.
 
   Initialize the personal information object.
 
-  A `PersonalInfo` object must be initialized with at least a `name` and
+  A PersonalInfo object must be initialized with at least a `name` and
   an `age`. All other keyword arguments are set as attributes.
 
   Example:
