@@ -1,3 +1,5 @@
+# Challenge 002 Easy - Calculator
+
 ## Information
 
 **Challenge name:** [Calculator](http://www.reddit.com/r/dailyprogrammer/comments/pjbj8/easy_challenge_2/)  
