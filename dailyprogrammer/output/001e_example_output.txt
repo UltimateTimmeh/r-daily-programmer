@@ -1,0 +1,4 @@
+Personal information of John Smith (50 years old):
+    reddit_username: John_Smith
+    name: John Smith
+    age: 50
