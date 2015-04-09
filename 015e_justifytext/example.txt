@@ -1,9 +1,0 @@
-Short line 1
-Short line 2
-A bit longer line 1
-Short line 3
-A bit longer line 2
-This is very long line number one
-This is very long line number two
-A bit longer line 3
-This is very long line number three
