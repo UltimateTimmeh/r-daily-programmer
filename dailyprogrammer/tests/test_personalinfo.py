@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Unit tests for module personalinfo.py
+Unit tests for plugin personalinfo
 """
 
 import os
@@ -12,6 +12,7 @@ from plugins import personalinfo
 
 
 class TestPersonalInfo(unittest.TestCase):
+    """Unit tests for class personalinfo.PersonalInfo"""
 
 
     def setUp(self):

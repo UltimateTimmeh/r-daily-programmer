@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Unit tests for module formula.py
+Unit tests for plugin formula
 """
 
 import unittest
@@ -9,6 +9,7 @@ from plugins import formula
 
 
 class TestFormula(unittest.TestCase):
+    """Unit tests for functions in plugin formula"""
 
 
     def setUp(self):
