@@ -2,7 +2,7 @@
 
 ## Information
 
-**Challenge name:** [Ask input](http://www.reddit.com/r/dailyprogrammer/comments/pih8x/easy_challenge_1/)  
+**Challenge name:** [Ask Input](http://www.reddit.com/r/dailyprogrammer/comments/pih8x/easy_challenge_1/)  
 **Challenge number:** 1  
 **Difficulty:** Easy  
 **Submission date:** 2012-02-10  
