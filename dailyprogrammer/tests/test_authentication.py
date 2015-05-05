@@ -36,5 +36,25 @@ class TestAuthentication(unittest.TestCase):
         self.assertEqual(result, expected)
 
 
+    def test_hash_password(self):
+        """Test function authentication.hash_password"""
+        password = 'password'
+        salt = '2b1d50bb859e4474a3ca5de7c87bfa82'
+        expected = '608c111b63d4b98858849a1b44d46f88056b22a409bed7250269e03ff28ccdbc'
+        expected += ':2b1d50bb859e4474a3ca5de7c87bfa82'
+        self.assertEqual(authentication.hash_password(password, salt), expected)
+
+
+    def test_validate_password(self):
+        """Test function authentication.validate_password"""
+        password_correct = 'password'
+        password_incorrect = 'passwrd'
+        password_hashed = '608c111b63d4b98858849a1b44d46f88056b22a409bed7250269e03ff28ccdbc'
+        password_hashed += ':2b1d50bb859e4474a3ca5de7c87bfa82'
+
+        self.assertFalse(authentication.validate_password(password_incorrect, password_hashed))
+        self.assertTrue(authentication.validate_password(password_correct, password_hashed))
+
+
 if __name__ == '__main__':
     unittest.main()
