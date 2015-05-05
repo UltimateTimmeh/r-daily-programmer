@@ -40,6 +40,7 @@ the file `dailyprogrammer/output/001e_example_output.txt`)*
 - *001e* - [Ask Input](doc/challenges/001e_askinput.md): Complete
 - *002e* - [Calculator](doc/challenges/002e_calculator.md): Complete
 - *003e* - [Caesar Cipher](doc/challenges/003e_caesarcipher.md): Complete
+- *004e* - [Random Password](doc/challenges/004e_randompassword.md): Complete
 
 ## Plugins
 
@@ -60,6 +61,7 @@ command:
 
 **List of plugins**
 
+- [authentication](doc/plugins/authentication.md)
 - [cipher](doc/plugins/cipher.md)
 - [config](doc/plugins/config.md)
 - [formula](doc/plugins/formula.md)
