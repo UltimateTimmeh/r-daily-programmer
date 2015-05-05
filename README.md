@@ -65,5 +65,5 @@ command:
 - [cipher](doc/plugins/cipher.md)
 - [config](doc/plugins/config.md)
 - [formula](doc/plugins/formula.md)
-- [personalinfo](doc/plugins/personalinfo.md)
 - [textmenu](doc/plugins/textmenu.md)
+- [user](doc/plugins/user.md)

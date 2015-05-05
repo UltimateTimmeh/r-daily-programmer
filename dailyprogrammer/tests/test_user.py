@@ -8,11 +8,11 @@ import shutil
 import unittest
 
 import plugins.config as cfg
-from plugins import personalinfo
+from plugins import user
 
 
-class TestPersonalInfo(unittest.TestCase):
-    """Unit tests for class personalinfo.PersonalInfo"""
+class TestUser(unittest.TestCase):
+    """Unit tests for class user.User"""
 
 
     def setUp(self):
@@ -27,28 +27,28 @@ class TestPersonalInfo(unittest.TestCase):
 
 
     def test___init__(self):
-        """Test method personalinfo.PersonalInfo.__init__"""
-        pi = personalinfo.PersonalInfo(
+        """Test method user.User.__init__"""
+        usr = user.User(
             'John Smith',
             50,
             reddit_username='John_Smith',
             personal_attribute='personal_value',
             )
-        self.assertEqual(pi.name, 'John Smith')
-        self.assertEqual(pi.age, 50)
-        self.assertEqual(pi.reddit_username, 'John_Smith')
-        self.assertEqual(pi.personal_attribute, 'personal_value')
+        self.assertEqual(usr.name, 'John Smith')
+        self.assertEqual(usr.age, 50)
+        self.assertEqual(usr.reddit_username, 'John_Smith')
+        self.assertEqual(usr.personal_attribute, 'personal_value')
 
 
     def test___str__(self):
-        """Test method personalinfo.PersonalInfo.__str__"""
-        pi = personalinfo.PersonalInfo(
+        """Test method user.User.__str__"""
+        usr = user.User(
             'John Smith',
             50,
             reddit_username='John_Smith',
             personal_attribute='personal_value',
             )
-        result = pi.__str__()
+        result = usr.__str__()
         expected = [
             "Personal information of John Smith (50 years old):",
             "name: John Smith",
@@ -59,15 +59,15 @@ class TestPersonalInfo(unittest.TestCase):
 
 
     def test_write(self):
-        """Test method personalinfo.PersonalInfo.write"""
-        pi = personalinfo.PersonalInfo(
+        """Test method user.User.write"""
+        usr = user.User(
             'John Smith',
             50,
             reddit_username='John_Smith',
             personal_attribute='personal_value',
             )
         testfile_fn = os.path.join(cfg.tmp_dir, 'testoutput.txt')
-        pi.write(testfile_fn)
+        usr.write(testfile_fn)
         with open(testfile_fn, 'r') as testfile:
             result = testfile.read()
         expected = [
