@@ -1,4 +1,4 @@
-Personal information of John Smith (50 years old):
-    reddit_username: John_Smith
-    name: John Smith
+Contents of User object:
     age: 50
+    name: John Smith
+    reddit_username: john_smith
