@@ -12,16 +12,6 @@ class TestFormula(unittest.TestCase):
     """Unit tests for functions in plugin formula"""
 
 
-    def setUp(self):
-        """Set up before test"""
-        pass
-
-
-    def tearDown(self):
-        """Tear down after test"""
-        pass
-
-
     def test_cube_surface_area(self):
         """Test function formula.cube_surface_area"""
         datapoints = [

@@ -27,7 +27,7 @@ Challenge module contents
 """
 
 from plugins import formula
-from plugins.textmenu import TextMenu, TextMenuEngine
+from plugins.textmenu import TextMenuItem, TextMenu, TextMenuEngine
 
 
 # Ask user input and pass to formulas.
@@ -87,29 +87,29 @@ def sphere_volume():
 def run():
     """Execute the challenges.002e module."""
     cubes_menuitems = [
-        ['1', 'Surface Area', cube_surface_area],
-        ['2', 'Volume', cube_volume],
-        ['b', 'Back', 'back'],
-        ['q', 'Quit', 'quit'],
+        TextMenuItem('1', cube_surface_area, 'Surface Area'),
+        TextMenuItem('2', cube_volume, 'Volume'),
+        TextMenuItem('b', 'back', 'Back'),
+        TextMenuItem('q', 'quit', 'Quit'),
         ]
 
     spheres_menuitems = [
-        ['1', 'Surface Area', sphere_surface_area],
-        ['2', 'Volume', sphere_volume],
-        ['b', 'Back', 'back'],
-        ['q', 'Quit', 'quit'],
+        TextMenuItem('1', sphere_surface_area, 'Surface Area'),
+        TextMenuItem('2', sphere_volume, 'Volume'),
+        TextMenuItem('b', 'back', 'Back'),
+        TextMenuItem('q', 'quit', 'Quit'),
         ]
 
     geometrical_menuitems = [
-        ['1', 'Cubes', 'cubes_menu'],
-        ['2', 'Spheres', 'spheres_menu'],
-        ['b', 'Back', 'back'],
-        ['q', 'Quit', 'quit'],
+        TextMenuItem('1', 'cubes_menu', 'Cubes'),
+        TextMenuItem('2', 'spheres_menu', 'Spheres'),
+        TextMenuItem('b', 'back', 'Back'),
+        TextMenuItem('q', 'quit', 'Quit'),
         ]
 
     main_menuitems = [
-        ['1', 'Geometrical', 'geometrical_menu'],
-        ['q', 'Quit', 'quit'],
+        TextMenuItem('1', 'geometrical_menu', 'Geometrical'),
+        TextMenuItem('q', 'quit', 'Quit'),
         ]
 
     menus = {
@@ -118,5 +118,5 @@ def run():
         'spheres_menu': TextMenu('SPHERES', spheres_menuitems),
         'cubes_menu': TextMenu('CUBES', cubes_menuitems)
         }
-    calculator = TextMenuEngine(menus, main='main_menu')
+    calculator = TextMenuEngine(menus, 'main_menu')
     calculator.run()

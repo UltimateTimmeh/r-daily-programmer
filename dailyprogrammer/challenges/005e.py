@@ -142,10 +142,10 @@ def run():
     """Execute the challenges.005e module."""
     # Create the menus.
     main_menuitems = [
-            ['1', 'Log in', log_in],
-            ['2', 'Create new user', new_user],
-            ['3', 'Look at secret code', secret_code],
-            ['q', 'Quit', 'quit'],
+            textmenu.TextMenuItem('1', log_in, 'Log in'),
+            textmenu.TextMenuItem('2', new_user, 'Create new user'),
+            textmenu.TextMenuItem('3', secret_code, 'Look at secret code'),
+            textmenu.TextMenuItem('q', 'quit', 'Quit'),
             ]
 
     menus = {
@@ -153,5 +153,5 @@ def run():
         }
 
     # Execute the menu engine.
-    protectedsoftware = textmenu.TextMenuEngine(menus, main='main_menu')
+    protectedsoftware = textmenu.TextMenuEngine(menus, 'main_menu')
     protectedsoftware.run()

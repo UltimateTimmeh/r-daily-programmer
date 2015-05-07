@@ -8,27 +8,37 @@ import unittest
 from plugins import textmenu
 
 
+class TestTextMenuItem(unittest.TestCase):
+    """Unit tests for class textmenu.TextMenuItem"""
+
+
+    def test___init__(self):
+        """Test method textmenu.TextMenuItem.__init__"""
+        tmi = textmenu.TextMenuItem('1', 'action', 'Menu Item 1')
+        self.assertEqual(tmi.id, '1')
+        self.assertEqual(tmi.action, 'action')
+        self.assertEqual(tmi.descr, 'Menu Item 1')
+
+
+    def test___str__(self):
+        """Test method textmenu.TextMenuItem.__str__"""
+        tmi = textmenu.TextMenuItem('1', 'action', 'Menu Item 1')
+        result = tmi.__str__()
+        expected = "1. Menu Item 1"
+        self.assertEqual(result, expected)
+
+
 class TestTextMenu(unittest.TestCase):
     """Unit tests for class textmenu.TextMenu"""
 
 
-    def setUp(self):
-        """Set up before test"""
-        pass
-
-
-    def tearDown(self):
-        """Tear down after test"""
-        pass
-
-
     def test___str__(self):
         """Test method textmenu.TextMenu.__str__"""
-        menuitems = [
-            ['1', 'Menu Item 1', 'Action 1'],
-            ['q', 'Quit', 'quit'],
+        items = [
+            textmenu.TextMenuItem('1', 'action', 'Menu Item 1'),
+            textmenu.TextMenuItem('q', 'quit', 'Quit'),
             ]
-        tm = textmenu.TextMenu(name='Main Menu', menuitems=menuitems)
+        tm = textmenu.TextMenu('Main Menu', items)
         result = tm.__str__()
         expected = '\n'.join([
             "=== Main Menu ===",
@@ -40,14 +50,14 @@ class TestTextMenu(unittest.TestCase):
 
     def test_map_id_to_action(self):
         """Test method textmenu.TextMenu.map_id_to_action"""
-        menuitems = [
-            ['1', 'Menu Item 1', 'Action 1'],
-            ['q', 'Quit', 'quit'],
+        items = [
+            textmenu.TextMenuItem('1', 'action', 'Menu Item 1'),
+            textmenu.TextMenuItem('q', 'quit', 'Quit'),
             ]
-        tm = textmenu.TextMenu(name='Main Menu', menuitems=menuitems)
+        tm = textmenu.TextMenu('Main Menu', items)
         result = tm.map_id_to_action()
         expected = {
-            '1': 'Action 1',
+            '1': 'action',
             'q': 'quit',
             }
         self.assertEqual(result, expected)
@@ -55,22 +65,22 @@ class TestTextMenu(unittest.TestCase):
 
     def test_is_valid_id(self):
         """Test method textmenu.TextMenu.is_valid_id"""
-        menuitems = [
-            ['1', 'Menu Item 1', 'Action 1'],
+        items = [
+            textmenu.TextMenuItem('1', 'action', 'Menu Item 1'),
             ]
-        tm = textmenu.TextMenu(name='Main Menu', menuitems=menuitems)
+        tm = textmenu.TextMenu('Main Menu', items)
         self.assertTrue(tm.is_valid_id('1'))
         self.assertFalse(tm.is_valid_id('foo'))
 
 
     def test_get_action(self):
         """Test method textmenu.TextMenu.get_action"""
-        menuitems = [
-            ['1', 'Menu Item 1', 'Action 1'],
-            ['q', 'Quit', 'quit'],
+        items = [
+            textmenu.TextMenuItem('1', 'action', 'Menu Item 1'),
+            textmenu.TextMenuItem('q', 'quit', 'Quit'),
             ]
-        tm = textmenu.TextMenu(name='Main Menu', menuitems=menuitems)
-        self.assertEqual(tm.get_action('1'), 'Action 1')
+        tm = textmenu.TextMenu('Main Menu', items)
+        self.assertEqual(tm.get_action('1'), 'action')
         self.assertEqual(tm.get_action('q'), 'quit')
         with self.assertRaises(ValueError):
             tm.get_action('foo')

@@ -1,11 +1,19 @@
 #!/usr/bin/python3
 """
-Configuration for package dailyprogrammer
+Configurable variables used in |project|.
+
+Directories
+-----------
+
+| **plugins_dir** (str) -- directory containing the |project| plugin modules
+| **root_dir** (str) -- root directory of |project|
+| **output_dir** (str) -- directory for storing |project| challenge output files
+| **tmp_dir** (str) -- temporary directory for storing |project| unit test files
 """
 import os
 
 # Directories.
 plugins_dir = os.path.split(__file__)[0]
-package_dir = os.path.abspath(os.path.join(plugins_dir, '..'))
-output_dir = os.path.join(package_dir, 'output')
-tmp_dir = os.path.join(package_dir, 'tests', 'tmp')
+root_dir = os.path.abspath(os.path.join(plugins_dir, '..'))
+output_dir = os.path.join(root_dir, 'output')
+tmp_dir = os.path.join(root_dir, 'tests', 'tmp')
