@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Unit tests for plugin personalinfo
+Unit tests for module :mod:`plugins.user`.
 """
 
 import os
@@ -12,22 +12,35 @@ from plugins import user
 
 
 class TestUser(unittest.TestCase):
-    """Unit tests for class user.User"""
+    """Unit tests for class :func:`plugins.user.User`."""
 
 
     def setUp(self):
-        """Set up before test"""
+        """Setup before test.
+
+        Create the directory for temporarily storing test input and output files (see
+        :mod:`plugins.config`).
+        """
         os.makedirs(cfg.tmp_dir, exist_ok=True)
 
 
     def tearDown(self):
-        """Tear down after test"""
+        """Teardown after test.
+
+        If it exists, recursively remove the directory for temporarily storing test input and output
+        files (see :meth:`tests.test_user.TestUser.setUp`).
+        """
         if os.path.isdir(cfg.tmp_dir):
             shutil.rmtree(cfg.tmp_dir)
 
 
     def test___init__(self):
-        """Test method user.User.__init__"""
+        """Test method :meth:`plugins.user.User.__init__`
+
+        **Tested:**
+
+        - The attributes of a user are correct after initialization.
+        """
         usr = user.User(
             name='John Smith',
             age=50,
@@ -41,7 +54,12 @@ class TestUser(unittest.TestCase):
 
 
     def test___str__(self):
-        """Test method user.User.__str__"""
+        """Test method :meth:`plugins.user.User.__str__`
+
+        **Tested:**
+
+        - The returned string is correct.
+        """
         usr = user.User(
             name='John Smith',
             age=50,
@@ -60,7 +78,15 @@ class TestUser(unittest.TestCase):
 
 
     def test___eq__(self):
-        """Test method user.User.__eq__"""
+        """Test method :meth:`plugins.user.User.__eq__`
+
+        **Tested:**
+
+        - True is returned when the two users have the same attributes and values.
+        - False is returned when the two users have the same attributes but different values.
+        - False is returned when the two users have different attributes, but the same values
+          for the attributes that are the same.
+        """
         user1 = user.User(name='John Smith', age=50, extra='extra_attribute')
         user2 = user.User(name='John Smith', age=50, extra='extra_attribute')
         user3 = user.User(name='John Smith', age=60, extra='extra_attribute')
@@ -73,7 +99,12 @@ class TestUser(unittest.TestCase):
 
 
     def test_write(self):
-        """Test method user.User.write"""
+        """Test method :meth:`plugins.user.User.write`
+
+        **Tested:**
+
+        - The contents of the generated file are correct.
+        """
         usr = user.User(
             name='John Smith',
             age=50,
@@ -95,22 +126,36 @@ class TestUser(unittest.TestCase):
 
 
 class TestUserDatabase(unittest.TestCase):
-    """Unit tests for class user.UserDatabase"""
+    """Unit tests for class :func:`plugins.user.UserDatabase`."""
 
 
     def setUp(self):
-        """Set up before test"""
+        """Setup before test.
+
+        Create the directory for temporarily storing test input and output files (see
+        :mod:`plugins.config`).
+        """
         os.makedirs(cfg.tmp_dir, exist_ok=True)
 
 
     def tearDown(self):
-        """Tear down after test"""
+        """Teardown after test.
+
+        If it exists, recursively remove the directory for temporarily storing test input and output
+        files (see :meth:`tests.test_user.TestUserDatabase.setUp`).
+        """
         if os.path.isdir(cfg.tmp_dir):
             shutil.rmtree(cfg.tmp_dir)
 
 
     def test___init__(self):
-        """Test method user.UserDatabase.__init__"""
+        """Test method :meth:`plugins.user.UserDatabase.__init__`
+
+        **Tested:**
+
+        - The amount of users in a user database is correct after initialization.
+        - The users in a user database are correct after initialization.
+        """
         userdb = user.UserDatabase(
             [
                 user.User(username='un1', password='pw1'),
@@ -125,7 +170,12 @@ class TestUserDatabase(unittest.TestCase):
 
 
     def test___str__(self):
-        """Test method user.UserDatabase.__str__"""
+        """Test method :meth:`plugins.user.UserDatabase.__str__`
+
+        **Tested:**
+
+        - The returned string is correct.
+        """
         userdb = user.UserDatabase(
             [
                 user.User(username='un1', password='pw1'),
@@ -142,7 +192,13 @@ class TestUserDatabase(unittest.TestCase):
 
 
     def test_set_required_attributes(self):
-        """Test method user.UserDatabase.set_required_attributes"""
+        """Test method :meth:`plugins.user.UserDatabase.set_required_attributes`
+
+        **Tested:**
+
+        - The required user attributes of a default user database are correct.
+        - The required user attributes are correct after changing them to something else.
+        """
         userdb = user.UserDatabase()
         self.assertEqual(userdb.attrs_req, ['username', 'password'])
         userdb.set_required_attributes(['req_attr1', 'req_attr2'])
@@ -150,7 +206,14 @@ class TestUserDatabase(unittest.TestCase):
 
 
     def test_is_valid_user(self):
-        """Test method user.UserDatabase.is_valid_user"""
+        """Test method :meth:`plugins.user.UserDatabase.is_valid_user`
+
+        **Tested:**
+
+        - False is returned when a non-user object is passed.
+        - False is returned when an invalid user is passed.
+        - True is returned when a valid user is passed.
+        """
         userdb = user.UserDatabase()
         usr_invalid = user.User(name='name1', age=10)
         usr_valid = user.User(username='un1', password='pw1')
@@ -161,23 +224,35 @@ class TestUserDatabase(unittest.TestCase):
 
 
     def test_add_user(self):
-        """Test method user.UserDatabase.add_user"""
+        """Test method :meth:`plugins.user.UserDatabase.add_user`
+
+        **Tested:**
+
+        - The amount of users in the user database is correct before and after adding a user.
+        - The last user in the user database is the one that was added.
+        """
         userdb = user.UserDatabase(
             [
                 user.User(username='un1', password='pw1'),
             ],
         )
         user_added = user.User(username='un2', password='pw2')
+        expected = user.User(username='un2', password='pw2')
 
         self.assertEqual(len(userdb.users), 1)
         userdb.add_user(user_added)
         self.assertEqual(len(userdb.users), 2)
-        expected1 = user.User(username='un2', password='pw2')
-        self.assertEqual(userdb.users[1], expected1)
+        self.assertEqual(userdb.users[-1], expected)
 
 
     def test_get_users(self):
-        """Test method user.UserDatabase.get_users"""
+        """Test method :meth:`plugins.user.UserDatabase.get_users`
+
+        **Tested:**
+
+        - If there are matches, the returned list of users is correct.
+        - If there are no matches, the returned list is empty.
+        """
         userdb = user.UserDatabase(
             [
                 user.User(username='un1', password='pw1'),
@@ -200,7 +275,12 @@ class TestUserDatabase(unittest.TestCase):
 
 
     def test_write(self):
-        """Test method user.UserDatabase.write"""
+        """Test method :meth:`plugins.user.UserDatabase.write`
+
+        **Tested:**
+
+        - The contents of the generated file are correct.
+        """
         userdb = user.UserDatabase(
             [
                 user.User(username='un1', password='pw1'),
@@ -220,7 +300,13 @@ class TestUserDatabase(unittest.TestCase):
 
 
     def test_read(self):
-        """Test classmethod user.UserDatabase.read"""
+        """Test classmethod :meth:`plugins.user.UserDatabase.read`
+
+        **Tested:**
+
+        - The returned object is a UserDatabase object.
+        - The contents of the returned user database are correct.
+        """
         userdb_fn = os.path.join(cfg.tmp_dir, 'testuserdb.txt')
         contents1 = '\n'.join([
             "username;password",

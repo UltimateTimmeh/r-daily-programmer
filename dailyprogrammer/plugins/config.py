@@ -8,7 +8,7 @@ Directories
 | **plugins_dir** (str) -- directory containing the |project| plugin modules
 | **root_dir** (str) -- root directory of |project|
 | **output_dir** (str) -- directory for storing |project| challenge output files
-| **tmp_dir** (str) -- temporary directory for storing |project| unit test files
+| **tmp_dir** (str) -- temporary directory for storing |project| unit test input and output files
 """
 import os
 

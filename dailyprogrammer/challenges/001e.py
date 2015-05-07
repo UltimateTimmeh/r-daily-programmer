@@ -41,3 +41,4 @@ def run():
     print(pi)
     outputfile_fn = os.path.join(cfg.output_dir, '001e_example_output.txt')
     pi.write(outputfile_fn)
+    print("Note: Data has been appended to file '{}'".format(outputfile_fn))

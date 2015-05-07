@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Unit tests for plugin formula
+Unit tests for module :mod:`plugins.formula`.
 """
 
 import unittest
@@ -8,12 +8,17 @@ import unittest
 from plugins import formula
 
 
-class TestFormula(unittest.TestCase):
-    """Unit tests for functions in plugin formula"""
+class TestFormulaFunctions(unittest.TestCase):
+    """Unit tests for functions in module :mod:`plugins.formula`."""
 
 
     def test_cube_surface_area(self):
-        """Test function formula.cube_surface_area"""
+        """Test :func:`plugins.formula.cube_surface_area`
+
+        **Tested:**
+
+        - The returned cube surface area is correct.
+        """
         datapoints = [
             (0, 0),
             (1, 6),
@@ -27,7 +32,12 @@ class TestFormula(unittest.TestCase):
 
 
     def test_cube_volume(self):
-        """Test function formula.cube_volume"""
+        """Test :func:`plugins.formula.cube_volume`
+
+        **Tested:**
+
+        - The returned cube volume is correct.
+        """
         datapoints = [
             (0, 0),
             (1, 1),
@@ -41,7 +51,12 @@ class TestFormula(unittest.TestCase):
 
 
     def test_sphere_surface_area(self):
-        """Test function formula.sphere_surface_area"""
+        """Test :func:`plugins.formula.sphere_surface_area`
+
+        **Tested:**
+
+        - The returned sphere surface area is correct.
+        """
         datapoints = [
             (0, '0.00'),
             (1, '12.57'),
@@ -55,7 +70,12 @@ class TestFormula(unittest.TestCase):
 
 
     def test_sphere_volume(self):
-        """Test function formula.sphere_volume"""
+        """Test :func:`plugins.formula.sphere_volume`
+
+        **Tested:**
+
+        - The returned sphere volume is correct.
+        """
         datapoints = [
             (0, '0.00'),
             (1, '4.19'),

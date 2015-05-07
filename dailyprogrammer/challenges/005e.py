@@ -83,6 +83,7 @@ def new_user():
     pwd = password.hash_password(pwd)
     userdb.add_user(user.User(username=username, password=pwd))
     userdb.write(userdb_fn)
+    print("Note: Data has been written to file '{}'".format(userdb_fn))
 
 
 def log_in():

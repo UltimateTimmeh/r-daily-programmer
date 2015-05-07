@@ -136,7 +136,7 @@ class TextMenu(object):
         :param str id: ID of a text menu item in the text menu
         :return: action associated with the text menu item that has ID '``id``'
         :rtype: object
-        :raise: ValueError if the passed ID is invalid (see :func:`plugins.textmenu.TextMenu.is_valid_id`)
+        :raise: ValueError if the passed ID is invalid (see :meth:`plugins.textmenu.TextMenu.is_valid_id`)
 
         For an example that uses this method, see :func:`plugins.textmenu.TextMenu`.
         """

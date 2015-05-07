@@ -3,31 +3,29 @@
 ## Introduction
 
 My repository for solutions to the challenges posted on [the /r/DailyProgrammer subreddit](http://www.reddit.com/r/DailyProgrammer).
-All programming is done using python 3.x, and I will attempt to always make all my code as pythonic
+All programming is done using Python 3, and I will attempt to always make all my code as pythonic
 as possible. If you have any comments or suggestions, feel free to send me a message!
 
 ## Challenges
 
 **Challenge execution**
 
-To execute one of the challenge solutions you should launch the `dailyprogrammer.py` script in a
-shell with python 3, with as argument the id of the desired challenge. If the challenge is supposed
-to write output to a file, then this file will be located in the directory
-`dailyprogrammer/output/`.
+All challenge solutions are presented as modules. To execute one of the challenge modules you should
+launch the `dailyprogrammer.py` script in a terminal with python3, and provide as argument the ID of the
+desired challenge. If the challenge is supposed to write output to a file, then this file will be
+located in the directory `dailyprogrammer/output/`.
 
 *Example - Execute the solution for challenge '001e - Ask Input'*
 
     $ python3 dailyprogrammer.py 001e
     Name? > John Smith
     Age? > 50
-    Reddit Username? > John_Smith
-    Personal information of John Smith (50 years old):
-        reddit_username: John_Smith
-        name: John Smith
+    Reddit Username? > johnsmith
+    Contents of User object:
+        reddit_username: johnsmith
         age: 50
-
-*(Note: The output that is printed at the end of this challenge should also have been appended to
-the file `dailyprogrammer/output/001e_example_output.txt`)*
+        name: John Smith
+    Note: Data has been appended to file '/path/to/project/dailyprogrammer/output/001e_example_output.txt'
 
 **Info about challenge status**
 
@@ -37,11 +35,11 @@ the file `dailyprogrammer/output/001e_example_output.txt`)*
 
 **List of challenges**
 
-- *001e* - [Ask Input](doc/challenges/001e_askinput.md): Complete
-- *002e* - [Calculator](doc/challenges/002e_calculator.md): Complete
-- *003e* - [Caesar Cipher](doc/challenges/003e_caesarcipher.md): Complete
-- *004e* - [Random Password](doc/challenges/004e_randompassword.md): Complete
-- *005e* - [Password Protect](doc/challenges/005e_passwordprotect.md): Complete
+- *001e* - [Ask Input](dailyprogrammer/challenges/001e.py): Complete
+- *002e* - [Calculator](dailyprogrammer/challenges/002e.py): Complete
+- *003e* - [Caesar Cipher](dailyprogrammer/challenges/003e.py): Complete
+- *004e* - [Random Password](dailyprogrammer/challenges/004e.py): Complete
+- *005e* - [Password Protect](dailyprogrammer/challenges/005e.py): Complete
 
 ## Plugins
 
@@ -55,16 +53,23 @@ imported in the challenge execution scripts.
 
 Plugins will be tested with Python's `unittest` package. Unit tests for all plugins that have them
 can be executed by using the 'discover' functionality of Python's unittest in the `dailyprogrammer`
-directory. To store the output of the test run in a log file, for example, you should use the
-command:
+directory. For example, to execute all unit tests in the DailyProgrammer project and store the
+results to a log file, you could use the command:
 
     $ python3 -m unittest discover -v > path_to_log_file.log 2>&1
 
 **List of plugins**
 
-- [authentication](doc/plugins/authentication.md)
-- [cipher](doc/plugins/cipher.md)
-- [config](doc/plugins/config.md)
-- [formula](doc/plugins/formula.md)
-- [textmenu](doc/plugins/textmenu.md)
-- [user](doc/plugins/user.md)
+- [cipher](dailyprogrammer/plugins/cipher.py)
+- [config](dailyprogrammer/plugins/config.py)
+- [formula](dailyprogrammer/plugins/formula.py)
+- [password](dailyprogrammer/plugins/password.py)
+- [textmenu](dailyprogrammer/plugins/textmenu.py)
+- [user](dailyprogrammer/plugins/user.py)
+
+## Documentation
+
+All code in this project is documented through the docstrings as well as I am able. All docstring
+documentation can be automatically bundled as reStructuredText in the `docs` directory using Sphinx.
+If you are interested in doing this, then you should follow [this link](docs/README.md) for
+instructions.

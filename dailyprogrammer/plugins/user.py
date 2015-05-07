@@ -290,7 +290,7 @@ class UserDatabase(object):
         """Read the contents of a user database file.
 
         For more information about the formatting of the contents of a user database file, see
-        :func:`plugins.user.UserDatabase.write`. If the specified file does not exist, an empty
+        :meth:`plugins.user.UserDatabase.write`. If the specified file does not exist, an empty
         user database is returned.
 
         :param str fn: path to the file that is read
@@ -298,7 +298,7 @@ class UserDatabase(object):
                  or an empty user database if the specified file does not exist
         :rtype: UserDatabase
 
-        For an example that uses this classmethod, see :func:`plugins.user.UserDatabase.write`.
+        For an example that uses this classmethod, see :meth:`plugins.user.UserDatabase.write`.
         """
         # Read file contents (if file exists).
         if not os.path.isfile(fn):

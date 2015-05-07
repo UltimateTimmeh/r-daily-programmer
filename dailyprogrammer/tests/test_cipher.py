@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Unit tests for plugin cipher
+Unit tests for module :mod:`plugins.cipher`.
 """
 
 import unittest
@@ -8,22 +8,18 @@ import unittest
 from plugins import cipher
 
 
-class TestCipher(unittest.TestCase):
-    """Unit tests for functions in plugin cipher"""
-
-
-    def setUp(self):
-        """Set up before test"""
-        pass
-
-
-    def tearDown(self):
-        """Tear down after test"""
-        pass
+class TestCipherFunctions(unittest.TestCase):
+    """Unit tests for functions in module :mod:`plugins.cipher`."""
 
 
     def test_caesar(self):
-        """Test function cipher.caesar"""
+        """Test :func:`plugins.cipher.caesar`
+
+        **Tested:**
+
+        - The returned encoded message is correct.
+        - The returned decoded message is correct.
+        """
         datapoints = [
             ('testmsg', 0, 'testmsg'),
             ('testmsg', 13, 'grfgzft'),
@@ -38,8 +34,14 @@ class TestCipher(unittest.TestCase):
 
 
     def test_caesar_brute_force(self):
-        """Test function cipher.caesar_brute_force"""
+        """Test :func:`plugins.cipher.caesar_brute_force`
+
+        **Tested:**
+
+        - The returned list of decoding possibilities is correct.
+        """
         msg_encoded = 'havggrfg'
+        result = cipher.caesar_brute_force(msg_encoded)
         expected = [
             'havggrfg',
             'gzuffqef',
@@ -67,8 +69,7 @@ class TestCipher(unittest.TestCase):
             'kdyjjuij',
             'jcxiithi',
             'ibwhhsgh',
-            ]
-        result = cipher.caesar_brute_force(msg_encoded)
+        ]
         self.assertEqual(result, expected)
 
 

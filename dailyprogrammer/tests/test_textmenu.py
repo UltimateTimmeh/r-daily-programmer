@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Unit tests for plugin textmenu
+Unit tests for module :mod:`plugins.textmenu`.
 """
 
 import unittest
@@ -9,11 +9,16 @@ from plugins import textmenu
 
 
 class TestTextMenuItem(unittest.TestCase):
-    """Unit tests for class textmenu.TextMenuItem"""
+    """Unit tests for class :func:`plugins.textmenu.TextMenuItem`."""
 
 
     def test___init__(self):
-        """Test method textmenu.TextMenuItem.__init__"""
+        """Test method :meth:`plugins.textmenu.TextMenuItem.__init__`
+
+        **Tested:**
+
+        - The attributes of a text menu item are correct after initialization.
+        """
         tmi = textmenu.TextMenuItem('1', 'action', 'Menu Item 1')
         self.assertEqual(tmi.id, '1')
         self.assertEqual(tmi.action, 'action')
@@ -21,7 +26,12 @@ class TestTextMenuItem(unittest.TestCase):
 
 
     def test___str__(self):
-        """Test method textmenu.TextMenuItem.__str__"""
+        """Test method :meth:`plugins.textmenu.TextMenuItem.__str__`
+
+        **Tested:**
+
+        - The returned string is correct.
+        """
         tmi = textmenu.TextMenuItem('1', 'action', 'Menu Item 1')
         result = tmi.__str__()
         expected = "1. Menu Item 1"
@@ -29,11 +39,16 @@ class TestTextMenuItem(unittest.TestCase):
 
 
 class TestTextMenu(unittest.TestCase):
-    """Unit tests for class textmenu.TextMenu"""
+    """Unit tests for class :func:`plugins.textmenu.TextMenu`."""
 
 
     def test___str__(self):
-        """Test method textmenu.TextMenu.__str__"""
+        """Test method :meth:`plugins.textmenu.TextMenu.__str__`
+
+        **Tested:**
+
+        - The returned string is correct.
+        """
         items = [
             textmenu.TextMenuItem('1', 'action', 'Menu Item 1'),
             textmenu.TextMenuItem('q', 'quit', 'Quit'),
@@ -49,7 +64,12 @@ class TestTextMenu(unittest.TestCase):
 
 
     def test_map_id_to_action(self):
-        """Test method textmenu.TextMenu.map_id_to_action"""
+        """Test method :meth:`plugins.textmenu.TextMenu.map_id_to_action`
+
+        **Tested:**
+
+        - The returned dictionary correctly maps text menu item IDs to actions.
+        """
         items = [
             textmenu.TextMenuItem('1', 'action', 'Menu Item 1'),
             textmenu.TextMenuItem('q', 'quit', 'Quit'),
@@ -64,7 +84,13 @@ class TestTextMenu(unittest.TestCase):
 
 
     def test_is_valid_id(self):
-        """Test method textmenu.TextMenu.is_valid_id"""
+        """Test method :meth:`plugins.textmenu.TextMenu.is_valid_id`
+
+        **Tested:**
+
+        - The returned boolean is True if the passed user is valid.
+        - The returned boolean is False if the passed user is invalid.
+        """
         items = [
             textmenu.TextMenuItem('1', 'action', 'Menu Item 1'),
             ]
@@ -74,7 +100,13 @@ class TestTextMenu(unittest.TestCase):
 
 
     def test_get_action(self):
-        """Test method textmenu.TextMenu.get_action"""
+        """Test method :meth:`plugins.textmenu.TextMenu.get_action`
+
+        **Tested:**
+
+        - The returned action is correct when the passed text menu item ID exists.
+        - A ValueError is raised when the passed text menu item ID does not exist.
+        """
         items = [
             textmenu.TextMenuItem('1', 'action', 'Menu Item 1'),
             textmenu.TextMenuItem('q', 'quit', 'Quit'),
