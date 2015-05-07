@@ -124,6 +124,23 @@ class TestUserDatabase(unittest.TestCase):
         self.assertEqual(userdb.users[1], expected1)
 
 
+    def test___str__(self):
+        """Test method user.UserDatabase.__str__"""
+        userdb = user.UserDatabase(
+            [
+                user.User(username='un1', password='pw1'),
+                user.User(username='un2', password='pw2'),
+            ],
+        )
+        result = userdb.__str__()
+        expected = '\n'.join([
+            "User database:",
+            "    Required user attributes: ['username', 'password']",
+            "    Amount of users inside database: 2"
+        ])
+        self.assertEqual(result, expected)
+
+
     def test_set_required_attributes(self):
         """Test method user.UserDatabase.set_required_attributes"""
         userdb = user.UserDatabase()
