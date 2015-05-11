@@ -14,7 +14,7 @@ class TestPasswordFunctions(unittest.TestCase):
 
 
     def test_random_password(self):
-        """Test :func:`plugins.password.random_password`
+        """Test function :func:`plugins.password.random_password`
 
         **Tested:**
 
@@ -33,7 +33,7 @@ class TestPasswordFunctions(unittest.TestCase):
 
 
     def test_hash_password(self):
-        """Test :func:`plugins.password.hash_password`
+        """Test function :func:`plugins.password.hash_password`
 
         **Tested:**
 
@@ -47,7 +47,7 @@ class TestPasswordFunctions(unittest.TestCase):
 
 
     def test_validate_password(self):
-        """Test :func:`plugins.password.validate_password`
+        """Test function :func:`plugins.password.validate_password`
 
         **Tested:**
 

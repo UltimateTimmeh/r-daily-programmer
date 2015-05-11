@@ -13,7 +13,7 @@ class TestFormulaFunctions(unittest.TestCase):
 
 
     def test_cube_surface_area(self):
-        """Test :func:`plugins.formula.cube_surface_area`
+        """Test function :func:`plugins.formula.cube_surface_area`
 
         **Tested:**
 
@@ -32,7 +32,7 @@ class TestFormulaFunctions(unittest.TestCase):
 
 
     def test_cube_volume(self):
-        """Test :func:`plugins.formula.cube_volume`
+        """Test function :func:`plugins.formula.cube_volume`
 
         **Tested:**
 
@@ -51,7 +51,7 @@ class TestFormulaFunctions(unittest.TestCase):
 
 
     def test_sphere_surface_area(self):
-        """Test :func:`plugins.formula.sphere_surface_area`
+        """Test function :func:`plugins.formula.sphere_surface_area`
 
         **Tested:**
 
@@ -70,7 +70,7 @@ class TestFormulaFunctions(unittest.TestCase):
 
 
     def test_sphere_volume(self):
-        """Test :func:`plugins.formula.sphere_volume`
+        """Test function :func:`plugins.formula.sphere_volume`
 
         **Tested:**
 

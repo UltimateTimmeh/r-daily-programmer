@@ -13,7 +13,7 @@ class TestCipherFunctions(unittest.TestCase):
 
 
     def test_caesar(self):
-        """Test :func:`plugins.cipher.caesar`
+        """Test function :func:`plugins.cipher.caesar`
 
         **Tested:**
 
@@ -34,7 +34,7 @@ class TestCipherFunctions(unittest.TestCase):
 
 
     def test_caesar_brute_force(self):
-        """Test :func:`plugins.cipher.caesar_brute_force`
+        """Test function :func:`plugins.cipher.caesar_brute_force`
 
         **Tested:**
 
