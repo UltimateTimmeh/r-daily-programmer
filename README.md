@@ -40,6 +40,7 @@ located in the directory `dailyprogrammer/output/`.
 - *003e* - [Caesar Cipher](dailyprogrammer/challenges/003e.py): Complete
 - *004e* - [Random Password](dailyprogrammer/challenges/004e.py): Complete
 - *005e* - [Password Protect](dailyprogrammer/challenges/005e.py): Complete
+- *006e* - [Calculate Pi](dailyprogrammer/challenges/006e.py): Complete
 
 ## Plugins
 
@@ -64,12 +65,13 @@ results to a log file, you could use the command:
 - [config](dailyprogrammer/plugins/config.py)
 - [formula](dailyprogrammer/plugins/formula.py)
 - [password](dailyprogrammer/plugins/password.py)
+- [pi](dailyprogrammer/plugins/pi.py)
 - [textmenu](dailyprogrammer/plugins/textmenu.py)
 - [user](dailyprogrammer/plugins/user.py)
 
 ## Documentation
 
 All code in this project is documented through the docstrings as well as I am able. All docstring
-documentation can be automatically bundled as reStructuredText in the `docs` directory using Sphinx.
-If you are interested in doing this, then you should follow [this link](docs/README.md) for
-instructions.
+documentation can be automatically bundled as reStructuredText in the `docs` directory and then
+converted into nice HTML doumentation using Sphinx. If you are interested in doing this, then you
+should follow [this link](docs/README.md) for instructions.
