@@ -41,6 +41,7 @@ located in the directory `dailyprogrammer/output/`.
 - *004e* - [Random Password](dailyprogrammer/challenges/004e.py): Complete
 - *005e* - [Password Protect](dailyprogrammer/challenges/005e.py): Complete
 - *006e* - [Calculate Pi](dailyprogrammer/challenges/006e.py): Complete
+- *007e* - [Morse Code](dailyprogrammer/challenges/007e.py): Complete
 
 ## Plugins
 
@@ -64,6 +65,7 @@ results to a log file, you could use the command:
 - [cipher](dailyprogrammer/plugins/cipher.py)
 - [config](dailyprogrammer/plugins/config.py)
 - [formula](dailyprogrammer/plugins/formula.py)
+- [morse](dailyprogrammer/plugins/morse.py)
 - [password](dailyprogrammer/plugins/password.py)
 - [pi](dailyprogrammer/plugins/pi.py)
 - [textmenu](dailyprogrammer/plugins/textmenu.py)
