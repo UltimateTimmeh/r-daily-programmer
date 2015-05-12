@@ -80,6 +80,8 @@ List of challenges
 .. _006e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/006e.py
 .. _007e.doc: _apidoc/challenges.007e.html
 .. _007e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/007e.py
+.. _008e.doc: _apidoc/challenges.008e.html
+.. _008e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/008e.py
 
 +-----+------------+------+------------------+-------------+---------------+-----------+
 | Nr. | Difficulty | ID   | Name             | Status*     | Documentation | Source    |
@@ -97,6 +99,8 @@ List of challenges
 | 6   | Easy       | 006e | Calculate Pi     | Complete    | 006e.doc_     | 006e.src_ |
 +-----+------------+------+------------------+-------------+---------------+-----------+
 | 7   | Easy       | 007e | Morse Code       | Complete    | 007e.doc_     | 007e.src_ |
++-----+------------+------+------------------+-------------+---------------+-----------+
+| 8   | Easy       | 007e | Beer Bottle      | Complete    | 008e.doc_     | 008e.src_ |
 +-----+------------+------+------------------+-------------+---------------+-----------+
 
 \*\ **Challenge status**:
