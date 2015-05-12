@@ -1,23 +1,166 @@
-.. DailyProgrammer documentation master file, created by
+.. r-Daily-Programmer documentation master file, created by
    sphinx-quickstart on Wed May  6 11:32:46 2015.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to DailyProgrammer's documentation!
-===========================================
+Welcome to |project|'s documentation!
+=====================================
 
-Contents:
+Quick-links
+-----------
+
+Source
+''''''
+
+Those who are not interested in documentation at all, but would rather see some source code,
+can continue to my GitHub `r-daily-programmer <https://github.com/UltimateTimmeh/r-daily-programmer>`_
+repository.
+
+Documentation
+'''''''''''''
+
+Those who are not interested in scrolling through this introduction page to get to the part of
+the documentation they are interested in can continue to the :ref:`modindex`, search for the
+desired documentation using the :ref:`search` or make use of the following links, leading
+to the documentation of the three main |project| packages:
 
 .. toctree::
    :maxdepth: 2
 
    _apidoc/modules.rst
 
+Introduction
+------------
 
-Indices and tables
-==================
+This is the documentation for my solutions to the challenges posted on `the /r/DailyProgrammer
+subreddit <http://www.reddit.com/r/DailyProgrammer>`_. All programming is done in Python 3, and I
+will attempt to always make my code as Pythonic as possible. The source can be consulted on GitHub,
+in my `r-daily-programmer <https://github.com/UltimateTimmeh/r-daily-programmer>`_  repository.
+If you have any questions, comments or suggestions, then feel free to send me a message on Reddit
+(`/u/Ultimate_Timmeh <http://www.reddit.com/u/ultimate_timmeh>`_) or send me an email
+(`dezutter.tim@gmail.com <mailto:dezutter.tim@gmail.com>`_).
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+Challenges
+----------
 
+Challenge execution
+'''''''''''''''''''
+
+All challenge solutions are presented as modules. To execute one of the challenge modules you
+should launch the ``dailyprogrammer.py`` script in a terminal with Python 3, and provide as
+argument the ID of the challenge you wish to execute. If the challenge is supposed to write
+output to a file, then this file will be located in the directory ``dailyprogrammer/output/``.
+
+Example -- Execute the solution to challenge '1 Easy - Ask Input' (ID 001e)::
+
+    $ python3 dailyprogrammer.py 001e
+    Name? > John Smith
+    Age? > 50
+    Reddit Username? > johnsmith
+    Contents of User object:
+        reddit_username: johnsmith
+        age: 50
+        name: John Smith
+    Note: Data has been appended to file 'path/to/project/dailyprogrammer/output/001e_example_output.txt'
+
+List of challenges
+''''''''''''''''''
+
+.. _001e.doc: _apidoc/challenges.001e.html
+.. _001e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/001e.py
+.. _002e.doc: _apidoc/challenges.002e.html
+.. _002e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/002e.py
+.. _003e.doc: _apidoc/challenges.003e.html
+.. _003e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/003e.py
+.. _004e.doc: _apidoc/challenges.004e.html
+.. _004e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/004e.py
+.. _005e.doc: _apidoc/challenges.005e.html
+.. _005e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/005e.py
+.. _006e.doc: _apidoc/challenges.006e.html
+.. _006e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/006e.py
+.. _007e.doc: _apidoc/challenges.007e.html
+.. _007e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/007e.py
+
++-----+------------+------+------------------+-------------+---------------+-----------+
+| Nr. | Difficulty | ID   | Name             | Status*     | Documentation | Source    |
++=====+============+======+==================+=============+===============+===========+
+| 1   | Easy       | 001e | Ask Input        | Complete    | 001e.doc_     | 001e.src_ |
++-----+------------+------+------------------+-------------+---------------+-----------+
+| 2   | Easy       | 002e | Calculator       | Complete    | 002e.doc_     | 002e.src_ |
++-----+------------+------+------------------+-------------+---------------+-----------+
+| 3   | Easy       | 003e | Caesar Cipher    | Complete    | 003e.doc_     | 003e.src_ |
++-----+------------+------+------------------+-------------+---------------+-----------+
+| 4   | Easy       | 004e | Random Password  | Complete    | 004e.doc_     | 004e.src_ |
++-----+------------+------+------------------+-------------+---------------+-----------+
+| 5   | Easy       | 005e | Password Protect | Complete    | 005e.doc_     | 005e.src_ |
++-----+------------+------+------------------+-------------+---------------+-----------+
+| 6   | Easy       | 006e | Calculate Pi     | Complete    | 006e.doc_     | 006e.src_ |
++-----+------------+------+------------------+-------------+---------------+-----------+
+| 7   | Easy       | 007e | Morse Code       | Complete    | 007e.doc_     | 007e.src_ |
++-----+------------+------+------------------+-------------+---------------+-----------+
+
+\*\ **Challenge status**:
+
+- *In progress*: started but not yet done
+- *Done*: main challenge finished, but not the extra credit(s)
+- *Complete*: main challenge and extra credit(s) finished
+
+Plugins
+-------
+
+Motivation for the creation of plugins
+''''''''''''''''''''''''''''''''''''''
+
+Many of the challenges lead to code that might be useful in future challenges. Because of this,
+in some cases it makes sense to package part of the solution to a challenge as a *plugin* that
+can also be imported in future challenge execution modules.
+
+Testing of plugins
+''''''''''''''''''
+
+Plugins will be tested with Python's standard ``unittest`` library. Unit tests for all plugins
+that have them can be executed by executing ``unittest``'s *discover* functionality in the
+``dailyprogrammer`` directory. For example, to execute all unit tests and store the results
+in a log file, you could use the command::
+
+    $ python3 -m unittest discover -v > path_to_log_file.log 2>&1
+
+List of plugins
+'''''''''''''''
+
+.. _cipher.doc: _apidoc/plugins.cipher.html
+.. _cipher.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/plugins/cipher.py
+.. _config.doc: _apidoc/plugins.config.html
+.. _config.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/plugins/config.py
+.. _formula.doc: _apidoc/plugins.formula.html
+.. _formula.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/plugins/formula.py
+.. _morse.doc: _apidoc/plugins.morse.html
+.. _morse.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/plugins/morse.py
+.. _password.doc: _apidoc/plugins.password.html
+.. _password.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/plugins/password.py
+.. _pi.doc: _apidoc/plugins.pi.html
+.. _pi.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/plugins/pi.py
+.. _textmenu.doc: _apidoc/plugins.textmenu.html
+.. _textmenu.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/plugins/textmenu.py
+.. _user.doc: _apidoc/plugins.user.html
+.. _user.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/plugins/user.py
+
++----------+---------------+---------------+
+| Name     | Documentation | Source        |
++==========+===============+===============+
+| cipher   | cipher.doc_   | cipher.src_   |
++----------+---------------+---------------+
+| config   | config.doc_   | config.src_   |
++----------+---------------+---------------+
+| formula  | formula.doc_  | formula.src_  |
++----------+---------------+---------------+
+| morse    | morse.doc_    | morse.src_    |
++----------+---------------+---------------+
+| password | password.doc_ | password.src_ |
++----------+---------------+---------------+
+| pi       | pi.doc_       | pi.src_       |
++----------+---------------+---------------+
+| textmenu | textmenu.doc_ | textmenu.src_ |
++----------+---------------+---------------+
+| user     | user.doc_     | user.src_     |
++----------+---------------+---------------+

@@ -1,16 +1,19 @@
 #!/usr/bin/python3
 """
-Challenge information
----------------------
+Information
+-----------
 
-| **Challenge name:** `Caesar Cipher <http://www.reddit.com/r/dailyprogrammer/comments/pkw2m/2112012_challenge_3_easy/>`_
+.. _reddit: http://www.reddit.com/r/dailyprogrammer/comments/pkw2m/2112012_challenge_3_easy/
+.. _source: https://github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/003e.py
+
+| **Challenge name:** Caesar Cipher (reddit_, source_)
 | **Challenge number:** 3
 | **Difficulty:** Easy
 | **Submission date:** 2012-02-11
 | **Status:** Complete
 
-Challenge description
----------------------
+Description
+-----------
 
 Welcome to cipher day!
 
@@ -19,8 +22,47 @@ numbers, symbols, and whitespace.
 
 For extra credit, add a "decrypt" function to your program!
 
-Challenge module contents
--------------------------
+Example run
+-----------
+
+::
+
+    $ python3 dailyprogrammer.py 003e
+    Message to encode > dailyprogrammer
+    Amount of right shift > 5
+    Original message: dailyprogrammer
+    Encoded message: ifnqduwtlwfrrjw
+    Decoded encoded message: dailyprogrammer
+    Brute-force-decoded encoded message:
+    ifnqduwtlwfrrjw
+    hempctvskveqqiv
+    gdlobsurjudpphu
+    fcknartqitcoogt
+    ebjmzqsphsbnnfs
+    dailyprogrammer
+    czhkxoqnfqzlldq
+    bygjwnpmepykkcp
+    axfivmoldoxjjbo
+    zwehulnkcnwiian
+    yvdgtkmjbmvhhzm
+    xucfsjlialuggyl
+    wtberikhzktffxk
+    vsadqhjgyjseewj
+    urzcpgifxirddvi
+    tqybofhewhqccuh
+    spxanegdvgpbbtg
+    rowzmdfcufoaasf
+    qnvylcebtenzzre
+    pmuxkbdasdmyyqd
+    oltwjaczrclxxpc
+    nksvizbyqbkwwob
+    mjruhyaxpajvvna
+    liqtgxzwoziuumz
+    khpsfwyvnyhttly
+    jgorevxumxgsskx
+
+Module contents
+---------------
 """
 
 from plugins import cipher

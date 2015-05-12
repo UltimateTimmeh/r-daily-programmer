@@ -1,22 +1,71 @@
 #!/usr/bin/python3
 """
-Challenge information
----------------------
+Information
+-----------
 
-| **Challenge name:** `Password Protect <http://www.reddit.com/r/dailyprogrammer/comments/pnhyn/2122012_challenge_5_easy/>`_
+.. _reddit: http://www.reddit.com/r/dailyprogrammer/comments/pnhyn/2122012_challenge_5_easy/
+.. _source: https://github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/005e.py
+
+| **Challenge name:** Password Protect (reddit_, source_)
 | **Challenge number:** 5
 | **Difficulty:** Easy
 | **Submission date:** 2012-02-13
 | **Status:** Complete
 
-Challenge description
----------------------
+Description
+-----------
 
 Your challenge for today is to create a program which is password protected, and wont open unless
 the correct user and password is given.
 
 For extra credit, have the user and password in a seperate .txt file. For even more extra credit,
 break into your own program :).
+
+Example run
+-----------
+
+::
+
+    $ python3 dailyprogrammer.py 005e
+    === MAIN ===
+    1. Log in
+    2. Create new user
+    3. Look at secret code
+    q. Quit
+    Choose menu item > 3
+    ACCESS DENIED! You must first log in. Press ENTER to continue.
+    === MAIN ===
+    1. Log in
+    2. Create new user
+    3. Look at secret code
+    q. Quit
+    Choose menu item > 2
+    New username > johnsmith
+    New password (leave blank for random) > password
+    Note: Data has been written to file '/path/to/project/dailyprogrammer/output/005e_userdatabase.txt'
+    === MAIN ===
+    1. Log in
+    2. Create new user
+    3. Look at secret code
+    q. Quit
+    Choose menu item > 1
+    Username > johnsmith
+    Password > password
+    Welcome, johnsmith! Press ENTER to continue.
+    === MAIN ===
+    1. Log in
+    2. Create new user
+    3. Look at secret code
+    q. Quit
+    Choose menu item > 3
+    You are 'johnsmith', and you have access to the secret code. Enjoy!
+    Press ENTER to continue.
+    === MAIN ===
+    1. Log in
+    2. Create new user
+    3. Look at secret code
+    q. Quit
+    Choose menu item > q
 
 Extra credit
 ------------
@@ -42,8 +91,8 @@ this, do the following in a terminal::
     Press ENTER to continue.
     >>>
 
-Challenge module contents
--------------------------
+Module contents
+---------------
 """
 
 import os

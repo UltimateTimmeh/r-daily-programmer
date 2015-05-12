@@ -1,24 +1,54 @@
 #!/usr/bin/python3
 """
-Challenge information
----------------------
+Information
+-----------
 
-| **Challenge name:** `Calculate Pi <http://www.reddit.com/r/dailyprogrammer/comments/pp53w/2142012_challenge_6_easy/>`_
+.. _reddit: http://www.reddit.com/r/dailyprogrammer/comments/pp53w/2142012_challenge_6_easy/
+.. _source: https://github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/006e.py
+
+| **Challenge name:** Calculate Pi (reddit_, source_)
 | **Challenge number:** 6
 | **Difficulty:** Easy
 | **Submission date:** 2012-02-14
 | **Status:** Complete
 
-Challenge description
----------------------
+Description
+-----------
 
 Your challenge for today is to create a program that can calculate pi accurately to at least 30
 decimal places.
 
 Try not to cheat :-).
 
-Challenge module contents
--------------------------
+Example run
+-----------
+
+::
+
+    $ python3 dailyprogrammer.py 006e
+    === Choose the desired method for the calculation of pi ===
+    1. Bailey-Borwein-Plouffe formula
+    2. Bellard's formula
+    3. Chudnovsky algorithm
+    q. Quit
+    Choose menu item > 1
+    Desired precision for calculation of pi: 30
+
+    Calculation of pi up to 30 digits:
+        3.141592653589793238462643383279
+    Pi calculated up to 30 digits should be:
+        3.141592653589793238462643383279
+    The calculation appears to be correct!
+
+    === Choose the desired method for the calculation of pi ===
+    1. Bailey-Borwein-Plouffe formula
+    2. Bellard's formula
+    3. Chudnovsky algorithm
+    q. Quit
+    Choose menu item > q
+
+Module contents
+---------------
 """
 
 from plugins import pi

@@ -1,16 +1,19 @@
 #!/usr/bin/python3
 """
-Challenge information
----------------------
+Information
+-----------
 
-| **Challenge name:** `Morse Code <http://www.reddit.com/r/dailyprogrammer/comments/pr2xr/2152012_challenge_7_easy/>`_
+.. _reddit: http://www.reddit.com/r/dailyprogrammer/comments/pr2xr/2152012_challenge_7_easy/
+.. _source: https://github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/007e.py
+
+| **Challenge name:** Morse Code (reddit_, source_)
 | **Challenge number:** 7
 | **Difficulty:** Easy
 | **Submission date:** 2012-02-15
 | **Status:** Complete
 
-Challenge description
----------------------
+Description
+-----------
 
 Write a program that can translate Morse code in the format of `...---...`. A space will
 be placed between letters and a slash will be placed between words. This is your Morse
@@ -23,8 +26,71 @@ to translate::
 For bonus, add the capability of going from a string to Morse code.
 Super-bonus if your program can flash or beep the Morse.
 
-Challenge module contents
--------------------------
+Example run
+-----------
+
+::
+
+    $ python3 dailyprogrammer.py 007e
+
+    Challenge Morse sequence:
+    .... . .-.. .-.. --- / -.. .- .. .-.. -.-- / .--. .-. --- --. .-. .- -- -- . .-. / --. --- --- -.. / .-.. ..- -.-. -.- / --- -. / - .... . / -.-. .... .- .-.. .-.. . -. --. . ... / - --- -.. .- -.--
+    decodes to:
+    HELLO DAILY PROGRAMMER GOOD LUCK ON THE CHALLENGES TODAY
+
+    Message to encode? > WHAT HATH GOD WROUGHT
+    Resulting Morse sequence:
+    .-- .... .- - / .... .- - .... / --. --- -.. / .-- .-. --- ..- --. .... -
+
+    Beep this (y/n)? n
+
+Extra credit
+------------
+
+Beeping the Morse sequences is achieved by printing the system bell character ``\a`` in the
+terminal. I chose this option because it is supposed to be OS independent. First, however, I
+had to find a way to allow the system bell in the terminal (Debian Jessie, can't help you if
+you're a Windows user), since it was apparently off by default. This is what I had to do to
+set it to allow the system bell to be played in the terminal, but keep it off by default:
+
+1. Apparently the setting for allowing the system bell in the xfce4 terminal is a 'hidden' setting.
+   The only way to change this is by manually editing the terminal's configuration file.
+2. Open (or create, if it does not yet exist) the file ``/home/user/.config/xfce4/terminal/terminalrc``
+   in a text editor.
+3. Edit the file so it contains at least the following::
+
+    [Configuration]
+    MiscBell=TRUE
+
+.. warning:: For me, creating the terminal configuration file reset all terminal settings
+   (background color changed from white to black, for example), so I had to change the preferences
+   back to what they were before. Doing this did not remove the system bell setting from the
+   configuration file.
+
+4. If you log out and back in, the change should have taken effect. You can test by simply pressing
+   backspace in the terminal, or by launching Python in the terminal and printing the ``\a``
+   character.
+5. If it does not work, then perhaps the bell is deactivated system-wide by default. You can
+   check this with the command ``xset q | grep bell`` in a terminal. If 'percent' (the volume)
+   is zero, then the bell is off. You can turn it on with the command ``xset b on``. Then it
+   should work. If it doesn't, then I can't help you any further.
+6. If the bell is activated system-wide by default, then allowing the bell in the terminal
+   can get annoying. Because of this, the bell should be automatically switched off when
+   opening a terminal. You can do this by adding the following lines to the ``/home/user/.bashrc``
+   file::
+
+    # Turn off system bell
+    if [ -n "$DISPLAY" ]; then
+      xset b off
+    fi
+
+7. If you open a terminal now, the bell should be allowed, but it will be off by default. You
+   can always check the settings of the bell with the command ``xset q | grep bell``, turn it
+   on with ``xset b on`` and test if it works by printing the ``\a`` character in Python. To
+   deactivate the bell, use the command ``xset b off``.
+
+Module contents
+---------------
 """
 
 from plugins.morse import Beep, MorseConvention

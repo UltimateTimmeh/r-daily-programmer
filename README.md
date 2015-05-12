@@ -1,39 +1,40 @@
-# r-daily-programmer
+# r-Daily-Programmer
 
 ## Introduction
 
-My repository for solutions to the challenges posted on [the /r/DailyProgrammer subreddit](http://www.reddit.com/r/DailyProgrammer).
-All programming is done using Python 3, and I will attempt to always make all my code as pythonic
-as possible. If you have any comments or suggestions, feel free to send me a message!
+This is the repository for my solutions to the challenges posted on [the /r/DailyProgrammer
+subreddit](http://www.reddit.com/r/DailyProgrammer). All programming is done in Python 3, and I
+will attempt to always make my code as Pythonic as possible. If you have any questions, comments
+or suggestions, then feel free to send me a message on Reddit
+([/u/Ultimate_Timmeh](http://www.reddit.com/u/ultimate_timmeh)) or send me an email
+([dezutter.tim@gmail.com](mailto:dezutter.tim@gmail.com)).
 
-## Challenges
+## Documentation
 
-**Challenge execution**
+For more information about this repository and its contents, how to execute challenge solutions,
+example runs of challenge solutions, code documentation... you should consult this project's
+documentation master file. An online version of the documentation will be made available soon.
+If you're only interested in the source code, then you can stay here and simply browse the
+repository's `dailyprogrammer` directory.
 
-All challenge solutions are presented as modules. To execute one of the challenge modules you should
-launch the `dailyprogrammer.py` script in a terminal with python3, and provide as argument the ID of the
-desired challenge. If the challenge is supposed to write output to a file, then this file will be
-located in the directory `dailyprogrammer/output/`.
+All code in this project is documented through the docstrings as well as I am able. All docstring
+documentation can be automatically bundled as reStructuredText in the `docs` directory and then
+converted into nice HTML doumentation using Sphinx. If you are interested in building the
+documentation on your computer for offline use, then you should follow [this link](docs/README.md)
+for instructions.
 
-*Example - Execute the solution for challenge '001e - Ask Input'*
+## List of challenges
 
-    $ python3 dailyprogrammer.py 001e
-    Name? > John Smith
-    Age? > 50
-    Reddit Username? > johnsmith
-    Contents of User object:
-        reddit_username: johnsmith
-        age: 50
-        name: John Smith
-    Note: Data has been appended to file '/path/to/project/dailyprogrammer/output/001e_example_output.txt'
+To quickly give you an impression of which challenges you can find in this repository,
+I have included a list of challenges I have worked on so far.
 
-**Info about challenge status**
+**Challenge status**:
 
-- *In progress*: Started, but not yet done.
-- *Done*: Main challenge finished, but not the extra credit(s).
-- *Complete*: Main challenge and extra credits finished.
+- *In progress*: started but not yet done
+- *Done*: main challenge finished, but not the extra credit(s)
+- *Complete*: main challenge and extra credit(s) finished
 
-**List of challenges**
+**List**:
 
 - *001e* - [Ask Input](dailyprogrammer/challenges/001e.py): Complete
 - *002e* - [Calculator](dailyprogrammer/challenges/002e.py): Complete
@@ -43,37 +44,4 @@ located in the directory `dailyprogrammer/output/`.
 - *006e* - [Calculate Pi](dailyprogrammer/challenges/006e.py): Complete
 - *007e* - [Morse Code](dailyprogrammer/challenges/007e.py): Complete
 
-## Plugins
 
-**Description**
-
-Many of the challenges have objectives in them that can be (partially) solved by making use of the
-solution of previous challenges. Because of this, it makes sense to create *plugins* that can be
-imported in the challenge execution scripts.
-
-**Testing**
-
-Plugins will be tested with Python's `unittest` package. Unit tests for all plugins that have them
-can be executed by using the 'discover' functionality of Python's unittest in the `dailyprogrammer`
-directory. For example, to execute all unit tests in the DailyProgrammer project and store the
-results to a log file, you could use the command:
-
-    $ python3 -m unittest discover -v > path_to_log_file.log 2>&1
-
-**List of plugins**
-
-- [cipher](dailyprogrammer/plugins/cipher.py)
-- [config](dailyprogrammer/plugins/config.py)
-- [formula](dailyprogrammer/plugins/formula.py)
-- [morse](dailyprogrammer/plugins/morse.py)
-- [password](dailyprogrammer/plugins/password.py)
-- [pi](dailyprogrammer/plugins/pi.py)
-- [textmenu](dailyprogrammer/plugins/textmenu.py)
-- [user](dailyprogrammer/plugins/user.py)
-
-## Documentation
-
-All code in this project is documented through the docstrings as well as I am able. All docstring
-documentation can be automatically bundled as reStructuredText in the `docs` directory and then
-converted into nice HTML doumentation using Sphinx. If you are interested in doing this, then you
-should follow [this link](docs/README.md) for instructions.

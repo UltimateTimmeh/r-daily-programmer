@@ -1,16 +1,19 @@
 #!/usr/bin/python3
 """
-Challenge information
----------------------
+Information
+-----------
 
-| **Challenge name:** `Calculator <http://www.reddit.com/r/dailyprogrammer/comments/pjbj8/easy_challenge_2/>`_
+.. _reddit: http://www.reddit.com/r/dailyprogrammer/comments/pjbj8/easy_challenge_2/
+.. _source: https://github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/002e.py
+
+| **Challenge name:** Calculator (reddit_, source_)
 | **Challenge number:** 2
 | **Difficulty:** Easy
 | **Submission date:** 2012-02-10
 | **Status:** Complete
 
-Challenge description
----------------------
+Description
+-----------
 
 Hello, coders! An important part of programming is being able to apply your programs,
 so your challenge for today is to create a calculator application that has use in your
@@ -22,8 +25,41 @@ For example, if you were in physics class, you might want to make a ``F = M * A`
 EXTRA CREDIT: make the calculator have multiple functions! Not only should it be able to
 calculate ``F = M * A``, but also ``A = F/M``, and ``M = F/A``!
 
-Challenge module contents
--------------------------
+Example run
+-----------
+
+::
+
+    $ python3 dailyprogrammer.py 002e
+    === MAIN ===
+    1. Geometrical
+    q. Quit
+    Choose menu item > 1
+    === GEOMETRICAL ===
+    1. Cubes
+    2. Spheres
+    b. Back
+    q. Quit
+    Choose menu item > 2
+    === SPHERES ===
+    1. Surface Area
+    2. Volume
+    b. Back
+    q. Quit
+    Choose menu item > 2
+    Sphere radius: 10
+    The sphere's volume is: 4188.790
+    Formula: 4/3*pi*r**3
+    PRESS ENTER TO CONTINUE
+    === SPHERES ===
+    1. Surface Area
+    2. Volume
+    b. Back
+    q. Quit
+    Choose menu item > q
+
+Module contents
+---------------
 """
 
 from plugins import formula
