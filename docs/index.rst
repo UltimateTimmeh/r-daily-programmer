@@ -84,28 +84,32 @@ List of challenges
 .. _008e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/008e.py
 .. _009e.doc: _apidoc/challenges.009e.html
 .. _009e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/009e.py
+.. _010e.doc: _apidoc/challenges.010e.html
+.. _010e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/010e.py
 
-+-----+------------+------+------------------+-------------+---------------+-----------+
-| Nr. | Difficulty | ID   | Name             | Status*     | Documentation | Source    |
-+=====+============+======+==================+=============+===============+===========+
-| 1   | Easy       | 001e | Ask Input        | Complete    | 001e.doc_     | 001e.src_ |
-+-----+------------+------+------------------+-------------+---------------+-----------+
-| 2   | Easy       | 002e | Calculator       | Complete    | 002e.doc_     | 002e.src_ |
-+-----+------------+------+------------------+-------------+---------------+-----------+
-| 3   | Easy       | 003e | Caesar Cipher    | Complete    | 003e.doc_     | 003e.src_ |
-+-----+------------+------+------------------+-------------+---------------+-----------+
-| 4   | Easy       | 004e | Random Password  | Complete    | 004e.doc_     | 004e.src_ |
-+-----+------------+------+------------------+-------------+---------------+-----------+
-| 5   | Easy       | 005e | Password Protect | Complete    | 005e.doc_     | 005e.src_ |
-+-----+------------+------+------------------+-------------+---------------+-----------+
-| 6   | Easy       | 006e | Calculate Pi     | Complete    | 006e.doc_     | 006e.src_ |
-+-----+------------+------+------------------+-------------+---------------+-----------+
-| 7   | Easy       | 007e | Morse Code       | Complete    | 007e.doc_     | 007e.src_ |
-+-----+------------+------+------------------+-------------+---------------+-----------+
-| 8   | Easy       | 008e | Beer Bottle      | Complete    | 008e.doc_     | 008e.src_ |
-+-----+------------+------+------------------+-------------+---------------+-----------+
-| 9   | Easy       | 009e | Sort Numbers     | Done        | 009e.doc_     | 009e.src_ |
-+-----+------------+------+------------------+-------------+---------------+-----------+
++-----+------------+------+-----------------------+-------------+---------------+-----------+
+| Nr. | Difficulty | ID   | Name                  | Status*     | Documentation | Source    |
++=====+============+======+=======================+=============+===============+===========+
+| 1   | Easy       | 001e | Ask Input             | Complete    | 001e.doc_     | 001e.src_ |
++-----+------------+------+-----------------------+-------------+---------------+-----------+
+| 2   | Easy       | 002e | Calculator            | Complete    | 002e.doc_     | 002e.src_ |
++-----+------------+------+-----------------------+-------------+---------------+-----------+
+| 3   | Easy       | 003e | Caesar Cipher         | Complete    | 003e.doc_     | 003e.src_ |
++-----+------------+------+-----------------------+-------------+---------------+-----------+
+| 4   | Easy       | 004e | Random Password       | Complete    | 004e.doc_     | 004e.src_ |
++-----+------------+------+-----------------------+-------------+---------------+-----------+
+| 5   | Easy       | 005e | Password Protect      | Complete    | 005e.doc_     | 005e.src_ |
++-----+------------+------+-----------------------+-------------+---------------+-----------+
+| 6   | Easy       | 006e | Calculate Pi          | Complete    | 006e.doc_     | 006e.src_ |
++-----+------------+------+-----------------------+-------------+---------------+-----------+
+| 7   | Easy       | 007e | Morse Code            | Complete    | 007e.doc_     | 007e.src_ |
++-----+------------+------+-----------------------+-------------+---------------+-----------+
+| 8   | Easy       | 008e | Beer Bottle           | Complete    | 008e.doc_     | 008e.src_ |
++-----+------------+------+-----------------------+-------------+---------------+-----------+
+| 9   | Easy       | 009e | Sort Numbers          | Done        | 009e.doc_     | 009e.src_ |
++-----+------------+------+-----------------------+-------------+---------------+-----------+
+| 10  | Easy       | 010e | Validate Phone Number | Complete    | 010e.doc_     | 010e.src_ |
++-----+------------+------+-----------------------+-------------+---------------+-----------+
 
 \*\ **Challenge status**:
 
@@ -146,6 +150,8 @@ List of plugins
 .. _morse.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/plugins/morse.py
 .. _password.doc: _apidoc/plugins.password.html
 .. _password.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/plugins/password.py
+.. _phonenumber.doc: _apidoc/plugins.phonenumber.html
+.. _phonenumber.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/plugins/phonenumber.py
 .. _pi.doc: _apidoc/plugins.pi.html
 .. _pi.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/plugins/pi.py
 .. _sort.doc: _apidoc/plugins.sort.html
@@ -155,24 +161,26 @@ List of plugins
 .. _user.doc: _apidoc/plugins.user.html
 .. _user.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/plugins/user.py
 
-+----------+---------------+---------------+
-| Name     | Documentation | Source        |
-+==========+===============+===============+
-| cipher   | cipher.doc_   | cipher.src_   |
-+----------+---------------+---------------+
-| config   | config.doc_   | config.src_   |
-+----------+---------------+---------------+
-| formula  | formula.doc_  | formula.src_  |
-+----------+---------------+---------------+
-| morse    | morse.doc_    | morse.src_    |
-+----------+---------------+---------------+
-| password | password.doc_ | password.src_ |
-+----------+---------------+---------------+
-| pi       | pi.doc_       | pi.src_       |
-+----------+---------------+---------------+
-| sort     | sort.doc_     | sort.src_     |
-+----------+---------------+---------------+
-| textmenu | textmenu.doc_ | textmenu.src_ |
-+----------+---------------+---------------+
-| user     | user.doc_     | user.src_     |
-+----------+---------------+---------------+
++-------------+------------------+------------------+
+| Name        | Documentation    | Source           |
++=============+==================+==================+
+| cipher      | cipher.doc_      | cipher.src_      |
++-------------+------------------+------------------+
+| config      | config.doc_      | config.src_      |
++-------------+------------------+------------------+
+| formula     | formula.doc_     | formula.src_     |
++-------------+------------------+------------------+
+| morse       | morse.doc_       | morse.src_       |
++-------------+------------------+------------------+
+| password    | password.doc_    | password.src_    |
++-------------+------------------+------------------+
+| phonenumber | phonenumber.doc_ | phonenumber.src_ |
++-------------+------------------+------------------+
+| pi          | pi.doc_          | pi.src_          |
++-------------+------------------+------------------+
+| sort        | sort.doc_        | sort.src_        |
++-------------+------------------+------------------+
+| textmenu    | textmenu.doc_    | textmenu.src_    |
++-------------+------------------+------------------+
+| user        | user.doc_        | user.src_        |
++-------------+------------------+------------------+

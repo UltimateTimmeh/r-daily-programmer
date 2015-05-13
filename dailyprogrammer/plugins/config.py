@@ -4,11 +4,19 @@
 
 Configurable variables used in |project| (source_).
 
-| **plugins_dir** (str) -- directory containing the |project| plugin modules
-| **root_dir** (str) -- root directory of |project|
-| **output_dir** (str) -- directory for storing |project| challenge output files
-| **tmp_dir** (str) -- temporary directory for storing |project| unit test input and output files
+| *var* plugins.config.\ **plugins_dir** (str)
+|     directory containing the |project| plugin modules
+|
+| *var* plugins.config.\ **root_dir** (str)
+|     root directory of |project|
+|
+| *var* plugins.config.\ **output_dir** (str)
+|     directory for storing |project| challenge output files
+|
+| *var* plugins.config.\ **tmp_dir** (str)
+|     temporary directory for storing |project| unit test input and output files
 """
+
 import os
 
 # Directories.
