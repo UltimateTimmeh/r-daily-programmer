@@ -1,9 +1,8 @@
 #!/usr/bin/python3
 """
-Configurable variables used in |project|.
+.. _source: https://github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/plugins/config.py
 
-Directories
------------
+Configurable variables used in |project| (source_).
 
 | **plugins_dir** (str) -- directory containing the |project| plugin modules
 | **root_dir** (str) -- root directory of |project|

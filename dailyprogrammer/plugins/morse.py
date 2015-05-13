@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """
-Encode, decode and beep messages in Morse code.
+.. _source: https://github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/plugins/morse.py
+
+Encode, decode and beep messages in Morse code (source_).
 """
 
 import subprocess

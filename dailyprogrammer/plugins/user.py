@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """
-Storing and handling a user's information
+.. _source: https://github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/plugins/user.py
+
+Storing and handling a user's information (source_).
 """
 
 import os

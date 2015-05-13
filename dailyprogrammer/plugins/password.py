@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """
-Create and manage passwords.
+.. _source: https://github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/plugins/password.py
+
+Create, hash and validate passwords (source_).
 """
 
 import hashlib

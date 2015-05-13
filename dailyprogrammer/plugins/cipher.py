@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """
-Encoding and decoding messages using ciphers.
+.. _source: https://github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/plugins/cipher.py
+
+Encoding and decoding messages using ciphers (source_).
 """
 
 

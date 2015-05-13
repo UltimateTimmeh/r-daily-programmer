@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """
-A collection of basic formulas.
+.. _source: https://github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/plugins/formula.py
+
+A collection of basic formulas (source_).
 """
 
 import math

@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """
-Create text menus and run a text menu framework.
+.. _source: https://github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/plugins/textmenu.py
+
+Create text menus and run a text menu framework (source_).
 """
 
 

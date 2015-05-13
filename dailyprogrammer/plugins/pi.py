@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """
-Various functions for accurately calculating pi.
+.. _source: https://github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/plugins/pi.py
+
+Various functions for accurately calculating pi to an arbitrary precision (source_).
 """
 
 from decimal import Decimal, getcontext
