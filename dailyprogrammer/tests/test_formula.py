@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """
-Unit tests for module :mod:`plugins.formula`.
+.. _source: https://github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/tests/test_formula.py
+
+Unit tests for module :mod:`plugins.formula` (source_).
 """
 
 import unittest

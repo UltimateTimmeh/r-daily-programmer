@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """
-Unit tests for module :mod:`plugins.user`.
+.. _source: https://github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/tests/test_user.py
+
+Unit tests for module :mod:`plugins.user` (source_).
 """
 
 import os

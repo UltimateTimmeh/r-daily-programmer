@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """
-Unit tests for module :mod:`plugins.pi`.
+.. _source: https://github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/tests/test_pi.py
+
+Unit tests for module :mod:`plugins.pi` (source_).
 """
 
 import decimal

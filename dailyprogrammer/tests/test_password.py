@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """
-Unit tests for module :mod:`plugins.password`.
+.. _source: https://github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/tests/test_password.py
+
+Unit tests for module :mod:`plugins.password` (source_).
 """
 
 import unittest

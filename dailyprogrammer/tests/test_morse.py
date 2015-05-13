@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """
-Unit tests for module :mod:`plugins.morse`.
+.. _source: https://github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/tests/test_morse.py
+
+Unit tests for module :mod:`plugins.morse` (source_).
 """
 
 import unittest

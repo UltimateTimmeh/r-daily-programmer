@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """
-Unit tests for module :mod:`plugins.cipher`.
+.. _source: https://github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/tests/test_cipher.py
+
+Unit tests for module :mod:`plugins.cipher` (source_).
 """
 
 import unittest

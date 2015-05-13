@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """
-Unit tests for module :mod:`plugins.textmenu`.
+.. _source: https://github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/tests/test_textmenu.py
+
+Unit tests for module :mod:`plugins.textmenu` (source_).
 """
 
 import unittest
