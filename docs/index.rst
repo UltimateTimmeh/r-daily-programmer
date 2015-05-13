@@ -82,6 +82,8 @@ List of challenges
 .. _007e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/007e.py
 .. _008e.doc: _apidoc/challenges.008e.html
 .. _008e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/008e.py
+.. _009e.doc: _apidoc/challenges.009e.html
+.. _009e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/009e.py
 
 +-----+------------+------+------------------+-------------+---------------+-----------+
 | Nr. | Difficulty | ID   | Name             | Status*     | Documentation | Source    |
@@ -100,7 +102,9 @@ List of challenges
 +-----+------------+------+------------------+-------------+---------------+-----------+
 | 7   | Easy       | 007e | Morse Code       | Complete    | 007e.doc_     | 007e.src_ |
 +-----+------------+------+------------------+-------------+---------------+-----------+
-| 8   | Easy       | 007e | Beer Bottle      | Complete    | 008e.doc_     | 008e.src_ |
+| 8   | Easy       | 008e | Beer Bottle      | Complete    | 008e.doc_     | 008e.src_ |
++-----+------------+------+------------------+-------------+---------------+-----------+
+| 9   | Easy       | 009e | Sort Numbers     | Done        | 009e.doc_     | 009e.src_ |
 +-----+------------+------+------------------+-------------+---------------+-----------+
 
 \*\ **Challenge status**:
@@ -144,6 +148,8 @@ List of plugins
 .. _password.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/plugins/password.py
 .. _pi.doc: _apidoc/plugins.pi.html
 .. _pi.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/plugins/pi.py
+.. _sort.doc: _apidoc/plugins.sort.html
+.. _sort.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/plugins/sort.py
 .. _textmenu.doc: _apidoc/plugins.textmenu.html
 .. _textmenu.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/plugins/textmenu.py
 .. _user.doc: _apidoc/plugins.user.html
@@ -163,6 +169,8 @@ List of plugins
 | password | password.doc_ | password.src_ |
 +----------+---------------+---------------+
 | pi       | pi.doc_       | pi.src_       |
++----------+---------------+---------------+
+| sort     | sort.doc_     | sort.src_     |
 +----------+---------------+---------------+
 | textmenu | textmenu.doc_ | textmenu.src_ |
 +----------+---------------+---------------+

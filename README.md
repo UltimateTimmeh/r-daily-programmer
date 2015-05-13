@@ -44,3 +44,4 @@ I have included a list of challenges I have worked on so far.
 - *006e* - [Calculate Pi](dailyprogrammer/challenges/006e.py): Complete
 - *007e* - [Morse Code](dailyprogrammer/challenges/007e.py): Complete
 - *008e* - [Beer Bottle](dailyprogrammer/challenges/008e.py): Complete
+- *009e* - [Sort Numbers](dailyprogrammer/challenges/009e.py): Done
