@@ -86,6 +86,8 @@ List of challenges
 .. _009e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/009e.py
 .. _010e.doc: _apidoc/challenges.010e.html
 .. _010e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/010e.py
+.. _011e.doc: _apidoc/challenges.011e.html
+.. _011e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/011e.py
 
 +-----+------------+------+-----------------------+-------------+---------------+-----------+
 | Nr. | Difficulty | ID   | Name                  | Status*     | Documentation | Source    |
@@ -109,6 +111,8 @@ List of challenges
 | 9   | Easy       | 009e | Sort Numbers          | Done        | 009e.doc_     | 009e.src_ |
 +-----+------------+------+-----------------------+-------------+---------------+-----------+
 | 10  | Easy       | 010e | Validate Phone Number | Complete    | 010e.doc_     | 010e.src_ |
++-----+------------+------+-----------------------+-------------+---------------+-----------+
+| 11  | Easy       | 011e | Doomsday Algorithm    | Complete    | 011e.doc_     | 011e.src_ |
 +-----+------------+------+-----------------------+-------------+---------------+-----------+
 
 \*\ **Challenge status**:
@@ -144,6 +148,8 @@ List of plugins
 .. _cipher.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/plugins/cipher.py
 .. _config.doc: _apidoc/plugins.config.html
 .. _config.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/plugins/config.py
+.. _doomsday.doc: _apidoc/plugins.doomsday.html
+.. _doomsday.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/plugins/doomsday.py
 .. _formula.doc: _apidoc/plugins.formula.html
 .. _formula.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/plugins/formula.py
 .. _morse.doc: _apidoc/plugins.morse.html
@@ -167,6 +173,8 @@ List of plugins
 | cipher      | cipher.doc_      | cipher.src_      |
 +-------------+------------------+------------------+
 | config      | config.doc_      | config.src_      |
++-------------+------------------+------------------+
+| doomsday    | doomsday.doc_    | doomsday.src_    |
 +-------------+------------------+------------------+
 | formula     | formula.doc_     | formula.src_     |
 +-------------+------------------+------------------+
