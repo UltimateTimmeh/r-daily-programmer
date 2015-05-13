@@ -13,9 +13,9 @@ or suggestions, then feel free to send me a message on Reddit
 
 For more information about this repository and its contents, how to execute challenge solutions,
 example runs of challenge solutions, code documentation... you should consult this project's
-documentation master file. An online version of the documentation will be made available soon.
-If you're only interested in the source code, then you can stay here and simply browse the
-repository's `dailyprogrammer` directory.
+documentation master file. The latest online version of the documentation can be found
+[here](http://users.telenet.be/dailyprogrammer/). If you're only interested in the source code,
+then you can stay here and simply browse the repository's `dailyprogrammer` directory.
 
 All code in this project is documented through the docstrings as well as I am able. All docstring
 documentation can be automatically bundled as reStructuredText in the `docs` directory and then
