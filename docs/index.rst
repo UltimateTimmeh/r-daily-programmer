@@ -92,6 +92,8 @@ List of challenges
 .. _012e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/012e.py
 .. _013e.doc: _apidoc/challenges.013e.html
 .. _013e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/013e.py
+.. _014e.doc: _apidoc/challenges.014e.html
+.. _014e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/014e.py
 
 +-----+------------+------+----------------------------+-------------+---------------+-----------+
 | Nr. | Difficulty | ID   | Name                       | Status*     | Documentation | Source    |
@@ -121,6 +123,8 @@ List of challenges
 | 12  | Easy       | 012e | Permutations               | Complete    | 012e.doc_     | 012e.src_ |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+
 | 13  | Easy       | 013e | Cumulative Day of the Year | Complete    | 013e.doc_     | 013e.src_ |
++-----+------------+------+----------------------------+-------------+---------------+-----------+
+| 14  | Easy       | 014e | Block Invert               | Complete    | 014e.doc_     | 014e.src_ |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+
 
 \*\ **Challenge status**:
