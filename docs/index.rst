@@ -172,6 +172,8 @@ List of plugins
 .. _config.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/plugins/config.py
 .. _doomsday.doc: _apidoc/plugins.doomsday.html
 .. _doomsday.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/plugins/doomsday.py
+.. _enhancedstring.doc: _apidoc/plugins.enhancedstring.html
+.. _enhancedstring.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/plugins/enhancedstring.py
 .. _formula.doc: _apidoc/plugins.formula.html
 .. _formula.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/plugins/formula.py
 .. _morse.doc: _apidoc/plugins.morse.html
@@ -189,28 +191,30 @@ List of plugins
 .. _user.doc: _apidoc/plugins.user.html
 .. _user.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/plugins/user.py
 
-+-------------+------------------+------------------+
-| Name        | Documentation    | Source           |
-+=============+==================+==================+
-| cipher      | cipher.doc_      | cipher.src_      |
-+-------------+------------------+------------------+
-| config      | config.doc_      | config.src_      |
-+-------------+------------------+------------------+
-| doomsday    | doomsday.doc_    | doomsday.src_    |
-+-------------+------------------+------------------+
-| formula     | formula.doc_     | formula.src_     |
-+-------------+------------------+------------------+
-| morse       | morse.doc_       | morse.src_       |
-+-------------+------------------+------------------+
-| password    | password.doc_    | password.src_    |
-+-------------+------------------+------------------+
-| phonenumber | phonenumber.doc_ | phonenumber.src_ |
-+-------------+------------------+------------------+
-| pi          | pi.doc_          | pi.src_          |
-+-------------+------------------+------------------+
-| sort        | sort.doc_        | sort.src_        |
-+-------------+------------------+------------------+
-| textmenu    | textmenu.doc_    | textmenu.src_    |
-+-------------+------------------+------------------+
-| user        | user.doc_        | user.src_        |
-+-------------+------------------+------------------+
++----------------+---------------------+---------------------+
+| Name           | Documentation       | Source              |
++================+=====================+=====================+
+| cipher         | cipher.doc_         | cipher.src_         |
++----------------+---------------------+---------------------+
+| config         | config.doc_         | config.src_         |
++----------------+---------------------+---------------------+
+| doomsday       | doomsday.doc_       | doomsday.src_       |
++----------------+---------------------+---------------------+
+| enhancedstring | enhancedstring.doc_ | enhancedstring.src_ |
++----------------+---------------------+---------------------+
+| formula        | formula.doc_        | formula.src_        |
++----------------+---------------------+---------------------+
+| morse          | morse.doc_          | morse.src_          |
++----------------+---------------------+---------------------+
+| password       | password.doc_       | password.src_       |
++----------------+---------------------+---------------------+
+| phonenumber    | phonenumber.doc_    | phonenumber.src_    |
++----------------+---------------------+---------------------+
+| pi             | pi.doc_             | pi.src_             |
++----------------+---------------------+---------------------+
+| sort           | sort.doc_           | sort.src_           |
++----------------+---------------------+---------------------+
+| textmenu       | textmenu.doc_       | textmenu.src_       |
++----------------+---------------------+---------------------+
+| user           | user.doc_           | user.src_           |
++----------------+---------------------+---------------------+

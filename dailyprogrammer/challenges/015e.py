@@ -56,26 +56,7 @@ Module contents
 ---------------
 """
 
-
-def align_text(text, a='<'):
-    """Left, right or center alignment of text.
-
-    :param str text: the text to be aligned
-    :param str a: desired alignment of the text, '<' for left, '>' for right, '^' for center
-                  (default '<')
-    :return: aligned text
-    :rtype: str
-    :raise: ValueError if the provided alignment is invalid
-    """
-    if a not in '<>^':
-        error = "Unknown alignment: '{}'."
-        raise ValueError(error.format(a))
-    text_stripped = [line.strip() for line in text.split('\n')]
-    max_length = max([len(line) for line in text_stripped])
-    text_aligned = '\n'.join([
-        '{0:{1}{2}}'.format(line, a, max_length).rstrip() for line in text_stripped
-        ])
-    return text_aligned
+from plugins.enhancedstring import EnhancedString
 
 
 def run():
@@ -87,9 +68,9 @@ def run():
 
     # Read, justify and write.
     with open(text_in_fn, 'r') as text_in_file:
-        text_in = text_in_file.read()
-    text_out = align_text(text_in, a)
+        text = EnhancedString(text_in_file.read())
+    text.align(a)
     with open(text_out_fn, 'w') as text_out_file:
-        text_out_file.write(text_out)
+        text_out_file.write(str(text))
     print("Note: Data has been written to file '{}'.".format(text_out_fn))
 

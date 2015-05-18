@@ -34,37 +34,7 @@ Module contents
 ---------------
 """
 
-
-class EnhancedString(object):
-    """Class representing an enhanced string object.
-
-    This class' main purpose is to enhance the built-in string object with several
-    useful methods.
-
-    :param str str_: the built-in string object that needs to be enhanced
-    """
-
-
-    def __init__(self, str_):
-        """Create a new enhanced string."""
-        self.str_ = str_
-
-
-    def __str__(self):
-        """Format the enhanced string as a string."""
-        return self.str_
-
-
-    def remove(self, chars):
-        """Remove all instances of certain characters from the enhanced string.
-
-        Note that any instance of each individual character in ``chars`` will be removed,
-        not any instance of the complete ``chars`` string.
-
-        :param str chars: string of characters to remove
-        """
-        for c in chars:
-            self.str_ = self.str_.replace(c, '')
+from plugins.enhancedstring import EnhancedString
 
 
 def run():
