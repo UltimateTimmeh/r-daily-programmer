@@ -51,3 +51,4 @@ I have included a list of challenges I have worked on so far.
 - *013e* - [Cumulative Day of the Year](dailyprogrammer/challenges/013e.py): Complete
 - *014e* - [Block Invert](dailyprogrammer/challenges/014e.py): Complete
 - *015e* - [Align Text](dailyprogrammer/challenges/015e.py): Complete
+- *016e* - [Remove Characters](dailyprogrammer/challenges/016e.py): Complete
