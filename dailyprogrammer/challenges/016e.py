@@ -16,9 +16,9 @@ Description
 -----------
 
 Write a function that takes two strings and removes from the first string any character that appears
-in the second string. For instance, if the first string is `Daily Programmer` and the second string
-is `aeiou ` the result is `DlyPrgrmmr`. Note that the second string has the [space] character in it,
-so the space in "Daily Programmer" is also removed.
+in the second string. For instance, if the first string is ``Daily Programmer`` and the second
+string is ``ae iou`` the result is ``DlyPrgrmmr``. Note that the second string has the [space]
+character in it, so the space in "Daily Programmer" is also removed.
 
 Example run
 -----------

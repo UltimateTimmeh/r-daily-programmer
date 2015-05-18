@@ -15,7 +15,7 @@ Information
 Description
 -----------
 
-*Input:** List of elements and a block size k or some other variable of your choice.
+**Input:** List of elements and a block size k or some other variable of your choice.
 
 **Output:** Return the list of elements with every block of k elements reversed, starting from the
 beginning of the list.
