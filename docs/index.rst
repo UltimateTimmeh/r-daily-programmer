@@ -48,8 +48,10 @@ Challenge execution
 
 All challenge solutions are presented as modules. To execute one of the challenge modules you
 should launch the ``dailyprogrammer.py`` script in a terminal with Python 3, and provide as
-argument the ID of the challenge you wish to execute. If the challenge is supposed to write
-output to a file, then this file will be located in the directory ``dailyprogrammer/output/``.
+argument the ID of the challenge you wish to execute. If the challenge requires one or more
+input files, these files will be located in the directory ``dailyprogrammer/input/``. If the
+challenge is supposed to write output to a file, then this file will be located in the
+directory ``dailyprogrammer/output/``.
 
 Example -- Execute the solution to challenge '1 Easy - Ask Input' (ID 001e)::
 
@@ -94,6 +96,8 @@ List of challenges
 .. _013e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/013e.py
 .. _014e.doc: _apidoc/challenges.014e.html
 .. _014e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/014e.py
+.. _015e.doc: _apidoc/challenges.015e.html
+.. _015e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/015e.py
 
 +-----+------------+------+----------------------------+-------------+---------------+-----------+
 | Nr. | Difficulty | ID   | Name                       | Status*     | Documentation | Source    |
@@ -125,6 +129,8 @@ List of challenges
 | 13  | Easy       | 013e | Cumulative Day of the Year | Complete    | 013e.doc_     | 013e.src_ |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+
 | 14  | Easy       | 014e | Block Invert               | Complete    | 014e.doc_     | 014e.src_ |
++-----+------------+------+----------------------------+-------------+---------------+-----------+
+| 15  | Easy       | 015e | Block Invert               | Complete    | 015e.doc_     | 015e.src_ |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+
 
 \*\ **Challenge status**:
