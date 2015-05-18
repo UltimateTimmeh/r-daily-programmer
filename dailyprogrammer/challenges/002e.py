@@ -62,8 +62,75 @@ Module contents
 ---------------
 """
 
-from plugins import formula
+import math
+
 from plugins.textmenu import TextMenuItem, TextMenu, TextMenuEngine
+
+
+# Cubes
+def cube_surface_area(z):
+    """Calculate the surface area of a cube.
+
+    :param float z: cube edge length
+    :return: cube surface area
+    :rtype: float
+
+    Example::
+
+        >>> from formula import cube_surface_area
+        >>> cube_surface_area(3.)
+        54.0
+    """
+    return 6*z**2
+
+
+def cube_volume(z):
+    """Calculate the volume of a cube.
+
+    :param float z: cube edge length
+    :return: cube volume
+    :rtype: float
+
+    Example::
+
+        >>> from formula import cube_volume
+        >>> cube_volume(3.)
+        27.0
+    """
+    return z**3
+
+
+# Spheres
+def sphere_surface_area(r):
+    """Calculate the surface area of a sphere.
+
+    :param float r: sphere radius
+    :return: sphere surface area
+    :rtype: float
+
+    Example::
+
+        >>> from formula import sphere_surface_area
+        >>> sphere_surface_area(3.)
+        113.09733552923255
+    """
+    return 4*math.pi*r**2
+
+
+def sphere_volume(r):
+    """Calculate the volume of a sphere.
+
+    :param float r: sphere radius
+    :return: sphere volume
+    :rtype: float
+
+    Example::
+
+        >>> from formula import sphere_volume
+        >>> sphere_volume(3.)
+        113.09733552923254
+    """
+    return 4/3*math.pi*r**3
 
 
 # Ask user input and pass to formulas.
@@ -83,37 +150,37 @@ def ask_float(msg):
             print("You must provide a valid number!")
 
 
-def cube_surface_area():
+def calc_cube_surface_area():
     """Ask for the input required for calculating a cube's surface area and print the result."""
     z = ask_float("Cube edge length: ")
-    result = formula.cube_surface_area(z)
+    result = cube_surface_area(z)
     print("The cube's surface area is: {0:.3f}".format(result))
     print("Formula: 6*z**2")
     input("PRESS ENTER TO CONTINUE")
 
 
-def cube_volume():
+def calc_cube_volume():
     """Ask for the input required for calculating a cube's volume and print the result."""
     z = ask_float("Cube edge length: ")
-    result = formula.cube_volume(z)
+    result = cube_volume(z)
     print("The cube's volume is: {0:.3f}".format(result))
     print("Formula: z**3")
     input("PRESS ENTER TO CONTINUE")
 
 
-def sphere_surface_area():
+def calc_sphere_surface_area():
     """Ask for the input required for calculating a sphere's surface area and print the result."""
     r = ask_float("Sphere radius: ")
-    result = formula.sphere_surface_area(r)
+    result = sphere_surface_area(r)
     print("The sphere's surface area is: {0:.3f}".format(result))
     print("Formula: 4*pi*r**2")
     input("PRESS ENTER TO CONTINUE")
 
 
-def sphere_volume():
+def calc_sphere_volume():
     """Ask for the input required for calculating a sphere's volume and print the result."""
     r = ask_float("Sphere radius: ")
-    result = formula.sphere_volume(r)
+    result = sphere_volume(r)
     print("The sphere's volume is: {0:.3f}".format(result))
     print("Formula: 4/3*pi*r**3")
     input("PRESS ENTER TO CONTINUE")
@@ -123,15 +190,15 @@ def sphere_volume():
 def run():
     """Execute the challenges.002e module."""
     cubes_menuitems = [
-        TextMenuItem('1', cube_surface_area, 'Surface Area'),
-        TextMenuItem('2', cube_volume, 'Volume'),
+        TextMenuItem('1', calc_cube_surface_area, 'Surface Area'),
+        TextMenuItem('2', calc_cube_volume, 'Volume'),
         TextMenuItem('b', 'back', 'Back'),
         TextMenuItem('q', 'quit', 'Quit'),
         ]
 
     spheres_menuitems = [
-        TextMenuItem('1', sphere_surface_area, 'Surface Area'),
-        TextMenuItem('2', sphere_volume, 'Volume'),
+        TextMenuItem('1', calc_sphere_surface_area, 'Surface Area'),
+        TextMenuItem('2', calc_sphere_volume, 'Volume'),
         TextMenuItem('b', 'back', 'Back'),
         TextMenuItem('q', 'quit', 'Quit'),
         ]
@@ -156,3 +223,4 @@ def run():
         }
     calculator = TextMenuEngine(menus, 'main_menu')
     calculator.run()
+
