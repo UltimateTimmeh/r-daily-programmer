@@ -52,3 +52,4 @@ I have included a list of challenges I have worked on so far.
 - *014e* - [Block Invert](dailyprogrammer/challenges/014e.py): Complete
 - *015e* - [Align Text](dailyprogrammer/challenges/015e.py): Complete
 - *016e* - [Remove Characters](dailyprogrammer/challenges/016e.py): Complete
+- *017e* - [Text Triangle](dailyprogrammer/challenges/017e.py): Complete

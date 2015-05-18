@@ -100,6 +100,8 @@ List of challenges
 .. _015e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/015e.py
 .. _016e.doc: _apidoc/challenges.016e.html
 .. _016e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/016e.py
+.. _017e.doc: _apidoc/challenges.017e.html
+.. _017e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/017e.py
 
 +-----+------------+------+----------------------------+-------------+---------------+-----------+
 | Nr. | Difficulty | ID   | Name                       | Status*     | Documentation | Source    |
@@ -135,6 +137,8 @@ List of challenges
 | 15  | Easy       | 015e | Align Text                 | Complete    | 015e.doc_     | 015e.src_ |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+
 | 16  | Easy       | 016e | Remove Characters          | Complete    | 016e.doc_     | 016e.src_ |
++-----+------------+------+----------------------------+-------------+---------------+-----------+
+| 17  | Easy       | 017e | Text Triangle              | Complete    | 017e.doc_     | 017e.src_ |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+
 
 \*\ **Challenge status**:
