@@ -88,6 +88,8 @@ List of challenges
 .. _010e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/010e.py
 .. _011e.doc: _apidoc/challenges.011e.html
 .. _011e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/011e.py
+.. _012e.doc: _apidoc/challenges.012e.html
+.. _012e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/012e.py
 
 +-----+------------+------+-----------------------+-------------+---------------+-----------+
 | Nr. | Difficulty | ID   | Name                  | Status*     | Documentation | Source    |
@@ -113,6 +115,8 @@ List of challenges
 | 10  | Easy       | 010e | Validate Phone Number | Complete    | 010e.doc_     | 010e.src_ |
 +-----+------------+------+-----------------------+-------------+---------------+-----------+
 | 11  | Easy       | 011e | Doomsday Algorithm    | Complete    | 011e.doc_     | 011e.src_ |
++-----+------------+------+-----------------------+-------------+---------------+-----------+
+| 12  | Easy       | 012e | Permutations          | Complete    | 012e.doc_     | 012e.src_ |
 +-----+------------+------+-----------------------+-------------+---------------+-----------+
 
 \*\ **Challenge status**:

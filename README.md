@@ -47,3 +47,4 @@ I have included a list of challenges I have worked on so far.
 - *009e* - [Sort Numbers](dailyprogrammer/challenges/009e.py): Done
 - *010e* - [Validate Phone Number](dailyprogrammer/challenges/010e.py): Complete
 - *011e* - [Doomsday Algorithm](dailyprogrammer/challenges/011e.py): Complete
+- *012e* - [Permutations](dailyprogrammer/challenges/012e.py): Complete
