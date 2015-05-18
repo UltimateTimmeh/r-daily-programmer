@@ -77,7 +77,6 @@ def cube_surface_area(z):
 
     Example::
 
-        >>> from formula import cube_surface_area
         >>> cube_surface_area(3.)
         54.0
     """
@@ -93,7 +92,6 @@ def cube_volume(z):
 
     Example::
 
-        >>> from formula import cube_volume
         >>> cube_volume(3.)
         27.0
     """
@@ -110,7 +108,6 @@ def sphere_surface_area(r):
 
     Example::
 
-        >>> from formula import sphere_surface_area
         >>> sphere_surface_area(3.)
         113.09733552923255
     """
@@ -126,7 +123,6 @@ def sphere_volume(r):
 
     Example::
 
-        >>> from formula import sphere_volume
         >>> sphere_volume(3.)
         113.09733552923254
     """

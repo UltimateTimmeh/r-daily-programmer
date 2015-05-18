@@ -22,7 +22,6 @@ class TextMenuItem(object):
 
     Example::
 
-        >>> from textmenu import TextMenuItem
         >>> tmi = TextMenuItem('1', 'Hello!', 'Say hello')
         >>> print(tmi)
         1. Say hello
@@ -52,7 +51,6 @@ class TextMenu(object):
 
     Example::
 
-        >>> from textmenu import TextMenuItem, TextMenu
         >>> def say_hello(): print('Hello!')
         ...
         >>> def say_goodbye(): print('Goodbye!')
@@ -94,7 +92,6 @@ class TextMenu(object):
 
         Example::
 
-            >>> from textmenu import TextMenuItem, TextMenu
             >>> def say_hello(): print('Hello!')
             ...
             >>> def say_goodbye(): print('Goodbye!')
@@ -117,7 +114,6 @@ class TextMenu(object):
 
         Example::
 
-            >>> from textmenu import TextMenuItem, TextMenu
             >>> def say_hello(): print('Hello!')
             ...
             >>> def say_goodbye(): print('Goodbye!')
@@ -165,7 +161,6 @@ class TextMenuEngine(object):
 
     Example::
 
-        >>> from textmenu import TextMenuItem, TextMenu, TextMenuEngine
         >>> def say_hello(): print('Hello!')
         ...
         >>> tm_main = TextMenu('Main', [
@@ -218,7 +213,6 @@ class TextMenuEngine(object):
 
         Example::
 
-            >>> from textmenu import TextMenuItem, TextMenu, TextMenuEngine
             >>> tm = TextMenu('Menu', [
             ...     TextMenuItem('1', 'action', 'Menu Item 1'),
             ... ])
@@ -258,3 +252,4 @@ class TextMenuEngine(object):
                 break
             else:
                 action()
+

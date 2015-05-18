@@ -55,7 +55,6 @@ def swap(x, ii, jj):
 
     Example::
 
-        >>> from sort import swap
         >>> x = ['a', 'b', 'c', 'd', 'e']
         >>> swap(x, 0, 4)
         'a'
@@ -84,12 +83,12 @@ def insertion(x, verbose=False):
 
     Example::
 
-        >>> import random, sort
+        >>> import random
         >>> x = list(range(1, 6))
         >>> random.shuffle(x)
         >>> x
         [4, 1, 3, 5, 2]
-        >>> sort.insertion(x, verbose=True)
+        >>> insertion(x, verbose=True)
         Taking out element '1' --> [4, '_', 3, 5, 2]
         Shifting empty space to the left --> ['_', 4, 3, 5, 2]
         Inserting pivot element in empty space --> [1, 4, 3, 5, 2]
@@ -140,12 +139,12 @@ def selection(x,  verbose=False):
 
     Example::
 
-        >>> import random, sort
+        >>> import random
         >>> x = list(range(1, 6))
         >>> random.shuffle(x)
         >>> x
         [2, 4, 3, 1, 5]
-        >>> sort.selection(x, verbose=True)
+        >>> selection(x, verbose=True)
         Start looking for element to put in location 0.
         Currect smallest is 0='2'. Comparing with 1='4', which is greater, so the smallest remains the same.
         Currect smallest is 0='2'. Comparing with 2='3', which is greater, so the smallest remains the same.
@@ -218,12 +217,12 @@ def merge(x, verbose=False, _layer=0):
 
     Example::
 
-        >>> import random, sort
+        >>> import random
         >>> x = list(range(1, 6))
         >>> random.shuffle(x)
         >>> x
         [2, 3, 5, 1, 4]
-        >>> sort.merge(x, verbose=True)
+        >>> merge(x, verbose=True)
         Splitting [2, 3, 5, 1, 4] --> [2, 3] + [5, 1, 4]
         Performing merge sort on [2, 3]
         |   Splitting [2, 3] --> [2] + [3]
@@ -314,12 +313,12 @@ def quick(x, verbose=False, _lo=0, _hi=None, _layer=0):
 
     Example::
 
-        >>> import random, sort
+        >>> import random
         >>> x = list(range(1, 6))
         >>> random.shuffle(x)
         >>> x
         [2, 3, 4, 1, 5]
-        >>> sort.quick(x, verbose=True)
+        >>> quick(x, verbose=True)
         The pivot element is '4'.
         [2, 3, 4, 1, 5] <-- swapping pivot to the end --> [2, 3, 5, 1, 4]
         [2, 3, 5, 1, 4] <-- swapping 0 with 0 --> [2, 3, 5, 1, 4] (pivot location updated to 1)
@@ -408,12 +407,12 @@ def heap(x, verbose=False):
 
     Example::
 
-        >>> import random, sort
+        >>> import random
         >>> x = list(range(1, 6))
         >>> random.shuffle(x)
         >>> x
         [2, 5, 4, 3, 1]
-        >>> sort.heap(x, verbose=True)
+        >>> heap(x, verbose=True)
         Start constructing heap from full list: [2, 5, 4, 3, 1]
         |   Considering sublist from 1 to 5: [5, 4, 3, 1]
         |   |   Starting with root '5'
@@ -566,12 +565,12 @@ def bubble(x, verbose=False):
 
     Example::
 
-        >>> import random, sort
+        >>> import random
         >>> x = list(range(1, 6))
         >>> random.shuffle(x)
         >>> x
         [1, 5, 2, 3, 4]
-        >>> sort.bubble(x, verbose=True)
+        >>> bubble(x, verbose=True)
         Starting new pass, last swap in previous pass was at 5.
         Comparing 0='1' with 1='5'... Looks OK.
         Comparing 1='5' with 2='2': [1, 5, 2, 3, 4] <-- swapping 1 with 2 --> [1, 2, 5, 3, 4]
@@ -626,12 +625,12 @@ def shell(x, gap_sequence='ciura', verbose=False):
 
     Example::
 
-        >>> import random, sort
+        >>> import random
         >>> x = list(range(1, 6))
         >>> random.shuffle(x)
         >>> x
         [5, 3, 1, 4, 2]
-        >>> sort.shell(x, verbose=True)
+        >>> shell(x, verbose=True)
         Using gap sequence 'ciura': [4, 1]
         Start pass with gap 4...
             Taking out element '2' --> [5, 3, 1, 4, '_']
@@ -702,12 +701,12 @@ def comb(x, shrink=1.3, verbose=False):
 
     Example::
 
-        >>> import random, sort
+        >>> import random
         >>> x = list(range(1, 6))
         >>> random.shuffle(x)
         >>> x
         [4, 2, 1, 5, 3]
-        >>> sort.comb(x, verbose=True)
+        >>> comb(x, verbose=True)
         Start comb with gap 3...
         |   Comparing 0='4' with 3='5'... Looks OK.
         |   Comparing 1='2' with 4='3'... Looks OK.

@@ -23,7 +23,6 @@ def random_password(l=8):
 
     Example::
 
-        >>> from password import random_password
         >>> random_password()
         'ejKPWSNF'
         >>> random_password(l=20)
@@ -50,7 +49,6 @@ def hash_password(pwd, salt=None):
 
     Example::
 
-        >>> from password import hash_password
         >>> hash_password('password')
         'c7ca164ff8952dfef769f75398ebbad20952ee15fd9eae936d823ff57b7ce275:a9192d85fdd2465a9d1dbce823a52d0c'
     """
@@ -75,7 +73,6 @@ def validate_password(pwd, hs):
 
     Example::
 
-        >>> from password import validate_password
         >>> hs = 'c7ca164ff8952dfef769f75398ebbad20952ee15fd9eae936d823ff57b7ce275:a9192d85fdd2465a9d1dbce823a52d0c'
         >>> validate_password('passwrd', hs)
         False

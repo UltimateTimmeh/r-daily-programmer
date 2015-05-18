@@ -36,7 +36,6 @@ class EnhancedString(object):
 
         Example::
 
-            >>> from enhancedstring import EnhancedString
             >>> str_ = EnhancedString('abcdaabbccdd')
             >>> str_.remove('bc')
             >>> print(str_)
@@ -55,7 +54,6 @@ class EnhancedString(object):
 
         Example::
 
-            >>> from enhancedstring import EnhancedString
             >>> str_ = EnhancedString('a\\nbcd\\nefghi')
             >>> print(str_)
             a

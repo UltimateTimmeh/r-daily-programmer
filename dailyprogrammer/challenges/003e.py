@@ -76,7 +76,6 @@ def caesar(msg, rs, dir='encode'):
 
     Example::
 
-        >>> from cipher import caesar
         >>> msg = 'DailyProgrammer'
         >>> caesar(msg, 10)
         'nksvizbyqbkwwob'
@@ -114,7 +113,6 @@ def caesar_brute_force(msg_encoded):
 
     Example::
 
-        >>> from cipher import caesar_brute_force
         >>> msg = 'qnvylcebtenzzre'
         >>> print('\\n'.join(caesar_brute_force(msg)))
         qnvylcebtenzzre

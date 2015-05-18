@@ -67,8 +67,6 @@ def trunc(dec, tr):
 
     Example::
 
-        >>> from decimal import Decimal
-        >>> from pi import trunc
         >>> pi = Decimal('3.141592')
         >>> trunc(pi, 4)
         Decimal('3.14')
@@ -90,7 +88,6 @@ def bbp(prec=15, ptol=2):
 
     Example::
 
-        >>> from pi import bbp
         >>> bbp()
         Decimal('3.141592653589793')
         >>> import math
@@ -126,7 +123,6 @@ def bellard(prec=15, ptol=2):
 
     Example::
 
-        >>> from pi import bellard
         >>> bellard()
         Decimal('3.141592653589793')
         >>> import math
@@ -166,7 +162,6 @@ def chudnovsky(prec=15, ptol=2):
 
     Example::
 
-        >>> from pi import chudnovsky
         >>> chudnovsky()
         Decimal('3.141592653589793')
         >>> import math

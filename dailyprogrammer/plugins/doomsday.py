@@ -44,7 +44,6 @@ def is_leapyear(year):
 
     Example::
 
-        >>> from doomsday import is_leapyear
         >>> is_leapyear(2015)
         False
         >>> is_leapyear(2016)
@@ -77,7 +76,6 @@ class Date(object):
 
     Example::
 
-        >>> from doomsday import Date
         >>> date = Date(2015, 5, 13)
         >>> print(date)
         2015-5-13
@@ -108,7 +106,6 @@ class Date(object):
 
         Example::
 
-            >>> from doomsday import Date
             >>> date = Date(2016, 2, 29)
             >>> date.is_valid()
             True
@@ -135,7 +132,6 @@ class Date(object):
 
         Example::
 
-            >>> from doomsday import Date
             >>> date = Date(2015, 5, 13)
             >>> date.century()
             21
@@ -154,7 +150,6 @@ class Date(object):
 
         Example::
 
-            >>> from doomsday import Date
             >>> date = Date(2015, 5, 13)
             >>> date.anchorday(h=True)
             'tuesday'
@@ -179,7 +174,6 @@ class Date(object):
 
         Example::
 
-            >>> from doomsday import Date
             >>> date = Date(2015, 5, 13)
             >>> date.doomsday(h=True)
             'saturday'
@@ -201,7 +195,6 @@ class Date(object):
 
         Example::
 
-            >>> from doomsday import Date
             >>> date = Date(2015, 5, 13)
             >>> date.ndays_in_month()
             31
@@ -220,7 +213,6 @@ class Date(object):
 
         Example::
 
-            >>> from doomsday import Date
             >>> date = Date(2015, 5, 13)
             >>> date.doomsdate()
             9
@@ -239,7 +231,6 @@ class Date(object):
 
         Example::
 
-            >>> from doomsday import Date
             >>> date = Date(2015, 5, 13)
             >>> date.weekday(h=True)
             'wednesday'
@@ -258,7 +249,6 @@ class Date(object):
 
         Example::
 
-            >>> from doomsday import Date
             >>> date = Date(2015, 5, 13)
             >>> date.cumulative_day_of_year()
             133
@@ -277,7 +267,6 @@ class Date(object):
 
         Example::
 
-            >>> from doomsday import Date
             >>> date = Date.random()
             >>> print(date)
             2191-3-6

@@ -43,7 +43,6 @@ class PhoneNumber(object):
 
     Example::
 
-        >>> from phonenumber import PhoneNumber
         >>> nr = PhoneNumber('123-45-7890')
         >>> nr.format()
         'xxx-xx-xxxx'

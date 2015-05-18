@@ -109,7 +109,6 @@ class Beep(object):
 
     Example::
 
-        >>> from morse import Beep
         >>> Beep(200, 50, 0).play()
     """
 
@@ -149,7 +148,6 @@ class MorseConvention(object):
 
     Example::
 
-        >>> from morse import MorseConvention
         >>> morse_itu = MorseConvention(' '*3, ' '*7, {'A': '. ...', 'B': '... . . .'})
         >>> morse_itu.encode('ABBA')
         '. ...   ... . . .   ... . . .   . ...'
@@ -180,7 +178,6 @@ class MorseConvention(object):
 
         Example::
 
-            >>> from morse import MorseConvention
             >>> morse_itu = MorseConvention(' '*3, ' '*7, {'A': '. ...'})
             >>> morse_itu.is_valid_morse('.-')
             False
@@ -247,7 +244,6 @@ class MorseConvention(object):
 
         Example::
 
-            >>> from morse import Beep, MorseConvention
             >>> beep_space = Beep(200, 200, 250)
             >>> beep_dot = Beep(400, 200, 250)
             >>> beepmap = {' ': beep_space, '.': beep_dot}

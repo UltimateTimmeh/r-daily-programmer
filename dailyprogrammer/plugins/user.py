@@ -20,7 +20,6 @@ class User(object):
 
     Example::
 
-        >>> from user import User
         >>> name = 'John Smith'
         >>> info = {'age': 50, 'username': 'johnsmith'}
         >>> usr1 = User(name=name, **info)
@@ -77,7 +76,6 @@ class User(object):
 
         Example::
 
-            >>> from user import User
             >>> usr = User(name='John Smith', age=50, username='johnsmith')
             >>> usr.write('output.txt')
             >>> with open('output.txt', 'r') as fil: print(fil.read())
@@ -109,7 +107,6 @@ class UserDatabase(object):
 
     Example::
 
-        >>> from user import User, UserDatabase
         >>> usr1 = User(username='johnsmith', password='password')
         >>> usr2 = User(username='janesmith', password='possward')
         >>> userdb = UserDatabase([usr1, usr2])
@@ -151,7 +148,6 @@ class UserDatabase(object):
 
         Example::
 
-            >>> from user import UserDatabase
             >>> userdb = UserDatabase()
             >>> print(userdb)
             User database:
@@ -177,7 +173,6 @@ class UserDatabase(object):
 
         Example::
 
-            >>> from user import User, UserDatabase
             >>> usr1 = User(name='John Smith', age=50, username='johnsmith')
             >>> usr2 = User(name='Jane Smith', username='janesmith', password='possward')
             >>> userdb = UserDatabase()
@@ -198,7 +193,6 @@ class UserDatabase(object):
 
         Example::
 
-            >>> from user import User, UserDatabase
             >>> userdb = UserDatabase()
             >>> print(userdb)
             User database:
@@ -226,7 +220,6 @@ class UserDatabase(object):
 
         Example::
 
-            >>> from user import User, UserDatabase
             >>> usr1 = User(username='johnsmith', password='secret1')
             >>> usr2 = User(username='janesmith', password='secret2')
             >>> usr3 = User(username='jeansmith', password='secret1')
@@ -258,7 +251,6 @@ class UserDatabase(object):
 
         Example::
 
-            >>> from user import User, UserDatabase
             >>> usr = User(username='johnsmith', password='secret')
             >>> userdb = UserDatabase([usr])
             >>> userdb.write('output.txt')
@@ -319,3 +311,4 @@ class UserDatabase(object):
             user = User(**kwargs)
             users.append(user)
         return cls(users, attrs_req)
+
