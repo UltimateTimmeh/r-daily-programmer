@@ -37,7 +37,7 @@ from plugins.doomsday import Date
 
 
 def run():
-    """Execute the challenges.010e module."""
+    """Execute the challenges.011e module."""
     year = int(input("Year (1583 - ...) > "))
     month = int(input("Month (1 - 12) > "))
     ndays_in_month = Date(year, month, 1).ndays_in_month()
