@@ -26,6 +26,17 @@ class TestPhoneNumber(unittest.TestCase):
         self.assertEqual(nr.country, 'US')
 
 
+    def test_raw(self):
+        """Test method :meth:`plugins.phonenumber.PhoneNumber.raw`
+
+        **Tested:**
+
+        - The returned raw phone number is correct.
+        """
+        nr = phonenumber.PhoneNumber('1-800-VERIZON')
+        self.assertEqual(nr.raw(), '1-800-8374966')
+
+
     def test_format(self):
         """Test method :meth:`plugins.phonenumber.PhoneNumber.format`
 
@@ -60,5 +71,21 @@ class TestPhoneNumber(unittest.TestCase):
         self.assertEqual(result, expected)
 
 
+    def test_transform_to_format(self):
+        """Test method :meth:`plugins.phonenumber.PhoneNumber.transform_to_format`
+
+        **Tested:**
+
+        - The returned transformed phone number is correct.
+        - A ValueError is raised when there is a mismatch between the length of the phone
+          number and the length of the desired format.
+        """
+        nr = phonenumber.PhoneNumber('1-800-VERIZON')
+        self.assertEqual(nr.transform_to_format('x-xxx-xxx-xxxx'), '1-800-837-4966')
+        with self.assertRaises(ValueError):
+            nr.transform_to_format('x-xxx-xxx-xxx')
+
+
 if __name__ == '__main__':
     unittest.main()
+

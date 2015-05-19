@@ -102,6 +102,8 @@ List of challenges
 .. _016e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/016e.py
 .. _017e.doc: _apidoc/challenges.017e.html
 .. _017e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/017e.py
+.. _018e.doc: _apidoc/challenges.018e.html
+.. _018e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/018e.py
 
 +-----+------------+------+----------------------------+-------------+---------------+-----------+
 | Nr. | Difficulty | ID   | Name                       | Status*     | Documentation | Source    |
@@ -139,6 +141,8 @@ List of challenges
 | 16  | Easy       | 016e | Remove Characters          | Complete    | 016e.doc_     | 016e.src_ |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+
 | 17  | Easy       | 017e | Text Triangle              | Complete    | 017e.doc_     | 017e.src_ |
++-----+------------+------+----------------------------+-------------+---------------+-----------+
+| 18  | Easy       | 018e | Easy Phone Number          | Complete    | 018e.doc_     | 018e.src_ |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+
 
 \*\ **Challenge status**:
