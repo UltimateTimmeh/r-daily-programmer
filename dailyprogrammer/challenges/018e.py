@@ -6,7 +6,7 @@ Information
 .. _reddit: http://www.reddit.com/r/dailyprogrammer/comments/qit0h/352012_challenge_18_easy/
 .. _source: https://github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/018e.py
 
-| **Challenge name:**  Easy Phonenumber (reddit_, source_)
+| **Challenge name:**  Easy Phone Number (reddit_, source_)
 | **Challenge number:** 18
 | **Difficulty:** Easy
 | **Submission date:** 2012-03-05
