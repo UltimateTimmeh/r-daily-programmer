@@ -106,6 +106,8 @@ List of challenges
 .. _018e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/018e.py
 .. _019e.doc: _apidoc/challenges.019e.html
 .. _019e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/019e.py
+.. _020e.doc: _apidoc/challenges.020e.html
+.. _020e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/020e.py
 
 +-----+------------+------+----------------------------+-------------+---------------+-----------+
 | Nr. | Difficulty | ID   | Name                       | Status*     | Documentation | Source    |
@@ -147,6 +149,8 @@ List of challenges
 | 18  | Easy       | 018e | Easy Phone Number          | Complete    | 018e.doc_     | 018e.src_ |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+
 | 19  | Easy       | 019e | Character Count            | Complete    | 019e.doc_     | 019e.src_ |
++-----+------------+------+----------------------------+-------------+---------------+-----------+
+| 20  | Easy       | 020e | Find Primes                | Complete    | 020e.doc_     | 020e.src_ |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+
 
 \*\ **Challenge status**:

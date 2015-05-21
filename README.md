@@ -54,4 +54,5 @@ I have included a list of challenges I have worked on so far.
 - *016e* - [Remove Characters](dailyprogrammer/challenges/016e.py): Complete
 - *017e* - [Text Triangle](dailyprogrammer/challenges/017e.py): Complete
 - *018e* - [Easy Phone Number](dailyprogrammer/challenges/018e.py): Complete
-- *019e* - [Character Count](dailyprogrammer/challenges/018e.py): Complete
+- *019e* - [Character Count](dailyprogrammer/challenges/019e.py): Complete
+- *020e* - [Find Primes](dailyprogrammer/challenges/020e.py): Complete
