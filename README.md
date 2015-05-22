@@ -56,3 +56,4 @@ I have included a list of challenges I have worked on so far.
 - *018e* - [Easy Phone Number](dailyprogrammer/challenges/018e.py): Complete
 - *019e* - [Character Count](dailyprogrammer/challenges/019e.py): Complete
 - *020e* - [Find Primes](dailyprogrammer/challenges/020e.py): Complete
+- *021e* - [Next Permutation](dailyprogrammer/challenges/021e.py): Complete
