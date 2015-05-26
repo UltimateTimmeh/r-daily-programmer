@@ -65,3 +65,15 @@ class TestEnhancedString(unittest.TestCase):
         str_.align('<')
         self.assertEqual(str(str_), 'a\nbcd\nefghi')
 
+
+    def test_count_characters(self):
+        """Test method :meth:`plugins.enhancedstring.EnhancedString.count_characters`
+
+        **Tested:**
+
+        - The character count has been correctly added to the dictionary.
+        """
+        count = {}
+        enhancedstring.EnhancedString('aaa bb c . !').count_characters(count)
+        self.assertEqual(count, {'a': 3, 'b': 2, 'c': 1, ' ': 4, '.': 1, '!': 1})
+

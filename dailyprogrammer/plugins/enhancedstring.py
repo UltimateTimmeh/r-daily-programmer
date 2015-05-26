@@ -79,3 +79,23 @@ class EnhancedString(object):
             '{0:{1}{2}}'.format(line, a, ml).rstrip() for line in stripped
             ])
 
+
+    def count_characters(self, dict_):
+        """Count the prevalence of each character in a text and add the count to a dictionary.
+
+        :param str text: text to count the characters of
+        :param dict dict\_: dictionary to which the count will be added
+
+        Example::
+
+            >>> count = {}
+            >>> EnhancedString('aaa bb c . !').count_characters(count)
+            >>> count
+            {'a': 3, 'b': 2, 'c': 1, ' ': 4, '.': 1, '!': 1}
+        """
+        for char in self.str_:
+            if char in dict_:
+                dict_[char] += 1
+            else:
+                dict_[char] = 1
+

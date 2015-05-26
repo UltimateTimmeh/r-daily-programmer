@@ -171,25 +171,7 @@ Module contents
 
 from urllib.request import urlopen
 
-
-def count_characters(text, dict_):
-    """Count the prevalence of each character in a text and add the count to a dictionary.
-
-    :param str text: text to count the characters of
-    :param dict dict\_: dictionary to which the count will be added
-
-    Example::
-
-        >>> count = {}
-        >>> count_characters('aaa bb c . !', count)
-        >>> count
-        {'a': 3, 'b': 2, 'c': 1, ' ': 4, '.': 1, '!': 1}
-    """
-    for char in text:
-        if char in dict_:
-            dict_[char] += 1
-        else:
-            dict_[char] = 1
+from plugins.enhancedstring import EnhancedString
 
 
 def format_header(title, above='', below=''):
@@ -237,7 +219,7 @@ def run():
             lines_skipped.append(line)
         else:  ## If none of the previous, then the line should be counted.
             nlines_counted += 1
-            count_characters(line, count)
+            EnhancedString(line).count_characters(count)
 
     # Crunch the numbers.
     ## Line count
