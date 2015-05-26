@@ -2,7 +2,7 @@
 """
 .. _source: https://github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/plugins/listtools.py
 
-Collection of useful operations on lists.
+Collection of useful operations on lists (source_).
 """
 
 
