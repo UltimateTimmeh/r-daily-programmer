@@ -38,33 +38,7 @@ Module contents
 ---------------
 """
 
-
-def split_list(x, f=0.5):
-    """Split a list in two at a certain fraction of its length.
-
-    :param list x: the list to split
-    :param float f: split fraction, the fraction at which the list should be split, must be between
-                    0. and 1. (default 0.5)
-    :return: tuple containing the two parts of the split list
-    :rtype: tuple(list, list)
-    :raise: ValueError if the split fraction is not between 0. and 1.
-
-    Example::
-
-        >>> x = list(range(10))
-        >>> split_list(x)
-        ([0, 1, 2, 3, 4], [5, 6, 7, 8, 9])
-        >>> split_list(x, f=0.2)
-        ([0, 1], [2, 3, 4, 5, 6, 7, 8, 9])
-        >>> split_list(x, f=0.8)
-        ([0, 1, 2, 3, 4, 5, 6, 7], [8, 9])
-        >>> split_list(x, f=1.0)
-        ([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], [])
-    """
-    if f < 0. or f > 1.:
-        raise ValueError("Split fraction should be between 0. and 1. (got {})".format(f))
-    mid = round(len(x)*f)
-    return x[:mid], x[mid:]
+from plugins.listtools import split_list
 
 
 def run():

@@ -200,6 +200,8 @@ List of plugins
 .. _doomsday.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/plugins/doomsday.py
 .. _enhancedstring.doc: _apidoc/plugins.enhancedstring.html
 .. _enhancedstring.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/plugins/enhancedstring.py
+.. _listtools.doc: _apidoc/plugins.listtools.html
+.. _listtools.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/plugins/listtools.py
 .. _password.doc: _apidoc/plugins.password.html
 .. _password.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/plugins/password.py
 .. _phonenumber.doc: _apidoc/plugins.phonenumber.html
@@ -217,6 +219,8 @@ List of plugins
 | doomsday       | doomsday.doc_       | doomsday.src_       |
 +----------------+---------------------+---------------------+
 | enhancedstring | enhancedstring.doc_ | enhancedstring.src_ |
++----------------+---------------------+---------------------+
+| listtools      | listtools.doc_      | listtools.src_      |
 +----------------+---------------------+---------------------+
 | password       | password.doc_       | password.src_       |
 +----------------+---------------------+---------------------+
