@@ -38,8 +38,9 @@ def deconstruct_number(number):
 
     :param number: the number to deconstruct
     :type number: int or float
-    :return: list containing the number's digits, location of the number's dot (if any)
-    :rtype: list(int, ...), None or int
+    :return: tuple with the list containing the number's digits and the location of the number's
+             dot (if any)
+    :rtype: tuple(list(int, ...), None or int)
 
     Example::
 
