@@ -36,8 +36,8 @@ Example run
 
 .. note:: Note how in the second example, because there is only one 'a' in the first list, and
           there are two 'a's in the second list, an extra 'a' is appended to the output. This means
-          my implementation is able to 'merge' two lists instead of merely appending missing
-          items.
+          my implementation is able to 'merge' two lists instead of merely appending a single
+          instance of each missing item.
 
 Module contents
 ---------------
