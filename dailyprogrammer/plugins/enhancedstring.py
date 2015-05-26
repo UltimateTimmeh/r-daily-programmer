@@ -83,7 +83,8 @@ class EnhancedString(object):
     def count_characters(self, count=None):
         """Add the prevalence of each character in the enhanced string to a dictionary.
 
-        :param dict count: dictionary to which the count will be added (default {})
+        :param count: dictionary to which the count will be added (default None)
+        :type count: None or dict
         :return: the dictionary to which the count was added
         :rtype: dict
 

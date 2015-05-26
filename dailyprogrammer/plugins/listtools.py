@@ -75,7 +75,8 @@ def count_items(x, count=None):
     """Count the items in a list.
 
     :param list x: the list of which items must be counted
-    :param dict count: dictionary to which the count will be added (default {})
+    :param count: dictionary to which the count will be added (default None)
+    :type count: None or dict
     :return: the dictionary to which the count was added
     :rtype: dict
 
