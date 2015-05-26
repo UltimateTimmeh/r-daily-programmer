@@ -80,22 +80,28 @@ class EnhancedString(object):
             ])
 
 
-    def count_characters(self, dict_):
-        """Count the prevalence of each character in a text and add the count to a dictionary.
+    def count_characters(self, count=None):
+        """Add the prevalence of each character in the enhanced string to a dictionary.
 
-        :param str text: text to count the characters of
-        :param dict dict\_: dictionary to which the count will be added
+        :param dict count: dictionary to which the count will be added (default {})
+        :return: the dictionary to which the count was added
+        :rtype: dict
 
         Example::
 
-            >>> count = {}
-            >>> EnhancedString('aaa bb c . !').count_characters(count)
+            >>> count = EnhancedString('aaa bb c . !').count_characters()
             >>> count
             {'a': 3, 'b': 2, 'c': 1, ' ': 4, '.': 1, '!': 1}
+            >>> count = EnhancedString('a dd eeee').count_characters(count)
+            >>> count
+            {'a': 4, 'b': 2, 'c': 1, 'd': 2, 'e': 4, ' ': 6, '.': 1, '!': 1}
         """
+        if count is None:
+            count = {}
         for char in self.str_:
-            if char in dict_:
-                dict_[char] += 1
+            if char in count:
+                count[char] += 1
             else:
-                dict_[char] = 1
+                count[char] = 1
+        return count
 

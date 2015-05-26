@@ -71,3 +71,59 @@ def split_list(x, f=0.5):
     return x[:mid], x[mid:]
 
 
+def count_items(x, count=None):
+    """Count the items in a list.
+
+    :param list x: the list of which items must be counted
+    :param dict count: dictionary to which the count will be added (default {})
+    :return: the dictionary to which the count was added
+    :rtype: dict
+
+    Example::
+
+        >>> count = count_items(['a', 'b', 'b', 'c', 'c', 'c', 'a'])
+        >>> count
+        {'a': 2, 'b': 2, 'c': 3}
+        >>> count = count_items(['d', 'd', 'e', 'e', 'a', 'e', 'e'])
+        >>> count
+        {'a': 3, 'b': 2, 'c': 3, 'd': 2, 'e': 4}
+    """
+    if count is None:
+        count = {}
+    for xi in x:
+        if xi in count:
+            count[xi] += 1
+        else:
+            count[xi] = 1
+    return count
+
+
+def most_prevalent_items(x):
+    """Determine the most prevalent item(s) in a list.
+
+    :param list x: the list of which the most prevalent item(s) must be determined
+    :return: list containing the most prevalent item(s)
+    :rtype: list
+
+    Example::
+
+        >>> most_prevalent_items(['a', 'b', 'b', 'c'])
+        ['b']
+        >>> most_prevalent_items(['a', 'a', 'b', 'b', 'c'])
+        ['a', 'b']
+    """
+    count = count_items(x)
+    maxcount = 0
+    maxitems = []
+    s = set(x)
+    for xi in s:
+        if count[xi] > maxcount:
+            maxcount = count[xi]
+            maxitems = [xi]
+        elif count[xi] == maxcount:
+            maxitems.append(xi)
+        print(count)
+        print(maxcount)
+        print(maxitems)
+    return maxitems
+

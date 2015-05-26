@@ -50,5 +50,32 @@ class TestListtoolsFunctions(unittest.TestCase):
             self.assertEqual(listtools.split_list(x, f=case[0]), case[1])
 
 
+    def test_count_items(self):
+        """Test function :func:`plugins.listtools.count_items`
+
+        **Tested:**
+
+        - The item count is correctly added to a new dictionary.
+        - The item count is correctly added to an existing dictionary.
+        """
+        x1 = ['a', 'b', 'b', 'c', 'c', 'c', 'a']
+        x2 = ['d', 'e', 'e', 'e', 'd', 'a', 'e']
+        count = listtools.count_items(x1)
+        self.assertEqual(count, {'a': 2, 'b': 2, 'c': 3})
+        count = listtools.count_items(x2, count=count)
+        self.assertEqual(count, {'a': 3, 'b': 2, 'c': 3, 'd': 2,  'e': 4})
+
+
+    def test_most_prevalent_items(self):
+        """Test function :func:`plugins.listtools.most_prevalent_items`
+
+        **Tested:**
+
+        - The returned list of most prevalent items is correct.
+        """
+        self.assertEqual(listtools.most_prevalent_items(['a', 'b', 'b', 'c']), ['b'])
+        self.assertEqual(listtools.most_prevalent_items(['a', 'b', 'b', 'c', 'a']), ['a', 'b'])
+
+
 if __name__ == '__main__':
     unittest.main()
