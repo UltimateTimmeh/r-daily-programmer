@@ -58,3 +58,4 @@ I have included a list of challenges I have worked on so far.
 - *020e* - [Find Primes](dailyprogrammer/challenges/020e.py): Complete
 - *021e* - [Next Permutation](dailyprogrammer/challenges/021e.py): Complete
 - *022e* - [Merge Lists](dailyprogrammer/challenges/022e.py): Complete
+- *023e* - [Split Lists](dailyprogrammer/challenges/023e.py): Complete

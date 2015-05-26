@@ -112,6 +112,8 @@ List of challenges
 .. _021e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/021e.py
 .. _022e.doc: _apidoc/challenges.022e.html
 .. _022e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/022e.py
+.. _023e.doc: _apidoc/challenges.023e.html
+.. _023e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/023e.py
 
 +-----+------------+------+----------------------------+-------------+---------------+-----------+
 | Nr. | Difficulty | ID   | Name                       | Status*     | Documentation | Source    |
@@ -158,7 +160,9 @@ List of challenges
 +-----+------------+------+----------------------------+-------------+---------------+-----------+
 | 21  | Easy       | 021e | Next Permutation           | Complete    | 021e.doc_     | 021e.src_ |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+
-| 22  | Easy       | 021e | Merge Lists                | Complete    | 022e.doc_     | 022e.src_ |
+| 22  | Easy       | 022e | Merge Lists                | Complete    | 022e.doc_     | 022e.src_ |
++-----+------------+------+----------------------------+-------------+---------------+-----------+
+| 23  | Easy       | 023e | Split Lists                | Complete    | 023e.doc_     | 023e.src_ |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+
 
 \*\ **Challenge status**:
