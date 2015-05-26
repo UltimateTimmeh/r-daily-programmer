@@ -116,15 +116,11 @@ def most_prevalent_items(x):
     count = count_items(x)
     maxcount = 0
     maxitems = []
-    s = set(x)
-    for xi in s:
+    for xi in set(x):
         if count[xi] > maxcount:
             maxcount = count[xi]
             maxitems = [xi]
         elif count[xi] == maxcount:
             maxitems.append(xi)
-        print(count)
-        print(maxcount)
-        print(maxitems)
     return maxitems
 

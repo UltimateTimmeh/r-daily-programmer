@@ -59,3 +59,4 @@ I have included a list of challenges I have worked on so far.
 - *021e* - [Next Permutation](dailyprogrammer/challenges/021e.py): Complete
 - *022e* - [Merge Lists](dailyprogrammer/challenges/022e.py): Complete
 - *023e* - [Split Lists](dailyprogrammer/challenges/023e.py): Complete
+- *025e* - [Vote Counter](dailyprogrammer/challenges/025e.py): Complete
