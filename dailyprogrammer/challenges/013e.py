@@ -43,14 +43,14 @@ Module contents
 ---------------
 """
 
-from plugins.doomsday import ndays_in_month, Date
+from plugins.doomsday import is_leapyear, ndays_in_month, Date
 
 
 def run():
     """Execute the challenges.013e module."""
     year = int(input("Year (1583 - ...) > "))
     month = int(input("Month (1 - 12) > "))
-    ndays = ndays_in_month(year, month)
+    ndays = ndays_in_month(month, is_leapyear(year))
     day = int(input("Day (1 - {}) > ".format(ndays)))
     date = Date(year, month, day)
     cumulday = date.cumulative_day_of_year()
