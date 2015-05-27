@@ -35,8 +35,8 @@ class TestDoomsdayFunctions(unittest.TestCase):
 
         **Tested:**
 
-        - The correct common century is returned.
-        - The correct doomsday century is returned.
+        - The correct century according to the common definition is returned.
+        - The correct century according to the doomsday definition is returned.
         """
         self.assertEqual(doomsday.century(2000), 20)
         self.assertEqual(doomsday.century(2000, mode='doomsday'), 21)
@@ -78,7 +78,7 @@ class TestDoomsdayFunctions(unittest.TestCase):
 
 
     def test_doomsdate(self):
-        """Test function :func:`plugins.doomsday.Date.doomsdate`
+        """Test function :func:`plugins.doomsday.doomsdate`
 
         **Tested:**
 
