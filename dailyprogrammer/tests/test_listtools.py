@@ -57,13 +57,15 @@ class TestListtoolsFunctions(unittest.TestCase):
 
         - The item count is correctly added to a new dictionary.
         - The item count is correctly added to an existing dictionary.
+        - The dictionary to which a count is added is not changed in-place.
         """
         x1 = ['a', 'b', 'b', 'c', 'c', 'c', 'a']
         x2 = ['d', 'e', 'e', 'e', 'd', 'a', 'e']
-        count = listtools.count_items(x1)
-        self.assertEqual(count, {'a': 2, 'b': 2, 'c': 3})
-        count = listtools.count_items(x2, count=count)
-        self.assertEqual(count, {'a': 3, 'b': 2, 'c': 3, 'd': 2,  'e': 4})
+        count1 = listtools.count_items(x1)
+        self.assertEqual(count1, {'a': 2, 'b': 2, 'c': 3})
+        count2 = listtools.count_items(x2, counts=count1)
+        self.assertEqual(count2, {'a': 3, 'b': 2, 'c': 3, 'd': 2,  'e': 4})
+        self.assertEqual(count1, {'a': 2, 'b': 2, 'c': 3})
 
 
     def test_most_prevalent_items(self):
@@ -71,10 +73,12 @@ class TestListtoolsFunctions(unittest.TestCase):
 
         **Tested:**
 
-        - The returned list of most prevalent items is correct.
+        - The returned set of most prevalent items is correct.
         """
-        self.assertEqual(listtools.most_prevalent_items(['a', 'b', 'b', 'c']), ['b'])
-        self.assertEqual(listtools.most_prevalent_items(['a', 'b', 'b', 'c', 'a']), ['a', 'b'])
+        x1 = ['a', 'b', 'b', 'c']
+        x2 = ['a', 'b', 'b', 'c', 'a']
+        self.assertEqual(listtools.most_prevalent_items(x1), {'b'})
+        self.assertEqual(listtools.most_prevalent_items(x2), {'a', 'b'})
 
 
 if __name__ == '__main__':

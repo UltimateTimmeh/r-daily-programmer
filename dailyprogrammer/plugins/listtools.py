@@ -5,6 +5,8 @@
 Collection of useful operations on lists (source_).
 """
 
+import copy
+
 
 def merge_lists(x, y):
     """Merge two lists.
@@ -71,56 +73,63 @@ def split_list(x, f=0.5):
     return x[:mid], x[mid:]
 
 
-def count_items(x, count=None):
+def count_items(x, counts=None):
     """Count the items in a list.
 
+    Note that, when providing a dictionary to which the count should be added, a deep copy of this
+    dictionary is made and returned. The provided dictionary is not updated in-place!
+
     :param list x: the list of which items must be counted
-    :param count: dictionary to which the count will be added (default None)
-    :type count: None or dict
-    :return: the dictionary to which the count was added
+    :param counts: dictionary to which the item counts will be added, if None a new dictionary is
+                   created (default None)
+    :type counts: None or dict
+    :return: a deep copy of the provided dictionary, with updated counts for the items in the list
     :rtype: dict
 
     Example::
 
-        >>> count = count_items(['a', 'b', 'b', 'c', 'c', 'c', 'a'])
-        >>> count
-        {'a': 2, 'b': 2, 'c': 3}
-        >>> count = count_items(['d', 'd', 'e', 'e', 'a', 'e', 'e'])
-        >>> count
-        {'a': 3, 'b': 2, 'c': 3, 'd': 2, 'e': 4}
+        >>> counts = count_items(['a', 'b', 'b', 'c', 'c', 'c', 'a'])
+        >>> counts
+        {'b': 2, 'a': 2, 'c': 3}
+        >>> count_items(['d', 'd', 'e', 'e', 'a', 'e', 'e'], counts=counts)  ## The counts are added to the provided dictionary
+        {'b': 2, 'e': 4, 'd': 2, 'a': 3, 'c': 3}
+        >>> counts  ## But the provided dictionary was not updated in-place!
+        {'b': 2, 'a': 2, 'c': 3}
     """
-    if count is None:
-        count = {}
+    if counts is None:
+        counts = {}
+    else:
+        counts = copy.deepcopy(counts)
     for xi in x:
-        if xi in count:
-            count[xi] += 1
+        if xi in counts:
+            counts[xi] += 1
         else:
-            count[xi] = 1
-    return count
+            counts[xi] = 1
+    return counts
 
 
 def most_prevalent_items(x):
     """Determine the most prevalent item(s) in a list.
 
     :param list x: the list of which the most prevalent item(s) must be determined
-    :return: list containing the most prevalent item(s)
-    :rtype: list
+    :return: set containing the most prevalent item(s)
+    :rtype: set
 
     Example::
 
         >>> most_prevalent_items(['a', 'b', 'b', 'c'])
-        ['b']
+        {'b'}
         >>> most_prevalent_items(['a', 'a', 'b', 'b', 'c'])
-        ['a', 'b']
+        {'a', 'b'}
     """
-    count = count_items(x)
+    counts = count_items(x)
     maxcount = 0
-    maxitems = []
-    for xi in x:
-        if count[xi] > maxcount:
-            maxcount = count[xi]
-            maxitems = [xi]
-        elif count[xi] == maxcount and xi not in maxitems:
-            maxitems.append(xi)
+    maxitems = set()
+    for item, count in counts.items():
+        if count > maxcount:
+            maxcount = count
+            maxitems = set(item)
+        elif count == maxcount:
+            maxitems.add(item)
     return maxitems
 

@@ -31,7 +31,7 @@ Example run
       'A' has won the election!
       He got 3 votes (50% of total)
     List of votes: ['A', 'A', 'B', 'C', 'A', 'B', 'B']
-      ['A', 'B'] got the same amount of votes!
+      'B' and 'A' got the same amount of votes!
       They each got 3 votes (43% of total)
     List of votes: []
       There are no votes!
@@ -46,28 +46,31 @@ from plugins.listtools import count_items, most_prevalent_items
 def determine_election_winners(votes):
     """Count votes to determine the winner(s) of an election.
 
-    Returns a list with the winner(s), the amount of votes the winner(s) got and what
-    percentage this is of the total amount of votes.
+    Returns a set with the winner(s), the amount of votes the winner(s) got and what fraction this
+    is of the total amount of votes. If there are no votes, then there can be no winner(s), in which
+    case an empty set is returned with 0 votes and a fraction of 0.
 
     :param list votes: the list of votes
-    :return: tuple containing a list with the winner(s), the amount of votes for the winner(s)
-             and the percentage of total votes for for the winner(s)
-    :rtype: tuple(list, int, float)
+    :return: tuple containing a set with the winner(s), the amount of votes for the winner(s)
+             and its fraction of the total amount of votes
+    :rtype: tuple(set, int, float)
 
     Example::
 
+        >>> determine_election_winners([])
+        (set(), 0, 0.)
         >>> determine_election_winners(['A', 'B', 'A', 'C'])
-        (['A'], 2, 0.5)
+        ({'A'}, 2, 0.5)
         >>> determine_election_winners(['A', 'B', 'B', 'A', 'C'])
-        (['A', 'B'], 2, 0.4)
+        ({'B', 'A'}, 2, 0.4)
     """
-    if votes == []:
-        return ([], 0, 0)
-    count = count_items(votes)
+    if len(votes) == 0:
+        return set(), 0, 0.
+    counts = count_items(votes)
     winners = most_prevalent_items(votes)
-    winnervotes = count[winners[0]]
-    totalvotes = sum([v for p, v in count.items()])
-    return (winners, winnervotes, winnervotes/totalvotes)
+    winnervotes = counts[winners.copy().pop()]
+    totalvotes = sum([c for p, c in counts.items()])
+    return winners, winnervotes, winnervotes/totalvotes
 
 
 def run():
@@ -79,13 +82,14 @@ def run():
     ]
     for votes in votess:
         print("List of votes: {}".format(votes))
-        winners = determine_election_winners(votes)
-        if len(winners[0]) == 0:
+        winners, count, fraction = determine_election_winners(votes)
+        if len(winners) == 0:
             print("  There are no votes!")
-        elif len(winners[0]) == 1:
-            print("  '{}' has won the election!".format(winners[0][0]))
-            print("  He got {} votes ({:.0f}% of total)".format(winners[1], 100*winners[2]))
+        elif len(winners) == 1:
+            print("  '{}' has won the election!".format(winners.copy().pop()))
+            print("  He got {} votes ({:.0f}% of total)".format(count, 100*fraction))
         else:
-            print("  {} got the same amount of votes!".format(winners[0]))
-            print("  They each got {} votes ({:.0f}% of total)".format(winners[1], 100*winners[2]))
+            winners = ' and '.join(["'{}'".format(winner) for winner in winners])
+            print("  {} got the same amount of votes!".format(winners))
+            print("  They each got {} votes ({:.0f}% of total)".format(count, 100*fraction))
 
