@@ -77,8 +77,6 @@ def century(year, mode='real'):
 
     Example::
 
-        >>> century(2015)
-        21
         >>> century(2000)
         20
         >>> century(2000, mode='doomsday')
@@ -272,7 +270,7 @@ class Date(object):
 
         Example::
 
-             >>> print(Date.random())
+            >>> print(Date.random())
             2191-3-6
         """
         year = random.randint(minyear, maxyear)

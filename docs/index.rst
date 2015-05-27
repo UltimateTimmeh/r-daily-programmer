@@ -118,6 +118,8 @@ List of challenges
 .. _025e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/025e.py
 .. _026e.doc: _apidoc/challenges.026e.html
 .. _026e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/026e.py
+.. _027e.doc: _apidoc/challenges.027e.html
+.. _027e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/027e.py
 
 +-----+------------+------+----------------------------+-------------+---------------+-----------+
 | Nr. | Difficulty | ID   | Name                       | Status*     | Documentation | Source    |
@@ -171,6 +173,8 @@ List of challenges
 | 25  | Easy       | 025e | Vote Counter               | Complete    | 025e.doc_     | 025e.src_ |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+
 | 26  | Easy       | 026e | Filter String Duplicates   | Complete    | 026e.doc_     | 026e.src_ |
++-----+------------+------+----------------------------+-------------+---------------+-----------+
+| 27  | Easy       | 027e | Year Info                  | Complete    | 027e.doc_     | 027e.src_ |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+
 
 \*\ **Challenge status**:

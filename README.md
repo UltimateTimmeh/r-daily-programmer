@@ -61,3 +61,4 @@ I have included a list of challenges I have worked on so far.
 - *023e* - [Split Lists](dailyprogrammer/challenges/023e.py): Complete
 - *025e* - [Vote Counter](dailyprogrammer/challenges/025e.py): Complete
 - *026e* - [Filter String Duplicates](dailyprogrammer/challenges/026e.py): Complete
+- *027e* - [Year Info](dailyprogrammer/challenges/027e.py): Complete
