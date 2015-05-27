@@ -5,7 +5,7 @@
 Calculate neat properties of arbitrary dates (source_).
 
 | *var* plugins.doomsday.\ **anchordays** *(list(int, ...))*
-|     list containing the anchor days for the 2000s, 2100s, 1800s and 1900s respectively
+|     list containing the anchor days for the 1900s, 2000s, 2100s and 1800s respectively
 
 | *var* plugins.doomsday.\ **ndays_in_months** *(dict(bool: list(int, ...), ...))*
 |     dictionary containing the amount of days in each month for both normal and leap years
@@ -20,7 +20,7 @@ Calculate neat properties of arbitrary dates (source_).
 
 import random
 
-anchordays = [2, 0, 5, 3]
+anchordays = [3, 2, 0, 5]
 
 ndays_in_months = {
     False: [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31],
@@ -63,6 +63,113 @@ def is_leapyear(year):
         return False
 
 
+def century(year, mode='real'):
+    """Return the century of a year in a certain mode.
+
+    Commonly, a century is defined to start at '01 and ends at '00. But for the purpose of the
+    doomsday algorithm, a mode is added where a century is defined to start at '00 and end at '99
+    instead. This definition will be referred to as the 'doomsday century' of a year.
+
+    :param int year: the year to determine the century of
+    :param str mode: mode of century calculation, one of 'real' or 'doomsday' (default 'real')
+    :return: the year's century
+    :rtype: int
+
+    Example::
+
+        >>> century(2015)
+        21
+        >>> century(2000)
+        20
+        >>> century(2000, mode='doomsday')
+        21
+    """
+    return (year + {'real': 99, 'doomsday': 100}[mode]) // 100
+
+
+def anchorday(year, h=False):
+    """Return the year's anchor day.
+
+    The anchor day of a year is the doomsday of the first year of that year's century.
+
+    :param int year: the year to determine the anchor day of
+    :param bool h: return the anchor day in 'human-readable' form (default False)
+    :return: the year's anchor day
+    :rtype: int or str
+
+    Example::
+
+        >>> anchorday(2015, h=True)
+        'tuesday'
+    """
+    anchorday = anchordays[century(year, mode='doomsday') % 4]
+    return {True: weekdays[anchorday], False: anchorday}[h]
+
+
+def doomsday(year, h=False):
+    """Return the year's doomsday.
+
+    The doomsday of a year is a day of the week upon which certain easy-to-remember dates
+    fall. For more information, see the `Doomsday rule on Wikipedia <http://en.wikipedia.org/wiki/Doomsday_rule>`_.
+    Here, the explicit 'Odd+11' formula is used for calculating the offset between the
+    century's anchor day and the year's doomsday.
+
+    :param int year: the year to determine the doomsday of
+    :param bool h: return the doomsday in 'human-readable' form (default False)
+    :return: the year's doomsday
+    :rtype: int or str
+
+    Example::
+
+        >>> doomsday(2015, h=True)
+        'saturday'
+    """
+    year_short = int(str(year)[-2:])
+    cse = (year_short + 11*(year_short % 2))/2  ## This is a 'common subexpression'.
+    offset = -(cse + 11*(cse % 2)) % 7
+    doomsday = int(anchorday(year) + offset) % 7
+    return {True: weekdays[doomsday], False: doomsday}[h]
+
+
+def ndays_in_month(year, month):
+    """Return the amount of days in a month.
+
+    :param int year: the year in which the specific month falls, required in case of leap years
+    :param int month: the month to determine the amount of days of
+    :return: the amount of days in the month
+    :rtype: int
+
+    Example::
+
+        >>> ndays_in_month(2015, 2)
+        28
+        >>> ndays_in_month(2016, 2)
+        29
+    """
+    return ndays_in_months[is_leapyear(year)][month-1]
+
+
+def doomsdate(year, month):
+    """Return the month's doomsdate.
+
+    The doomsdate of a month is the easy-to-remember day of the month that falls on the
+    corresponding year's doomsday.
+
+    :param int year: the year in which the specific month falls, required in case of leap years
+    :param int month: the month to determine the doomsdate of
+    :return: the month's doomsdate
+    :rtype: int
+
+    Example::
+
+        >>> doomsdate(2015, 1)
+        3
+        >>> doomsdate(2016, 1)
+        4
+    """
+    return doomsdate_in_months[is_leapyear(year)][month-1]
+
+
 class Date(object):
     """A class representing a date.
 
@@ -99,7 +206,7 @@ class Date(object):
         """Check if the date is valid.
 
         A date is invalid if the year is lower than 1583, the month is impossible (below 1 or
-        above 12) or the day is impossible for the month in the year.
+        above 12) or the day is impossible for the month in that specific year.
 
         :return: True if the date is valid, False otherwise
         :rtype: bool
@@ -117,107 +224,9 @@ class Date(object):
             return False
         if self.month < 1 or self.month > 12:
             return False
-        if self.day < 1 or self.day > self.ndays_in_month():
+        if self.day < 1 or self.day > ndays_in_month(self.year, self.month):
             return False
         return True
-
-
-    def century(self):
-        """Return the date's century.
-
-        For the purpose of the doomsday algorithm, a century will start at '00 and end at '99.
-
-        :return: the date's century
-        :rtype: int
-
-        Example::
-
-            >>> date = Date(2015, 5, 13)
-            >>> date.century()
-            21
-        """
-        return int(self.year/100)+1
-
-
-    def anchorday(self, h=False):
-        """Return the century's anchor day.
-
-        The anchor day of a century is the doomsday of the first year of that century.
-
-        :param bool h: return the anchor day in 'human-readable' form (default False)
-        :return: the century's anchor day
-        :rtype: int or str
-
-        Example::
-
-            >>> date = Date(2015, 5, 13)
-            >>> date.anchorday(h=True)
-            'tuesday'
-        """
-        anchorday = anchordays[(self.century()-1) % 4]
-        if h:
-            return weekdays[anchorday]
-        return anchorday
-
-
-    def doomsday(self, h=False):
-        """Return the year's doomsday.
-
-        The doomsday of a year is a day of the week upon which certain easy-to-remember dates
-        fall. For more information, see the `Doomsday rule on Wikipedia <http://en.wikipedia.org/wiki/Doomsday_rule>`_.
-        Here, the explicit 'Odd+11' formula is used for calculating the offset between the
-        century's anchor day and the year's doomsday.
-
-        :param bool h: return the doomsday in 'human-readable' form (default False)
-        :return: the year's doomsday
-        :rtype: int or str
-
-        Example::
-
-            >>> date = Date(2015, 5, 13)
-            >>> date.doomsday(h=True)
-            'saturday'
-        """
-        year = int(str(self.year)[-2:])
-        cse = (year + 11*(year % 2))/2  ## This is a 'common subexpression'.
-        offset = -(cse + 11*(cse % 2)) % 7
-        doomsday = int(self.anchorday() + offset) % 7
-        if h:
-            return weekdays[doomsday]
-        return doomsday
-
-
-    def ndays_in_month(self):
-        """Return the amount of days in the month.
-
-        :return: the amount of days in the month
-        :rtype: int
-
-        Example::
-
-            >>> date = Date(2015, 5, 13)
-            >>> date.ndays_in_month()
-            31
-        """
-        return ndays_in_months[is_leapyear(self.year)][self.month-1]
-
-
-    def doomsdate(self):
-        """Return the month's doomsdate.
-
-        The doomsdate of a month is the easy-to-remember day of the month that falls on the
-        corresponding year's doomsday.
-
-        :return: the month's doomsdate
-        :rtype: int
-
-        Example::
-
-            >>> date = Date(2015, 5, 13)
-            >>> date.doomsdate()
-            9
-        """
-        return doomsdate_in_months[is_leapyear(self.year)][self.month-1]
 
 
     def weekday(self, h=False):
@@ -231,14 +240,11 @@ class Date(object):
 
         Example::
 
-            >>> date = Date(2015, 5, 13)
-            >>> date.weekday(h=True)
+            >>> Date(2015, 5, 13).weekday(h=True)
             'wednesday'
         """
-        weekday = (self.doomsday() + (self.day-self.doomsdate())) % 7
-        if h:
-            return  weekdays[weekday]
-        return weekday
+        weekday = (doomsday(self.year) + (self.day-doomsdate(self.year, self.month))) % 7
+        return {True: weekdays[weekday], False: weekday}[h]
 
 
     def cumulative_day_of_year(self):
@@ -249,8 +255,7 @@ class Date(object):
 
         Example::
 
-            >>> date = Date(2015, 5, 13)
-            >>> date.cumulative_day_of_year()
+            >>> Date(2015, 5, 13).cumulative_day_of_year()
             133
         """
         return sum(ndays_in_months[is_leapyear(self.year)][:self.month-1]) + self.day
@@ -267,8 +272,7 @@ class Date(object):
 
         Example::
 
-            >>> date = Date.random()
-            >>> print(date)
+             >>> print(Date.random())
             2191-3-6
         """
         year = random.randint(minyear, maxyear)

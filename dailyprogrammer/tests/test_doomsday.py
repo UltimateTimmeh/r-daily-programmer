@@ -30,6 +30,64 @@ class TestDoomsdayFunctions(unittest.TestCase):
         self.assertFalse(doomsday.is_leapyear(2015))
 
 
+    def test_century(self):
+        """Test function :func:`plugins.doomsday.century`
+
+        **Tested:**
+
+        - The correct common century is returned.
+        - The correct doomsday century is returned.
+        """
+        self.assertEqual(doomsday.century(2000), 20)
+        self.assertEqual(doomsday.century(2000, mode='doomsday'), 21)
+
+
+    def test_anchorday(self):
+        """Test function :func:`plugins.doomsday.anchorday`
+
+        **Tested:**
+
+        - The correct anchor day of the year is returned as an integer.
+        - The correct anchor day of the year is returned as a string.
+        """
+        self.assertEqual(doomsday.anchorday(2015), 2)
+        self.assertEqual(doomsday.anchorday(2015, h=True), 'tuesday')
+
+
+    def test_doomsday(self):
+        """Test function :func:`plugins.doomsday.doomsday`
+
+        **Tested:**
+
+        - The correct doomsday of the year is returned as an integer.
+        - The correct doomsday of the year is returned as a string.
+        """
+        self.assertEqual(doomsday.doomsday(2015), 6)
+        self.assertEqual(doomsday.doomsday(2015, h=True), 'saturday')
+
+
+    def test_ndays_in_month(self):
+        """Test function :func:`plugins.doomsday.ndays_in_month`
+
+        **Tested:**
+
+        - The correct amount of days in the month is returned.
+        """
+        self.assertEqual(doomsday.ndays_in_month(2015, 2), 28)
+        self.assertEqual(doomsday.ndays_in_month(2016, 2), 29)
+
+
+    def test_doomsdate(self):
+        """Test function :func:`plugins.doomsday.Date.doomsdate`
+
+        **Tested:**
+
+        - The correct doomsdate of the month is returned.
+        """
+        self.assertEqual(doomsday.doomsdate(2015, 1), 3)
+        self.assertEqual(doomsday.doomsdate(2016, 1), 4)
+
+
 class TestDate(unittest.TestCase):
     """Unit tests for class :func:`plugins.doomsday.Date`."""
 
@@ -88,65 +146,6 @@ class TestDate(unittest.TestCase):
         self.assertFalse(date.is_valid())
         date.day = 28
         self.assertTrue(date.is_valid())
-
-
-    def test_century(self):
-        """Test method :meth:`plugins.doomsday.Date.century`
-
-        **Tested:**
-
-        - The correct century is returned.
-        """
-        date = doomsday.Date(2015, 5, 13)
-        self.assertEqual(date.century(), 21)
-
-
-    def test_anchorday(self):
-        """Test method :meth:`plugins.doomsday.Date.anchorday`
-
-        **Tested:**
-
-        - The correct anchor day of the century is returned as an integer.
-        - The correct anchor day of the century is returned as a string.
-        """
-        date = doomsday.Date(2015, 5, 13)
-        self.assertEqual(date.anchorday(), 2)
-        self.assertEqual(date.anchorday(h=True), 'tuesday')
-
-
-    def test_doomsday(self):
-        """Test method :meth:`plugins.doomsday.Date.doomsday`
-
-        **Tested:**
-
-        - The correct doomsday of the year is returned as an integer.
-        - The correct doomsday of the year is returned as a string.
-        """
-        date = doomsday.Date(2015, 5, 13)
-        self.assertEqual(date.doomsday(), 6)
-        self.assertEqual(date.doomsday(h=True), 'saturday')
-
-
-    def test_ndays_in_month(self):
-        """Test method :meth:`plugins.doomsday.Date.ndays_in_month`
-
-        **Tested:**
-
-        - The correct amount of days in the month is returned.
-        """
-        date = doomsday.Date(2015, 5, 13)
-        self.assertEqual(date.ndays_in_month(), 31)
-
-
-    def test_doomsdate(self):
-        """Test method :meth:`plugins.doomsday.Date.doomsdate`
-
-        **Tested:**
-
-        - The correct doomsdate of the month is returned.
-        """
-        date = doomsday.Date(2015, 5, 13)
-        self.assertEqual(date.doomsdate(), 9)
 
 
     def test_weekday(self):

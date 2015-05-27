@@ -27,21 +27,21 @@ Example run
     Year (1583 - ...) > 2015
     Month (1 - 12) > 5
     Day (1 - 31) > 13
-    2015-5-13 is a wednesday
+    2015-5-13 is a wednesday.
 
 Module contents
 ---------------
 """
 
-from plugins.doomsday import Date
+from plugins.doomsday import ndays_in_month, Date
 
 
 def run():
     """Execute the challenges.011e module."""
     year = int(input("Year (1583 - ...) > "))
     month = int(input("Month (1 - 12) > "))
-    ndays_in_month = Date(year, month, 1).ndays_in_month()
-    day = int(input("Day (1 - {}) > ".format(ndays_in_month)))
+    ndays = ndays_in_month(year, month)
+    day = int(input("Day (1 - {}) > ".format(ndays)))
     date = Date(year, month, day)
-    print("{} is a {}".format(date, date.weekday(h=True)))
+    print("{} is a {}.".format(date, date.weekday(h=True)))
 
