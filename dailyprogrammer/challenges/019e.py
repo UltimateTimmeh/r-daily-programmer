@@ -208,7 +208,7 @@ def run():
 
     # Go over all lines, excluding the Gutenberg header and footer, book title
     # and chapter index.
-    count = {}
+    counts = {}
     nlines_empty = 0
     lines_skipped = []
     nlines_counted = 0
@@ -219,7 +219,7 @@ def run():
             lines_skipped.append(line)
         else:  ## If none of the previous, then the line should be counted.
             nlines_counted += 1
-            EnhancedString(line).count_characters(count)
+            counts = EnhancedString(line).count_characters(counts=counts)
 
     # Crunch the numbers.
     ## Line count
@@ -227,10 +227,10 @@ def run():
     nlines_total = nlines_empty + nlines_skipped + nlines_counted
     nlines_expected = end - start
 
-    ## Character count
-    nchars_pure = sum([count[char] for char in count if char in chars_pure])
-    nchars_nospace = sum([count[char] for char in count if char != ' '])
-    nchars_all = sum([count[char] for char in count])
+    ## Character counts
+    nchars_pure = sum([counts[char] for char in counts if char in chars_pure])
+    nchars_nospace = sum([counts[char] for char in counts if char != ' '])
+    nchars_all = sum([counts[char] for char in counts])
 
     # Print a report.
     print('\n' + format_header("LINES", above='=', below='='))
@@ -243,9 +243,9 @@ def run():
     print("Expected amount of lines: {}".format(nlines_expected))
     print('\n' + format_header("Skipped, non-empty lines", below="'"))
     print('\n'.join(lines_skipped))
-    print('\n' + format_header("CHARACTER COUNT", above='=', below='='))
+    print('\n' + format_header("CHARACTER COUNTS", above='=', below='='))
     print('\n' + format_header("Individual characters", below="'"))
-    print('\n'.join(['{}: {}'.format(char, nr) for char, nr in count.items()]))
+    print('\n'.join(['{}: {}'.format(char, nr) for char, nr in counts.items()]))
     print('\n' + format_header("Groups of characters", below="'"))
     print("Amount of purely alphanumeric characters: {}".format(nchars_pure))
     print("Total amount of characters (without spaces): {}".format(nchars_nospace))

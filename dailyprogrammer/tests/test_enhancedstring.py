@@ -73,9 +73,13 @@ class TestEnhancedString(unittest.TestCase):
 
         - The character count has been correctly added to a new dictionary.
         - The character count has been correctly added to an existing dictionary.
+        - The dictionary to which a count is added is not changed in-place.
         """
-        count = enhancedstring.EnhancedString('aaa bb c . !').count_characters()
-        self.assertEqual(count, {'a': 3, 'b': 2, 'c': 1, ' ': 4, '.': 1, '!': 1})
-        count = enhancedstring.EnhancedString('a dd eeee').count_characters(count)
-        self.assertEqual(count, {'a': 4, 'b': 2, 'c': 1, 'd': 2, 'e': 4, ' ': 6, '.': 1, '!': 1})
+        s1 = enhancedstring.EnhancedString('aaa bb c . !')
+        s2 = enhancedstring.EnhancedString('a dd eeee')
+        count1 = s1.count_characters()
+        self.assertEqual(count1, {'a': 3, 'b': 2, 'c': 1, ' ': 4, '.': 1, '!': 1})
+        count2 = s2.count_characters(counts=count1)
+        self.assertEqual(count2, {'a': 4, 'b': 2, 'c': 1, 'd': 2, 'e': 4, ' ': 6, '.': 1, '!': 1})
+        self.assertEqual(count1, {'a': 3, 'b': 2, 'c': 1, ' ': 4, '.': 1, '!': 1})
 

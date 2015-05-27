@@ -5,6 +5,8 @@
 Enchance the built-in string object with useful methods (source_).
 """
 
+from plugins.listtools import count_items
+
 
 class EnhancedString(object):
     """A class representing an enhanced string object.
@@ -80,29 +82,28 @@ class EnhancedString(object):
             ])
 
 
-    def count_characters(self, count=None):
-        """Add the prevalence of each character in the enhanced string to a dictionary.
+    def count_characters(self, counts=None):
+        """Count the prevalence of each character in the enhanced string.
 
-        :param count: dictionary to which the count will be added (default None)
-        :type count: None or dict
-        :return: the dictionary to which the count was added
+        Note that, when providing a dictionary to which the count should be added, a deep copy
+        of this dictionary is made and returned. The provided dictionary is not updated in-place!
+
+        :param counts: dictionary to which the character counts will be added, if None a new
+                       dictionary is created (default None)
+        :type counts: None or dict
+        :return: a deep copy of the provided dictionary, with updated counts for the characters
+                 in the enhanced string
         :rtype: dict
 
         Example::
 
-            >>> count = EnhancedString('aaa bb c . !').count_characters()
-            >>> count
-            {'a': 3, 'b': 2, 'c': 1, ' ': 4, '.': 1, '!': 1}
-            >>> count = EnhancedString('a dd eeee').count_characters(count)
-            >>> count
-            {'a': 4, 'b': 2, 'c': 1, 'd': 2, 'e': 4, ' ': 6, '.': 1, '!': 1}
+            >>> counts = EnhancedString('aaa bb c . !').count_characters()
+            >>> counts
+            {'.': 1, ' ': 4, 'a': 3, '!': 1, 'b': 2, 'c': 1}
+            >>> EnhancedString('a dd eeee').count_characters(counts=counts)  ## The counts are added to the provided dictionary.
+            {'.': 1, 'd': 2, '!': 1, 'e': 4, ' ': 6, 'a': 4, 'b': 2, 'c': 1}
+            >>> counts  ## But the provided dictionary was not updated in-place!
+            {'.': 1, ' ': 4, 'a': 3, '!': 1, 'b': 2, 'c': 1}
         """
-        if count is None:
-            count = {}
-        for char in self.str_:
-            if char in count:
-                count[char] += 1
-            else:
-                count[char] = 1
-        return count
+        return count_items(self.str_, counts=counts)
 
