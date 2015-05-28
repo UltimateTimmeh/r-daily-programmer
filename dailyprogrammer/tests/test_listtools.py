@@ -81,5 +81,19 @@ class TestListtoolsFunctions(unittest.TestCase):
         self.assertEqual(listtools.most_prevalent_items(x2), {'a', 'b'})
 
 
+    def test_find_first_duplicate(self):
+        """Test function :func:`plugins.listtools.find_first_duplicate`
+
+        **Tested:**
+
+        - If there are no duplicate items, None is returned.
+        - If there is a single duplicate item, that item is returned.
+        - If there are multiple duplicate items, only the first duplicate item is returned.
+        """
+        self.assertEqual(listtools.find_first_duplicate([0, 1, 2, 3, 4]), None)
+        self.assertEqual(listtools.find_first_duplicate([0, 1, 2, 3, 4, 2]), 2)
+        self.assertEqual(listtools.find_first_duplicate([0, 1, 2, 3, 3, 4, 2]), 3)
+
+
 if __name__ == '__main__':
     unittest.main()
