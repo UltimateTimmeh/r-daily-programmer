@@ -25,12 +25,6 @@ chapters. Post your code and the alphanumeric character count.
 Example run
 -----------
 
-.. note:: The challenge is not clear about the definition of "alphanumeric characters". Does this
-          include punctuation? Does it include letters with accents? Does it include spaces?
-          Therefore, my output produces three numbers: the character count for the 62 pure
-          alphanumeric characters (a - z, A - Z and 0 - 9), the total character count excluding
-          spaces, and the total character count including spaces.
-
 .. warning:: This solution to the challenge downloads the book's text file from the Gutenberg
              website every time it is executed. After several runs it's possible it suddenly
              starts failing. That's because the Gutenberg website notices a lot of download
@@ -73,95 +67,95 @@ Example run
     XI. THE ADVENTURE OF THE BERYL CORONET
     XII. THE ADVENTURE OF THE COPPER BEECHES
 
-    ===============
-    CHARACTER COUNT
-    ===============
+    ================
+    CHARACTER COUNTS
+    ================
 
     Individual characters
     '''''''''''''''''''''
-    6: 14
-    ': 1492
-    I: 3722
-    ;: 202
-    W: 756
-    S: 747
     .: 6180
-    D: 192
-    G: 151
-    2: 35
-    ": 5093
-    â: 1
-    5: 16
-    y: 8970
-    U: 28
-    v: 4360
-    c: 10166
-    9: 13
-    s: 26425
-    p: 6647
-    Y: 449
-    b: 5878
-     : 94526
-    A: 724
-    ?: 737
-    0: 82
-    /: 1
-    w: 10506
-    M: 724
-    N: 277
-    3: 15
-    k: 3464
-    ): 5
-    m: 11052
-    !: 345
-    d: 18335
-    7: 18
-    :: 60
-    4: 22
-    8: 37
-    J: 114
-    V: 59
     (: 5
-    &: 5
-    n: 28362
-    f: 8778
-    e: 52806
-    a: 34362
-    à: 1
-    P: 176
-    C: 311
+    1: 63
+    6: 14
     j: 338
-    u: 13060
-    h: 27780
-    L: 275
+    ;: 202
+    ': 1492
+    c: 10166
+    W: 756
     é: 12
-    o: 33185
-    F: 180
-    -: 1141
+    t: 37823
     ,: 7639
     O: 290
-    i: 26357
-    l: 16845
-    T: 1087
+    J: 114
     x: 541
     K: 76
-    1: 63
+    8: 37
+    o: 33185
     Z: 2
-    z: 147
-    Q: 20
-    R: 177
-    E: 158
     g: 7730
+    ?: 737
+    U: 28
     r: 24290
-    t: 37823
-    è: 1
-    B: 461
-    H: 1217
+    y: 8970
+    :: 60
+    L: 275
+    -: 1141
+    E: 158
+    f: 8778
+    7: 18
+    3: 15
+    i: 26357
+    F: 180
+    P: 176
+    D: 192
+    G: 151
+    Y: 449
+     : 94526
+    0: 82
+    â: 1
     q: 406
+    ": 5093
+    s: 26425
+    S: 747
+    m: 11052
+    e: 52806
+    B: 461
+    à: 1
+    T: 1087
+    A: 724
+    k: 3464
+    4: 22
+    /: 1
+    R: 177
+    u: 13060
+    v: 4360
+    h: 27780
+    p: 6647
+    n: 28362
+    5: 16
+    a: 34362
+    d: 18335
+    H: 1217
+    N: 277
+    &: 5
+    V: 59
+    M: 724
+    I: 3722
+    !: 345
+    è: 1
+    C: 311
+    l: 16845
+    ): 5
+    9: 13
+    z: 147
+    w: 10506
+    Q: 20
+    b: 5878
+    2: 35
 
     Groups of characters
     ''''''''''''''''''''
-    Amount of purely alphanumeric characters: 431301
+    Amount of alphanumeric characters: 431316
     Total amount of characters (without spaces): 454221
     Total amount of characters (including spaces): 548747
 
@@ -198,8 +192,6 @@ def format_header(title, above='', below=''):
 def run():
     """Execute the challenges.019e module."""
     # Load the text file from the URL and split in lines.
-    chars_pure = 'abcdefghijklmnopqrstuvwxyz'
-    chars_pure += chars_pure.upper() + '0123456789'
     start = 57
     end = 12681
     target_url = 'http://www.gutenberg.org/cache/epub/1661/pg1661.txt'
@@ -228,7 +220,7 @@ def run():
     nlines_expected = end - start
 
     ## Character counts
-    nchars_pure = sum([counts[char] for char in counts if char in chars_pure])
+    nchars_an = sum([counts[char] for char in counts if char.isalnum()])
     nchars_nospace = sum([counts[char] for char in counts if char != ' '])
     nchars_all = sum([counts[char] for char in counts])
 
@@ -247,7 +239,7 @@ def run():
     print('\n' + format_header("Individual characters", below="'"))
     print('\n'.join(['{}: {}'.format(char, nr) for char, nr in counts.items()]))
     print('\n' + format_header("Groups of characters", below="'"))
-    print("Amount of purely alphanumeric characters: {}".format(nchars_pure))
+    print("Amount of alphanumeric characters: {}".format(nchars_an))
     print("Total amount of characters (without spaces): {}".format(nchars_nospace))
     print("Total amount of characters (including spaces): {}".format(nchars_all))
 
