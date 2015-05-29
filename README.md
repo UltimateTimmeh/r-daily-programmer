@@ -64,3 +64,4 @@ I have included a list of challenges I have worked on so far.
 - *027e* - [Year Info](dailyprogrammer/challenges/027e.py): Complete
 - *028e* - [Array Duplicate](dailyprogrammer/challenges/028e.py): Complete
 - *029e* - [Palindrome](dailyprogrammer/challenges/029e.py): Complete
+- *030e* - [Find Sum Pairs](dailyprogrammer/challenges/030e.py): Complete
