@@ -83,3 +83,18 @@ class TestEnhancedString(unittest.TestCase):
         self.assertEqual(count2, {'a': 4, 'b': 2, 'c': 1, 'd': 2, 'e': 4, ' ': 6, '.': 1, '!': 1})
         self.assertEqual(count1, {'a': 3, 'b': 2, 'c': 1, ' ': 4, '.': 1, '!': 1})
 
+
+    def test_is_palindrome(self):
+        """Test method :meth:`plugins.enhancedstring.EnhancedString.is_palindrome`
+
+        **Tested:**
+
+        - Returns True for a simple palindrome consisting only of alphanumeric characters.
+        - Returns True for a palindrome containing non-alphanumeric characters.
+        - Returns False for a non-palindrome.
+        """
+        self.assertTrue(enhancedstring.EnhancedString('racecar').is_palindrome())
+        self.assertFalse(enhancedstring.EnhancedString('racetruck').is_palindrome())
+        self.assertTrue(enhancedstring.EnhancedString("Dammit, I'm mad!").is_palindrome())
+        self.assertFalse(enhancedstring.EnhancedString("Damn it, I'm mad!").is_palindrome())
+

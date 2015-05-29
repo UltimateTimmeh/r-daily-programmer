@@ -107,3 +107,24 @@ class EnhancedString(object):
         """
         return count_items(self.str_, counts=counts)
 
+
+    def is_palindrome(self):
+        """Check whether or not the enhanced string is a palindrome.
+
+        Note that only the alphanumeric characters are considered.
+
+        :return: True if the enhanced string is a palindrome, False otherwise
+        :rtype: bool
+
+        Example:
+
+            >>> EnhancedString("racecar").is_palindrome()
+            True
+            >>> EnhancedString("Dammit I'm mad!").is_palindrome()
+            True
+            >>> EnhancedString("Damn it, I'm mad!").is_palindrom()
+            False
+        """
+        stripped = ''.join([c for c in self.str_ if c.isalnum()]).lower()
+        return stripped == stripped[::-1]
+
