@@ -126,6 +126,8 @@ List of challenges
 .. _029e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/029e.py
 .. _030e.doc: _apidoc/challenges.030e.html
 .. _030e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/030e.py
+.. _031e.doc: _apidoc/challenges.031e.html
+.. _031e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/031e.py
 
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 | Nr. | Difficulty | ID   | Name                       | Status*     | Documentation | Source    | Plugins                          |
@@ -187,6 +189,8 @@ List of challenges
 | 29  | Easy       | 029e | Palindrome                 | Complete    | 029e.doc_     | 029e.src_ | enhancedstring                   |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 | 30  | Easy       | 030e | Find Sum Pairs             | Complete    | 030e.doc_     | 030e.src_ |                                  |
++-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
+| 31  | Easy       | 031e | Base 26 Multiplication     | Complete    | 031e.doc_     | 031e.src_ |                                  |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 
 \*\ **Challenge status**:
