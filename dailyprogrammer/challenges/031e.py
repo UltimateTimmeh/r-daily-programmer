@@ -35,6 +35,12 @@ Example run
 
 Module contents
 ---------------
+
+| *var* challenges.031e.\ **map_nrs2ltrs** *(dict(int: str, ...))*
+|     dictionary mapping the numbers 0 - 25 to the letters A - Z
+
+| *var* challenges.031e.\ **map_ltrs2nrs** *(dict(int: str, ...))*
+|     dictionary mapping the letters A - Z to the numbers 0 - 25
 """
 
 map_nrs2ltrs = {
