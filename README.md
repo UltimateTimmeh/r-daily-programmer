@@ -67,3 +67,4 @@ I have included a list of challenges I have worked on so far.
 - *030e* - [Find Sum Pairs](dailyprogrammer/challenges/030e.py): Complete
 - *031e* - [Base 26 Multiplication](dailyprogrammer/challenges/031e.py): Complete
 - *032e* - [Roulette](dailyprogrammer/challenges/032e.py): Complete
+- *033e* - [Study Tool](dailyprogrammer/challenges/033e.py): Complete
