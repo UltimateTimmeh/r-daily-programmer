@@ -132,6 +132,8 @@ List of challenges
 .. _032e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/032e.py
 .. _033e.doc: _apidoc/challenges.033e.html
 .. _033e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/033e.py
+.. _034e.doc: _apidoc/challenges.034e.html
+.. _034e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/034e.py
 
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 | Nr. | Difficulty | ID   | Name                       | Status*     | Documentation | Source    | Plugins                          |
@@ -199,6 +201,8 @@ List of challenges
 | 32  | Easy       | 032e | Roulette                   | Complete    | 032e.doc_     | 032e.src_ |                                  |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 | 33  | Easy       | 033e | Study Tool                 | Complete    | 033e.doc_     | 033e.src_ |                                  |
++-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
+| 34  | Easy       | 034e | Sum Of Squares             | Complete    | 034e.doc_     | 034e.src_ |                                  |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 
 \*\ **Challenge status**:
