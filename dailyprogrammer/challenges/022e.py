@@ -27,6 +27,7 @@ Example run
 
 ::
 
+    $ python3 dailyprogrammer execute 022e
     Challenge example:
     Input: ['a', 'b', 'c', 1, 4], ['a', 'b', 'x', 34, '4']
     Output: ['a', 'b', 'c', 1, 4, 'x', 34, '4']

@@ -42,7 +42,7 @@ Example run
 
 ::
 
-    $ python3 dailyprogrammer.py 026e
+    $ python3 dailyprogrammer.py execute 026e
     Input: balloons
       Output: 'balons' 'lo'
     Input: ddaaiillyypprrooggrraammeerr

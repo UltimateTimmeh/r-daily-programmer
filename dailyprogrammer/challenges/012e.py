@@ -32,7 +32,7 @@ Example run
 
 ::
 
-    $ python3 dailyprogrammer.py 012e
+    $ python3 dailyprogrammer.py execute 012e
     Input: hi!
     hi!
     h!i

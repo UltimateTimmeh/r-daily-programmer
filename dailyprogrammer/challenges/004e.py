@@ -27,7 +27,7 @@ Example run
 
 ::
 
-    $ python3 dailyprogrammer.py 004e
+    $ python3 dailyprogrammer.py execute 004e
     Amount of passwords > 5
     Password length > 20
     ===PASSWORDS===

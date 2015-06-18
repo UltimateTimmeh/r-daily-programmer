@@ -27,7 +27,7 @@ Example run
 
 ::
 
-    $ python3 dailyprogrammer.py 018e
+    $ python3 dailyprogrammer.py execute 018e
     Input: 1-800-COMCAST
     Output: 1-800-266-2278
 

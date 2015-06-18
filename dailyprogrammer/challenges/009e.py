@@ -23,7 +23,7 @@ Example run
 
 ::
 
-    $ python3 dailyprogrammer.py 009e
+    $ python3 dailyprogrammer.py execute 009e
     Enter numbers to sort, separated by a comma: 1.2, 325.0, 2, 5.6, 2.0, -3.75
 
     The available sorting algorithms are: ['selection', 'heap', 'merge', 'bubble', 'quick', 'shell', 'insertion', 'comb']

@@ -34,14 +34,14 @@ Example run
 
 ::
 
-    $ python3 dailyprogrammer.py 027e
+    $ python3 dailyprogrammer.py execute 027e
     Enter Year: 1996
     Century: 20
     Leap Year: yes
 
 ::
 
-    $ python3 dailyprogrammer.py 027e
+    $ python3 dailyprogrammer.py execute 027e
     Enter Year: 1900
     Century: 19
     Leap Year: no

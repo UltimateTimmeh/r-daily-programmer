@@ -48,14 +48,14 @@ Challenge execution
 
 All challenge solutions are presented as modules. To execute one of the challenge modules you
 should launch the ``dailyprogrammer.py`` script in a terminal with Python 3, and provide as
-argument the ID of the challenge you wish to execute. If the challenge requires one or more
-input files, these files will be located in the directory ``dailyprogrammer/input/``. If the
-challenge is supposed to write output to a file, then this file will be located in the
-directory ``dailyprogrammer/output/``.
+arguments the word 'execute' and the ID of the challenge you wish to execute. If the challenge
+requires one or more input files, these files will be located in the directory
+``dailyprogrammer/input/``. If the challenge is supposed to write output to a file, then this
+file will be located in the directory ``dailyprogrammer/output/``.
 
 Example -- Execute the solution to challenge '1 Easy - Ask Input' (ID 001e)::
 
-    $ python3 dailyprogrammer.py 001e
+    $ python3 dailyprogrammer.py execute 001e
     Name? > John Smith
     Age? > 50
     Reddit Username? > johnsmith

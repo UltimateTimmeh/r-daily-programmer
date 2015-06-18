@@ -23,7 +23,7 @@ Example run
 
 ::
 
-    $ python3 dailyprogrammer.py 008e
+    $ python3 dailyprogrammer.py execute 008e
 
     Multiple lines:
     99 bottles of beer on the wall, 99 bottles of beer

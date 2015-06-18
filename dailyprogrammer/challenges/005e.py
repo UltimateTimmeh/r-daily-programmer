@@ -26,7 +26,7 @@ Example run
 
 ::
 
-    $ python3 dailyprogrammer.py 005e
+    $ python3 dailyprogrammer.py execute 005e
     === MAIN ===
     1. Log in
     2. Create new user

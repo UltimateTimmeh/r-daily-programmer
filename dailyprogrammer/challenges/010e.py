@@ -42,7 +42,7 @@ Example run
 
 ::
 
-    $ python3 dailyprogrammer.py 010e
+    $ python3 dailyprogrammer.py execute 010e
     The phone number '1234567890' is valid.
     The phone number '123-456-7890' is valid.
     The phone number '123.456.7890' is valid.

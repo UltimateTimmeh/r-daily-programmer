@@ -27,7 +27,7 @@ Example run
 
 ::
 
-    $ python3 dailyprogrammer.py 003e
+    $ python3 dailyprogrammer.py execute 003e
     Message to encode > dailyprogrammer
     Amount of right shift > 5
     Original message: dailyprogrammer

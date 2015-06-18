@@ -28,7 +28,7 @@ Example run
 
 ::
 
-    $ python3 dailyprogrammer.py 031e
+    $ python3 dailyprogrammer.py execute 031e
     First base 26 number (A - Z): CSGHJ
     Second base 26 number (A - Z): CBA
     Multiplication of both numbers: FNEUZJA

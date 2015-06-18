@@ -30,7 +30,7 @@ Example run
 
 ::
 
-    $ python3 dailyprogrammer.py 002e
+    $ python3 dailyprogrammer.py execute 002e
     === MAIN ===
     1. Geometrical
     q. Quit

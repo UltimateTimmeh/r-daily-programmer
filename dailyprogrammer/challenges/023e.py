@@ -27,7 +27,7 @@ Example run
 
 ::
 
-    $ python3 dailyprogrammer.py 023e
+    $ python3 dailyprogrammer.py execute 023e
     Length of list: 10
     Split fraction: 0.5
     Original list: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]

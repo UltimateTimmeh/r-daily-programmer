@@ -23,7 +23,7 @@ Example run
 
 ::
 
-    $ python3 dailyprogrammer.py 034e
+    $ python3 dailyprogrammer.py execute 034e
     Provide three numbers, separated with a comma: 9,2,6
     The largest two numbers are [6, 9] and the sum of their squares is 117.
 

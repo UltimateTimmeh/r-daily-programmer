@@ -29,7 +29,7 @@ Example run
 
 ::
 
-    $ python3 dailyprogrammer.py 028e
+    $ python3 dailyprogrammer.py execute 028e
     Amount of elements in list: 10
     Lower element limit: 1
     Upper element limit: 1000000
@@ -40,7 +40,7 @@ Example run
 
 ::
 
-    $ python3 dailyprogrammer.py 028e
+    $ python3 dailyprogrammer.py execute 028e
     Amount of elements in list: 1000000
     Lower element limit: 1
     Upper element limit: 2000000

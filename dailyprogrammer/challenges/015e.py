@@ -34,7 +34,7 @@ Example run
 
 **Running the challenge module**::
 
-    $ python3 dailyprogrammer.py 015e
+    $ python3 dailyprogrammer.py execute 015e
     Input file? > input/015e_example_input.txt
     Desired alignment ('<', '>', '^')? > ^
     Output file? > output/015e_example_output.txt

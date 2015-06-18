@@ -34,7 +34,7 @@ Example run
 
 ::
 
-    $ python3 dailyprogrammer.py 019e
+    $ python3 dailyprogrammer.py execute 019e
 
     =====
     LINES

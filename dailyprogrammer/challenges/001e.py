@@ -28,7 +28,7 @@ Example run
 
 ::
 
-    $ python3 dailyprogrammer.py 001e
+    $ python3 dailyprogrammer.py execute 001e
     Name? > John Smith
     Age? > 50
     Reddit Username? > johnsmith

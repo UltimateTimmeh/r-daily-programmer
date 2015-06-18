@@ -23,7 +23,7 @@ Example run
 
 ::
 
-    $ python3 dailyprogrammer.py 011e
+    $ python3 dailyprogrammer.py execute 011e
     Year (1583 - ...) > 2015
     Month (1 - 12) > 5
     Day (1 - 31) > 13

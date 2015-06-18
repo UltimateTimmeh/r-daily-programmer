@@ -39,7 +39,7 @@ Example run
 
 ::
 
-    $ python3 dailyprogrammer.py 033e
+    $ python3 dailyprogrammer.py execute 033e
     Translate: hola
     > hello
     Correct!

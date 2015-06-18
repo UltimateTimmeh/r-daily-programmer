@@ -25,7 +25,7 @@ Example run
 
 ::
 
-    $ python3 dailyprogrammer.py 006e
+    $ python3 dailyprogrammer.py execute 006e
     === Choose the desired method for the calculation of pi ===
     1. Bailey-Borwein-Plouffe formula
     2. Bellard's formula

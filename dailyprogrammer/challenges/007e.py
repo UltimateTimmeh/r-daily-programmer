@@ -31,7 +31,7 @@ Example run
 
 ::
 
-    $ python3 dailyprogrammer.py 007e
+    $ python3 dailyprogrammer.py execute 007e
 
     Challenge Morse sequence:
     .... . .-.. .-.. --- / -.. .- .. .-.. -.-- / .--. .-. --- --. .-. .- -- -- . .-. / --. --- --- -.. / .-.. ..- -.-. -.- / --- -. / - .... . / -.-. .... .- .-.. .-.. . -. --. . ... / - --- -.. .- -.--

@@ -25,7 +25,7 @@ Example run
 
 ::
 
-    $ python3 dailyprogrammer.py 016e
+    $ python3 dailyprogrammer.py execute 016e
     Input string: Daily Programmer
     Characters to remove: ae iou
     Result: DlyPrgrmmr

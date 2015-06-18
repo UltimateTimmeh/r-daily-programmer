@@ -30,7 +30,7 @@ Example run
 
 ::
 
-    $ python3 dailyprogrammer.py 017e
+    $ python3 dailyprogrammer.py execute 017e
     Amount of triangle levels: 6
 
     Normal triangle:

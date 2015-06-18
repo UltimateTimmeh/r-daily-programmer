@@ -32,7 +32,7 @@ Example run
 
 ::
 
-    $ python3 dailyprogrammer.py 029e
+    $ python3 dailyprogrammer.py execute 029e
     Give me a string: hannah
     It's a palindrome!
     Extra: Is the poem 'Dammit I'm Mad' from Demetri Martin a palindrome?

@@ -26,7 +26,7 @@ Example run
 
 ::
 
-    $ python3 dailyprogrammer.py 025e
+    $ python3 dailyprogrammer.py execute 025e
     List of votes: ['A', 'A', 'B', 'C', 'A', 'B']
       'A' has won the election!
       He got 3 votes (50% of total)

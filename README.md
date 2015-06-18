@@ -12,7 +12,7 @@ or suggestions, then feel free to send me a message on Reddit
 ## Documentation
 
 For more information about this repository and its contents, how to execute challenge solutions,
-example runs of challenge solutions, code documentation... you should consult this project's
+example runs of challenge solutions, code documentation... you can consult this project's
 documentation master file. The latest online version of the documentation can be found
 [here](http://users.telenet.be/dailyprogrammer/). If you're only interested in the source code,
 then you can stay here and simply browse the repository's `dailyprogrammer` directory.
@@ -25,7 +25,7 @@ for instructions.
 
 ## List of challenges
 
-To quickly give you an impression of which challenges you can find in this repository,
+To quickly give you an impression of which challenges you can find solved in this repository,
 I have included a list of challenges I have worked on so far.
 
 **Challenge status**:

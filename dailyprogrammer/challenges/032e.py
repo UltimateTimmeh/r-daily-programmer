@@ -32,7 +32,7 @@ Example run
 
 ::
 
-    $ python3 dailyprogrammer.py 032e
+    $ python3 dailyprogrammer.py execute 032e
     Amount of players: 1
     Enter information for player 1:
     New player name: John

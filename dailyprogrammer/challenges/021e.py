@@ -24,7 +24,7 @@ Example run
 
 ::
 
-    $ python3 dailyprogrammer.py 021e
+    $ python3 dailyprogrammer.py execute 021e
     Number: 93765.44321
     Next higher permutation of this number: 94123.34567
 

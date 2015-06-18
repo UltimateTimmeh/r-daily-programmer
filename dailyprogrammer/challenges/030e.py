@@ -26,7 +26,7 @@ Example run
 
 ::
 
-    $ python3 dailyprogrammer.py 030e
+    $ python3 dailyprogrammer.py execute 030e
     Amount of elements in list: 10
     Minimum element value: 0
     Maximum element value: 1
@@ -37,7 +37,7 @@ Example run
 
 ::
 
-    $ python3 dailyprogrammer.py 030e
+    $ python3 dailyprogrammer.py execute 030e
     Amount of elements in list: 20
     Minimum element value: 0
     Maximum element value: 10
