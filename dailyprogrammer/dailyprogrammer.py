@@ -10,7 +10,7 @@ from urllib.request import urlopen
 def execute(challenge_id):
     """Execute a challenge."""
     if not os.path.isfile(os.path.join('challenges', '{}.py'.format(challenge_id))):
-        print("\nERROR: Could not find solution module for challenge {}!".format(challenge_id))
+        print("\nERROR: Could not find solution module for challenge {}!\n".format(challenge_id))
         return
     challenge = importlib.import_module('challenges.{}'.format(challenge_id))
     challenge.run()
@@ -21,7 +21,7 @@ def prepare(challenge_id):
     # Make sure the file doesn't already exist. We don't want to risk overwriting!
     challenge_path = os.path.join('challenges', '{}.py'.format(challenge_id))
     if os.path.isfile(challenge_path):
-        print("\nERROR: Solution module for challenge {} already exists!".format(challenge_id))
+        print("\nERROR: Solution module for challenge {} already exists!\n".format(challenge_id))
         return
 
     # Split challenge id in number and difficulty.
@@ -39,12 +39,12 @@ def prepare(challenge_id):
         if link.string is not None and challenge_title in link.string.lower()]
 
     if len(url_match) == 0:
-        print("\nERROR: No challenge with title '{}' was found.".format(challenge_title))
+        print("\nERROR: No challenge with title '{}' was found.\n".format(challenge_title))
         return
     elif len(url_match) > 1:
         print("\nWARNING: Multiple challenges with title '{}' were found:".format(challenge_title))
         print('\n'.join(url_match))
-        print("Automatically picking the first one. Others will have to be prepared manually.")
+        print("Automatically picking the first one. Others will have to be prepared manually.\n")
     challenge['url'] = url_base + url_match[0]
 
     print("\nPreparing challenge {} from url:\n{}".format(challenge['id'], challenge['url']))
@@ -61,7 +61,7 @@ def prepare(challenge_id):
         template = fil.read()
     with open(challenge_path, 'w') as fil:
         fil.write(template.format(**challenge))
-    print("DONE")
+    print("DONE\n")
 
 
 if __name__ == '__main__':
