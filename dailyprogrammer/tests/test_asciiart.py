@@ -22,7 +22,7 @@ class TestTextTriangle(unittest.TestCase):
         - The attributes of a TextTriangle are correct after initialization.
         """
         triangle = asciiart.TextTriangle()
-        self.assertEqual(triangle.char, '*')
+        self.assertEqual(triangle.char, ['*'])
         self.assertEqual(triangle.n1, 1)
         self.assertEqual(triangle.rm, 0)
         self.assertEqual(triangle.lm, 1)
@@ -51,32 +51,25 @@ class TestTextTriangle(unittest.TestCase):
         self.assertTrue(all([r==e for r, e in zip(result, expected)]))
 
 
-    def test__singlecharlevel(self):
-        """Test method :meth:`plugins.asciiart.TextTriangle._singlecharlevel`
+    def test__compose_level(self):
+        """Test method :meth:`plugins.asciiart.TextTriangle._compose_level`
 
         **Tested:**
 
-        - The correct level is generated for a single-character text triangle.
-        """
-        result = asciiart.TextTriangle()._singlecharlevel(10)
-        expected = ('* * * * * * * * * *'.split(), 0)
-        self.assertEqual(result, expected)
-
-
-    def test__multicharlevel(self):
-        """Test method :meth:`plugins.asciiart.TextTriangle._multicharlevel`
-
-        **Tested:**
-
-        - The correct level is generated for a multicharacter text triangle.
+        - The correct level is generated in case of single-character tirangles.
+        - The correct level is generated in case of multicharacter triangles.
         """
         result = [
-            asciiart.TextTriangle(char='a b c'.split())._multicharlevel(10),
-            asciiart.TextTriangle(char='a b c'.split())._multicharlevel(10, 2),
+            asciiart.TextTriangle()._compose_level(10),
+            asciiart.TextTriangle(char='ab')._compose_level(5),
+            asciiart.TextTriangle(char='a b c'.split())._compose_level(10),
+            asciiart.TextTriangle(char='a b c'.split())._compose_level(10, 1),
         ]
         expected = [
+            ('* * * * * * * * * *'.split(), 0),
+            ('ab ab ab ab ab'.split(), 0),
             ('a b c a b c a b c a'.split(), 1),
-            ('c a b c a b c a b c'.split(), 0),
+            ('b c a b c a b c a b'.split(), 2),
         ]
         self.assertTrue(all([r==e for r, e in zip(result, expected)]))
 

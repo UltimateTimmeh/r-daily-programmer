@@ -64,10 +64,9 @@ class TextTriangle(object):
             raise ValueError("Invalid triangle order: '{}'".format(o))
         if a not in '<^>':
             raise ValueError("Invalid triangle alignment: '{}'".format(a))
-        if isinstance(char, list) and len(char) == 1:
-            self.char = char[0]
-        else:
-            self.char = char
+        if isinstance(char, str):
+            char = [char]
+        self.char = char
         self.nlevels = nlevels
         self.n1 = n1
         self.rm = rm
@@ -79,22 +78,14 @@ class TextTriangle(object):
 
     def __str__(self):
         """Format a text triangle as a string."""
-        # Determine which level composition needs to be used.
-        if isinstance(self.char, str):
-            compose_level = self._singlecharlevel
-        else:
-            compose_level = self._multicharlevel
-
-        # Compose the triangle.
-        level, ci = compose_level(self.n1)
+        level, ci = self._compose_level(self.n1)
         triangle = [level]
         for ii in range(1, self.nlevels):
             nelems = len(triangle[-1])*self.rm + ii*self.lm + self.add
-            level, ci = compose_level(nelems, ci)
+            level, ci = self._compose_level(nelems, ci)
             triangle.append(level)
         triangle = [''.join(lvl) for lvl in triangle]
 
-        # Format the triangle as a string.
         if self.o == 'v':
             triangle = triangle [::-1]
         triangle = EnhancedString('\n'.join(triangle))
@@ -102,13 +93,7 @@ class TextTriangle(object):
         return triangle.__str__()
 
 
-    def _singlecharlevel(self, nelems, ci=0):
-        """Compose a single-character triangle level."""
-        level = [self.char]*nelems
-        return level, ci
-
-
-    def _multicharlevel(self, nelems, ci=0):
+    def _compose_level(self, nelems, ci=0):
         """Compose a multicharacter triangle level.
 
         The generated level will contain the given amount of elements, taken in sequential order
