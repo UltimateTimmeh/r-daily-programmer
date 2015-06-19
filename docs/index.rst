@@ -134,6 +134,8 @@ List of challenges
 .. _033e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/033e.py
 .. _034e.doc: _apidoc/challenges.034e.html
 .. _034e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/034e.py
+.. _035e.doc: _apidoc/challenges.035e.html
+.. _035e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/035e.py
 
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 | Nr. | Difficulty | ID   | Name                       | Status*     | Documentation | Source    | Plugins                          |
@@ -170,7 +172,7 @@ List of challenges
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 | 16  | Easy       | 016e | Remove Characters          | Complete    | 016e.doc_     | 016e.src_ | enhancedstring                   |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
-| 17  | Easy       | 017e | Text Triangle              | Complete    | 017e.doc_     | 017e.src_ | enhancedstring                   |
+| 17  | Easy       | 017e | Text Triangle              | Complete    | 017e.doc_     | 017e.src_ | asciiart                         |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 | 18  | Easy       | 018e | Easy Phone Number          | Complete    | 018e.doc_     | 018e.src_ | phonenumber                      |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
@@ -204,6 +206,8 @@ List of challenges
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 | 34  | Easy       | 034e | Sum Of Squares             | Complete    | 034e.doc_     | 034e.src_ |                                  |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
+| 35  | Easy       | 034e | Number Triangle            | Complete    | 035e.doc_     | 035e.src_ | asciiart                         |
++-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 
 \*\ **Challenge status**:
 
@@ -234,6 +238,8 @@ in a log file, you could use the command::
 List of plugins
 '''''''''''''''
 
+.. _asciiart.doc: _apidoc/plugins.asciiart.html
+.. _asciiart.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/plugins/asciiart.py
 .. _config.doc: _apidoc/plugins.config.html
 .. _config.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/plugins/config.py
 .. _doomsday.doc: _apidoc/plugins.doomsday.html
@@ -254,6 +260,8 @@ List of plugins
 +----------------+---------------------+---------------------+
 | Name           | Documentation       | Source              |
 +================+=====================+=====================+
+| asciiart       | asciiart.doc_       | asciiart.src_       |
++----------------+---------------------+---------------------+
 | config         | config.doc_         | config.src_         |
 +----------------+---------------------+---------------------+
 | doomsday       | doomsday.doc_       | doomsday.src_       |
