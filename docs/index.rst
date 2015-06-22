@@ -136,6 +136,8 @@ List of challenges
 .. _034e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/034e.py
 .. _035e.doc: _apidoc/challenges.035e.html
 .. _035e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/035e.py
+.. _036e.doc: _apidoc/challenges.036e.html
+.. _036e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/036e.py
 
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 | Nr. | Difficulty | ID   | Name                       | Status*     | Documentation | Source    | Plugins                          |
@@ -206,7 +208,9 @@ List of challenges
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 | 34  | Easy       | 034e | Sum Of Squares             | Complete    | 034e.doc_     | 034e.src_ |                                  |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
-| 35  | Easy       | 034e | Number Triangle            | Complete    | 035e.doc_     | 035e.src_ | asciiart                         |
+| 35  | Easy       | 035e | Number Triangle            | Complete    | 035e.doc_     | 035e.src_ | asciiart                         |
++-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
+| 36  | Easy       | 036e | 1000 Lockers               | Complete    | 036e.doc_     | 036e.src_ |                                  |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 
 \*\ **Challenge status**:

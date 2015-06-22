@@ -70,3 +70,4 @@ I have included a list of challenges I have worked on so far.
 - *033e* - [Study Tool](dailyprogrammer/challenges/033e.py): Complete
 - *034e* - [Sum Of Squares](dailyprogrammer/challenges/034e.py): Complete
 - *035e* - [Number Triangle](dailyprogrammer/challenges/035e.py): Complete
+- *036e* - [1000 Lockers](dailyprogrammer/challenges/036e.py): Complete
