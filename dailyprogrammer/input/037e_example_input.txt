@@ -1,0 +1,11 @@
+
+This is an example of text with
+multiple lines. Some lines have
+several words. Others only
+one.
+Others even have
+
+none!
+Note that this text starts and ends
+with a newline character, so it has
+twelve lines and 40 words.

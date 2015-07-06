@@ -28,6 +28,11 @@ class EnhancedString(object):
         return self.str_
 
 
+    def __eq__(self, other):
+        """Test if the enhanced string is equal to something else."""
+        return isinstance(other, EnhancedString) and self.str_ == other.str_
+
+
     def remove(self, chars):
         """Remove all instances of certain characters from the enhanced string.
 
@@ -116,15 +121,71 @@ class EnhancedString(object):
         :return: True if the enhanced string is a palindrome, False otherwise
         :rtype: bool
 
-        Example:
+        Example::
 
             >>> EnhancedString("racecar").is_palindrome()
             True
             >>> EnhancedString("Dammit I'm mad!").is_palindrome()
             True
-            >>> EnhancedString("Damn it, I'm mad!").is_palindrom()
+            >>> EnhancedString("Damn it, I'm mad!").is_palindrome()
             False
         """
         stripped = ''.join([c for c in self.str_ if c.isalnum()]).lower()
         return stripped == stripped[::-1]
+
+
+    def lines(self):
+        """Return the list of lines in the enhanced string.
+
+        :return: list of lines
+        :rtype: list(EnhancedString, ...)
+
+        Example::
+
+            >>> EnhancedString("This string has\\nmultiple lines!").lines()
+            ['This string has', 'multiple lines!']
+        """
+        return [EnhancedString(line) for line in self.str_.split('\n')]
+
+
+    def count_lines(self):
+        """Count the amount of lines in the enhanced string.
+
+        :return: the amount of lines in the enhanced string
+        :rtype: int
+
+        Example::
+
+            >>> EnhancedString("This string has\\nmultiple lines!").count_lines()
+            2
+        """
+        return len(self.lines())
+
+
+    def words(self):
+        """Return the list of words in the enhanced string.
+
+        :return: list of words
+        :rtype: list(EnhancedString, ...)
+
+        Example::
+
+            >>> EnhancedString("This string has multiple words!").words()
+            ['This', 'string', 'has', 'multiple', 'words!']
+        """
+        return [EnhancedString(word) for word in self.str_.split()]
+
+
+    def count_words(self):
+        """Count the amount of words in the enhanced string.
+
+        :return: the amount of words in the enhanced string
+        :rtype: int
+
+        Example::
+
+            >>> EnhancedString("This string has multiple words!").count_words()
+            5
+        """
+        return len(self.words())
 
