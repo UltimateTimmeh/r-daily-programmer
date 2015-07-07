@@ -123,7 +123,7 @@ class Beep(object):
     def play(self):
         """Play the beep by printing a system bell character.
 
-        For an example that uses this method, see :func:`plugins.morse.Beep`.
+        For an example that uses this method, see :func:`challenges.007e.Beep`.
         """
         cmd = 'xset b 100 {} {}'.format(self.pitch, self.btime).split()
         subprocess.call(cmd)
@@ -197,7 +197,7 @@ class MorseConvention(object):
         :return: encoded Morse sequence
         :rtype: str
 
-        For an example that uses this method, see :func:`plugins.morse.MorseConvention`.
+        For an example that uses this method, see :func:`challenges.007e.MorseConvention`.
         """
         morse = ''
         for msg_word in msg.split():
@@ -220,7 +220,7 @@ class MorseConvention(object):
         :rtype: str
         :raise: ValueError if the passed Morse sequence is invalid
 
-        For an example that uses this method, see :func:`plugins.morse.MorseConvention`.
+        For an example that uses this method, see :func:`challenges.007e.MorseConvention`.
         """
         if not self.is_valid_morse(morse):
             raise ValueError("Received invalid Morse code sequence to decode.")
