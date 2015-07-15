@@ -142,9 +142,11 @@ List of challenges
 .. _037e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/037e.py
 .. _038e.doc: _apidoc/challenges.038e.html
 .. _038e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/038e.py
+.. _039e.doc: _apidoc/challenges.039e.html
+.. _039e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/039e.py
 
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
-| Nr. | Difficulty | ID   | Name                       | Status*     | Documentation | Source    | Plugins                          |
+| Nr. | Difficulty | ID   | Name                       | Status*     | Documentation | Source    | Plugins used                     |
 +=====+============+======+============================+=============+===============+===========+==================================+
 | 1   | Easy       | 001e | Ask Input                  | Complete    | 001e.doc_     | 001e.src_ | config, user                     |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
@@ -219,6 +221,8 @@ List of challenges
 | 37  | Easy       | 037e | File Line Count            | Complete    | 037e.doc_     | 037e.src_ | enhancedstring                   |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 | 38  | Easy       | 038e | Dijkstra's Algorithm       | Complete    | 038e.doc_     | 038e.src_ |                                  |
++-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
+| 39  | Easy       | 039e | FizzBuzz                   | Complete    | 039e.doc_     | 039e.src_ |                                  |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 
 \*\ **Challenge status**:
