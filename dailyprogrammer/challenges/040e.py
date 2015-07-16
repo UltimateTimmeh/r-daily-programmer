@@ -39,7 +39,7 @@ Module contents
 """
 
 
-def print_range(n1, n2=None, step=1):
+def print_range(n1, n2=None, step=1, sep=', '):
     """Print the defined range of integers.
 
     This function doesn't use loops or conditional statements (apart from those used for parsing the
@@ -49,6 +49,7 @@ def print_range(n1, n2=None, step=1):
     :param n2: None or end of the range (default None)
     :type n2: None or int
     :param int step: incrementation step of the count (default 1)
+    :param str sep: separation string, printed between the integers (default ', ')
 
     Example::
 
@@ -58,8 +59,12 @@ def print_range(n1, n2=None, step=1):
         5, 6, 7, 8, 9,
         >>> print_range(10, step=2)
         0, 2, 4, 6, 8,
-        >>> print_range(10, 5, step=-1)
-        10, 9, 8, 7, 6,
+        >>> print_range(10, 5, step=-1, sep='\\n')
+        10
+        9
+        8
+        7
+        6
     """
     if n2 is None:
         start = 0
@@ -68,8 +73,9 @@ def print_range(n1, n2=None, step=1):
         start = n1
         end = n2
     i = start
-    exec("print(i, end=', '); i += {}; ".format(step) * ((end-start)//step))
-    print('')
+    exec("print(i, end={}); i += {}; ".format(repr(sep), step) * ((end-start)//step))
+    if sep != '\n':
+        print('')
 
 
 def run():
