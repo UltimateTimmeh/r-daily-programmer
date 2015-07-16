@@ -144,6 +144,8 @@ List of challenges
 .. _038e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/038e.py
 .. _039e.doc: _apidoc/challenges.039e.html
 .. _039e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/039e.py
+.. _040e.doc: _apidoc/challenges.040e.html
+.. _040e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/040e.py
 
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 | Nr. | Difficulty | ID   | Name                       | Status*     | Documentation | Source    | Plugins used                     |
@@ -223,6 +225,8 @@ List of challenges
 | 38  | Easy       | 038e | Dijkstra's Algorithm       | Complete    | 038e.doc_     | 038e.src_ |                                  |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 | 39  | Easy       | 039e | FizzBuzz                   | Complete    | 039e.doc_     | 039e.src_ |                                  |
++-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
+| 40  | Easy       | 040e | Alternative Counting       | Complete    | 040e.doc_     | 040e.src_ |                                  |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 
 \*\ **Challenge status**:
