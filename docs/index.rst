@@ -146,6 +146,8 @@ List of challenges
 .. _039e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/039e.py
 .. _040e.doc: _apidoc/challenges.040e.html
 .. _040e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/040e.py
+.. _041e.doc: _apidoc/challenges.041e.html
+.. _041e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/041e.py
 
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 | Nr. | Difficulty | ID   | Name                       | Status*     | Documentation | Source    | Plugins used                     |
@@ -227,6 +229,8 @@ List of challenges
 | 39  | Easy       | 039e | FizzBuzz                   | Complete    | 039e.doc_     | 039e.src_ |                                  |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 | 40  | Easy       | 040e | Alternative Counting       | Complete    | 040e.doc_     | 040e.src_ |                                  |
++-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
+| 41  | Easy       | 041e | ASCII Framing              | Complete    | 041e.doc_     | 041e.src_ |                                  |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 
 \*\ **Challenge status**:

@@ -176,3 +176,26 @@ class TestEnhancedString(unittest.TestCase):
         expected = 5
         self.assertEqual(result, expected)
 
+
+    def test_frame_with_ascii(self):
+        """Test method :meth:`plugins.enhancedstring.EnhancedString.frame_with_ascii`
+
+        **Tested:**
+
+        - The returned enhanced string is correct.
+        """
+        text = "Hello World!\nSo long and thanks for all the fish...\nYay, I'm a programmer now!"
+        result = enhancedstring.EnhancedString(text).frame_with_ascii(char='@', mfl=30, a='^')
+        expected = enhancedstring.EnhancedString('\n'.join([
+            "@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
+            "@                          @",
+            "@       Hello World!       @",
+            "@  So long and thanks for  @",
+            "@     all the fish...      @",
+            "@  Yay, I'm a programmer   @",
+            "@           now!           @",
+            "@                          @",
+            "@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
+        ]))
+        self.assertEqual(result, expected)
+

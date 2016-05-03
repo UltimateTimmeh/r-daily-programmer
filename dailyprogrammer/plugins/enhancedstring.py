@@ -30,7 +30,7 @@ class EnhancedString(object):
 
     def __eq__(self, other):
         """Test if the enhanced string is equal to something else."""
-        return isinstance(other, EnhancedString) and self.str_ == other.str_
+        return isinstance(other, self.__class__) and self.str_ == other.str_
 
 
     def remove(self, chars):
@@ -145,7 +145,7 @@ class EnhancedString(object):
             >>> EnhancedString("This string has\\nmultiple lines!").lines()
             ['This string has', 'multiple lines!']
         """
-        return [EnhancedString(line) for line in self.str_.split('\n')]
+        return [self.__class__(line) for line in self.str_.split('\n')]
 
 
     def count_lines(self):
@@ -173,7 +173,7 @@ class EnhancedString(object):
             >>> EnhancedString("This string has multiple words!").words()
             ['This', 'string', 'has', 'multiple', 'words!']
         """
-        return [EnhancedString(word) for word in self.str_.split()]
+        return [self.__class__(word) for word in self.str_.split()]
 
 
     def count_words(self):
@@ -189,3 +189,66 @@ class EnhancedString(object):
         """
         return len(self.words())
 
+
+    def frame_with_ascii(self, char='*', mfl=80, a='<'):
+        """Return a copy of the enhanced string, decorated with a nice ASCII frame.
+
+        The frame will be six characters longer than the maximum line length in the enhanced string,
+        and will be four lines higher than the amount of lines in the enhanced string. The desired
+        maximum length of the frame can be provided, and the text will be split over multiple lines
+        if necessary.
+
+        :param str char: character used for the frame (default '*')
+        :param int mfl: maximum length of the frame
+        :param str a: alignment of the text inside the frame (see
+                      :meth:`plugins.enhancedstring.EnhancedString.align`)
+        :return: the framed enhanced string
+        :rtype: EnhancedString
+
+        Example::
+
+            >>> text = '''Hello World!
+            ... So long and thanks for all the fish...
+            ... Yay, I'm a programmer now!'''
+            >>> framed = EnhancedString(text).frame_with_ascii(char='@', mfl=30, a='^')
+            >>> print(framed)
+            @@@@@@@@@@@@@@@@@@@@@@@@@@@@
+            @                          @
+            @       Hello World!       @
+            @  So long and thanks for  @
+            @     all the fish...      @
+            @  Yay, I'm a programmer   @
+            @           now!           @
+            @                          @
+            @@@@@@@@@@@@@@@@@@@@@@@@@@@@
+        """
+        # Parse the arguments.
+        char = char[0]  ## If multpile characters are given, keep only the first one.
+        if a not in '<>^':
+            error = "Unknown alignment: '{}'."
+            raise ValueError(error.format(a))
+
+        # Reformat the enhanced string so lines have at most mfl-6 characters.
+        lines = self.str_.splitlines()
+        newlines = []
+        for line in lines:
+            words = line.split()
+            newline = words[0]
+            for word in words[1:]:
+                concatenation = '{} {}'.format(newline, word)
+                if len(concatenation) <= mfl-6:
+                    newline = concatenation
+                else:
+                    newlines.append(newline)
+                    newline = word
+            newlines.append(newline)
+
+        # Add the frame to the enhanced string and return.
+        mll = max([len(line) for line in newlines])  ## Maximum line length.
+        border1 = char * (mll+6)
+        border2 = char + ' ' * (mll+4) + char
+        framedlines = ['{0}  {1:{2}{3}}  {0}'.format(char, line, a, mll) for line in newlines]
+        return self.__class__('\n'.join([border1, border2] + framedlines + [border2, border1]))
+
+
+# End
