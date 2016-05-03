@@ -49,7 +49,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'r-Daily-Programmer'
-copyright = u'2015, Tim Dezutter'
+copyright = u'2015, Ultimate_Timmeh'
 
 # Append at the beginning of each rst file.
 replace = ['.. |project| replace:: {}'.format(project)]
@@ -206,7 +206,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
   ('index', 'r-Daily-Programmer.tex', u'r-Daily-Programmer Documentation',
-   u'Tim Dezutter', 'manual'),
+   u'Ultimate_Timmeh', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -236,7 +236,7 @@ latex_documents = [
 # (source start file, name, description, authors, manual section).
 man_pages = [
     ('index', 'r-daily-programmer', u'r-Daily-Programmer Documentation',
-     [u'Tim Dezutter'], 1)
+     [u'Ultimate_Timmeh'], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -250,7 +250,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
   ('index', 'r-Daily-Programmer', u'r-Daily-Programmer Documentation',
-   u'Tim Dezutter', 'r-Daily-Programmer', 'One line description of project.',
+   u'Ultimate_Timmeh', 'r-Daily-Programmer', 'One line description of project.',
    'Miscellaneous'),
 ]
 

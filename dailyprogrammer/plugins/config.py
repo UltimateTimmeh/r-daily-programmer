@@ -13,8 +13,14 @@ Configurable variables used in |project| (source_).
 | *var* plugins.config.\ **output_dir** (str)
 |     directory for storing |project| challenge output files
 
+| *var* plugins.config.\ **tests_dir** (str)
+|     directory containing the |project| unit tests
+
+| *var* plugins.config.\ **logs_dir** (str)
+|     directory containing the |project| unit test logs
+
 | *var* plugins.config.\ **tmp_dir** (str)
-|     temporary directory for storing |project| unit test input and output files
+|     directory for temporarily storing unit test input and output files
 """
 
 import os
@@ -23,4 +29,6 @@ import os
 plugins_dir = os.path.split(__file__)[0]
 root_dir = os.path.abspath(os.path.join(plugins_dir, '..'))
 output_dir = os.path.join(root_dir, 'output')
-tmp_dir = os.path.join(root_dir, 'tests', 'tmp')
+tests_dir = os.path.join(root_dir, 'tests')
+logs_dir = os.path.join(tests_dir, 'logs')
+tmp_dir = os.path.join(tests_dir, 'tmp')

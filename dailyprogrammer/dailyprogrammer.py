@@ -4,12 +4,16 @@ import importlib
 import os
 import praw
 import sys
+import unittest
 from urllib.request import urlopen
+
+from plugins import config as cfg
 
 
 def execute(challenge_id):
     """Execute a challenge."""
-    if not os.path.isfile(os.path.join('challenges', '{}.py'.format(challenge_id))):
+    challenge_fp = os.path.join(cfg.root_dir, 'challenges', '{}.py').format(challenge_id)
+    if not os.path.isfile(challenge_fp):
         print("\nERROR: Could not find solution module for challenge {}!\n".format(challenge_id))
         return
     challenge = importlib.import_module('challenges.{}'.format(challenge_id))
@@ -19,8 +23,8 @@ def execute(challenge_id):
 def prepare(challenge_id):
     """Prepare a challenge's solution module."""
     # Make sure the file doesn't already exist. We don't want to risk overwriting!
-    challenge_path = os.path.join('challenges', '{}.py'.format(challenge_id))
-    if os.path.isfile(challenge_path):
+    challenge_fp = os.path.join(cfg.root_dir, 'challenges', '{}.py'.format(challenge_id))
+    if os.path.isfile(challenge_fp):
         print("\nERROR: Solution module for challenge {} already exists!\n".format(challenge_id))
         return
 
@@ -28,7 +32,7 @@ def prepare(challenge_id):
     challenge = {'id': challenge_id}
     challenge['nr'] = int(challenge['id'][:-1])
     challenge['difficulty'] = {'e': 'Easy', 'i': 'Intermediate', 'h': 'Hard'}[challenge['id'][-1]]
-    challenge_title = 'challenge #{} [{}]'.format(challenge['nr'], challenge['difficulty'].lower())
+    challenge_title = 'challenge #{nr} [{difficulty}]'.format(**challenge).lower()
 
     # Fetch the url of the challenge's post from Reddit.
     url_base = 'http://www.reddit.com'
@@ -56,19 +60,30 @@ def prepare(challenge_id):
     challenge['date'] = str(datetime.date.fromtimestamp(challenge_submission.created))
 
     # Create the challenge module blueprint by formatting the template.
-    template_path = os.path.join('templates','challenge.py')
-    with open(template_path, 'r') as fil:
+    template_fp = os.path.join(cfg.root_dir, 'templates', 'challenge.py')
+    with open(template_fp, 'r') as fil:
         template = fil.read()
-    with open(challenge_path, 'w') as fil:
+    with open(challenge_fp, 'w') as fil:
         fil.write(template.format(**challenge))
     print("DONE\n")
+
+
+def run_unittests(logfn):
+    """Execute the project's unit tests and write results to a log file."""
+    testloader = unittest.defaultTestLoader
+    testsuite = testloader.discover(cfg.tests_dir)
+    logfp = os.path.join(cfg.logs_dir, logfn)
+    with open(logfp, 'w') as logfile:
+        testrunner = unittest.TextTestRunner(logfile, verbosity=2)
+        testrunner.run(testsuite)
 
 
 if __name__ == '__main__':
     actions = {
         'execute': execute,
         'prepare': prepare,
+        'unittests': run_unittests,
     }
-    action,  challenge_id = sys.argv[1:]
-    actions[action](challenge_id)
+    action, arg = sys.argv[1:]
+    actions[action](arg)
 

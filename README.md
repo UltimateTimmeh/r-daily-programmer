@@ -6,8 +6,7 @@ This is the repository for my solutions to the challenges posted on [the /r/Dail
 subreddit](http://www.reddit.com/r/DailyProgrammer). All programming is done in Python 3, and I
 will attempt to always make my code as Pythonic as possible. If you have any questions, comments
 or suggestions, then feel free to send me a message on Reddit
-([/u/Ultimate_Timmeh](http://www.reddit.com/u/ultimate_timmeh)) or send me an email
-([dezutter.tim@gmail.com](mailto:dezutter.tim@gmail.com)).
+([/u/Ultimate_Timmeh](http://www.reddit.com/u/ultimate_timmeh)).
 
 ## Documentation
 
@@ -71,3 +70,8 @@ I have included a list of challenges I have worked on so far.
 - *034e* - [Sum Of Squares](dailyprogrammer/challenges/034e.py): Complete
 - *035e* - [Number Triangle](dailyprogrammer/challenges/035e.py): Complete
 - *036e* - [1000 Lockers](dailyprogrammer/challenges/036e.py): Complete
+- *037e* - [File Line Count](dailyprogrammer/challenges/037e.py): Complete
+- *038e* - [Dijkstra's Algorithm](dailyprogrammer/challenges/038e.py): Complete
+- *039e* - [FizzBuzz](dailyprogrammer/challenges/039e.py): Complete
+- *040e* - [Alternative Counting](dailyprogrammer/challenges/040e.py): Complete
+- *041e* - [ASCII Framing](dailyprogrammer/challenges/041e.py): Complete

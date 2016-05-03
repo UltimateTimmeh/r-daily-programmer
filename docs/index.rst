@@ -37,8 +37,7 @@ subreddit <http://www.reddit.com/r/DailyProgrammer>`_. All programming is done i
 will attempt to always make my code as Pythonic as possible. The source can be consulted on GitHub,
 in my `r-daily-programmer <https://github.com/UltimateTimmeh/r-daily-programmer>`_  repository.
 If you have any questions, comments or suggestions, then feel free to send me a message on Reddit
-(`/u/Ultimate_Timmeh <http://www.reddit.com/u/ultimate_timmeh>`_) or send me an email
-(`dezutter.tim@gmail.com <mailto:dezutter.tim@gmail.com>`_).
+(`/u/Ultimate_Timmeh <http://www.reddit.com/u/ultimate_timmeh>`_).
 
 Challenges
 ----------
@@ -63,7 +62,7 @@ Example -- Execute the solution to challenge '1 Easy - Ask Input' (ID 001e)::
         reddit_username: johnsmith
         age: 50
         name: John Smith
-    Note: Data has been appended to file 'path/to/project/dailyprogrammer/output/001e_example_output.txt'
+    Note: Data has been appended to file 'dailyprogrammer/output/001e_example_output.txt'
 
 List of challenges
 ''''''''''''''''''
@@ -253,11 +252,10 @@ Testing of plugins
 ''''''''''''''''''
 
 Plugins will be tested with Python's standard ``unittest`` library. Unit tests for all plugins
-that have them can be executed by executing ``unittest``'s *discover* functionality in the
-``dailyprogrammer`` directory. For example, to execute all unit tests and store the results
-in a log file, you could use the command::
+that have them can be executed with the following command, the output of which will be written
+to a file with the given name in directory ``dailyprogrammer/tests/logs``::
 
-    $ python3 -m unittest discover -v > path_to_log_file.log 2>&1
+    $ python3 dailyprogrammer.py unittests unittests.log
 
 List of plugins
 '''''''''''''''
