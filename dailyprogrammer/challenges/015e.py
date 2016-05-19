@@ -20,7 +20,7 @@ Write a program to left or right justify a text file.
 Example run
 -----------
 
-**Contents of file** ``input/015e_example_input.txt``::
+**Contents of file** ``015e_example_input.txt``::
 
     Short line 1
     Short line 2
@@ -35,12 +35,12 @@ Example run
 **Running the challenge module**::
 
     $ python3 dailyprogrammer.py execute 015e
-    Input file? > input/015e_example_input.txt
+    Input file? > 015e_example_input.txt
     Desired alignment ('<', '>', '^')? > ^
-    Output file? > output/015e_example_output.txt
-    Note: Data has been written to file 'output/015e_example_output.txt'.
+    Output file? > 015e_example_output.txt
+    Note: Data has been written to file '015e_example_output.txt'.
 
-**Contents of file** ``output/015e_example_output.txt``::
+**Contents of file** ``015e_example_output.txt``::
 
                Short line 1
                Short line 2
@@ -56,21 +56,27 @@ Module contents
 ---------------
 """
 
-from plugins.enhancedstring import EnhancedString
+import os
+
+from plugins import config as cfg
+from plugins import enhancedstring as estr
+from plugins import utils
 
 
 def run():
     """Execute the challenges.015e module."""
     # Get user input.
-    text_in_fn = input("Input file? > ")
-    a = input("Desired alignment ('<', '>', '^')? > ")
-    text_out_fn = input("Output file? > ")
+    textinfn = utils.get_input("Input file? > ")
+    a = utils.get_input("Desired alignment ('<', '>', '^')? > ")
+    textoutfn = utils.get_input("Output file? > ")
 
-    # Read, justify and write.
-    with open(text_in_fn, 'r') as text_in_file:
-        text = EnhancedString(text_in_file.read())
+    # Read, align and write.
+    textinfp = os.path.join(cfg.input_dir, textinfn)
+    textoutfp = os.path.join(cfg.output_dir, textoutfn)
+    with open(textinfp, 'r') as textinfil:
+        text = estr.EnhancedString(textinfil.read())
     text.align(a)
-    with open(text_out_fn, 'w') as text_out_file:
-        text_out_file.write(str(text))
-    print("Note: Data has been written to file '{}'.".format(text_out_fn))
+    with open(textoutfp, 'w') as textoutfil:
+        textoutfil.write(str(text))
+    print("Note: Data has been written to file '{}'.".format(textoutfp))
 

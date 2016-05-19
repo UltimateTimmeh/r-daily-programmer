@@ -35,11 +35,12 @@ Module contents
 ---------------
 """
 
-from plugins.phonenumber import PhoneNumber
+from plugins import phonenumber as pn
+from plugins import utils
 
 
 def run():
     """Execute the challenges.018e module."""
-    nr = PhoneNumber(input("Input: "))
+    nr = pn.PhoneNumber(utils.get_input("Input: "))
     print("Output: " + nr.transform_to_format('x-xxx-xxx-xxxx'))
 

@@ -38,20 +38,29 @@ Example run
     Extra: Is the poem 'Dammit I'm Mad' from Demetri Martin a palindrome?
     Yes it is!
 
+::
+
+    $ python3 dailyprogrammer.py execute 029e
+    Give me a string: hennah
+    Nope, not a palindrome.
+    Extra: Is the poem 'Dammit I'm Mad' from Demetri Martin a palindrome?
+    Yes it is!
+
 Module contents
 ---------------
 """
 
-from plugins.enhancedstring import EnhancedString
+from plugins import enhancedstring as es
+from plugins import utils
 
 
 def run():
     """Execute the challenges.029e module."""
-    str_ = EnhancedString(input("Give me a string: "))
+    str_ = es.EnhancedString(utils.get_input("Give me a string: "))
     options = {True: "It's a palindrome!", False: "Nope, not a palindrome."}
     print(options[str_.is_palindrome()])
 
-    poem = EnhancedString("""Dammit I'm mad.
+    poem = es.EnhancedString("""Dammit I'm mad.
 Evil is a deed as I live.
 God, am I reviled? I rise, my bed on a sun, I melt.
 To be not one man emanating is sad. I piss.

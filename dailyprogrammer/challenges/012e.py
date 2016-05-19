@@ -45,6 +45,8 @@ Module contents
 ---------------
 """
 
+from plugins import utils
+
 
 def permutations(x):
     """Determine all possible permutations of a list or string.
@@ -67,6 +69,6 @@ def permutations(x):
 
 def run():
     """Execute the challenges.012e module."""
-    x = input("Input: ")
+    x = utils.get_input("Input: ")
     print('\n'.join(permutations(x)))
 

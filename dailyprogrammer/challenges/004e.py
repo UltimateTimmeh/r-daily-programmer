@@ -43,16 +43,18 @@ Module contents
 """
 
 from plugins import password
+from plugins import utils
 
 
 def run():
     """Execute the challenges.004e module."""
     # Ask for input.
-    np = int(input("Amount of passwords > "))
-    lp = int(input("Password length > "))
+    np = int(utils.get_input("Amount of passwords > "))
+    lp = int(utils.get_input("Password length > "))
 
     # Generate the passwords.
     pwds = [password.random_password(l=lp) for ii in range(np)]
     print("===PASSWORDS===")
     print('\n'.join(["{}. {}".format(pi+1, pwd) for pi, pwd in enumerate(pwds)]))
     print("="*15)
+

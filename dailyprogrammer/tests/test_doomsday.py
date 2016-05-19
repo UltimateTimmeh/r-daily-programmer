@@ -73,8 +73,8 @@ class TestDoomsdayFunctions(unittest.TestCase):
 
         - The correct amount of days in the month is returned.
         """
-        self.assertEqual(doomsday.ndays_in_month(2, False), 28)
-        self.assertEqual(doomsday.ndays_in_month(2, True), 29)
+        self.assertEqual(doomsday.ndays_in_month(2, 2015), 28)
+        self.assertEqual(doomsday.ndays_in_month(2, 2016), 29)
 
 
     def test_doomsdate(self):

@@ -61,13 +61,14 @@ Module contents
 ---------------
 """
 
-from plugins.asciiart import TextTriangle
+from plugins import asciiart as aa
+from plugins import utils
 
 
 def run():
     """Execute the challenges.017e module."""
-    nlevels = int(input("Amount of triangle levels: "))
-    triangle = TextTriangle(rm=2, lm=0, add=0, nlevels=nlevels)
+    nlevels = int(utils.get_input("Amount of triangle levels: "))
+    triangle = aa.TextTriangle(rm=2, lm=0, add=0, nlevels=nlevels)
     print("\nNormal triangle:\n{}".format(triangle))
     triangle.o = 'v'
     print("\nReversed triangle:\n{}".format(triangle))

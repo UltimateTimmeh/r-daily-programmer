@@ -117,12 +117,15 @@ Module contents
 |     dictionary mapping positions on an American roulette table to the associated winning numbers
 """
 
+import os
 import random
 
+from plugins import config as cfg
+from plugins import utils
+
 # Numbers on an American roulette wheel.
-rnrs = '0 00 r1 b2 r3 b4 r5 b6 r7 b8 r9 b10 b11 r12 b13 r14 b15 r16 b17 r18 r19 b20 '
-rnrs += 'r21 b22 r23 b24 r25 b26 r27 b28 b29 r30 b31 r32 b33 r34 b35 r36'
-rnrs = rnrs.split()
+rnrs = ('0 00 r1 b2 r3 b4 r5 b6 r7 b8 r9 b10 b11 r12 b13 r14 b15 r16 b17 r18 r19 b20 r21 b22 r23 '
+    'b24 r25 b26 r27 b28 b29 r30 b31 r32 b33 r34 b35 r36').split()
 
 # Map all possible bet positions to the related winning numbers.
 p2w = {nr: [nr] for nr in rnrs}  ## Individual numbers.
@@ -297,7 +300,7 @@ class RouletteBet(object):
 
         Example::
 
-            >>> RouletteBet('2,red').value()
+            >>> RouletteBet('2,red').position()
             'red'
         """
         if not self.is_valid():
@@ -315,7 +318,7 @@ class RouletteBet(object):
         Example::
 
             >>> RouletteBet('2,r1+b2+b4+r5').winning_numbers()
-            ['r1', 'b2', 'b4', 'r5']s
+            ['r1', 'b2', 'b4', 'r5']
             >>> RouletteBet('2,c1').winning_numbers()
             ['r1', 'b4', 'r7', 'b10', 'b13', 'r16', 'r19', 'b22', 'r25', 'b28', 'b31', 'r34']
         """
@@ -383,7 +386,7 @@ def validate_bets(bets_raw, player):
     string of bets (can be more than one) coming from the raw input provided by the player. If
     all bets are valid and the total sum of all bet values is not more than the credits available
     to the player, the list of roulette bets is returned. Otherwise, None is returned. The
-    validation of the roulette bets is made verbose, so if one or more bets are invalid information
+    evaluation of the roulette bets is made verbose, so if one or more bets are invalid information
     will be printed concerning the reason of invalidity.
 
     :param str bets_raw: string of raw bets
@@ -470,9 +473,9 @@ class RoulettePlayer(object):
             >>> print(player, player.goal)
             John (100 credits) 2000
         """
-        name = input("New player name: ")
-        credits = int(input("Starting credits for {}: ".format(name)))
-        goal = int(input("Goal for {}: ".format(name)))
+        name = utils.get_input("New player name: ")
+        credits = int(utils.get_input("Starting credits for {}: ".format(name)))
+        goal = int(utils.get_input("Goal for {}: ".format(name)))
         return cls(name, credits, goal)
 
 
@@ -490,7 +493,7 @@ class RoulettePlayer(object):
             >>> player.bets
             []
             >>> player.place_bets()
-            100,red;200,odd
+            Place your bet(s): 100,red;200,odd
             Insufficient credits, maximum allowed: 100
             Try again: 50,red;50,odd
             >>> for bet in player.bets:
@@ -503,9 +506,9 @@ class RoulettePlayer(object):
                 Pays out 50 credits if won.
                 Odds for winning this bet are 18 against 20.
         """
-        self.bets = validate_bets(input(), self)
+        self.bets = validate_bets(utils.get_input("Place your bet(s): "), self)
         while self.bets is None:
-            self.bets = validate_bets(input("Try again: "), self)
+            self.bets = validate_bets(utils.get_input("Try again: "), self)
 
 
 class Roulette(object):
@@ -564,14 +567,14 @@ class Roulette(object):
         """
         # Ask for amount of players and create that amount of new players.
         if nplayers is None:
-            nplayers = int(input("Amount of players: "))
+            nplayers = int(utils.get_input("Amount of players: "))
         players = []
         for ip in range(nplayers):
             print("Enter information for player {}:".format(ip+1))
             players.append(RoulettePlayer.new())
         # Ask for the path to the table ASCII art.
         if table is None:
-            table = input("Path to table ASCII art: ")
+            table = utils.get_input("Path to table ASCII art: ")
         return cls(players, table)
 
 
@@ -665,15 +668,14 @@ class Roulette(object):
         """
         for player in self.players:
             self.draw_table()
-            msg = "{}, it's your turn! You have {} credits, your goal is {} credits.\n"
-            msg += "Place your bet(s): "
-            print(msg.format(player.name, player.credits, player.goal), end='')
+            msg = "{}, it's your turn! You have {} credits, your goal is {} credits."
+            print(msg.format(player.name, player.credits, player.goal))
             player.place_bets()
             print("This is the interpretation of your bet(s):")
             [print(bet) for bet in player.bets]
-            input()
+            utils.get_input()
         self.draw_table()
-        input("All players have placed their bets!")
+        utils.get_input("All players have placed their bets!")
 
 
     def spin_wheel(self):
@@ -692,9 +694,9 @@ class Roulette(object):
             >>> roulette.winning_number
             'b24'
         """
-        input("Press [ENTER] to spin the wheel!")
+        utils.get_input("Press [ENTER] to spin the wheel!")
         self.winning_number = random.sample(rnrs, 1)[0]
-        input("The winning number is: '{}'".format(self.winning_number))
+        utils.get_input("The winning number is: '{}'".format(self.winning_number))
 
 
     def evaluate_bets(self):
@@ -727,7 +729,7 @@ class Roulette(object):
             All bets have been evaluated!
         """
         for player in self.players:
-            input("\n{}, let's see how you did...".format(player.name))
+            utils.get_input("\n{}, let's see how you did...".format(player.name))
             for bet in player.bets:
                 msg = "Your bet of {} credits in position '{}' is ".format(
                     bet.value(),
@@ -735,14 +737,14 @@ class Roulette(object):
                     )
                 print(msg, end='')
                 if self.winning_number in bet.winning_numbers():
-                    input("won! You gain {} credits.".format(bet.payout()))
+                    utils.get_input("won! You gain {} credits.".format(bet.payout()))
                     player.credits += bet.payout()
                 else:
-                    input("lost... You lose {} credits.".format(bet.value()))
+                    utils.get_input("lost... You lose {} credits.".format(bet.value()))
                     player.credits -= bet.value()
             msg = "{}, that was it for you. You now have {} credits."
-            input(msg.format(player.name, player.credits))
-        input("\nAll bets have been evaluated!")
+            utils.get_input(msg.format(player.name, player.credits))
+        utils.get_input("\nAll bets have been evaluated!")
 
 
     def remove_broke_players(self):
@@ -770,7 +772,7 @@ class Roulette(object):
             if player.credits > 0:
                 players_new.append(player)
             else:
-                input("Sorry {}, but you are broke. You're out!".format(player.name))
+                utils.get_input("Sorry {}, but you are broke. You're out!".format(player.name))
         self.players = players_new
 
 
@@ -820,7 +822,8 @@ class Roulette(object):
 
 def run():
     """Execute the challenges.032e module."""
-    roulette = Roulette.new(table='input/032e_ascii_roulette_table.txt')
+    tablefp = os.path.join(cfg.input_dir, '032e_ascii_roulette_table.txt')
+    roulette = Roulette.new(table=tablefp)
     while roulette.winner() is None and len(roulette.players) > 0:
         roulette.play_turn()
     if roulette.winner() is not None:

@@ -33,15 +33,16 @@ Module contents
 ---------------
 """
 
-from plugins.doomsday import is_leapyear, ndays_in_month, Date
+from plugins import doomsday as dd
+from plugins import utils
 
 
 def run():
     """Execute the challenges.011e module."""
-    year = int(input("Year (1583 - ...) > "))
-    month = int(input("Month (1 - 12) > "))
-    ndays = ndays_in_month(month, is_leapyear(year))
-    day = int(input("Day (1 - {}) > ".format(ndays)))
-    date = Date(year, month, day)
+    year = int(utils.get_input("Year (1583 - ...) > "))
+    month = int(utils.get_input("Month (1 - 12) > "))
+    ndays = dd.ndays_in_month(month, year)
+    day = int(utils.get_input("Day (1 - {}) > ".format(ndays)))
+    date = dd.Date(year, month, day)
     print("{} is a {}.".format(date, date.weekday(h=True)))
 

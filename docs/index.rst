@@ -229,7 +229,7 @@ List of challenges
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 | 40  | Easy       | 040e | Alternative Counting       | Complete    | 040e.doc_     | 040e.src_ |                                  |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
-| 41  | Easy       | 041e | ASCII Framing              | Complete    | 041e.doc_     | 041e.src_ |                                  |
+| 41  | Easy       | 041e | ASCII Framing              | Complete    | 041e.doc_     | 041e.src_ | enhancedstring                   |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 
 \*\ **Challenge status**:
@@ -247,15 +247,6 @@ Motivation for the creation of plugins
 Many of the challenges lead to code that might be useful in future challenges. Because of this,
 in some cases it makes sense to package part of the solution to a challenge as a *plugin* that
 can also be imported in future challenge execution modules.
-
-Testing of plugins
-''''''''''''''''''
-
-Plugins will be tested with Python's standard ``unittest`` library. Unit tests for all plugins
-that have them can be executed with the following command, the output of which will be written
-to a file with the given name in directory ``dailyprogrammer/tests/logs``::
-
-    $ python3 dailyprogrammer.py unittests unittests.log
 
 List of plugins
 '''''''''''''''
@@ -300,3 +291,19 @@ List of plugins
 +----------------+---------------------+---------------------+
 | user           | user.doc_           | user.src_           |
 +----------------+---------------------+---------------------+
+
+Testing
+-------
+
+Because testing code is not only good practice, but also required in a professional environment, I
+decided to include it in this project. Plugins are used in multiple challenges and are often subject
+to change, so I decided to write a unit test module for each plugin combined with one execution test
+module for testing the execution of *all* challenge modules. These test modules are located in the
+directory ``dailyprogrammer/tests``. Testing is performed using Python's standard ``unittest`` and
+``mock`` libraries. Tests can be executed by running the ``dailyprogrammer.py`` script with Python
+3, providing the arguments 'runtests' followed by the desired name of the resulting log file. By
+default, log files are placed in ``dailyprogrammer/tests/logs``.
+
+Example -- Execute all tests and write the output to 'tests.log'::
+
+    $ python3 dailyprogrammer.py runtests tests.log

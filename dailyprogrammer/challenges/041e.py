@@ -59,11 +59,12 @@ Module contents
 """
 
 from plugins import enhancedstring as es
+from plugins import utils
 
 
 def run():
     """Execute the challenges.041e module."""
-    text = input("Enter a sentence > ")
+    text = utils.get_input("Enter a sentence > ")
     framed = es.EnhancedString(text).frame_with_ascii()
     print(framed)
 

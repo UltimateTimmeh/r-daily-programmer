@@ -53,6 +53,8 @@ Module contents
 
 import random
 
+from plugins import utils
+
 
 def find_target_pairs(x, target):
     """Find all pairs of integers in a list whose sum equals a certain target.
@@ -88,8 +90,7 @@ def find_target_pairs(x, target):
     """
     x = sorted(x)
     p = []
-    i = 0
-    j = len(x) - 1
+    i, j = 0, len(x)-1
     while i < j:
         if x[i] + x[j] == target:
             p.append((x[i], x[j]))
@@ -128,15 +129,15 @@ def find_target_pairs(x, target):
 def run():
     """Execute the challenges.030e module."""
     # Generate random list (with repetition).
-    nelems = int(input("Amount of elements in list: "))
-    minval = int(input("Minimum element value: "))
-    maxval = int(input("Maximum element value: "))
+    nelems = int(utils.get_input("Amount of elements in list: "))
+    minval = int(utils.get_input("Minimum element value: "))
+    maxval = int(utils.get_input("Maximum element value: "))
     if minval > maxval:
         minval, maxval = maxval, minval
     x = [random.randrange(minval, maxval+1) for n in range(nelems)]
 
     # Choose a target, find and print pairs.
-    target = int(input("Choose a target: "))
+    target = int(utils.get_input("Choose a target: "))
     p = find_target_pairs(x, target)
     print("Randomly generated list: {}".format(x))
     print("Target: {}".format(target))

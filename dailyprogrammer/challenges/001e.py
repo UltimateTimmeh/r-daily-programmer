@@ -36,7 +36,7 @@ Example run
         name: John Smith
         age: 50
         reddit_username: johnsmith
-    Note: Data has been appended to file '/path/to/project/dailyprogrammer/output/001e_example_output.txt'
+    Note: Data has been appended to file '001e_example_output.txt'
 
 Module contents
 ---------------
@@ -45,14 +45,15 @@ Module contents
 import os
 import plugins.config as cfg
 from plugins import user
+from plugins import utils
 
 
 def run():
     """Execute the challenges.001e module."""
     # Ask for input.
-    name = input("Name? > ")
-    age = input("Age? > ")
-    reddit_username = input("Reddit Username? > ")
+    name = utils.get_input("Name? > ")
+    age = utils.get_input("Age? > ")
+    reddit_username = utils.get_input("Reddit Username? > ")
 
     # Create PersonalInfo object, print and write to file.
     pi = user.User(name=name, age=age, reddit_username=reddit_username)
@@ -60,3 +61,4 @@ def run():
     outputfile_fn = os.path.join(cfg.output_dir, '001e_example_output.txt')
     pi.write(outputfile_fn)
     print("Note: Data has been appended to file '{}'".format(outputfile_fn))
+

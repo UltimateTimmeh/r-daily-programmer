@@ -38,6 +38,8 @@ Module contents
 ---------------
 """
 
+from plugins import utils
+
 
 ###
 ### GENERAL SWAPPING FUNCTION
@@ -765,7 +767,7 @@ def comb(x, shrink=1.3, verbose=False):
 def run():
     """Execute the challenges.009e module."""
     # Ask for list of numbers to sort.
-    nrs = input("Enter numbers to sort, separated by a comma: ")
+    nrs = utils.get_input("Enter numbers to sort, separated by a comma: ")
     x = [float(nr) for nr in nrs.split(',')]
 
     # Ask for sorting algorithm to use.
@@ -780,9 +782,9 @@ def run():
         'comb': (1, comb),
     }
     print("\nThe available sorting algorithms are: {}".format(list(algorithms.keys())))
-    chosen = input("Choose one: ")
+    chosen = utils.get_input("Choose one: ")
     while chosen not in algorithms:
-        chosen = input("Invalid algorithm! Choose one from the list: ")
+        chosen = utils.get_input("Invalid algorithm! Choose one from the list: ")
 
     # Sort the list and print the result.
     inplace, sortfunc = algorithms[chosen]

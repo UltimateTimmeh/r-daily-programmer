@@ -138,12 +138,12 @@ def counting_game(n, factors={3: 'Fizz', 5: 'Buzz'}):
         ['1', '2', 'Fizz', '4', 'Buzz']
     """
     solution = []
-    for i in range(1, n+1):
-        replace = ''.join([('', word)[i%fac==0] for fac, word in factors.items()])
+    for nr in range(1, n+1):
+        replace = ''.join([('', word)[nr%factor==0] for factor, word in factors.items()])
         if replace:
             solution.append(replace)
         else:
-            solution.append(str(i))
+            solution.append(str(nr))
     return solution
 
 

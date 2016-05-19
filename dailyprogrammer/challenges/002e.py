@@ -64,7 +64,8 @@ Module contents
 
 import math
 
-from plugins.textmenu import TextMenuItem, TextMenu, TextMenuEngine
+from plugins import textmenu as tm
+from plugins import utils
 
 
 # Cubes
@@ -141,7 +142,7 @@ def ask_float(msg):
     """
     while True:
         try:
-            return float(input(msg))
+            return float(utils.get_input(msg))
         except:
             print("You must provide a valid number!")
 
@@ -152,7 +153,7 @@ def calc_cube_surface_area():
     result = cube_surface_area(z)
     print("The cube's surface area is: {0:.3f}".format(result))
     print("Formula: 6*z**2")
-    input("PRESS ENTER TO CONTINUE")
+    utils.get_input("PRESS ENTER TO CONTINUE")
 
 
 def calc_cube_volume():
@@ -161,7 +162,7 @@ def calc_cube_volume():
     result = cube_volume(z)
     print("The cube's volume is: {0:.3f}".format(result))
     print("Formula: z**3")
-    input("PRESS ENTER TO CONTINUE")
+    utils.get_input("PRESS ENTER TO CONTINUE")
 
 
 def calc_sphere_surface_area():
@@ -170,7 +171,7 @@ def calc_sphere_surface_area():
     result = sphere_surface_area(r)
     print("The sphere's surface area is: {0:.3f}".format(result))
     print("Formula: 4*pi*r**2")
-    input("PRESS ENTER TO CONTINUE")
+    utils.get_input("PRESS ENTER TO CONTINUE")
 
 
 def calc_sphere_volume():
@@ -179,44 +180,44 @@ def calc_sphere_volume():
     result = sphere_volume(r)
     print("The sphere's volume is: {0:.3f}".format(result))
     print("Formula: 4/3*pi*r**3")
-    input("PRESS ENTER TO CONTINUE")
+    utils.get_input("PRESS ENTER TO CONTINUE")
 
 
 # Create menus and run the calculator as a text menu engine.
 def run():
     """Execute the challenges.002e module."""
     cubes_menuitems = [
-        TextMenuItem('1', calc_cube_surface_area, 'Surface Area'),
-        TextMenuItem('2', calc_cube_volume, 'Volume'),
-        TextMenuItem('b', 'back', 'Back'),
-        TextMenuItem('q', 'quit', 'Quit'),
+        tm.TextMenuItem('1', calc_cube_surface_area, 'Surface Area'),
+        tm.TextMenuItem('2', calc_cube_volume, 'Volume'),
+        tm.TextMenuItem('b', 'back', 'Back'),
+        tm.TextMenuItem('q', 'quit', 'Quit'),
         ]
 
     spheres_menuitems = [
-        TextMenuItem('1', calc_sphere_surface_area, 'Surface Area'),
-        TextMenuItem('2', calc_sphere_volume, 'Volume'),
-        TextMenuItem('b', 'back', 'Back'),
-        TextMenuItem('q', 'quit', 'Quit'),
+        tm.TextMenuItem('1', calc_sphere_surface_area, 'Surface Area'),
+        tm.TextMenuItem('2', calc_sphere_volume, 'Volume'),
+        tm.TextMenuItem('b', 'back', 'Back'),
+        tm.TextMenuItem('q', 'quit', 'Quit'),
         ]
 
     geometrical_menuitems = [
-        TextMenuItem('1', 'cubes_menu', 'Cubes'),
-        TextMenuItem('2', 'spheres_menu', 'Spheres'),
-        TextMenuItem('b', 'back', 'Back'),
-        TextMenuItem('q', 'quit', 'Quit'),
+        tm.TextMenuItem('1', 'cubes_menu', 'Cubes'),
+        tm.TextMenuItem('2', 'spheres_menu', 'Spheres'),
+        tm.TextMenuItem('b', 'back', 'Back'),
+        tm.TextMenuItem('q', 'quit', 'Quit'),
         ]
 
     main_menuitems = [
-        TextMenuItem('1', 'geometrical_menu', 'Geometrical'),
-        TextMenuItem('q', 'quit', 'Quit'),
+        tm.TextMenuItem('1', 'geometrical_menu', 'Geometrical'),
+        tm.TextMenuItem('q', 'quit', 'Quit'),
         ]
 
     menus = {
-        'main_menu': TextMenu('MAIN', main_menuitems),
-        'geometrical_menu': TextMenu('GEOMETRICAL', geometrical_menuitems),
-        'spheres_menu': TextMenu('SPHERES', spheres_menuitems),
-        'cubes_menu': TextMenu('CUBES', cubes_menuitems)
+        'main_menu': tm.TextMenu('MAIN', main_menuitems),
+        'geometrical_menu': tm.TextMenu('GEOMETRICAL', geometrical_menuitems),
+        'spheres_menu': tm.TextMenu('SPHERES', spheres_menuitems),
+        'cubes_menu': tm.TextMenu('CUBES', cubes_menuitems)
         }
-    calculator = TextMenuEngine(menus, 'main_menu')
+    calculator = tm.TextMenuEngine(menus, 'main_menu')
     calculator.run()
 

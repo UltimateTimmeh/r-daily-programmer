@@ -40,14 +40,14 @@ Example run
 ::
 
     $ python3 dailyprogrammer.py execute 033e
-    Translate: hola
-    > hello
+    12 * 12?
+    > 144
     Correct!
     What is reddit?
     > website without cats
     Incorrect, correct answer was: website with cats
-    12 * 12?
-    > 144
+    Translate: hola
+    > hello
     Correct!
     12 * 12?
     > exit
@@ -56,7 +56,11 @@ Module contents
 ---------------
 """
 
+import os
 import random
+
+from plugins import config as cfg
+from plugins import utils
 
 
 def read_study_tool_file(fn):
@@ -83,10 +87,11 @@ def run():
     """Execute the challenges.033e module."""
     cont = True
     while cont:
-        data = read_study_tool_file('input/033e_example_input.txt')
+        datafp = os.path.join(cfg.input_dir, '033e_example_input.txt')
+        data = read_study_tool_file(datafp)
         random.shuffle(data)
         for question, expected in data:
-            answer = input("{}\n> ".format(question))
+            answer = utils.get_input("{}\n> ".format(question))
             if answer == 'exit':
                 cont = False
                 break

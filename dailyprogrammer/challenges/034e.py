@@ -31,6 +31,8 @@ Module contents
 ---------------
 """
 
+from plugins import utils
+
 
 def sumsq(nrs):
     """Return the sum of the squares of the numbers in a list.
@@ -51,7 +53,7 @@ def sumsq(nrs):
 def run():
     """Execute the challenges.034e module."""
     inputmsg = "Provide three numbers, separated with a comma: "
-    nrs = sorted([int(nr) for nr in input(inputmsg).split(',')])[1:]
+    nrs = sorted([int(nr) for nr in utils.get_input(inputmsg).split(',')])[-2:]
     outputmsg = "The largest two numbers are {} and the sum of their squares is {}."
     print(outputmsg.format(nrs, sumsq(nrs)))
 

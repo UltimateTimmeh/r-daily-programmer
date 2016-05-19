@@ -50,12 +50,13 @@ Module contents
 ---------------
 """
 
-from plugins.doomsday import century, is_leapyear
+from plugins import doomsday as dd
+from plugins import utils
 
 
 def run():
     """Execute the challenges.027e module."""
-    year = int(input("Enter Year: "))
-    print("Century: {}".format(century(year)))
-    print("Leap Year: {}".format({True: 'yes', False: 'no'}[is_leapyear(year)]))
+    year = int(utils.get_input("Enter Year: "))
+    print("Century: {}".format(dd.century(year)))
+    print("Leap Year: {}".format({True: 'yes', False: 'no'}[dd.is_leapyear(year)]))
 

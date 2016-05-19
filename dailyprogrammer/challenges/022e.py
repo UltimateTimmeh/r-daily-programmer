@@ -44,7 +44,7 @@ Module contents
 ---------------
 """
 
-from plugins.listtools import merge_lists
+from plugins import listtools as lt
 
 
 def run():
@@ -56,7 +56,7 @@ def run():
     for example in examples:
         x = example[1]
         y = example[2]
-        xnew = merge_lists(x, y)
+        xnew = lt.merge_lists(x, y)
         print("{} example:".format(example[0]))
         print("Input: {}, {}".format(x, y))
         print("Output: {}".format(xnew))

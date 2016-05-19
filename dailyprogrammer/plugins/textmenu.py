@@ -5,6 +5,8 @@
 Create text menus and run a text menu framework (source_).
 """
 
+from plugins import utils
+
 
 class TextMenuItem(object):
     """A class representing a text menu item.
@@ -226,7 +228,7 @@ class TextMenuEngine(object):
         """
         print(tm)
         while True:
-            id = input('Choose menu item > ')
+            id = utils.get_input('Choose menu item > ')
             if tm.is_valid_id(id):
                 return id
             else:

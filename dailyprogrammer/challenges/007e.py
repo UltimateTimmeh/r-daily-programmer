@@ -96,6 +96,8 @@ Module contents
 import subprocess
 import time
 
+from plugins import utils
+
 
 class Beep(object):
     """A class representing a beeping sound.
@@ -302,15 +304,17 @@ def run():
     morse_reddit = MorseConvention(ls, ws, charmap, beepmap)
 
     # Decode the challenge sequence.
-    sequence = ".... . .-.. .-.. --- / -.. .- .. .-.. -.-- / .--. .-. --- --. .-. .- -- -- . .-. / --. --- --- -.. / .-.. ..- -.-. -.- / --- -. / - .... . / -.-. .... .- .-.. .-.. . -. --. . ... / - --- -.. .- -.--"
+    sequence = (".... . .-.. .-.. --- / -.. .- .. .-.. -.-- / .--. .-. --- --. .-. .- -- -- . .-. /"
+                " --. --- --- -.. / .-.. ..- -.-. -.- / --- -. / - .... . / -.-. .... .- .-.. .-.. "
+                ". -. --. . ... / - --- -.. .- -.--")
     msg = morse_reddit.decode(sequence)
     print("\nChallenge Morse sequence:\n{}".format(sequence))
     print("decodes to:\n{}\n".format(msg))
 
     # Ask for a message to encode and whether or not to beep it.
-    msg = input("Message to encode? > ").upper()
+    msg = utils.get_input("Message to encode? > ").upper()
     sequence = morse_reddit.encode(msg)
     print("Resulting Morse sequence:\n{}\n".format(sequence))
-    if input("Beep this (y/n)? ").lower()[0] == 'y':
+    if utils.get_input("Beep this (y/n)? ").lower()[0] == 'y':
         morse_reddit.beep(sequence)
 

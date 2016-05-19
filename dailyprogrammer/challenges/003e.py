@@ -65,6 +65,9 @@ Module contents
 ---------------
 """
 
+from plugins import utils
+
+
 def caesar(msg, rs, dir='encode'):
     """Encode or decode a message using the caesar cipher.
 
@@ -148,8 +151,8 @@ def caesar_brute_force(msg_encoded):
 def run():
     """Execute the challenges.003e module."""
     # Ask for input
-    msg = input("Message to encode > ")
-    n = int(input("Amount of right shift > "))
+    msg = utils.get_input("Message to encode > ")
+    n = int(utils.get_input("Amount of right shift > "))
 
     # Play with the input
     print("Original message: " + msg)

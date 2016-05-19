@@ -98,12 +98,11 @@ class UserDatabase(object):
     file. A default user database is empty and has the required attributes 'username'
     and 'password'.
 
-    :param users: a list of users (default [])
+    :param users: a list of initial users to put in the database (default [])
     :type users: list(User, ...)
-    :param attrs_req: the list of required user attributes (default ['username',
-                      'password'])
-    :type attrs_req: list(str, ...)
-    :raise: ValueError if the list of users contains invalid objects
+    :param attrib: the list of required user attributes (default ['username', 'password'])
+    :type attrib: list(str, ...)
+    :raise: ValueError if the initial list of users contains invalid objects
 
     Example::
 
@@ -121,8 +120,12 @@ class UserDatabase(object):
     """
 
 
-    def __init__(self, users=[], attrs_req=['username', 'password']):
+    def __init__(self, users=None, attrs_req=None):
         """Create a new user database."""
+        if users is None:
+            users = []
+        if attrs_req is None:
+            attrs_req = ['username', 'password']
         self.attrs_req = attrs_req
         if not all([self.is_valid_user(user) for user in users]):
             raise ValueError("Invalid users for UserDatabase initialization!")

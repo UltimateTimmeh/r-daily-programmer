@@ -38,14 +38,15 @@ Module contents
 ---------------
 """
 
-from plugins.listtools import split_list
+from plugins import listtools as lt
+from plugins import utils
 
 
 def run():
     """Execute the challenges.023e module."""
-    x = list(range(int(input("Length of list: "))))
-    f = float(input("Split fraction: "))
-    x1, x2 = split_list(x, f=f)
+    x = list(range(int(utils.get_input("Length of list: "))))
+    f = float(utils.get_input("Split fraction: "))
+    x1, x2 = lt.split_list(x, f=f)
     print("Original list: {}".format(x))
     print("Split part 1: {}".format(x1))
     print("Split part 2: {}".format(x2))

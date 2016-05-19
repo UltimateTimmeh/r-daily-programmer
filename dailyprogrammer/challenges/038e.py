@@ -72,18 +72,20 @@ Module contents
 ---------------
 """
 
-from operator import attrgetter
+import operator
+
+from plugins import utils
 
 
 class Vertex(object):
-    """A class representing a graph vertex.
+    """A graph vertex with a set of paths to other vertices.
 
     A vertex is characterized by a label (or name) and a dictionary of paths from the vertex to
     other vertices. For application of Dijkstra's algorithm for calculating the shortest path from
     any vertex to all other vertices, each vertex also has the 'visited', 'parent' and 'cost'
     attributes.
 
-    :param str label: the vertex' label
+    :param str label: the vertex's label
     :param paths: dictionary specifying the connectivity of the vertex with other vertices, where
                   keys specify vertex labels and values indicate the associated cost of traveling to
                   the respective vertex (default {})
@@ -105,10 +107,12 @@ class Vertex(object):
     """
 
 
-    def __init__(self, label, paths={}):
+    def __init__(self, label, paths=None):
         """Create a new vertex."""
         self.label = label
         self.paths = paths
+        if self.paths is None:
+            self.paths = {}
         self.reset()
 
 
@@ -213,7 +217,6 @@ class Graph(object):
         return self.vertices[label]
 
 
-
     def reset(self):
         """Reset the graph to its default values.
 
@@ -313,7 +316,7 @@ class Graph(object):
         # and set the cost of the origin to zero.
         self.reset()
         self.origin = origin
-        originv = self.__getitem__(origin)
+        originv = self[origin]
         originv.cost = 0
 
         # Go through all vertices until there are no more unvisited vertices with
@@ -321,10 +324,10 @@ class Graph(object):
         availablevs = self.unvisited_with_cost()
         while len(availablevs) > 0:
             # Consider the unvisited vertex with the lowest cost.
-            currentv = min(availablevs.values(), key=attrgetter('cost'))
+            currentv = min(availablevs.values(), key=operator.attrgetter('cost'))
             # Go through all paths of the considered vertex.
             for destination, pathcost in currentv.paths.items():
-                destinationv = self.__getitem__(destination)
+                destinationv = self[destination]
                 # If the destination vertex was already visited, pass.
                 if destinationv.visited:
                     pass
@@ -340,40 +343,38 @@ class Graph(object):
             availablevs = self.unvisited_with_cost()
 
 
-    def route(self, start, end):
+    def route(self, origin, destination):
         """Return the shortest route on the graph from the start vertex to the end vertex.
 
         If the end vertex is not connected to the start vertex, then no route exists
         and an empty list is returned.
 
-        :param str start: label of the start vertex (will become the new graph origin)
-        :param str end: label of the end vertex
-        :return: a list of vertex labels that represents the shortest route from the start
-                 vertex to the end vertex
+        :param str origin: label of the origin vertex (will become the new graph origin)
+        :param str destination: label of the destination vertex
+        :return: a list of vertex labels that represents the shortest route from the origin
+                 vertex to the destination vertex
         :rtype: list(str, ...)
 
         For an example that uses this method, see :func:`challenges.038e.Graph`.
         """
-        # Execute the Dijkstra algirithm with the provided start vertex label.
-        self.dijkstra(start)
-        # Make sure the end vertex is connected to the start vertex. Return an empty list
+        # Execute the Dijkstra algirithm with the provided origin vertex.
+        self.dijkstra(origin)
+        # Make sure the destination vertex is connected to the origin vertex. Return an empty list
         # if this is not the case.
-        endv = self.__getitem__(end)
-        if not endv.visited:
+        vdest = self[destination]
+        if not vdest.visited:
             return []
-        # Extract the route from the start vertex to the end vertex.
-        route = [end]
-        while endv.parent is not None:
-            route.append(endv.parent)
-            endv = self.__getitem__(endv.parent)
+        # Extract the route.
+        route = [destination]
+        while vdest.parent is not None:
+            route.append(vdest.parent)
+            vdest = self[vdest.parent]
         return route[::-1]
 
 
     @classmethod
     def from_dict(cls, dict_):
         """Create a graph from a dictionary representation.
-
-        Note that in this way, the order of the vertices in the list is uncertain.
 
         :param dict dict_: dictionary representation of the graph
         :return: the graph
@@ -387,7 +388,7 @@ class Graph(object):
 
 def run():
     """Execute the challenges.038e module."""
-    vertices = {
+    graph_dict = {
         'A': {'B': 3, 'C': 5, 'D': 7},
         'B': {'A': 3, 'D': 1, 'E': 7},
         'C': {'A': 5, 'D': 3, 'F': 2},
@@ -398,11 +399,13 @@ def run():
         'H': {'E': 1, 'G': 3, 'I': 5},
         'I': {'F': 4, 'G': 2, 'H': 5},
     }
-    graph = Graph.from_dict(vertices)
+    graph = Graph.from_dict(graph_dict)
     print("This is the graph before doing anything:\n{}".format(graph))
-    start = input("Determine shortest route from vertex: ")
-    end = input("To vertex: ")
+    start = utils.get_input("Determine shortest route from vertex: ")
+    end = utils.get_input("To vertex: ")
     route = graph.route(start, end)
-    print("Graph after application of Dijkstra's algorithm with origin '{}':\n{}".format(start, graph))
-    print("Shortest route from vertex '{}' to vertex '{}': {}".format(start, end, route))
+    msg_graph = "Graph after application of Dijkstra's algorithm with origin '{}':\n{}"
+    msg_route = "Shortest route from vertex '{}' to vertex '{}': {}"
+    print(msg_graph.format(start, graph))
+    print(msg_route.format(start, end, route))
 

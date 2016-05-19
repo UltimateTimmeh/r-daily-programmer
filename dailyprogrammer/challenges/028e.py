@@ -57,16 +57,17 @@ Module contents
 
 import random
 
-from plugins.listtools import find_first_duplicate
+from plugins import listtools as lt
+from plugins import utils
 
 
 def run():
     """Execute the challenges.028e module."""
     # Ask user input.
-    nelems = int(input("Amount of elements in list: "))
-    llim = int(input("Lower element limit: "))
-    ulim = int(input("Upper element limit: "))
-    plist = input("Print the list (y/n)? ").lower()[0]
+    nelems = int(utils.get_input("Amount of elements in list: "))
+    llim = int(utils.get_input("Lower element limit: "))
+    ulim = int(utils.get_input("Upper element limit: "))
+    plist = utils.get_input("Print the list (y/n)? ").lower()[0]
 
     # Generate the random list with a single duplicate element.
     if llim > ulim:
@@ -82,5 +83,5 @@ def run():
         print(x)
 
     # Find and print the duplicate element.
-    print("The duplicate element in the list is: {}".format(find_first_duplicate(x)))
+    print("The duplicate element in the list is: {}".format(lt.find_first_duplicate(x)))
 

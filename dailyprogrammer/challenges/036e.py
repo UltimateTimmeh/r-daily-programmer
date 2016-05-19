@@ -46,6 +46,8 @@ Module contents
 ---------------
 """
 
+from plugins import utils
+
 
 def locker_problem(n):
     """Simulate the locker problem for an arbitrary amount of lockers.
@@ -92,7 +94,7 @@ def locker_problem2(n):
 
 def run():
     """Execute the challenges.036e module."""
-    n = int(input("How many lockers are there? > "))
+    n = int(utils.get_input("How many lockers are there? > "))
     lockers = locker_problem2(n)
     open_lockers = [l+1 for l, s in enumerate(lockers) if s]
     msg = "After toggling, there are {} open lockers.\nThese are their numbers:\n{}"

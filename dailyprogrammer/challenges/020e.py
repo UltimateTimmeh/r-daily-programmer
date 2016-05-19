@@ -53,6 +53,8 @@ Module contents
 ---------------
 """
 
+from plugins import utils
+
 
 def sieve_of_eratosthenes(limit):
     """Find all primes up to a certain limit.
@@ -88,7 +90,7 @@ def sieve_of_eratosthenes(limit):
 
 def run():
     """Execute the challenges.020e module."""
-    limit = int(input("Find all prime numbers up to and including: "))
+    limit = int(utils.get_input("Find all prime numbers up to and including: "))
     primes = sieve_of_eratosthenes(limit)
     end = {True: '\n', False: ', '}
     for i, prime in enumerate(primes):

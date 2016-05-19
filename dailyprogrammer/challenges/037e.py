@@ -42,7 +42,7 @@ Contents of 037e_example_input.txt::
 
 Example run::
 
-    $ python3 dailyprogrammer.py execute 037e
+    Provide input file name > 037e_example_input.txt
     Amount of lines in file: 12
     Amount of words in file: 40
 
@@ -50,13 +50,19 @@ Module contents
 ---------------
 """
 
-from plugins.enhancedstring import EnhancedString
+import os
+
+from plugins import config as cfg
+from plugins import enhancedstring as es
+from plugins import utils
 
 
 def run():
     """Execute the challenges.037e module."""
-    with open("input/037e_example_input.txt", 'r') as fil:
-        text = EnhancedString(fil.read())
-    print("Amount of lines in file: {}".format(text.count_lines()))
-    print("Amount of words in file: {}".format(text.count_words()))
+    fil_fn = utils.get_input("Provide input file name > ")
+    fil_fp = os.path.join(cfg.input_dir, fil_fn)
+    with open(fil_fp, 'r') as fil:
+        text = es.EnhancedString(fil.read())
+    print("Amount of lines in file: {}".format(text.nlines))
+    print("Amount of words in file: {}".format(text.nwords))
 

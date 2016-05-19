@@ -43,6 +43,8 @@ Module contents
 |     dictionary mapping the letters A - Z to the numbers 0 - 25
 """
 
+from plugins import utils
+
 map_nrs2ltrs = {
     nr: ltr for nr, ltr in enumerate('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
 }
@@ -126,7 +128,7 @@ class EnhancedInt(object):
 
         Note that the returned enhanced string has the same base as self (the first number).
         """
-        result = EnhancedInt(self.base10()*other.base10())
+        result = self.__class__(self.base10()*other.base10())
         result.convert(self.base)
         return result
 
@@ -177,8 +179,8 @@ class EnhancedInt(object):
 
 def run():
     """Execute the challenges.031e module."""
-    nr1 = input('First base 26 number (A - Z): ').upper()
-    nr2 = input('Second base 26 number (A - Z): ').upper()
+    nr1 = utils.get_input('First base 26 number (A - Z): ').upper()
+    nr2 = utils.get_input('Second base 26 number (A - Z): ').upper()
     nr1 = EnhancedInt([map_ltrs2nrs[char] for char in nr1], 26)
     nr2 = EnhancedInt([map_ltrs2nrs[char] for char in nr2], 26)
     result = ''.join([map_nrs2ltrs[digit] for digit in (nr1 * nr2).digits])

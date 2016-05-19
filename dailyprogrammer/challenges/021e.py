@@ -32,6 +32,8 @@ Module contents
 ---------------
 """
 
+from plugins import utils
+
 
 def deconstruct_number(number):
     """Deconstruct a number into a list of digits and the location of the dot (if any).
@@ -124,7 +126,7 @@ def next_permutation(number):
 
 def run():
     """Execute the challenges.021e module."""
-    number = input("Number: ")
+    number = utils.get_input("Number: ")
     number = {True: float, False: int}['.' in number](number)
     newnumber = next_permutation(number)
     if newnumber != number:

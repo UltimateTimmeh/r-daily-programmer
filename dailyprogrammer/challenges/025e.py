@@ -40,7 +40,7 @@ Module contents
 ---------------
 """
 
-from plugins.listtools import count_items, most_prevalent_items
+from plugins import listtools as lt
 
 
 def determine_election_winners(votes):
@@ -66,8 +66,8 @@ def determine_election_winners(votes):
     """
     if len(votes) == 0:
         return set(), 0, 0.
-    counts = count_items(votes)
-    winners = most_prevalent_items(votes)
+    counts = lt.count_items(votes)
+    winners = lt.most_prevalent_items(votes)
     winnervotes = counts[winners.copy().pop()]
     totalvotes = sum([c for p, c in counts.items()])
     return winners, winnervotes, winnervotes/totalvotes

@@ -55,6 +55,7 @@ from decimal import Decimal, getcontext
 from math import factorial
 
 from plugins import textmenu
+from plugins import utils
 
 
 def trunc(dec, tr):
@@ -195,7 +196,7 @@ def calc_pi(func, pi_exp='3.141592653589793238462643383279'):
     :param str pi_exp: the expected value of pi (default '3.141592653589793238462643383279')
     """
     prec_exp = len(pi_exp) - 2
-    prec_calc = int(input("Desired precision for calculation of pi: "))
+    prec_calc = int(utils.get_input("Desired precision for calculation of pi: "))
     pi_calc = str(func(prec_calc))
     print("\nCalculation of pi up to {} digits:\n    {}".format(prec_calc, pi_calc))
     print("Pi calculated up to {} digits should be:\n    {}".format(prec_exp, pi_exp))

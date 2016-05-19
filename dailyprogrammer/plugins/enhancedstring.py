@@ -23,9 +23,19 @@ class EnhancedString(object):
         self.str_ = str_
 
 
+    def __repr__(self):
+        """Format the enhanced string as a representation."""
+        return "'{}'".format(self.str_)
+
+
     def __str__(self):
         """Format the enhanced string as a string."""
         return self.str_
+
+
+    def __len__(self):
+        """Return the length of the enhanced string."""
+        return len(self.str_)
 
 
     def __eq__(self, other):
@@ -134,6 +144,7 @@ class EnhancedString(object):
         return stripped == stripped[::-1]
 
 
+    @property
     def lines(self):
         """Return the list of lines in the enhanced string.
 
@@ -148,7 +159,8 @@ class EnhancedString(object):
         return [self.__class__(line) for line in self.str_.split('\n')]
 
 
-    def count_lines(self):
+    @property
+    def nlines(self):
         """Count the amount of lines in the enhanced string.
 
         :return: the amount of lines in the enhanced string
@@ -159,9 +171,10 @@ class EnhancedString(object):
             >>> EnhancedString("This string has\\nmultiple lines!").count_lines()
             2
         """
-        return len(self.lines())
+        return len(self.lines)
 
 
+    @property
     def words(self):
         """Return the list of words in the enhanced string.
 
@@ -176,7 +189,8 @@ class EnhancedString(object):
         return [self.__class__(word) for word in self.str_.split()]
 
 
-    def count_words(self):
+    @property
+    def nwords(self):
         """Count the amount of words in the enhanced string.
 
         :return: the amount of words in the enhanced string
@@ -187,7 +201,7 @@ class EnhancedString(object):
             >>> EnhancedString("This string has multiple words!").count_words()
             5
         """
-        return len(self.words())
+        return len(self.words)
 
 
     def frame_with_ascii(self, char='*', mfl=80, a='<'):
@@ -229,18 +243,16 @@ class EnhancedString(object):
             raise ValueError(error.format(a))
 
         # Reformat the enhanced string so lines have at most mfl-6 characters.
-        lines = self.str_.splitlines()
         newlines = []
-        for line in lines:
-            words = line.split()
-            newline = words[0]
-            for word in words[1:]:
+        for line in self.lines:
+            newline = line.words[0].str_
+            for word in line.words[1:]:
                 concatenation = '{} {}'.format(newline, word)
                 if len(concatenation) <= mfl-6:
                     newline = concatenation
                 else:
                     newlines.append(newline)
-                    newline = word
+                    newline = word.str_
             newlines.append(newline)
 
         # Add the frame to the enhanced string and return.

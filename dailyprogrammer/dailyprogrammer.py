@@ -1,11 +1,11 @@
 from bs4 import BeautifulSoup
 import datetime
+import http
 import importlib
 import os
 import praw
 import sys
 import unittest
-from urllib.request import urlopen
 
 from plugins import config as cfg
 
@@ -35,9 +35,14 @@ def prepare(challenge_id):
     challenge_title = 'challenge #{nr} [{difficulty}]'.format(**challenge).lower()
 
     # Fetch the url of the challenge's post from Reddit.
-    url_base = 'http://www.reddit.com'
-    url = url_base + '/r/dailyprogrammer/wiki/challenges'
-    page = urlopen(url).read().decode('utf-8')
+    protocol = 'https://'
+    url_address = 'www.reddit.com'
+    url_path = '/r/dailyprogrammer/wiki/challenges'
+    hdr = {'User-Agent': 'Getting DailyProgrammer list of challenges'}
+    connection = http.client.HTTPSConnection(url_address)
+    connection.request('GET', url_path, headers=hdr)
+    page = connection.getresponse().read().decode('utf-8')
+    connection.close()
     soup = BeautifulSoup(page)
     url_match = [link.get('href') for link in soup.find_all('a') \
         if link.string is not None and challenge_title in link.string.lower()]
@@ -49,7 +54,8 @@ def prepare(challenge_id):
         print("\nWARNING: Multiple challenges with title '{}' were found:".format(challenge_title))
         print('\n'.join(url_match))
         print("Automatically picking the first one. Others will have to be prepared manually.\n")
-    challenge['url'] = url_base + url_match[0]
+    challenge['url'] = protocol + url_address + url_match[0]
+    print(challenge['url'])
 
     print("\nPreparing challenge {} from url:\n{}".format(challenge['id'], challenge['url']))
 
@@ -68,7 +74,7 @@ def prepare(challenge_id):
     print("DONE\n")
 
 
-def run_unittests(logfn):
+def runtests(logfn):
     """Execute the project's unit tests and write results to a log file."""
     testloader = unittest.defaultTestLoader
     testsuite = testloader.discover(cfg.tests_dir)
@@ -82,7 +88,7 @@ if __name__ == '__main__':
     actions = {
         'execute': execute,
         'prepare': prepare,
-        'unittests': run_unittests,
+        'runtests': runtests,
     }
     action, arg = sys.argv[1:]
     actions[action](arg)

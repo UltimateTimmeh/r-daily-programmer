@@ -34,13 +34,14 @@ Module contents
 ---------------
 """
 
-from plugins.enhancedstring import EnhancedString
+from plugins import enhancedstring as estr
+from plugins import utils
 
 
 def run():
     """Execute the challenges.016e module."""
-    str_ = EnhancedString(input("Input string: "))
-    chars = input("Characters to remove: ")
+    str_ = estr.EnhancedString(utils.get_input("Input string: "))
+    chars = utils.get_input("Characters to remove: ")
     str_.remove(chars)
     print("Result: {}".format(str_))
 

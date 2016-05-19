@@ -36,6 +36,17 @@ class TestEnhancedString(unittest.TestCase):
         self.assertEqual(str_.__str__(), 'test123')
 
 
+    def test___len__(self):
+        """Test method :meth:`plugins.enhancedstring.EnhancedString.__len__`
+
+        **Tested:**
+
+        - The returned string length is correct.
+        """
+        str_ = enhancedstring.EnhancedString('test123')
+        self.assertEqual(str_.__len__(), 7)
+
+
     def test___eq__(self):
         """Test method :meth:`plugins.enhancedstring.EnhancedString.__str__`
 
@@ -117,43 +128,44 @@ class TestEnhancedString(unittest.TestCase):
 
 
     def test_lines(self):
-        """Test method :meth:`plugins.enhancedstring.EnhancedString.lines`
+        """Test property :meth:`plugins.enhancedstring.EnhancedString.lines`
 
         **Tested:**
 
-        - The enhanced string is correctly split in a list of enhancedstrings for each line.
+        - The enhanced string is correctly split in a list of enhanced strings for each line.
         """
-        s1 = enhancedstring.EnhancedString("This string has\nmultiple lines!")
-        result = s1.lines()
+        s1 = enhancedstring.EnhancedString("This string has\nmultiple lines!\n")
+        result = s1.lines
         expected = [
             enhancedstring.EnhancedString("This string has"),
             enhancedstring.EnhancedString("multiple lines!"),
+            enhancedstring.EnhancedString(""),
         ]
         self.assertEqual(result, expected)
 
 
-    def test_count_lines(self):
-        """Test method :meth:`plugins.enhancedstring.EnhancedString.count_lines`
+    def test_nlines(self):
+        """Test property :meth:`plugins.enhancedstring.EnhancedString.nlines`
 
         **Tested:**
 
         - The returned amount of lines is correct.
         """
-        s1 = enhancedstring.EnhancedString("This string has\nmultiple lines!")
-        result = s1.count_lines()
-        expected = 2
+        s1 = enhancedstring.EnhancedString("This string has\nmultiple lines!\n")
+        result = s1.nlines
+        expected = 3
         self.assertEqual(result, expected)
 
 
     def test_words(self):
-        """Test method :meth:`plugins.enhancedstring.EnhancedString.words`
+        """Test property :meth:`plugins.enhancedstring.EnhancedString.words`
 
         **Tested:**
 
         - The enhanced string is correctly split in a list of enhancedstrings for each word.
         """
         s1 = enhancedstring.EnhancedString("This string has multiple words!")
-        result = s1.words()
+        result = s1.words
         expected = [
             enhancedstring.EnhancedString("This"),
             enhancedstring.EnhancedString("string"),
@@ -164,15 +176,15 @@ class TestEnhancedString(unittest.TestCase):
         self.assertEqual(result, expected)
 
 
-    def test_count_words(self):
-        """Test method :meth:`plugins.enhancedstring.EnhancedString.count_words`
+    def test_nwords(self):
+        """Test property :meth:`plugins.enhancedstring.EnhancedString.nwords`
 
         **Tested:**
 
         - The returned amount of words is correct.
         """
         s1 = enhancedstring.EnhancedString("This string has multiple words!")
-        result = s1.count_words()
+        result = s1.nwords
         expected = 5
         self.assertEqual(result, expected)
 

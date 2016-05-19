@@ -104,12 +104,22 @@ Example run
     2   3
     1
 
+.. note:: The amount of triangle levels you can have for a certain number in this challenge is equal
+          to the floor of its 'inverse sum of range'. For example, the sum of the range from 1 to 5
+          is 15. So if you want to make a triangle containing the numbers ranging from 1 to 15, that
+          triangle will have 5 levels. The sum of the range from 1 to 16 is 136. So if you want to
+          make a triangle containing the numbers ranging from 1 to 150 (of which the 'inverse sum of
+          range' equals roughly 16.828), that triangle will have 16 levels and will only go up to
+          136.
+
 Module contents
 ---------------
 """
 
-from math import floor, sqrt
-from plugins.asciiart import TextTriangle
+import math
+
+from plugins import asciiart as aa
+from plugins import utils
 
 
 def sum_of_range(nr):
@@ -151,15 +161,15 @@ def inverse_sum_of_range(sum):
         >>> inverse_sum_of_range(12)
         4.424428900898052
     """
-    return (sqrt(8*sum+1)-1)/2
+    return (math.sqrt(8*sum+1)-1)/2
 
 
 def run():
     """Execute the challenges.035e module."""
-    sum = int(input("Enter number: "))
-    nr = floor(inverse_sum_of_range(sum))
-    floorsum = sum_of_range(nr)
-    char_len = len(str(floorsum)) + 1
-    chars = ['{1:<{0}}'.format(char_len, n) for n in range(1, floorsum+1)]
-    print(TextTriangle(char=chars, nlevels=nr, o='v'))
+    nr = int(utils.get_input("Enter number: "))
+    nlevels = math.floor(inverse_sum_of_range(nr))
+    maxnr = sum_of_range(nlevels)
+    char_len = len(str(maxnr)) + 1
+    chars = ['{1:<{0}}'.format(char_len, n) for n in range(1, maxnr+1)]
+    print(aa.TextTriangle(char=chars, nlevels=nlevels, o='v'))
 

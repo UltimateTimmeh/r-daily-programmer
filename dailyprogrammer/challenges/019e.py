@@ -165,7 +165,7 @@ Module contents
 
 from urllib.request import urlopen
 
-from plugins.enhancedstring import EnhancedString
+from plugins import enhancedstring as estr
 
 
 def format_header(title, above='', below=''):
@@ -192,6 +192,7 @@ def format_header(title, above='', below=''):
 def run():
     """Execute the challenges.019e module."""
     # Load the text file from the URL and split in lines.
+    print("Start downloading and processing the book. This may take a while...")
     start = 57
     end = 12681
     target_url = 'http://www.gutenberg.org/cache/epub/1661/pg1661.txt'
@@ -207,11 +208,11 @@ def run():
     for line in lines[start:end]:
         if line == '':  ## Skip empty lines.
             nlines_empty += 1
-        elif line == line.upper() and line[0] in 'IVXA':  ## Allcaps lines that start with one of 'IVXA' should be story or chapter titles.
+        elif line == line.upper() and line[0] in 'IVXA':  ## Allcaps lines that start with one of 'IVXA' are considered story or chapter titles.
             lines_skipped.append(line)
         else:  ## If none of the previous, then the line should be counted.
             nlines_counted += 1
-            counts = EnhancedString(line).count_characters(counts=counts)
+            counts = estr.EnhancedString(line).count_characters(counts=counts)
 
     # Crunch the numbers.
     ## Line count

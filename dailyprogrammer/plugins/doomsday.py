@@ -129,22 +129,22 @@ def doomsday(year, h=False):
     return {True: weekdays[doomsday], False: doomsday}[h]
 
 
-def ndays_in_month(month, leap):
+def ndays_in_month(month, year):
     """Return the amount of days in a month, depending on it being a leap year.
 
     :param int month: the month to determine the amount of days of
-    :param bool leap: indication for whether or not the month falls in a leap year
+    :param int year: year in which the month falls, to determine whether or not it's a leap year
     :return: the amount of days in the month
     :rtype: int
 
     Example::
 
-        >>> ndays_in_month(2, False)
+        >>> ndays_in_month(2, 2015)
         28
-        >>> ndays_in_month(2, True)
+        >>> ndays_in_month(2, 2016)
         29
     """
-    return ndays_in_months[leap][month-1]
+    return ndays_in_months[is_leapyear(year)][month-1]
 
 
 def doomsdate(month, leap):
@@ -222,7 +222,7 @@ class Date(object):
             return False
         if self.month < 1 or self.month > 12:
             return False
-        if self.day < 1 or self.day > ndays_in_month(self.month, is_leapyear(self.year)):
+        if self.day < 1 or self.day > ndays_in_month(self.month, self.year):
             return False
         return True
 

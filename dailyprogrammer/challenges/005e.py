@@ -42,7 +42,7 @@ Example run
     Choose menu item > 2
     New username > johnsmith
     New password (leave blank for random) > password
-    Note: Data has been written to file '/path/to/project/dailyprogrammer/output/005e_userdatabase.txt'
+    Note: Data has been written to file '005e_userdatabase.txt'
     === MAIN ===
     1. Log in
     2. Create new user
@@ -99,6 +99,7 @@ import os
 
 from plugins import config as cfg
 from plugins import textmenu, user, password
+from plugins import utils
 
 # Set global variables.
 user_authenticated = None
@@ -116,13 +117,13 @@ def new_user():
     """
     # Ask for new username. Make sure it does not already exist in the database.
     userdb = user.UserDatabase.read(userdb_fn)
-    username = input("New username > ")
-    while len(userdb.get_users('username', username)) >= 1:
+    username = utils.get_input("New username > ")
+    while userdb.get_users('username', username):
         print("That user already exists, please choose another name.")
-        username = input("New username > ")
+        username = utils.get_input("New username > ")
 
     # Ask for password. Generate random password if left blank.
-    pwd = input("New password (leave blank for random) > ")
+    pwd = utils.get_input("New password (leave blank for random) > ")
     if pwd == '':
         pwd = password.random_password(l=8)
         print("Your randomly generated password is: {}".format(pwd))
@@ -151,8 +152,8 @@ def log_in():
         print("Logging in as another user will terminate that session.")
 
     # Ask for the username and password.
-    username = input("Username > ")
-    pwd = input("Password > ")
+    username = utils.get_input("Username > ")
+    pwd = utils.get_input("Password > ")
 
     # Check if the user exists.
     userdb = user.UserDatabase.read(userdb_fn)
@@ -160,17 +161,17 @@ def log_in():
     if match:
         user_match = match[0]
     else:
-        input("Incorrect username or password. Press ENTER to continue.")
+        utils.get_input("Incorrect username or password. Press ENTER to continue.")
         return
 
     # Check if the password is correct.
     if not password.validate_password(pwd, user_match.password):
-        input("Incorrect username or password. Press ENTER to continue.")
+        utils.get_input("Incorrect username or password. Press ENTER to continue.")
         return
 
     # Getting here means the provided information is correct. Set authenticated user.User
     user_authenticated = user_match
-    input("Welcome, {}! Press ENTER to continue.".format(user_authenticated.username))
+    utils.get_input("Welcome, {}! Press ENTER to continue.".format(user_authenticated.username))
 
 
 def secret_code():
@@ -181,11 +182,11 @@ def secret_code():
     logged in, then the function continues and displays the 'secret message'.
     """
     if user_authenticated is None:
-        input("ACCESS DENIED! You must first log in. Press ENTER to continue.")
+        utils.get_input("ACCESS DENIED! You must first log in. Press ENTER to continue.")
         return
     secretmsg = "You are '{}', and you have access to the secret code. Enjoy!"
     print(secretmsg.format(user_authenticated.username))
-    input("Press ENTER to continue.")
+    utils.get_input("Press ENTER to continue.")
 
 
 def run():
@@ -205,3 +206,4 @@ def run():
     # Execute the menu engine.
     protectedsoftware = textmenu.TextMenuEngine(menus, 'main_menu')
     protectedsoftware.run()
+

@@ -38,6 +38,8 @@ Module contents
 ---------------
 """
 
+from plugins import utils
+
 
 def print_range(n1, n2=None, step=1, sep=', '):
     """Print the defined range of integers.
@@ -72,16 +74,16 @@ def print_range(n1, n2=None, step=1, sep=', '):
     else:
         start = n1
         end = n2
-    i = start
+    exec('i = start')
     exec("print(i, end={}); i += {}; ".format(repr(sep), step) * ((end-start)//step))
     if sep != '\n':
-        print('')
+        print('')  ## To make sure you go to a new line after printing the last one.
 
 
 def run():
     """Execute the challenges.040e module."""
-    start = int(input("Start of printed range: "))
-    end = int(input("End of printed range: "))
-    step = int(input("Counting step: "))
+    start = int(utils.get_input("Start of printed range: "))
+    end = int(utils.get_input("End of printed range: "))
+    step = int(utils.get_input("Counting step: "))
     print_range(start, end, step)
 
