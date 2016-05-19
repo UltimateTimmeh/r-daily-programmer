@@ -21,24 +21,25 @@ class GetInputMock(mock.Mock):
     the value you want it to return, it also prints the first argument it was called with followed
     by the return value. As can be seen in the example below, this replicates the printing behavior
     of the :func:`plugins.utils.get_input` function instead of merely returning the assigned return
-    value. The sole reason for this behavior is to make the challenge execution tests print exactly
-    the same text as printed by the example runs included in each challenge's documentation.
+    value. The sole reason this behavior is desired is to make the automatic challenge execution
+    tests print the same output as when executing the challenges normally (also see the example runs
+    on the challenge documentation pages).
 
     Example::
 
-        >>> get_input = input
+        >>> from plugins.utils import get_input
         >>> result = get_input("Input request > ")  ## Here the user has to type the response himself.
         Input request > answer
         >>> print(result)
         answer
         >>> from mock import Mock
         >>> get_input = Mock(return_value='answer')
-        >>> result = get_input("Input request > ")  ## Nothing is printed in this mock call.
+        >>> result = get_input("Input request > ")  ## Nothing is printed when calling this mock object.
         >>> print(result)
         answer
-        >>> from tests.test_challenges import GetInputMock
+        >>> from tests.test_challenge_execution import GetInputMock
         >>> get_input = GetInputMock(return_value='answer')
-        >>> result = get_input("Input request > ")  ## In this mock call, the printing behavior of 'get_input' is replicated.
+        >>> result = get_input("Input request > ")  ## When calling this mock object, the printing behavior of 'get_input' is replicated.
         Input request > answer
         >>> print(result)
         answer
@@ -91,11 +92,7 @@ class TestChallenges(unittest.TestCase):
         # Test successful execution.
         print("\n=== EXECUTING CHALLENGE 001 EASY ===\n")
         challenge = importlib.import_module('challenges.001e')
-        inputm.side_effect = [
-            'John Smith',
-            '50',
-            'johnsmith'
-        ]
+        inputm.side_effect = ['John Smith', '50', 'johnsmith']
         challenge.run()
         # Test correct execution.
         outfp = os.path.join(plugins.config.output_dir, '001e_example_output.txt')
