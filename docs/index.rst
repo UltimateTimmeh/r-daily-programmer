@@ -269,6 +269,8 @@ List of plugins
 .. _textmenu.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/plugins/textmenu.py
 .. _user.doc: _apidoc/plugins.user.html
 .. _user.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/plugins/user.py
+.. _utils.doc: _apidoc/plugins.utils.html
+.. _utils.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/plugins/utils.py
 
 +----------------+---------------------+---------------------+
 | Name           | Documentation       | Source              |
@@ -290,6 +292,8 @@ List of plugins
 | textmenu       | textmenu.doc_       | textmenu.src_       |
 +----------------+---------------------+---------------------+
 | user           | user.doc_           | user.src_           |
++----------------+---------------------+---------------------+
+| utils          | utils.doc_          | utils.src_          |
 +----------------+---------------------+---------------------+
 
 Testing

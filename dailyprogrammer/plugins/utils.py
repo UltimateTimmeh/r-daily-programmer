@@ -7,6 +7,6 @@ Utility functions (source_).
 
 
 def get_input(*args, **kwargs):
-    """Wrapper function for the builtin input function, so it can be mocked in execution tests."""
+    """Wrapper function for the builtin ``input`` function, so it can be mocked."""
     return input(*args, **kwargs)
 
