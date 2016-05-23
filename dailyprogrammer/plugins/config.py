@@ -25,8 +25,8 @@ Configurable variables used in |project| (source_).
 | *var* plugins.config.\ **tmp_dir** (str)
 |     directory for temporarily storing unit test input and output files
 
-| *var* plugins.config.\**testlong** (bool)
-|     indicates whether or not to perform execution tests of time consuming challenges
+| *var* plugins.config.\ **testlong** (bool)
+|     indicates whether or not to perform execution tests of time-consuming challenges
 """
 
 import os
