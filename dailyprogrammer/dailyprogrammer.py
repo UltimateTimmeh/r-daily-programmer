@@ -55,7 +55,6 @@ def prepare(challenge_id):
         print('\n'.join(url_match))
         print("Automatically picking the first one. Others will have to be prepared manually.\n")
     challenge['url'] = protocol + url_address + url_match[0]
-    print(challenge['url'])
 
     print("\nPreparing challenge {} from url:\n{}".format(challenge['id'], challenge['url']))
 

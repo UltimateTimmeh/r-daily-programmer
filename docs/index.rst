@@ -147,6 +147,8 @@ List of challenges
 .. _040e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/040e.py
 .. _041e.doc: _apidoc/challenges.041e.html
 .. _041e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/041e.py
+.. _042e.doc: _apidoc/challenges.042e.html
+.. _042e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/042e.py
 
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 | Nr. | Difficulty | ID   | Name                       | Status*     | Documentation | Source    | Plugins used                     |
@@ -209,7 +211,7 @@ List of challenges
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 | 30  | Easy       | 030e | Find Sum Pairs             | Complete    | 030e.doc_     | 030e.src_ |                                  |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
-| 31  | Easy       | 031e | Base 26 Multiplication     | Complete    | 031e.doc_     | 031e.src_ |                                  |
+| 31  | Easy       | 031e | Base 26 Multiplication     | Complete    | 031e.doc_     | 031e.src_ | enhancedint                      |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 | 32  | Easy       | 032e | Roulette                   | Complete    | 032e.doc_     | 032e.src_ |                                  |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
@@ -230,6 +232,8 @@ List of challenges
 | 40  | Easy       | 040e | Alternative Counting       | Complete    | 040e.doc_     | 040e.src_ |                                  |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 | 41  | Easy       | 041e | ASCII Framing              | Complete    | 041e.doc_     | 041e.src_ | enhancedstring                   |
++-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
+| 42  | Easy       | 042e | Beer Bottle 2              | Complete    | 042e.doc_     | 042e.src_ | enhancedint                      |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 
 \*\ **Challenge status**:
@@ -257,6 +261,8 @@ List of plugins
 .. _config.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/plugins/config.py
 .. _doomsday.doc: _apidoc/plugins.doomsday.html
 .. _doomsday.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/plugins/doomsday.py
+.. _enhancedint.doc: _apidoc/plugins.enhancedint.html
+.. _enhancedint.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/plugins/enhancedint.py
 .. _enhancedstring.doc: _apidoc/plugins.enhancedstring.html
 .. _enhancedstring.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/plugins/enhancedstring.py
 .. _listtools.doc: _apidoc/plugins.listtools.html
@@ -280,6 +286,8 @@ List of plugins
 | config         | config.doc_         | config.src_         |
 +----------------+---------------------+---------------------+
 | doomsday       | doomsday.doc_       | doomsday.src_       |
++----------------+---------------------+---------------------+
+| enhancedint    | enhancedint.doc_    | enhancedint.src_    |
 +----------------+---------------------+---------------------+
 | enhancedstring | enhancedstring.doc_ | enhancedstring.src_ |
 +----------------+---------------------+---------------------+

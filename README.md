@@ -75,3 +75,4 @@ I have included a list of challenges I have worked on so far.
 - *039e* - [FizzBuzz](dailyprogrammer/challenges/039e.py): Complete
 - *040e* - [Alternative Counting](dailyprogrammer/challenges/040e.py): Complete
 - *041e* - [ASCII Framing](dailyprogrammer/challenges/041e.py): Complete
+- *042e* - [Beer Bottle 2](dailyprogrammer/challenges/042e.py): Complete
