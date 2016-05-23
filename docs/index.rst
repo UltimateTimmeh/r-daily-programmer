@@ -149,11 +149,13 @@ List of challenges
 .. _041e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/041e.py
 .. _042e.doc: _apidoc/challenges.042e.html
 .. _042e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/042e.py
+.. _043e.doc: _apidoc/challenges.043e.html
+.. _043e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/043e.py
 
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 | Nr. | Difficulty | ID   | Name                       | Status*     | Documentation | Source    | Plugins used                     |
 +=====+============+======+============================+=============+===============+===========+==================================+
-| 1   | Easy       | 001e | Ask Input                  | Complete    | 001e.doc_     | 001e.src_ | config, user                     |
+| 1   | Easy       | 001e | Ask Input                  | Complete    | 001e.doc_     | 001e.src_ | user                             |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 | 2   | Easy       | 002e | Calculator                 | Complete    | 002e.doc_     | 002e.src_ | textmenu                         |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
@@ -161,7 +163,7 @@ List of challenges
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 | 4   | Easy       | 004e | Random Password            | Complete    | 004e.doc_     | 004e.src_ | password                         |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
-| 5   | Easy       | 005e | Password Protect           | Complete    | 005e.doc_     | 005e.src_ | config, password, textmenu, user |
+| 5   | Easy       | 005e | Password Protect           | Complete    | 005e.doc_     | 005e.src_ | password, textmenu, user         |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 | 6   | Easy       | 006e | Calculate Pi               | Complete    | 006e.doc_     | 006e.src_ | textmenu                         |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
@@ -234,6 +236,8 @@ List of challenges
 | 41  | Easy       | 041e | ASCII Framing              | Complete    | 041e.doc_     | 041e.src_ | enhancedstring                   |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 | 42  | Easy       | 042e | Beer Bottle 2              | Complete    | 042e.doc_     | 042e.src_ | enhancedint                      |
++-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
+| 43  | Easy       | 043e | Lowest Common Ancestor     | Complete    | 043e.doc_     | 043e.src_ |                                  |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 
 \*\ **Challenge status**:
