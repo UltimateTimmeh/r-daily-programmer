@@ -25,7 +25,8 @@ Try using an american roulette wheel (which has the 00 slot) to add a slight twi
 try to incorporate as many complex bets as you can. A comprehensive list can be found
 `here <http://en.wikipedia.org/wiki/Roulette#Bet_odds_table>`_.
 
-Thanks to SleepyTurtle for the challenge at `/r/dailyprogrammer_ideas <http://www.reddit.com/r/dailyprogrammer_ideas>`_
+Thanks to `/u/SleepyTurtle <https://www.reddit.com/user/SleepyTurtle>`_ for the challenge at
+`/r/dailyprogrammer_ideas <http://www.reddit.com/r/dailyprogrammer_ideas>`_.
 
 Example run
 -----------
