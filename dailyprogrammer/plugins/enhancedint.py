@@ -50,7 +50,7 @@ class EnhancedInt(object):
             errmsg += "For bases higher than 10, digits should be separated with a colon "
             errmsg += "or should be a list of integers."
             raise TypeError(errmsg.format(base, digits))
-        elif isinstance(digits, int):
+        if isinstance(digits, int):
             self.digits = [int(digit) for digit in str(digits)]
         elif isinstance(digits, str):
             self.digits = [int(digit) for digit in digits.split(':')]
@@ -81,9 +81,7 @@ class EnhancedInt(object):
 
         Note that the returned enhanced string has the same base as self (the first number).
         """
-        result = self.__class__(self.base10()*other.base10())
-        result.convert(self.base)
-        return result
+        return self.__class__(self.base10()*other.base10()).convert(self.base)
 
 
     def base10(self):
@@ -107,13 +105,14 @@ class EnhancedInt(object):
         """Convert the enhanced integer to another base.
 
         :param int newbase: the base to which the enhanced integer should be converted
+        :return: the converted enhanced integer
+        :rtype: EnhancedInt
 
         Example::
 
             >>> nr = EnhancedInt(12432525)
             >>> for newbase in [2, 8, 10, 125]:
-            ...     nr.convert(newbase)
-            ...     print(nr)
+            ...     print(nr.convert(newbase))
             ...
             101111011011010010001101 (b2)
             57332215 (b8)
@@ -121,13 +120,13 @@ class EnhancedInt(object):
             6:45:85:25 (b125)
         """
         base10 = self.base10()
-        self.base = newbase
         if base10 == 0:  ## If the number is zero, only the base needs to change.
-            return
-        self.digits = []
+            return self.__class__([0], newbase)
+        newdigits = []
         while base10 > 0:
-            self.digits.insert(0, base10 % newbase)
-            base10 = base10 // newbase
+            newdigits.insert(0, base10 % newbase)
+            base10 //= newbase
+        return self.__class__(newdigits, newbase)
 
 
     def as_words(self):

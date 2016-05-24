@@ -121,12 +121,12 @@ class TestEnhancedInt(unittest.TestCase):
 
         **Tested:**
 
-        - The conversion was performed correctly.
+        - The returned converted enhanced integer is correct.
         """
         int_ = enhancedint.EnhancedInt('125:63:7:0', base=150)
-        int_.convert(6)
-        self.assertEqual(int_.digits, [1, 1, 0, 0, 0, 0, 3, 5, 2, 2, 1, 0])
-        self.assertEqual(int_.base, 6)
+        result = int_.convert(6)
+        self.assertEqual(result.digits, [1, 1, 0, 0, 0, 0, 3, 5, 2, 2, 1, 0])
+        self.assertEqual(result.base, 6)
 
 
     def test_as_words(self):
