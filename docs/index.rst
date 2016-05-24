@@ -151,6 +151,8 @@ List of challenges
 .. _042e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/042e.py
 .. _043e.doc: _apidoc/challenges.043e.html
 .. _043e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/043e.py
+.. _044e.doc: _apidoc/challenges.044e.html
+.. _044e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/044e.py
 
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 | Nr. | Difficulty | ID   | Name                       | Status*     | Documentation | Source    | Plugins used                     |
@@ -238,6 +240,8 @@ List of challenges
 | 42  | Easy       | 042e | Beer Bottle 2              | Complete    | 042e.doc_     | 042e.src_ | enhancedint                      |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 | 43  | Easy       | 043e | Lowest Common Ancestor     | Complete    | 043e.doc_     | 043e.src_ |                                  |
++-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
+| 44  | Easy       | 044e | Split Sentences            | Complete    | 044e.doc_     | 044e.src_ | enhancedstring                   |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 
 \*\ **Challenge status**:

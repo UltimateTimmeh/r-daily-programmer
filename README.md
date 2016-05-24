@@ -77,3 +77,4 @@ I have included a list of challenges I have worked on so far.
 - *041e* - [ASCII Framing](dailyprogrammer/challenges/041e.py): Complete
 - *042e* - [Beer Bottle 2](dailyprogrammer/challenges/042e.py): Complete
 - *043e* - [Lowest Common Ancestor](dailyprogrammer/challenges/043e.py): Complete
+- *044e* - [Split Sentences](dailyprogrammer/challenges/044e.py): Complete
