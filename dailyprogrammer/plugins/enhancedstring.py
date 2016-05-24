@@ -284,3 +284,19 @@ class EnhancedString(object):
         pattern = '|'.join(map(re.escape, delimiters))
         return [self.__class__(part) for part in re.split(pattern, self.str_)]
 
+
+    def strip(self, *args, **kwargs):
+        """Strip the enhanced string.
+
+        Arguments are identical to the ``str.strip`` method.
+
+        :return: the stripped enhanced string
+        :rtype: EnhancedString
+
+        Example::
+
+            >>> EnhancedString("   Allow me to tease you with a strip.   ").strip()
+            'Allow me to tease you with a strip.'
+        """
+        return self.__class__(self.str_.strip(*args, **kwargs))
+

@@ -241,3 +241,16 @@ class TestEnhancedString(unittest.TestCase):
         ]))
         self.assertEqual(result, expected)
 
+
+    def test_strip(self):
+        """Test method :meth:`plugins.enhancedstring.EnhancedString.strip`
+
+        **Tested:**
+
+        - The returned stripped enhanced string is correct.
+        """
+        text = "   Allow me to tease you with a strip.   "
+        result = enhancedstring.EnhancedString(text).strip()
+        expected = enhancedstring.EnhancedString("Allow me to tease you with a strip.")
+        self.assertEqual(result, expected)
+
