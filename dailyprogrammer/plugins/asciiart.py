@@ -160,11 +160,18 @@ class Tile(object):
 class CheckeredGrid(object):
     """A checkered grid, composed of alternating tiles of (possibly) different characters.
 
+    The characters out of which tiles are alternatively composed can be defined as a string, or as a
+    list of strings. A single string consisting of multiple characters and a list of single
+    characters are functionally identical (see the first three examples). Defining a list of strings
+    is required when the 'character' out of which one of your tiles is composed is actually a
+    combination of multiple characters (see the fourth example).
+
     :param int x: amount of tiles in the x-direction of the grid
     :param int y: amount of tiles in the y-direction of the grid
     :param int tx: tile width
     :param int ty: tile height
-    :param str chars: list of characters out of which tiles are alternatingly composed
+    :param chars: string or list of characters out of which tiles are alternatingly composed
+    :type chars: str or list(str, ...)
 
     Example::
 
@@ -176,7 +183,7 @@ class CheckeredGrid(object):
         ###...###...###...###...
         ...###...###...###...###
         ...###...###...###...###
-        >>> grid = CheckeredGrid(8, 3, 3, 2, ['.', 'x', 'O'])
+        >>> grid = CheckeredGrid(8, 3, 3, 2, '.xO')
         >>> print(grid)
         ...xxxOOO...xxxOOO...xxx
         ...xxxOOO...xxxOOO...xxx
@@ -184,6 +191,23 @@ class CheckeredGrid(object):
         xxxOOO...xxxOOO...xxxOOO
         OOO...xxxOOO...xxxOOO...
         OOO...xxxOOO...xxxOOO...
+        >>> grid = CheckeredGrid(7, 7, 1, 1, 'raceca')
+        >>> print(grid)
+        racecar
+        acecara
+        cecarac
+        ecarace
+        caracec
+        araceca
+        racecar
+        >>> grid = CheckeredGrid(3, 3, 2, 2, ['@#', '..'])  ## Note how each tile 'character' is actually a combination of multiple characters.
+        >>> print(grid)
+        @#@#....@#@#
+        @#@#....@#@#
+        ....@#@#....
+        ....@#@#....
+        @#@#....@#@#
+        @#@#....@#@#
     """
 
 
