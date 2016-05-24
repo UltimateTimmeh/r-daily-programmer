@@ -269,8 +269,8 @@ class EnhancedString(object):
         """Split the enhanced string using the provided delimiter or a list of delimiters.
 
         :param delimiters: single delimiter or list of delimiters (default ' ')
-        :type chars: str or list(str, ...)
-        :return: list of split enhanced string objects
+        :type delimiters: str or list(str, ...)
+        :return: the enhanced string object, split at the provided delimiter(s)
         :rtype: list(EnhancedString, ...)
 
         Example::
