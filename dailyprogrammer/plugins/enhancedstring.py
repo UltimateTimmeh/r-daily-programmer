@@ -5,6 +5,8 @@
 Enchance the built-in string object with useful methods (source_).
 """
 
+import re
+
 from plugins.listtools import count_items
 
 
@@ -263,4 +265,22 @@ class EnhancedString(object):
         return self.__class__('\n'.join([border1, border2] + framedlines + [border2, border1]))
 
 
-# End
+    def split(self, delimiters=' '):
+        """Split the enhanced string using the provided delimiter or a list of delimiters.
+
+        :param delimiters: single delimiter or list of delimiters (default ' ')
+        :type chars: str or list(str, ...)
+        :return: list of split enhanced string objects
+        :rtype: list(EnhancedString, ...)
+
+        Example::
+
+            >>> delimiters = 'a e i o u'.split()
+            >>> EnhancedString("Thus, split at vowels!").split(delimiters)
+            ['Th', 's, spl', 't ', 't v', 'w', 'ls!']
+        """
+        if isinstance(delimiters, str):
+            return [self.__class__(part) for part in self.str_.split(delimiters)]
+        pattern = '|'.join(map(re.escape, delimiters))
+        return [self.__class__(part) for part in re.split(pattern, self.str_)]
+

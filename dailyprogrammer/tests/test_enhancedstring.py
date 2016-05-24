@@ -211,3 +211,33 @@ class TestEnhancedString(unittest.TestCase):
         ]))
         self.assertEqual(result, expected)
 
+
+    def test_split(self):
+        """Test method :meth:`plugins.enhancedstring.EnhancedString.split`
+
+        **Tested:**
+
+        - The returned list of enhanced strings is correct when using a single delimiter.
+        - The returned list of enhanced strings is correct when using multiple delimiters.
+        """
+        text = ("This text ends sentences with dots. Does it also end sentences with question "
+                "marks? Yes it does! Oh look, it even has exclamation marks!")
+
+        result = enhancedstring.EnhancedString(text).split()
+        expected = list(map(enhancedstring.EnhancedString, text.split()))
+        self.assertEqual(result, expected)
+
+        result = enhancedstring.EnhancedString(text).split('.')
+        expected = list(map(enhancedstring.EnhancedString, text.split('.')))
+        self.assertEqual(result, expected)
+
+        result = enhancedstring.EnhancedString(text).split(['.', '!', '?'])
+        expected = list(map(enhancedstring.EnhancedString, [
+            "This text ends sentences with dots",
+            " Does it also end sentences with question marks",
+            " Yes it does",
+            " Oh look, it even has exclamation marks",
+            "",
+        ]))
+        self.assertEqual(result, expected)
+
