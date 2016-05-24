@@ -9,7 +9,7 @@ from plugins.enhancedstring import EnhancedString
 
 
 class TextTriangle(object):
-    """A class representing an ASCII text triangle.
+    """An ASCII text triangle.
 
     Formula for the amount of characters in each level of the triangle::
 
@@ -105,4 +105,105 @@ class TextTriangle(object):
             level.append(self.char[ci])
             ci = (ci+1) % len(self.char)
         return level, ci
+
+
+class Tile(object):
+    """A tile, which is a basic element of a checkered grid.
+
+    :param int x: character length in the x-direction (width) of the tile
+    :param int y: character length in the y-direction (height) of the tile
+    :param str char: character out of which the tile is composed (default '#')
+
+    Example::
+
+        >>> tile = Tile(5, 3, 'x')
+        >>> print(tile)
+        xxxxx
+        xxxxx
+        xxxxx
+        >>> tile.char = 'O'
+        >>> print(tile)
+        OOOOO
+        OOOOO
+        OOOOO
+    """
+
+
+    def __init__(self, x, y, char='#'):
+        """Initialize a new tile."""
+        self.x = x
+        self.y = y
+        self.char = char
+
+
+    def __str__(self):
+        """Format a string representation of the tile."""
+        return '\n'.join(self.lines)
+
+
+    @property
+    def lines(self):
+        """Return the list of lines out of which the tile is composed.
+
+        :return: the list of lines out of which the tile is composed
+        :rtype: list(str, ...)
+
+        Example::
+
+            >>> tile = Tile(5, 3)
+            >>> tile.lines
+            ['#####', '#####', '#####']
+        """
+        return [self.char*self.x]*self.y
+
+
+class CheckeredGrid(object):
+    """A checkered grid, composed of alternating tiles of (possibly) different characters.
+
+    :param int x: amount of tiles in the x-direction of the grid
+    :param int y: amount of tiles in the y-direction of the grid
+    :param int tx: tile width
+    :param int ty: tile height
+    :param str chars: list of characters out of which tiles are alternatingly composed
+
+    Example::
+
+        >>> grid = CheckeredGrid(8, 3, 3, 2, ['.', '#'])
+        >>> print(grid)
+        ...###...###...###...###
+        ...###...###...###...###
+        ###...###...###...###...
+        ###...###...###...###...
+        ...###...###...###...###
+        ...###...###...###...###
+        >>> grid = CheckeredGrid(8, 3, 3, 2, ['.', 'x', 'O'])
+        >>> print(grid)
+        ...xxxOOO...xxxOOO...xxx
+        ...xxxOOO...xxxOOO...xxx
+        xxxOOO...xxxOOO...xxxOOO
+        xxxOOO...xxxOOO...xxxOOO
+        OOO...xxxOOO...xxxOOO...
+        OOO...xxxOOO...xxxOOO...
+    """
+
+
+    def __init__(self, x, y, tx, ty, chars):
+        """Initialize a new checkered grid."""
+        self.x = x
+        self.y = y
+        self.tx = tx
+        self.ty = ty
+        self.chars = chars
+
+
+    def __str__(self):
+        """Format a string representation of the checkered grid."""
+        chars = self.chars
+        allrows = []
+        for yi in range(self.y):
+            tiles = [Tile(self.tx, self.ty, chars[xi%len(chars)]) for xi in range(self.x)]
+            tilerows = [''.join([tile.lines[tyi] for tile in tiles]) for tyi in range(self.ty)]
+            allrows += tilerows
+            chars = chars[1:] + chars[:1]
+        return '\n'.join(allrows)
 
