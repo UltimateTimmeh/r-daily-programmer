@@ -155,6 +155,8 @@ List of challenges
 .. _044e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/044e.py
 .. _045e.doc: _apidoc/challenges.045e.html
 .. _045e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/045e.py
+.. _046e.doc: _apidoc/challenges.046e.html
+.. _046e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/046e.py
 
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 | Nr. | Difficulty | ID   | Name                       | Status*     | Documentation | Source    | Plugins used                     |
@@ -246,6 +248,8 @@ List of challenges
 | 44  | Easy       | 044e | Split Sentences            | Complete    | 044e.doc_     | 044e.src_ | enhancedstring                   |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 | 45  | Easy       | 045e | Checkered Grid             | Complete    | 045e.doc_     | 045e.src_ | asciiart                         |
++-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
+| 46  | Easy       | 046e | Population Count           | Complete    | 046e.doc_     | 046e.src_ |                                  |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 
 \*\ **Challenge status**:

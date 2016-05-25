@@ -79,3 +79,4 @@ I have included a list of challenges I have worked on so far.
 - *043e* - [Lowest Common Ancestor](dailyprogrammer/challenges/043e.py): Complete
 - *044e* - [Split Sentences](dailyprogrammer/challenges/044e.py): Complete
 - *045e* - [Checkered Grid](dailyprogrammer/challenges/045e.py): Complete
+- *046e* - [Population Count](dailyprogrammer/challenges/046e.py): Complete
