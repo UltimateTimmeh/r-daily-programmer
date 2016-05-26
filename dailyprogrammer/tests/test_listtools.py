@@ -5,6 +5,7 @@
 Unit tests for module :mod:`plugins.listtools` (source_).
 """
 
+import random
 import unittest
 
 from plugins import listtools
@@ -12,6 +13,121 @@ from plugins import listtools
 
 class TestListtoolsFunctions(unittest.TestCase):
     """Unit tests for functions in module :mod:`plugins.listtools`."""
+
+
+    def randomrange(self, *args, **kwargs):
+        """Generate a randomly shuffled range."""
+        x = list(range(*args, **kwargs))
+        random.shuffle(x)
+        return x
+
+
+    def test_swap(self):
+        """Test function :func:`plugins.listtools.swap`
+
+        **Tested**
+
+        - The items in the list were swapped correctly.
+        """
+        x = list(range(10))
+        listtools.swap(x, 2, 7)
+        self.assertEqual(x, [0, 1, 7, 3, 4, 5, 6, 2, 8, 9])
+
+
+    def test_insertionsort(self):
+        """Test function :func:`plugins.listtools.insertionsort`
+
+        **Tested**
+
+        - A randomly shuffled range from 0 to 100 is correctly sorted.
+        """
+        x, expected = self.randomrange(100), list(range(100))
+        listtools.insertionsort(x)
+        self.assertEqual(x, expected)
+
+
+    def test_selectionsort(self):
+        """Test function :func:`plugins.listtools.selectionsort`
+
+        **Tested**
+
+        - A randomly shuffled range from 0 to 100 is correctly sorted.
+        """
+        x, expected = self.randomrange(100), list(range(100))
+        listtools.selectionsort(x)
+        self.assertEqual(x, expected)
+
+
+    def test_mergesort(self):
+        """Test function :func:`plugins.listtools.mergesort`
+
+        **Tested**
+
+        - A randomly shuffled range from 0 to 100 is correctly sorted.
+        """
+        x, expected = self.randomrange(100), list(range(100))
+        x = listtools.mergesort(x)
+        self.assertEqual(x, expected)
+
+
+    def test_quicksort(self):
+        """Test function :func:`plugins.listtools.quicksort`
+
+        **Tested**
+
+        - A randomly shuffled range from 0 to 100 is correctly sorted.
+        """
+        x, expected = self.randomrange(100), list(range(100))
+        listtools.quicksort(x)
+        self.assertEqual(x, expected)
+
+
+    def test_heapsort(self):
+        """Test function :func:`plugins.listtools.heapsort`
+
+        **Tested**
+
+        - A randomly shuffled range from 0 to 100 is correctly sorted.
+        """
+        x, expected = self.randomrange(100), list(range(100))
+        listtools.heapsort(x)
+        self.assertEqual(x, expected)
+
+
+    def test_bubblesort(self):
+        """Test function :func:`plugins.listtools.bubblesort`
+
+        **Tested**
+
+        - A randomly shuffled range from 0 to 100 is correctly sorted.
+        """
+        x, expected = self.randomrange(100), list(range(100))
+        listtools.bubblesort(x)
+        self.assertEqual(x, expected)
+
+
+    def test_shellsort(self):
+        """Test function :func:`plugins.listtools.shellsort`
+
+        **Tested**
+
+        - A randomly shuffled range from 0 to 100 is correctly sorted.
+        """
+        x, expected = self.randomrange(100), list(range(100))
+        listtools.shellsort(x)
+        self.assertEqual(x, expected)
+
+
+    def test_combsort(self):
+        """Test function :func:`plugins.listtools.combsort`
+
+        **Tested**
+
+        - A randomly shuffled range from 0 to 100 is correctly sorted.
+        """
+        x, expected = self.randomrange(100), list(range(100))
+        listtools.combsort(x)
+        self.assertEqual(x, expected)
 
 
     def test_merge_lists(self):
