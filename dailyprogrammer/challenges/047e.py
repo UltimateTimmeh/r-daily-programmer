@@ -52,9 +52,9 @@ that you think would be good for us, head over there and contribute!
 Example run
 -----------
 
-.. note:: This challenge is pretty much an exact duplication of
-          `003e - Caesar Cipher <challenges.003e.html>`_. Because I don't think that code
-          deserves its own plugin (at least not yet), I have decided to simply import the challenge
+.. note:: This challenge is pretty much identical to `003e - Caesar Cipher <challenges.003e.html>`_.
+          Because I don't think that code deserves its own plugin (at least not until some more
+          interesting cipher challenge pops up), I have decided to simply import the other challenge
           module.
 
 ::
