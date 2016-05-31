@@ -590,5 +590,14 @@ class TestChallenges(unittest.TestCase):
         challenge.run()
 
 
+    @unittest.skipIf(not plugins.config.testlong, "plugins.config.testlong is False")
+    def test_challenge_048e(self):
+        """Challenge 048e is executed successfully"""
+        # Test successful execution.
+        print("\n=== EXECUTING CHALLENGE 048 EASY ===\n")
+        challenge = importlib.import_module('challenges.048e')
+        challenge.run()
+
+
 if __name__ == '__main__':
     unittest.main()

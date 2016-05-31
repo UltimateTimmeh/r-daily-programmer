@@ -171,6 +171,8 @@ List of challenges
 .. _046e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/046e.py
 .. _047e.doc: _apidoc/challenges.047e.html
 .. _047e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/047e.py
+.. _048e.doc: _apidoc/challenges.048e.html
+.. _048e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/048e.py
 
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 | Nr. | Difficulty | ID   | Name                       | Status*     | Documentation | Source    | Imported plugins                 |
@@ -266,6 +268,8 @@ List of challenges
 | 46  | Easy       | 046e | Population Count           | Complete    | 046e.doc_     | 046e.src_ | enhancedint_                     |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 | 47  | Easy       | 047e | Caesar Cipher 2            | Complete    | 047e.doc_     | 047e.src_ |                                  |
++-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
+| 48  | Easy       | 047e | Evensort                   | Complete    | 048e.doc_     | 048e.src_ | listtools_                       |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 
 \*\ **Challenge status**:
