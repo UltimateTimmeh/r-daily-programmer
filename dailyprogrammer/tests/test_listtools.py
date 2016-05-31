@@ -25,7 +25,7 @@ class TestListtoolsFunctions(unittest.TestCase):
     def test_swap(self):
         """Test function :func:`plugins.listtools.swap`
 
-        **Tested**
+        **Tested:**
 
         - The items in the list were swapped correctly.
         """
@@ -37,7 +37,7 @@ class TestListtoolsFunctions(unittest.TestCase):
     def test_insertionsort(self):
         """Test function :func:`plugins.listtools.insertionsort`
 
-        **Tested**
+        **Tested:**
 
         - A randomly shuffled range from 0 to 100 is correctly sorted.
         """
@@ -49,7 +49,7 @@ class TestListtoolsFunctions(unittest.TestCase):
     def test_selectionsort(self):
         """Test function :func:`plugins.listtools.selectionsort`
 
-        **Tested**
+        **Tested:**
 
         - A randomly shuffled range from 0 to 100 is correctly sorted.
         """
@@ -61,7 +61,7 @@ class TestListtoolsFunctions(unittest.TestCase):
     def test_mergesort(self):
         """Test function :func:`plugins.listtools.mergesort`
 
-        **Tested**
+        **Tested:**
 
         - A randomly shuffled range from 0 to 100 is correctly sorted.
         """
@@ -73,7 +73,7 @@ class TestListtoolsFunctions(unittest.TestCase):
     def test_quicksort(self):
         """Test function :func:`plugins.listtools.quicksort`
 
-        **Tested**
+        **Tested:**
 
         - A randomly shuffled range from 0 to 100 is correctly sorted.
         """
@@ -85,7 +85,7 @@ class TestListtoolsFunctions(unittest.TestCase):
     def test_heapsort(self):
         """Test function :func:`plugins.listtools.heapsort`
 
-        **Tested**
+        **Tested:**
 
         - A randomly shuffled range from 0 to 100 is correctly sorted.
         """
@@ -97,7 +97,7 @@ class TestListtoolsFunctions(unittest.TestCase):
     def test_bubblesort(self):
         """Test function :func:`plugins.listtools.bubblesort`
 
-        **Tested**
+        **Tested:**
 
         - A randomly shuffled range from 0 to 100 is correctly sorted.
         """
@@ -109,7 +109,7 @@ class TestListtoolsFunctions(unittest.TestCase):
     def test_shellsort(self):
         """Test function :func:`plugins.listtools.shellsort`
 
-        **Tested**
+        **Tested:**
 
         - A randomly shuffled range from 0 to 100 is correctly sorted.
         """
@@ -121,12 +121,24 @@ class TestListtoolsFunctions(unittest.TestCase):
     def test_combsort(self):
         """Test function :func:`plugins.listtools.combsort`
 
-        **Tested**
+        **Tested:**
 
         - A randomly shuffled range from 0 to 100 is correctly sorted.
         """
         x, expected = self.randomrange(100), list(range(100))
         listtools.combsort(x)
+        self.assertEqual(x, expected)
+
+
+    def test_evensort(self):
+        """Test function :func:`plugins.listtools.combsort`
+
+        **Tested:**
+
+        - The even numbers are correctly placed in front of the odd numbers.
+        """
+        x, expected = [4, 1, 7, 2, 6, 3, 5], [4, 6, 2, 7, 1, 3, 5]
+        listtools.evensort(x)
         self.assertEqual(x, expected)
 
 

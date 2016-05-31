@@ -677,7 +677,7 @@ def combsort(x, shrink=1.3, verbose=False):
         [1, 2, 3, 4, 5]
     """
     # Verbosity texts.
-    txt_error = "ERROR: Shrink factor should be larger than 1. (is {})"
+    txt_error = "ERROR: Shrink factor should be larger than 1. (got {})"
     txt_startcomb = "Start comb with gap {}..."
     txt_compare = "|   Comparing {}='{}' with {}='{}'"
     txt_swap = ": {} <-- swapping {} with {} --> "
@@ -709,6 +709,72 @@ def combsort(x, shrink=1.3, verbose=False):
             elif verbose:
                 print(txt_ok)
             ii += 1
+
+
+def evensort(x, verbose=False):
+    """In-place sorting of a list such that even numbers come before odd numbers.
+
+    The list is edited in-place such that all even numbers come before odd numbers. Note that this
+    does not preserve the relative order of even and odd numbers.
+
+    :param list x: list to be sorted
+    :param bool verbose: make the function verbose, printing a detailed report of all actions
+                         (default False)
+
+    Example::
+
+        >>> import random
+        >>> x = list(range(1, 8))
+        >>> random.shuffle(x)
+        >>> x
+        [4, 1, 7, 2, 6, 3, 5]
+        >>> evensort(x, verbose=True)
+        Lower index (0) smaller than higher index (6). Continuing sort.
+        Element at lower index (0) is not odd. Incrementing lower index.
+        Element at higher index (6) is not even. Decrementing higher index.
+        Element at higher index (5) is not even. Decrementing higher index.
+        An odd element was found to be ranked lower than an even element:
+        [4, 1, 7, 2, 6, 3, 5] <-- swapping 1 with 4 --> [4, 6, 7, 2, 1, 3, 5]
+        Lower index (1) smaller than higher index (4). Continuing sort.
+        Element at lower index (1) is not odd. Incrementing lower index.
+        Element at higher index (4) is not even. Decrementing higher index.
+        An odd element was found to be ranked lower than an even element:
+        [4, 6, 7, 2, 1, 3, 5] <-- swapping 2 with 3 --> [4, 6, 2, 7, 1, 3, 5]
+        Lower index (2) smaller than higher index (3). Continuing sort.
+        Element at lower index (2) is not odd. Incrementing lower index.
+        Lower index has become equal to higher index. Sort complete.
+        >>> x
+        [4, 6, 2, 7, 1, 3, 5]
+    """
+    # Verbosity texts.
+    txt_continue = "Lower index ({}) smaller than higher index ({}). Continuing sort."
+    txt_increment = "Element at lower index ({}) is not odd. Incrementing lower index."
+    txt_decrement = "Element at higher index ({}) is not even. Decrementing higher index."
+    txt_swap = ("An odd element was found to be ranked lower than an even element:\n"
+                "{} <-- swapping {} with {} --> ")
+    txt_end = ("Lower index has become equal to higher index. Sort complete.")
+
+    lo_ = 0
+    hi_ = len(x) - 1
+    while lo_ < hi_:
+        if verbose:
+            print(txt_continue.format(lo_, hi_))
+        while lo_ < hi_ and x[lo_] % 2 == 0:
+            if verbose:
+                print(txt_increment.format(lo_))
+            lo_ += 1
+        while lo_ < hi_ and x[hi_] % 2 == 1:
+            if verbose:
+                print(txt_decrement.format(hi_))
+            hi_ -= 1
+        if lo_ < hi_:
+            if verbose:
+                print(txt_swap.format(x, lo_, hi_), end='')
+            swap(x, lo_, hi_)
+            if verbose:
+                print(x)
+    if verbose:
+        print(txt_end)
 
 
 def merge_lists(x, y):
