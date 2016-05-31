@@ -108,6 +108,11 @@ Example run
     All bets have been evaluated!
     Congratulations John, you have reached your goal!
 
+Imported plugins
+----------------
+
+| None
+
 Module contents
 ---------------
 

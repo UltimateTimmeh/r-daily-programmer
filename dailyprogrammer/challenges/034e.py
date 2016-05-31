@@ -27,6 +27,11 @@ Example run
     Provide three numbers, separated with a comma: 9,2,6
     The largest two numbers are [6, 9] and the sum of their squares is 117.
 
+Imported plugins
+----------------
+
+| None
+
 Module contents
 ---------------
 """

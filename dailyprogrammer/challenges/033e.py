@@ -52,6 +52,11 @@ Example run
     12 * 12?
     > exit
 
+Imported plugins
+----------------
+
+| None
+
 Module contents
 ---------------
 """

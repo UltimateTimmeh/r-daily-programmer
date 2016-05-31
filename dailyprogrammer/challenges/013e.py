@@ -39,6 +39,11 @@ Example run
     Day (1 - 29) > 29
     2016-2-29 is day number 60 of the year 2016.
 
+Imported plugins
+----------------
+
+| :mod:`plugins.doomsday`
+
 Module contents
 ---------------
 """

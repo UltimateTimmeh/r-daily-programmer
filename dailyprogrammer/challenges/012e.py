@@ -41,6 +41,11 @@ Example run
     !hi
     !ih
 
+Imported plugins
+----------------
+
+| None
+
 Module contents
 ---------------
 """

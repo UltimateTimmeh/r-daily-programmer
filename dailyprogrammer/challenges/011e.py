@@ -29,6 +29,11 @@ Example run
     Day (1 - 31) > 13
     2015-5-13 is a wednesday.
 
+Imported plugins
+----------------
+
+| :mod:`plugins.doomsday`
+
 Module contents
 ---------------
 """

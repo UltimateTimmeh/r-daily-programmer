@@ -30,6 +30,11 @@ Example run
     Characters to remove: ae iou
     Result: DlyPrgrmmr
 
+Imported plugins
+----------------
+
+| :mod:`plugins.enhancedstring`
+
 Module contents
 ---------------
 """

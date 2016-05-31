@@ -68,6 +68,11 @@ Example run
             paths: {'D': 7, 'C': 5, 'B': 3}
     Shortest route from vertex 'A' to vertex 'I': ['A', 'B', 'D', 'G', 'I']
 
+Imported plugins
+----------------
+
+| None
+
 Module contents
 ---------------
 """

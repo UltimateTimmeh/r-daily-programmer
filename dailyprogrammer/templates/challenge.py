@@ -24,6 +24,11 @@ Example run
 
 
 
+Imported plugins
+----------------
+
+| None
+
 Module contents
 ---------------
 """

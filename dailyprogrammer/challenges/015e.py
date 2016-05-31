@@ -52,6 +52,11 @@ Example run
             A bit longer line 3
     This is very long line number three
 
+Imported plugins
+----------------
+
+| :mod:`plugins.enhancedstring`
+
 Module contents
 ---------------
 """

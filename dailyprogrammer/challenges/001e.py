@@ -38,11 +38,17 @@ Example run
         reddit_username: johnsmith
     Note: Data has been appended to file '001e_example_output.txt'
 
+Imported plugins
+----------------
+
+| :mod:`plugins.user`
+
 Module contents
 ---------------
 """
 
 import os
+
 import plugins.config as cfg
 from plugins import user
 from plugins import utils

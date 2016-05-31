@@ -57,6 +57,11 @@ Example run
                                   **
                                    *
 
+Imported plugins
+----------------
+
+| :mod:`plugins.asciiart`
+
 Module contents
 ---------------
 """

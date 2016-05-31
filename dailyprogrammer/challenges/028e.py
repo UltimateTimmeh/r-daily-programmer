@@ -51,6 +51,11 @@ Example run
           time is spent generating the random list. Finding the first duplicate should be pretty
           fast.
 
+Imported plugins
+----------------
+
+| :mod:`plugins.listtools`
+
 Module contents
 ---------------
 """

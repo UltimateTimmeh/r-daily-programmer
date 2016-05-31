@@ -112,6 +112,11 @@ Example run
           range' equals roughly 16.828), that triangle will have 16 levels and will only go up to
           136.
 
+Imported plugins
+----------------
+
+| :mod:`plugins.asciiart`
+
 Module contents
 ---------------
 """

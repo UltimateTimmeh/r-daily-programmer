@@ -91,6 +91,13 @@ this, do the following in a terminal::
     Press ENTER to continue.
     >>>
 
+Imported plugins
+----------------
+
+| :mod:`plugins.password`
+| :mod:`plugins.textmenu`
+| :mod:`plugins.user`
+
 Module contents
 ---------------
 """
@@ -98,7 +105,9 @@ Module contents
 import os
 
 from plugins import config as cfg
-from plugins import textmenu, user, password
+from plugins import password
+from plugins import textmenu
+from plugins import user
 from plugins import utils
 
 # Set global variables.

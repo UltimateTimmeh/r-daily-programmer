@@ -32,6 +32,11 @@ Example run
     Input: [12, 24, 32, 44, 55, 66]
     Result of inversion in blocks with size 2: [24, 12, 44, 32, 66, 55]
 
+Imported plugins
+----------------
+
+| None
+
 Module contents
 ---------------
 """

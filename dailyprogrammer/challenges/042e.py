@@ -94,6 +94,11 @@ Example run
     here a moo, there a moo, everywhere a moo moo
     old macdonald had a farm, E-I-E-I-O
 
+Imported plugins
+----------------
+
+| :mod:`plugins.enhancedint`
+
 Module contents
 ---------------
 """

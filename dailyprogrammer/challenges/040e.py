@@ -34,6 +34,11 @@ Example run
     Counting step: 1
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10, ..., 990, 991, 992, 993, 994, 995, 996, 997, 998, 999, 1000,
 
+Imported plugins
+----------------
+
+| None
+
 Module contents
 ---------------
 """

@@ -33,6 +33,11 @@ Example run
     Second base 26 number (A - Z): CBA
     Multiplication of both numbers: FNEUZJA
 
+Imported plugins
+----------------
+
+| :mod:`plugins.enhancedint`
+
 Module contents
 ---------------
 

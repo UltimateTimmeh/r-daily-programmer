@@ -89,6 +89,11 @@ set it to allow the system bell to be played in the terminal, but keep it off by
    on with ``xset b on`` and test if it works by printing the ``\a`` character in Python. To
    deactivate the bell, use the command ``xset b off``.
 
+Imported plugins
+----------------
+
+| None
+
 Module contents
 ---------------
 """

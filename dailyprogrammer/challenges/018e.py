@@ -31,6 +31,11 @@ Example run
     Input: 1-800-COMCAST
     Output: 1-800-266-2278
 
+Imported plugins
+----------------
+
+| :mod:`plugins.phonenumber`
+
 Module contents
 ---------------
 """

@@ -38,6 +38,11 @@ Example run
     5. snvga7R4B1wa1EFWqIG2
     ===============
 
+Imported plugins
+----------------
+
+| :mod:`plugins.password`
+
 Module contents
 ---------------
 """

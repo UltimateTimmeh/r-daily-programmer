@@ -47,6 +47,11 @@ Example run
     Pairs in this list of which the sum equals the target:
     [(0, 10), (0, 10), (1, 9), (3, 7), (4, 6)]
 
+Imported plugins
+----------------
+
+| None
+
 Module contents
 ---------------
 """

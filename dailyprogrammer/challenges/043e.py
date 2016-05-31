@@ -40,6 +40,11 @@ Example run
     Node 2 > h
     The lowest common ancestor of 'd' and 'h' is 'b'
 
+Imported plugins
+----------------
+
+| None
+
 Module contents
 ---------------
 """

@@ -34,6 +34,11 @@ Example run
     Split part 1: [0, 1, 2, 3, 4]
     Split part 2: [5, 6, 7, 8, 9]
 
+Imported plugins
+----------------
+
+| :mod:`plugins.listtools`
+
 Module contents
 ---------------
 """

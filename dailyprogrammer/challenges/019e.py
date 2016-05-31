@@ -159,6 +159,11 @@ Example run
     Total amount of characters (without spaces): 454221
     Total amount of characters (including spaces): 548747
 
+Imported plugins
+----------------
+
+| :mod:`plugins.enhancedstring`
+
 Module contents
 ---------------
 """

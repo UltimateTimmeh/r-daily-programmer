@@ -52,6 +52,11 @@ Example run
     Input: flabby aapples
       Output: 'flaby aples' 'bap'
 
+Imported plugins
+----------------
+
+| None
+
 Module contents
 ---------------
 """

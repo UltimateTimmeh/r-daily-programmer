@@ -47,11 +47,17 @@ Example run
     q. Quit
     Choose menu item > q
 
+Imported plugins
+----------------
+
+| :mod:`plugins.textmenu`
+
 Module contents
 ---------------
 """
 
-from decimal import Decimal, getcontext
+from decimal import Decimal
+from decimal import getcontext
 from math import factorial
 
 from plugins import textmenu

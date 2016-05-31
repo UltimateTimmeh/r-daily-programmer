@@ -61,6 +61,11 @@ Example run
     khpsfwyvnyhttly
     jgorevxumxgsskx
 
+Imported plugins
+----------------
+
+| None
+
 Module contents
 ---------------
 """

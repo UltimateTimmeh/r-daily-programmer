@@ -46,6 +46,11 @@ Example run
     Century: 19
     Leap Year: no
 
+Imported plugins
+----------------
+
+| :mod:`plugins.doomsday`
+
 Module contents
 ---------------
 """

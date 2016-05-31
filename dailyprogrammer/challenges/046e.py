@@ -39,6 +39,11 @@ Example run
     111010110111100110100010101 (b2) ; 16
     Give me a number ('q' to quit) > q
 
+Imported plugins
+----------------
+
+| :mod:`plugins.enhancedint`
+
 Module contents
 ---------------
 """

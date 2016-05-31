@@ -53,11 +53,16 @@ Example run
     The phone number '123:4567890' is invalid.
     The phone number '123/456-7980' is invalid.
 
+Imported plugins
+----------------
+
+| :mod:`plugins.phonenumber`
+
 Module contents
 ---------------
 """
 
-from plugins.phonenumber import PhoneNumber
+from plugins import phonenumber as pn
 
 
 def run():
@@ -73,7 +78,7 @@ def run():
         '123:4567890',
         '123/456-7980',
     ]
-    validation = [PhoneNumber(nr).is_valid() for nr in numbers]
+    validation = [pn.PhoneNumber(nr).is_valid() for nr in numbers]
     validity = {True: 'valid', False: 'invalid'}
     for nr, valid in zip(numbers, validation):
         print("The phone number '{}' is {}.".format(nr, validity[valid]))

@@ -46,6 +46,11 @@ Example run::
     Amount of lines in file: 12
     Amount of words in file: 40
 
+Imported plugins
+----------------
+
+| :mod:`plugins.enhancedstring`
+
 Module contents
 ---------------
 """

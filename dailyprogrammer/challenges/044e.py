@@ -69,6 +69,11 @@ Example run
     'subject', 'diseases,', 'healed', 'means,', 'warmed', 'cooled', 'winter', 'summer,',
     'Christian']
 
+Imported plugins
+----------------
+
+| :mod:`plugins.enhancedstring`
+
 Module contents
 ---------------
 """

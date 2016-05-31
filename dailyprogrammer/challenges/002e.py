@@ -58,6 +58,11 @@ Example run
     q. Quit
     Choose menu item > q
 
+Imported plugins
+----------------
+
+| :mod:`plugins.textmenu`
+
 Module contents
 ---------------
 """

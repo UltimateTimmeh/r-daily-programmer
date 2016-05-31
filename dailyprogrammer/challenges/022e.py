@@ -40,6 +40,11 @@ Example run
           my implementation is able to 'merge' two lists instead of merely appending a single
           instance of each missing item.
 
+Imported plugins
+----------------
+
+| :mod:`plugins.listtools`
+
 Module contents
 ---------------
 """

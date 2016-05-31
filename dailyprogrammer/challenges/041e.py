@@ -54,6 +54,11 @@ Example run
     *                                                                            *
     ******************************************************************************
 
+Imported plugins
+----------------
+
+| :mod:`plugins.enhancedstring`
+
 Module contents
 ---------------
 """

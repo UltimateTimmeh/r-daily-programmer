@@ -67,6 +67,18 @@ Example -- Execute the solution to challenge '1 Easy - Ask Input' (ID 001e)::
 List of challenges
 ''''''''''''''''''
 
+.. _asciiart: _apidoc/plugins.asciiart.html
+.. _config: _apidoc/plugins.config.html
+.. _doomsday: _apidoc/plugins.doomsday.html
+.. _enhancedint: _apidoc/plugins.enhancedint.html
+.. _enhancedstring: _apidoc/plugins.enhancedstring.html
+.. _listtools: _apidoc/plugins.listtools.html
+.. _password: _apidoc/plugins.password.html
+.. _phonenumber: _apidoc/plugins.phonenumber.html
+.. _textmenu: _apidoc/plugins.textmenu.html
+.. _user: _apidoc/plugins.user.html
+.. _utils: _apidoc/plugins.utils.html
+
 .. _001e.doc: _apidoc/challenges.001e.html
 .. _001e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/001e.py
 .. _002e.doc: _apidoc/challenges.002e.html
@@ -161,67 +173,67 @@ List of challenges
 .. _047e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/047e.py
 
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
-| Nr. | Difficulty | ID   | Name                       | Status*     | Documentation | Source    | Plugins used                     |
+| Nr. | Difficulty | ID   | Name                       | Status*     | Documentation | Source    | Imported plugins                 |
 +=====+============+======+============================+=============+===============+===========+==================================+
-| 1   | Easy       | 001e | Ask Input                  | Complete    | 001e.doc_     | 001e.src_ | user                             |
+| 1   | Easy       | 001e | Ask Input                  | Complete    | 001e.doc_     | 001e.src_ | user_                            |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
-| 2   | Easy       | 002e | Calculator                 | Complete    | 002e.doc_     | 002e.src_ | textmenu                         |
+| 2   | Easy       | 002e | Calculator                 | Complete    | 002e.doc_     | 002e.src_ | textmenu_                        |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 | 3   | Easy       | 003e | Caesar Cipher              | Complete    | 003e.doc_     | 003e.src_ |                                  |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
-| 4   | Easy       | 004e | Random Password            | Complete    | 004e.doc_     | 004e.src_ | password                         |
+| 4   | Easy       | 004e | Random Password            | Complete    | 004e.doc_     | 004e.src_ | password_                        |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
-| 5   | Easy       | 005e | Password Protect           | Complete    | 005e.doc_     | 005e.src_ | password, textmenu, user         |
+| 5   | Easy       | 005e | Password Protect           | Complete    | 005e.doc_     | 005e.src_ | password_, textmenu_, user_      |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
-| 6   | Easy       | 006e | Calculate Pi               | Complete    | 006e.doc_     | 006e.src_ | textmenu                         |
+| 6   | Easy       | 006e | Calculate Pi               | Complete    | 006e.doc_     | 006e.src_ | textmenu_                        |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 | 7   | Easy       | 007e | Morse Code                 | Complete    | 007e.doc_     | 007e.src_ |                                  |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 | 8   | Easy       | 008e | Beer Bottle                | Complete    | 008e.doc_     | 008e.src_ |                                  |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
-| 9   | Easy       | 009e | Sort Numbers               | Done        | 009e.doc_     | 009e.src_ | listtools                        |
+| 9   | Easy       | 009e | Sort Numbers               | Done        | 009e.doc_     | 009e.src_ | listtools_                       |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
-| 10  | Easy       | 010e | Validate Phone Number      | Complete    | 010e.doc_     | 010e.src_ | phonenumber                      |
+| 10  | Easy       | 010e | Validate Phone Number      | Complete    | 010e.doc_     | 010e.src_ | phonenumber_                     |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
-| 11  | Easy       | 011e | Doomsday Algorithm         | Complete    | 011e.doc_     | 011e.src_ | doomsday                         |
+| 11  | Easy       | 011e | Doomsday Algorithm         | Complete    | 011e.doc_     | 011e.src_ | doomsday_                        |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 | 12  | Easy       | 012e | Permutations               | Complete    | 012e.doc_     | 012e.src_ |                                  |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
-| 13  | Easy       | 013e | Cumulative Day of the Year | Complete    | 013e.doc_     | 013e.src_ | doomsday                         |
+| 13  | Easy       | 013e | Cumulative Day of the Year | Complete    | 013e.doc_     | 013e.src_ | doomsday_                        |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 | 14  | Easy       | 014e | Block Invert               | Complete    | 014e.doc_     | 014e.src_ |                                  |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
-| 15  | Easy       | 015e | Align Text                 | Complete    | 015e.doc_     | 015e.src_ | enhancedstring                   |
+| 15  | Easy       | 015e | Align Text                 | Complete    | 015e.doc_     | 015e.src_ | enhancedstring_                  |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
-| 16  | Easy       | 016e | Remove Characters          | Complete    | 016e.doc_     | 016e.src_ | enhancedstring                   |
+| 16  | Easy       | 016e | Remove Characters          | Complete    | 016e.doc_     | 016e.src_ | enhancedstring_                  |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
-| 17  | Easy       | 017e | Text Triangle              | Complete    | 017e.doc_     | 017e.src_ | asciiart                         |
+| 17  | Easy       | 017e | Text Triangle              | Complete    | 017e.doc_     | 017e.src_ | asciiart_                        |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
-| 18  | Easy       | 018e | Easy Phone Number          | Complete    | 018e.doc_     | 018e.src_ | phonenumber                      |
+| 18  | Easy       | 018e | Easy Phone Number          | Complete    | 018e.doc_     | 018e.src_ | phonenumber_                     |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
-| 19  | Easy       | 019e | Character Count            | Complete    | 019e.doc_     | 019e.src_ | enhancedstring                   |
+| 19  | Easy       | 019e | Character Count            | Complete    | 019e.doc_     | 019e.src_ | enhancedstring_                  |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 | 20  | Easy       | 020e | Find Primes                | Complete    | 020e.doc_     | 020e.src_ |                                  |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 | 21  | Easy       | 021e | Next Permutation           | Complete    | 021e.doc_     | 021e.src_ |                                  |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
-| 22  | Easy       | 022e | Merge Lists                | Complete    | 022e.doc_     | 022e.src_ | listtools                        |
+| 22  | Easy       | 022e | Merge Lists                | Complete    | 022e.doc_     | 022e.src_ | listtools_                       |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
-| 23  | Easy       | 023e | Split Lists                | Complete    | 023e.doc_     | 023e.src_ | listtools                        |
+| 23  | Easy       | 023e | Split Lists                | Complete    | 023e.doc_     | 023e.src_ | listtools_                       |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
-| 25  | Easy       | 025e | Vote Counter               | Complete    | 025e.doc_     | 025e.src_ | listtools                        |
+| 25  | Easy       | 025e | Vote Counter               | Complete    | 025e.doc_     | 025e.src_ | listtools_                       |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 | 26  | Easy       | 026e | Filter String Duplicates   | Complete    | 026e.doc_     | 026e.src_ |                                  |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
-| 27  | Easy       | 027e | Year Info                  | Complete    | 027e.doc_     | 027e.src_ | doomsday                         |
+| 27  | Easy       | 027e | Year Info                  | Complete    | 027e.doc_     | 027e.src_ | doomsday_                        |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
-| 28  | Easy       | 028e | Array Duplicate            | Complete    | 028e.doc_     | 028e.src_ | listtools                        |
+| 28  | Easy       | 028e | Array Duplicate            | Complete    | 028e.doc_     | 028e.src_ | listtools_                       |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
-| 29  | Easy       | 029e | Palindrome                 | Complete    | 029e.doc_     | 029e.src_ | enhancedstring                   |
+| 29  | Easy       | 029e | Palindrome                 | Complete    | 029e.doc_     | 029e.src_ | enhancedstring_                  |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 | 30  | Easy       | 030e | Find Sum Pairs             | Complete    | 030e.doc_     | 030e.src_ |                                  |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
-| 31  | Easy       | 031e | Base 26 Multiplication     | Complete    | 031e.doc_     | 031e.src_ | enhancedint                      |
+| 31  | Easy       | 031e | Base 26 Multiplication     | Complete    | 031e.doc_     | 031e.src_ | enhancedint_                     |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 | 32  | Easy       | 032e | Roulette                   | Complete    | 032e.doc_     | 032e.src_ |                                  |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
@@ -229,11 +241,11 @@ List of challenges
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 | 34  | Easy       | 034e | Sum Of Squares             | Complete    | 034e.doc_     | 034e.src_ |                                  |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
-| 35  | Easy       | 035e | Number Triangle            | Complete    | 035e.doc_     | 035e.src_ | asciiart                         |
+| 35  | Easy       | 035e | Number Triangle            | Complete    | 035e.doc_     | 035e.src_ | asciiart_                        |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 | 36  | Easy       | 036e | 1000 Lockers               | Complete    | 036e.doc_     | 036e.src_ |                                  |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
-| 37  | Easy       | 037e | File Line Count            | Complete    | 037e.doc_     | 037e.src_ | enhancedstring                   |
+| 37  | Easy       | 037e | File Line Count            | Complete    | 037e.doc_     | 037e.src_ | enhancedstring_                  |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 | 38  | Easy       | 038e | Dijkstra's Algorithm       | Complete    | 038e.doc_     | 038e.src_ |                                  |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
@@ -241,17 +253,17 @@ List of challenges
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 | 40  | Easy       | 040e | Alternative Counting       | Complete    | 040e.doc_     | 040e.src_ |                                  |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
-| 41  | Easy       | 041e | ASCII Framing              | Complete    | 041e.doc_     | 041e.src_ | enhancedstring                   |
+| 41  | Easy       | 041e | ASCII Framing              | Complete    | 041e.doc_     | 041e.src_ | enhancedstring_                  |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
-| 42  | Easy       | 042e | Beer Bottle 2              | Complete    | 042e.doc_     | 042e.src_ | enhancedint                      |
+| 42  | Easy       | 042e | Beer Bottle 2              | Complete    | 042e.doc_     | 042e.src_ | enhancedint_                     |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 | 43  | Easy       | 043e | Lowest Common Ancestor     | Complete    | 043e.doc_     | 043e.src_ |                                  |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
-| 44  | Easy       | 044e | Split Sentences            | Complete    | 044e.doc_     | 044e.src_ | enhancedstring                   |
+| 44  | Easy       | 044e | Split Sentences            | Complete    | 044e.doc_     | 044e.src_ | enhancedstring_                  |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
-| 45  | Easy       | 045e | Checkered Grid             | Complete    | 045e.doc_     | 045e.src_ | asciiart                         |
+| 45  | Easy       | 045e | Checkered Grid             | Complete    | 045e.doc_     | 045e.src_ | asciiart_                        |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
-| 46  | Easy       | 046e | Population Count           | Complete    | 046e.doc_     | 046e.src_ | enhancedint                      |
+| 46  | Easy       | 046e | Population Count           | Complete    | 046e.doc_     | 046e.src_ | enhancedint_                     |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 | 47  | Easy       | 047e | Caesar Cipher 2            | Complete    | 047e.doc_     | 047e.src_ |                                  |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+

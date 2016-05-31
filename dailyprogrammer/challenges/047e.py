@@ -101,6 +101,11 @@ Example run
     violence inherent in the system! come see the violence inherent in the system!
     help! help! i'm being repressed!
 
+Imported plugins
+----------------
+
+| None
+
 Module contents
 ---------------
 """

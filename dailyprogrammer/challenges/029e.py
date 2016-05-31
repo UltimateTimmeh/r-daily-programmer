@@ -46,6 +46,11 @@ Example run
     Extra: Is the poem 'Dammit I'm Mad' from Demetri Martin a palindrome?
     Yes it is!
 
+Imported plugins
+----------------
+
+| :mod:`plugins.enhancedstring`
+
 Module contents
 ---------------
 """

@@ -28,6 +28,11 @@ Example run
     Number: 93765.44321
     Next higher permutation of this number: 94123.34567
 
+Imported plugins
+----------------
+
+| None
+
 Module contents
 ---------------
 """

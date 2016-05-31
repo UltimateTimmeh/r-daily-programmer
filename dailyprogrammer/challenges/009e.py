@@ -34,6 +34,11 @@ Example run
     Your sorted list is:
         [-3.75, 1.2, 2.0, 2.0, 5.6, 325.0]
 
+Imported plugins
+----------------
+
+| :mod:`plugins.listtools`
+
 Module contents
 ---------------
 """

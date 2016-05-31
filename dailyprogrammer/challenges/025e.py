@@ -36,6 +36,11 @@ Example run
     List of votes: []
       There are no votes!
 
+Imported plugins
+----------------
+
+| :mod:`plugins.listtools`
+
 Module contents
 ---------------
 """

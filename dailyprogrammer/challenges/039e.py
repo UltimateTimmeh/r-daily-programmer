@@ -112,6 +112,11 @@ Example run
     34
     BuzzJazz
 
+Imported plugins
+----------------
+
+| None
+
 Module contents
 ---------------
 """
