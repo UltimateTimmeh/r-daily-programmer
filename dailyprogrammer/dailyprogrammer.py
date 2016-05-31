@@ -74,7 +74,7 @@ def prepare(challenge_id):
 
 
 def runtests(logfn):
-    """Execute the project's unit tests and write results to a log file."""
+    """Execute the project's tests and write results to a log file."""
     testloader = unittest.defaultTestLoader
     testsuite = testloader.discover(cfg.tests_dir)
     logfp = os.path.join(cfg.logs_dir, logfn)
@@ -83,12 +83,21 @@ def runtests(logfn):
         testrunner.run(testsuite)
 
 
+def runtests_all(logfn):
+    """Execute all of the project's tests (also long ones) and write results to a log file."""
+    cfg.testlong = True
+    runtests(logfn)
+
+
 if __name__ == '__main__':
     actions = {
         'execute': execute,
         'prepare': prepare,
         'runtests': runtests,
+        'runtests_all': runtests_all,
     }
     action, arg = sys.argv[1:]
+    if action not in actions:
+        raise ValueError("Unknown action: '{}'.".format(action))
     actions[action](arg)
 
