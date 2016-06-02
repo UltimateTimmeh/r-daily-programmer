@@ -175,6 +175,8 @@ List of challenges
 .. _048e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/048e.py
 .. _049e.doc: _apidoc/challenges.049e.html
 .. _049e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/049e.py
+.. _050e.doc: _apidoc/challenges.050e.html
+.. _050e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/050e.py
 
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 | Nr. | Difficulty | ID   | Name                       | Status*     | Documentation | Source    | Imported plugins                 |
@@ -274,6 +276,8 @@ List of challenges
 | 48  | Easy       | 048e | Evensort                   | Complete    | 048e.doc_     | 048e.src_ | listtools_                       |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 | 49  | Easy       | 049e | Monty Hall Problem         | Complete    | 049e.doc_     | 049e.src_ | listtools_                       |
++-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
+| 50  | Easy       | 050e | First Sum Pair             | Complete    | 050e.doc_     | 050e.src_ | listtools_                       |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 
 \*\ **Challenge status**:
