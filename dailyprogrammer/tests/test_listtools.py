@@ -223,5 +223,24 @@ class TestListtoolsFunctions(unittest.TestCase):
         self.assertEqual(listtools.find_first_duplicate([0, 1, 2, 3, 3, 4, 2]), 3)
 
 
+    def test_find_sum(self):
+        """Test function :func:`plugins.listtools.find_sum`
+
+        **Tested:**
+
+        - The returned indices are correct (when a sum exists).
+        - None is returned when no sum exists.
+        """
+        cases = [
+            ([5, 75, 25], 100),
+            ([150, 24, 79, 50, 88, 345, 3], 200),
+            ([2, 1, 9, 4, 4, 56, 90, 3], 8),
+            ([5, 75, 25], 5),
+        ]
+        expected = [(1, 2), (0, 3), (3, 4), None]
+        results = [listtools.find_sum(*case) for case in cases]
+        self.assertEqual(results, expected)
+
+
 if __name__ == '__main__':
     unittest.main()

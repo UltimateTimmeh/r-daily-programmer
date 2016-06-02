@@ -925,3 +925,29 @@ def find_first_duplicate(x):
             return xi
         counts.add(xi)
 
+
+def find_sum(x, a):
+    """Find two items in a list of which the sum equals the given number.
+
+    :param list x: the input list
+    :param float a: the requested sum
+    :return: indices of the two items in the list of which the sum equals the requested number or
+             None if no such items exist
+    :rtype: (int, int) or None
+
+    Example::
+
+        >>> find_sum([5, 75, 25], 100)
+        (1, 2)
+        >>> find_sum([150, 24, 79, 50, 88, 345, 3], 200)
+        (0, 3)
+        >>> find_sum([2, 1, 9, 4, 4, 56, 90, 3], 8)
+        (3, 4)
+        >>> print(find_sum([5, 75, 25], 5))
+        None
+    """
+    for i1, a1 in enumerate(x[:-1]):
+        for i2, a2 in enumerate(x[i1+1:]):
+            if (a1 + a2) == a:
+                return (i1, i1+1+i2)
+
