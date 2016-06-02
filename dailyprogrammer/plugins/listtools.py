@@ -926,8 +926,8 @@ def find_first_duplicate(x):
         counts.add(xi)
 
 
-def find_sum(x, a):
-    """Find two items in a list of which the sum equals the given number.
+def first_sum_pair(x, a):
+    """Find the first two items in a list of which the sum equals the given number.
 
     :param list x: the input list
     :param float a: the requested sum
@@ -937,13 +937,13 @@ def find_sum(x, a):
 
     Example::
 
-        >>> find_sum([5, 75, 25], 100)
+        >>> first_sum_pair([5, 75, 25], 100)
         (1, 2)
-        >>> find_sum([150, 24, 79, 50, 88, 345, 3], 200)
+        >>> first_sum_pair([150, 24, 79, 50, 88, 345, 3], 200)
         (0, 3)
-        >>> find_sum([2, 1, 9, 4, 4, 56, 90, 3], 8)
+        >>> first_sum_pair([2, 1, 9, 4, 4, 56, 90, 3], 8)
         (3, 4)
-        >>> print(find_sum([5, 75, 25], 5))
+        >>> print(first_sum_pair([5, 75, 25], 5))
         None
     """
     for i1, a1 in enumerate(x[:-1]):

@@ -223,8 +223,8 @@ class TestListtoolsFunctions(unittest.TestCase):
         self.assertEqual(listtools.find_first_duplicate([0, 1, 2, 3, 3, 4, 2]), 3)
 
 
-    def test_find_sum(self):
-        """Test function :func:`plugins.listtools.find_sum`
+    def test_first_sum_pair(self):
+        """Test function :func:`plugins.listtools.first_sum_pair`
 
         **Tested:**
 
@@ -238,7 +238,7 @@ class TestListtoolsFunctions(unittest.TestCase):
             ([5, 75, 25], 5),
         ]
         expected = [(1, 2), (0, 3), (3, 4), None]
-        results = [listtools.find_sum(*case) for case in cases]
+        results = [listtools.first_sum_pair(*case) for case in cases]
         self.assertEqual(results, expected)
 
 
