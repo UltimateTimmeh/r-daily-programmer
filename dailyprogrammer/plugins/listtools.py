@@ -903,8 +903,8 @@ def most_prevalent_items(x):
     return maxitems
 
 
-def find_first_duplicate(x):
-    """Find the first duplicate item in a list.
+def first_duplicate(x):
+    """Return the first duplicate item in a list.
 
     :param list x: the list to find the first duplicate item of
     :return: the first duplicate item or None if there are no duplicate items
@@ -912,11 +912,11 @@ def find_first_duplicate(x):
 
     Example::
 
-        >>> print(find_first_duplicate([0, 1, 2, 3, 4]))
+        >>> print(first_duplicate([0, 1, 2, 3, 4]))
         None
-        >>> find_first_duplicate([0, 1, 2, 3, 4, 2])
+        >>> first_duplicate([0, 1, 2, 3, 4, 2])
         2
-        >>> find_first_duplicate([0, 1, 2, 3, 3, 4, 2])
+        >>> first_duplicate([0, 1, 2, 3, 3, 4, 2])
         3
     """
     counts = set()

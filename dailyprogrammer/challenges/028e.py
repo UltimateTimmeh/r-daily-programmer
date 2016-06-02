@@ -88,5 +88,5 @@ def run():
         print(x)
 
     # Find and print the duplicate element.
-    print("The duplicate element in the list is: {}".format(lt.find_first_duplicate(x)))
+    print("The duplicate element in the list is: {}".format(lt.first_duplicate(x)))
 
