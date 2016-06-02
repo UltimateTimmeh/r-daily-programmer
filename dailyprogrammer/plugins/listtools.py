@@ -878,7 +878,7 @@ def count_items(x, counts=None):
 
 
 def most_prevalent_items(x):
-    """Determine the most prevalent item(s) in a list.
+    """Return the most prevalent item(s) in a list.
 
     :param list x: the list of which the most prevalent item(s) must be determined
     :return: set containing the most prevalent item(s)
@@ -927,7 +927,7 @@ def first_duplicate(x):
 
 
 def first_sum_pair(x, a):
-    """Find the first two items in a list of which the sum equals the given number.
+    """Return the indices of the first two items in a list whose sum equals a given number.
 
     :param list x: the input list
     :param float a: the requested sum
