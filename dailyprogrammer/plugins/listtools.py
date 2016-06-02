@@ -904,7 +904,7 @@ def most_prevalent_items(x):
 
 
 def first_duplicate(x):
-    """Return the first duplicate item in a list.
+    """Return the index of the first duplicate item in a list.
 
     :param list x: the list to find the first duplicate item of
     :return: the first duplicate item or None if there are no duplicate items
@@ -915,15 +915,15 @@ def first_duplicate(x):
         >>> print(first_duplicate([0, 1, 2, 3, 4]))
         None
         >>> first_duplicate([0, 1, 2, 3, 4, 2])
-        2
+        5
         >>> first_duplicate([0, 1, 2, 3, 3, 4, 2])
-        3
+        4
     """
     counts = set()
-    for xi in x:
-        if xi in counts:
-            return xi
-        counts.add(xi)
+    for index, item in enumerate(x):
+        if item in counts:
+            return index
+        counts.add(item)
 
 
 def first_sum_pair(x, a):

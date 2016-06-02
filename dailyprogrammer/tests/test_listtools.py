@@ -215,12 +215,12 @@ class TestListtoolsFunctions(unittest.TestCase):
         **Tested:**
 
         - If there are no duplicate items, None is returned.
-        - If there is a single duplicate item, that item is returned.
-        - If there are multiple duplicate items, only the first duplicate item is returned.
+        - If there is a single duplicate item, that item's index is returned.
+        - If there are multiple duplicate items, only the first duplicate item's index is returned.
         """
         self.assertEqual(listtools.first_duplicate([0, 1, 2, 3, 4]), None)
-        self.assertEqual(listtools.first_duplicate([0, 1, 2, 3, 4, 2]), 2)
-        self.assertEqual(listtools.first_duplicate([0, 1, 2, 3, 3, 4, 2]), 3)
+        self.assertEqual(listtools.first_duplicate([0, 1, 2, 3, 4, 2]), 5)
+        self.assertEqual(listtools.first_duplicate([0, 1, 2, 3, 3, 4, 2]), 4)
 
 
     def test_first_sum_pair(self):
