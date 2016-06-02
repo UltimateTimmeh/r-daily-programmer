@@ -173,6 +173,8 @@ List of challenges
 .. _047e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/047e.py
 .. _048e.doc: _apidoc/challenges.048e.html
 .. _048e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/048e.py
+.. _049e.doc: _apidoc/challenges.049e.html
+.. _049e.src: http://www.github.com/UltimateTimmeh/r-daily-programmer/blob/master/dailyprogrammer/challenges/049e.py
 
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 | Nr. | Difficulty | ID   | Name                       | Status*     | Documentation | Source    | Imported plugins                 |
@@ -269,7 +271,9 @@ List of challenges
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 | 47  | Easy       | 047e | Caesar Cipher 2            | Complete    | 047e.doc_     | 047e.src_ |                                  |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
-| 48  | Easy       | 047e | Evensort                   | Complete    | 048e.doc_     | 048e.src_ | listtools_                       |
+| 48  | Easy       | 048e | Evensort                   | Complete    | 048e.doc_     | 048e.src_ | listtools_                       |
++-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
+| 49  | Easy       | 049e | Monty Hall Problem         | Complete    | 049e.doc_     | 049e.src_ | listtools_                       |
 +-----+------------+------+----------------------------+-------------+---------------+-----------+----------------------------------+
 
 \*\ **Challenge status**:

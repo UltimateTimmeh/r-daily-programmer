@@ -599,5 +599,15 @@ class TestChallenges(unittest.TestCase):
         challenge.run()
 
 
+    @mock.patch('plugins.utils.get_input', new_callable=GetInputMock)
+    def test_challenge_049e(self, inputm):
+        """Challenge 049e is executed successfully"""
+        # Test successful execution.
+        print("\n=== EXECUTING CHALLENGE 049 EASY ===\n")
+        challenge = importlib.import_module('challenges.049e')
+        inputm.side_effect = ['3', '1000000']
+        challenge.run()
+
+
 if __name__ == '__main__':
     unittest.main()
