@@ -259,5 +259,22 @@ class TestListtoolsFunctions(unittest.TestCase):
             self.assertEqual(result, expected)
 
 
+    def test_combinations(self):
+        """Test function :func:`plugins.listtools.combinations`
+
+        **Tested:**
+
+        - The returned list of combinations is correct (repeating).
+        - The returned list of combinations is correct (non-repeating).
+        """
+        cases = [
+            (([1, 2, 3], 2, True), [[1, 1], [1, 2], [1, 3], [2, 2], [2, 3], [3, 3]]),
+            (([1, 2, 3], 2, False), [[1, 2], [1, 3], [2, 3]]),
+        ]
+        for case, expected in cases:
+            result = listtools.combinations(*case)
+            self.assertEqual(result, expected)
+
+
 if __name__ == '__main__':
     unittest.main()

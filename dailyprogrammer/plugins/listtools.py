@@ -953,7 +953,7 @@ def first_sum_pair(x, a):
 
 
 def permutations(x):
-    """Determine all possible permutations of a list or string.
+    """Return all permutations of a list or string.
 
     :param list x: list of which to determine all permutations
     :return: a list containing all possible permutations of the list
@@ -977,4 +977,32 @@ def permutations(x):
         subx = x[:n] + x[n+1:]
         perms += [i + pp for pp in permutations(subx)]
     return perms
+
+
+def combinations(x, length, repeat=True):
+    """Return all combinations of given length of the items in a list.
+
+    :param list x: list of which to determine all combinations of the given length
+    :param int length: the desired length of the combinations
+    :param bool repeat: indicate whether or not items from the list can be used multiple times in a
+                        single combination (default True)
+    :return: all combinations of the given length of items from the list
+    :rtype: list(list, ...)
+
+    Example::
+
+        >>> x = list(range(1, 4))
+        >>> combinations(x, 2)
+        [[1, 1], [1, 2], [1, 3], [2, 2], [2, 3], [3, 3]]
+        >>> combinations(x, 2, repeat=False)
+        [[1, 2], [1, 3], [2, 3]]
+    """
+    if length == 1:
+        return [[item] for item in x]
+    combs = []
+    xr = (x[:len(x)-length+1], x)[repeat]
+    for ni, ii in enumerate(xr):
+        subx = (x[ni+1:], x[ni:])[repeat]
+        combs += [[ii] + cc for cc in combinations(subx, length-1, repeat)]
+    return combs
 
