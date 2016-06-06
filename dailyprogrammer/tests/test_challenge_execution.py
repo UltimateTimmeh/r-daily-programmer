@@ -624,5 +624,13 @@ class TestChallenges(unittest.TestCase):
         challenge.run()
 
 
+    def test_challenge_051e(self):
+        """Challenge 051e is executed successfully"""
+        # Test successful execution.
+        print("\n=== EXECUTING CHALLENGE 051 EASY ===\n")
+        challenge = importlib.import_module('challenges.051e')
+        challenge.run()
+
+
 if __name__ == '__main__':
     unittest.main()

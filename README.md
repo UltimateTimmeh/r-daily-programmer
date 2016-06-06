@@ -84,3 +84,4 @@ I have included a list of challenges I have worked on so far.
 - *048e* - [Evensort](dailyprogrammer/challenges/048e.py): Complete
 - *049e* - [Monty Hall Problem](dailyprogrammer/challenges/049e.py): Complete
 - *050e* - [First Sum Pair](dailyprogrammer/challenges/050e.py): Complete
+- *051e* - [Combinations](dailyprogrammer/challenges/051e.py): Complete
