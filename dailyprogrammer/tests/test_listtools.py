@@ -242,5 +242,22 @@ class TestListtoolsFunctions(unittest.TestCase):
         self.assertEqual(results, expected)
 
 
+    def test_permutations(self):
+        """Test function :func:`plugins.listtools.permutations`
+
+        **Tested:**
+
+        - The returned list of permutations is correct (list).
+        - The returned list of permutations is correct (string).
+        """
+        cases = [
+            ([1, 2, 3], [[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]),
+            ('abc', 'abc acb bac bca cab cba'.split())
+        ]
+        for case, expected in cases:
+            result = listtools.permutations(case)
+            self.assertEqual(result, expected)
+
+
 if __name__ == '__main__':
     unittest.main()

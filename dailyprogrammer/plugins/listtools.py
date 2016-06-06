@@ -951,3 +951,30 @@ def first_sum_pair(x, a):
             if (a1 + a2) == a:
                 return (i1, i1+1+i2)
 
+
+def permutations(x):
+    """Determine all possible permutations of a list or string.
+
+    :param list x: list of which to determine all permutations
+    :return: a list containing all possible permutations of the list
+    :rtype: list(list, ...)
+
+    Example::
+
+        >>> x = [1, 2, 3]
+        >>> permutations(x)
+        [[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]
+        >>> x = 'hi!'
+        >>> permutations(x)
+        ['hi!', 'h!i', 'ih!', 'i!h', '!hi', '!ih']
+    """
+    if len(x) == 1:
+        return [x]
+    perms = []
+    for n, i in enumerate(x):
+        if isinstance(x, list):
+            i = [i]
+        subx = x[:n] + x[n+1:]
+        perms += [i + pp for pp in permutations(subx)]
+    return perms
+
